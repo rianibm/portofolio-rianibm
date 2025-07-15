@@ -7,6 +7,7 @@ import icon from "astro-icon";
 import vercel from "@astrojs/vercel/static"; // versi static
 
 export default defineConfig({
+  site: 'https://portofolio-rianibm.vercel.app',
   integrations: [mdx(), sitemap(), tailwind(), icon()],
   adapter: vercel(), // static build (tanpa output: 'server')
 });
