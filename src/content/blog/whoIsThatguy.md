@@ -1,26 +1,61 @@
 ---
-title: "Who is that guy"
-description:
-  'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a class="underline" href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-  '
-icon: "3"
-pubDate: "Jun 19 2024"
+title: "Web 3PL"
+description: 'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>'
+pubDate: "Jun 19, 2024"
 heroImage: "/src/assets/adriana.jpg"
+icon: "1"
+tags: ["Frontend Developer", "UI/UX", "React"]
+pageSkills:
+  - category: "3PL & Logistics Domain"
+    icon: "1"
+    skills: ["3PL Operations", "Multi-modal Transportation", "Land Carriers", "Air Carriers", "Logistics Workflow"]
+  - category: "Partner Integration"
+    icon: "2"
+    skills: ["Carrier APIs", "Partner Onboarding", "System Integration", "Cross-modal Coordination", "Rate Management"]
+  - category: "Frontend Development"
+    icon: "3"
+    skills: ["Next.js", "React", "Tailwind CSS", "Custom UI Design", "Logistics-specific Interfaces"]
+  - category: "System Architecture"
+    icon: "4"
+    skills: ["Multi-modal Routing", "Real-time Tracking", "Dynamic Carrier Selection", "Capacity Management", "Performance Optimization"]
 ---
 
-# Title 1
-## Title 3
+# 3PL Logistics Platform - Multi-Modal Transportation
 
-Who is that guy. It's uh, the other end of town, a block past Maple. Excuse me. I think I know exactly what you mean. Of course not, Biff, now I wouldn't want that to happen. Now, uh, I'll finish those reports up tonight, and I'll run em them on over first thing tomorrow, alright?
+My first deep dive into **3PL (Third-Party Logistics)** industry, working directly with **land and air transportation partners**. This project opened up entirely new domain knowledge in logistics operations and multi-modal shipping coordination.
 
-## Title 2
+## Industry Learning Experience
 
+**New Territory**: First time working in 3PL logistics domain, learning complex shipping workflows, partner integration processes, and multi-modal transportation coordination between land and air carriers.
 
-You know, Doc, you left your equipment on all week. What, right here right now in the cafeteria? What if she said no? I don't know if I could take that kind of rejection. Besides, I think she'd rather go with somebody else. Whoa, whoa, kid, kid, stop, stop, stop, stop. What, I don't get what happened. Where?
+**Partner Integration**: Collaborated directly with various transportation partners - both **land carriers** (trucking companies, rail freight) and **air carriers** (cargo airlines, freight forwarders) to understand their operational requirements and system integration needs.
 
+## Design-to-Code Journey
 
-Marty, will we ever see you again? No wait, Doc, the bruise, the bruise on your head, I know how that happened, you told me the whole story. you were standing on your toilet and you were hanging a clock, and you fell, and you hit your head on the sink, and that's when you came up with the idea for the flux capacitor, which makes time travel possible. C'mon man, let's do something that really cooks. Hello, hello, anybody home? Think, McFly, think. I gotta have time to recopy it. Do your realize what would happen if I hand in my homework in your handwriting? I'd get kicked out of school. You wouldn't want that to happen would you, would you? Right.
+**Custom UI Design**: Created the entire interface from scratch specifically for 3PL operations. No existing logistics templates - designed unique workflows for partner onboarding, shipment coordination, and multi-modal tracking.
 
-Um, yeah, I'm on my way. Pa, what is it? What is it, Pa? He's alright. Our first television set, Dad just picked it up today. Do you have a television? It's already mutated into human form, shoot it.
+**Iterative Design Process**: Extensive discussions with logistics stakeholders, transportation partners, and operations teams. Multiple design iterations to accommodate complex 3PL workflows and partner-specific requirements.
 
-What's going on? Where have you been all week? Look at the time, you've got less than 4 minutes, please hurry. Well, aren't you going up to the lake tonight, you've been planning it for two weeks. Huh? Well yeah, you know we have two of them.
+**Precision Implementation**: Hand-coded every component for logistics-specific use cases - from partner dashboards to shipment coordination interfaces, ensuring seamless integration between land and air transportation modes.
+
+## Technical Deep Dive
+
+**3PL System Architecture**: Built comprehensive platform supporting:
+- **Multi-modal routing**: Seamless coordination between land and air transportation
+- **Partner integration**: APIs and interfaces for various carrier systems
+- **Cross-modal tracking**: Unified tracking across different transportation modes
+- **Dynamic carrier selection**: Algorithm-based partner assignment for optimal routes
+
+**Logistics-Specific Features**: 
+- **Partner onboarding workflows** for land and air carriers
+- **Capacity management** across different transportation modes  
+- **Rate comparison** between land vs air shipping options
+- **Real-time coordination** between multiple carriers in single shipment
+
+## What Makes This Project Special
+
+- **First 3PL Experience**: Deep dive into logistics industry and multi-modal transportation
+- **Partner Collaboration**: Direct work with land and air transportation partners
+- **Domain Expertise**: Gained comprehensive understanding of 3PL operations and workflows  
+- **Multi-Modal Innovation**: Created unified platform for cross-transportation coordination
+- **Industry Impact**: Streamlined logistics operations for complex supply chain management

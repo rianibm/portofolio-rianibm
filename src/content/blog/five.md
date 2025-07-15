@@ -1,246 +1,79 @@
 ---
-title: "Markdown example"
-description:
-  'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>
-  '
+title: "HiRE - Green Jobs Platform"
+description: 'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>'
 icon: "1"
 pubDate: "Jul 08 2022"
 heroImage: "/src/assets/adriana.jpg"
+tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Frontend"]
+pageSkills:
+  - category: "Learning & Adaptability"
+    icon: "1"
+    skills: ["Next.js (First Time)", "TypeScript Learning", "Technology Adaptability", "Learning Mindset", "New Framework Mastery"]
+  - category: "Frontend Implementation"
+    icon: "2"
+    skills: ["React", "Tailwind CSS", "UI Implementation", "Responsive Design", "Component Architecture", "Figma to Code"]
+  - category: "Deployment & CI/CD"
+    icon: "3"
+    skills: ["Vercel Deployment", "CI/CD Pipeline", "Environment Variables", "Preview Deployment", "Production Release"]
+  - category: "Team Collaboration"
+    icon: "4"
+    skills: ["UI/UX Collaboration", "Backend Integration", "Firebase Integration", "Cross-team Communication", "Code Quality"]
 ---
 
-This example is from https://markdown-it.github.io/
+# HiRE - Hiring for a Better Earth
 
----
+**HiRE** is a platform under the **Society of Renewable Energy (SRE)** that is dedicated to searching, preparing, and providing information about **green jobs**. HiRE recently organized a series of events called Career Fair, which included webinars and a virtual career fair.
 
-**Advertisement :)**
+## Project Links
+- **🚀 Production**: [https://www.sre-hireidn.com/](https://www.sre-hireidn.com/)
+- **🔧 Development**: [https://sre-hireidn-migrate.vercel.app/](https://sre-hireidn-migrate.vercel.app/)
 
-- **[pica](https://nodeca.github.io/pica/demo/)** - high quality and fast image
-  resize in browser.
-- **[babelfish](https://github.com/nodeca/babelfish/)** - developer friendly
-  i18n with plurals support and easy syntax.
+## Project Mission
 
-You will like those projects!
+The purpose of these events was to allow the younger generation to explore information about **job vacancies** and **career preparation**. Additionally, HiRE provides information on internships in various companies. The main focus is to facilitate the search for information on green jobs in order to **prevent environmental damage**.
 
----
+## Technical Implementation
 
-# h1 Heading 8-)
+### Frontend Development (UI Implementation)
 
-## h2 Heading
+**Design Implementation**: Translated UI/UX team's high-fidelity Figma designs into fully responsive and accessible UI using **React (Next.js)** with **TypeScript** and **Tailwind CSS**. Collaborated closely with dedicated UI/UX designer to ensure pixel-perfect implementation.
 
-### h3 Heading
+**Critical Page Implementation**:
+- **Landing Page**: Hero section, testimonials, call-to-action components
+- **Course Listing Page**: Advanced filtering, pagination, responsive grid layout
+- **Learning Dashboard**: Progress tracking, navigation, integrated video player
+- **Course Detail Page**: Comprehensive syllabus, instructor information, enrollment logic
+- **Career Page**: Job listings, application forms, candidate management
 
-#### h4 Heading
+### Advanced Routing & Dynamic Content
 
-##### h5 Heading
+**Next.js Architecture**: Utilized **file-based routing** and **dynamic routing** to support course detail pages with SEO optimization. Managed client-side navigation and conditional rendering using TypeScript props and states for enhanced user experience.
 
-###### h6 Heading
+### CI/CD & Deployment Leadership
 
-## Horizontal Rules
+**Vercel Pipeline Management**: Took complete ownership of **CI/CD workflow using Vercel**, including preview deployment per branch, environment variable management, and automated production release pipeline. Ensured build success across environments and handled staging/production branching strategies.
 
----
+**Backend Collaboration**: Worked with backend team using Firebase, focusing on frontend integration while the backend team handled Firebase architecture and data management.
 
----
+### Code Quality & Development Standards
 
----
+**Type Safety & Tooling**: Enforced rigorous code quality standards using **ESLint**, **Prettier**, and **TypeScript strict types**. Applied type safety in API integration and props/state management for better developer experience and fewer runtime errors.
 
-## Typographic replacements
+**Cross-Team Collaboration**: Worked with dedicated UI/UX designer for design implementation and collaborated with backend team managing Firebase architecture, while taking full ownership of Vercel CI/CD pipeline and frontend development.
 
-Enable typographer option to see result.
+## What Makes This Project Special
 
-(c) (C) (r) (R) (tm) (TM) (p) (P) +-
+- **First Next.js Experience**: My first project using Next.js framework - demonstrating willingness to learn and adapt to new technologies
+- **Learning Mindset**: Successfully delivered production-ready application while learning Next.js from scratch during development
+- **Technology Adaptability**: Proves ability to handle projects with unfamiliar tech stack, always open to learning new languages and frameworks
+- **CI/CD Ownership**: Took complete responsibility for Vercel deployment pipeline, ensuring smooth development workflow
+- **Environmental Impact**: Contributing to green job accessibility and environmental sustainability through technology
+- **Cross-Team Collaboration**: Successfully worked with dedicated UI/UX designer and backend team for seamless project delivery
+- **Type-Safe Implementation**: Learned and applied TypeScript best practices while building production application
 
-test.. test... test..... test?..... test!....
-
-!!!!!! ???? ,, -- ---
-
-"Smartypants, double quotes" and 'single quotes'
-
-## Emphasis
-
-**This is bold text**
-
-**This is bold text**
-
-_This is italic text_
-
-_This is italic text_
-
-~~Strikethrough~~
-
-## Blockquotes
-
-> Blockquotes can also be nested...
->
-> > ...by using additional greater-than signs right next to each other...
-> >
-> > > ...or with spaces between arrows.
-
-## Lists
-
-Unordered
-
-- Create a list by starting a line with `+`, `-`, or `*`
-- Sub-lists are made by indenting 2 spaces:
-  - Marker character change forces new list start:
-    - Ac tristique libero volutpat at
-    * Facilisis in pretium nisl aliquet
-    - Nulla volutpat aliquam velit
-- Very easy!
-
-Ordered
-
-1. Lorem ipsum dolor sit amet
-2. Consectetur adipiscing elit
-3. Integer molestie lorem at massa
-
-4. You can use sequential numbers...
-5. ...or keep all the numbers as `1.`
-
-Start numbering with offset:
-
-57. foo
-1. bar
-
-## Code
-
-Inline `code`
-
-Indented code
-
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
-
-Block code "fences"
-
-```
-Sample text here...
-```
-
-Syntax highlighting
-
-```js
-var foo = function (bar) {
-  return bar++;
-};
-
-console.log(foo(5));
-```
-
-## Tables
-
-| Option | Description                                                               |
-| ------ | ------------------------------------------------------------------------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default.    |
-| ext    | extension to be used for dest files.                                      |
-
-Right aligned columns
-
-| Option |                                                               Description |
-| -----: | ------------------------------------------------------------------------: |
-|   data | path to data files to supply the data that will be passed into templates. |
-| engine |    engine to be used for processing templates. Handlebars is the default. |
-|    ext |                                      extension to be used for dest files. |
-
-## Links
-
-[link text](http://dev.nodeca.com)
-
-[link with title](http://nodeca.github.io/pica/demo/ "title text!")
-
-Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
-
-## Images
-
-![Minion](https://octodex.github.com/images/minion.png)
-![Stormtroopocat](https://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-
-Like links, Images also have a footnote style syntax
-
-![Alt text][id]
-
-With a reference later in the document defining the URL location:
-
-[id]: https://octodex.github.com/images/dojocat.jpg "The Dojocat"
-
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
-### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
-
-> Classic markup: :wink: :cry: :laughing: :yum:
->
-> Shortcuts (emoticons): :-) :-( 8-) ;)
-
-see [how to change output](https://github.com/markdown-it/markdown-it-emoji#change-output) with twemoji.
-
-### [Subscript](https://github.com/markdown-it/markdown-it-sub) / [Superscript](https://github.com/markdown-it/markdown-it-sup)
-
-- 19^th^
-- H~2~O
-
-### [\<ins>](https://github.com/markdown-it/markdown-it-ins)
-
-++Inserted text++
-
-### [\<mark>](https://github.com/markdown-it/markdown-it-mark)
-
-==Marked text==
-
-### [Footnotes](https://github.com/markdown-it/markdown-it-footnote)
-
-Footnote 1 link[^first].
-
-Footnote 2 link[^second].
-
-Inline footnote^[Text of inline footnote] definition.
-
-Duplicated footnote reference[^second].
-
-[^first]: Footnote **can have markup**
-
-    and multiple paragraphs.
-
-[^second]: Footnote text.
-
-### [Definition lists](https://github.com/markdown-it/markdown-it-deflist)
-
-Term 1
-
-: Definition 1
-with lazy continuation.
-
-Term 2 with _inline markup_
-
-: Definition 2
-
-        { some code, part of Definition 2 }
-
-    Third paragraph of definition 2.
-
-_Compact style:_
-
-Term 1
-~ Definition 1
-
-Term 2
-~ Definition 2a
-~ Definition 2b
-
-### [Abbreviations](https://github.com/markdown-it/markdown-it-abbr)
-
-This is HTML abbreviation example.
-
-It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
-
-\*[HTML]: Hyper Text Markup Language
-
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-_here be dragons_
-:::
+## Tech Stack
+- **Frontend**: React, Next.js, TypeScript, Tailwind CSS
+- **Backend Integration**: Firebase
+- **Deployment**: Vercel
+- **Development**: ESLint, Prettier, Git workflow
+- **Design**: Figma-to-code implementation

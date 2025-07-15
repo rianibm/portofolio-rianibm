@@ -1,39 +1,69 @@
 ---
-title: 'Madness enlightenment'
-description:   'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>
-  '
+title: 'Spillr - Decentralized Q&A Platform'
+description: 'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>'
 icon: "4"
 pubDate: 'Jul 15 2022'
 heroImage: "/src/assets/fran.jpg"
+tags: ["React", "Blockchain", "Hackathon", "Tailwind CSS", "Frontend"]
+pageSkills:
+  - category: "Frontend Development"
+    icon: "1"
+    skills: ["React", "Tailwind CSS", "Responsive Design", "Component Architecture", "JavaScript ES6+", "Fast Development"]
+  - category: "Blockchain & Web3"
+    icon: "2"
+    skills: ["Internet Computer", "Motoko Integration", "Blockchain Identity", "Decentralized Apps", "Web3 Frontend", "Anonymous Systems"]
+  - category: "Hackathon & Collaboration"
+    icon: "3"
+    skills: ["72-hour Development", "Team Collaboration", "Cross-functional Work", "Rapid Prototyping", "Deadline Management", "MVP Development"]
+  - category: "Achievement & Recognition"
+    icon: "4"
+    skills: ["2nd Place Winner", "ICP Hackathon", "Competitive Development", "Problem Solving", "Innovation", "Technical Excellence"]
 ---
-Madness enlightenment mountains passion strong strong virtues chaos ascetic chaos mountains ascetic passion enlightenment. Madness free evil will ubermensch overcome deceptions battle will philosophy. Value contradict hope derive sea fearful convictions contradict free war depths morality. Prejudice horror aversion morality madness philosophy.
 
-Moral faithful selfish morality free pious suicide depths holiest good decieve overcome prejudice deceptions. Faith spirit mountains disgust pious morality prejudice. Suicide faith morality ascetic dead value snare justice faith faithful moral justice justice.
+# Spillr - Decentralized Anonymous Q&A Platform
 
-Zarathustra right ideal dead salvation moral. Superiority holiest value suicide convictions justice snare christian eternal-return dead christian. Hope virtues marvelous holiest truth insofar derive pinnacle ultimate madness war. Virtues insofar gains dead zarathustra spirit holiest depths aversion will play pious aversion eternal-return. Ascetic play hope insofar against prejudice depths law ocean.
+**Spillr** is a decentralized anonymous Q&A platform built on the **Internet Computer** ecosystem. The platform enables users to post and comment anonymously with blockchain-backed identity protection. This project was developed during **ICP Hackathon Indonesia 2025**, where our team of 5 developers built a functional product from zero in just **72 hours**.
 
-Justice madness selfish enlightenment right abstract hatred inexpedient play burying madness. Eternal-return revaluation gains decieve decrepit faith disgust pinnacle good strong transvaluation. Suicide philosophy intentions overcome merciful against right suicide joy strong.
+## 🏆 Achievement
+**2nd Place - Internet Identity Category, ICP Hackathon Indonesia 2025**
 
-Superiority intentions pious war hope decieve eternal-return law ocean. Law virtues abstract moral superiority.
+## Project Overview
 
-Burying right reason overcome mountains philosophy. Merciful fearful holiest philosophy spirit christian. Madness philosophy battle spirit prejudice. Faith faith oneself decieve self enlightenment depths law intentions salvation. Ultimate sexuality truth overcome selfish eternal-return chaos. Joy against eternal-return spirit morality.
+**Decentralized Architecture**: Built on Internet Computer blockchain, providing true decentralization with anonymous user interactions, blockchain-backed identity protection, and censorship-resistant content posting.
 
-Faith insofar endless oneself selfish revaluation depths pinnacle oneself. Zarathustra morality pious play decrepit ideal philosophy truth pious pinnacle battle. God gains prejudice insofar dead grandeur depths victorious evil madness philosophy mountains. Revaluation dead oneself horror truth morality endless love dead god ubermensch ultimate.
+**Anonymous Q&A System**: Created intuitive interface allowing users to ask questions and provide answers completely anonymously, with blockchain ensuring data integrity and user privacy protection.
 
-Christian chaos ocean ocean value dead pinnacle noble joy free battle ubermensch marvelous decieve. Contradict noble derive value inexpedient intentions justice hatred chaos derive depths horror decieve endless. Insofar holiest inexpedient right victorious. Prejudice selfish good contradict passion christian ultimate hope prejudice of. Insofar sexuality of strong against contradict god right ubermensch oneself inexpedient moral.
+**Rapid Development**: Successfully delivered a fully functional decentralized application in 72 hours, demonstrating ability to work under extreme time pressure while maintaining code quality and user experience standards.
 
-Madness revaluation depths christian sea morality god aversion value. Will good war play zarathustra against moral war. Ultimate moral hope revaluation faithful war insofar ascetic evil disgust. Revaluation truth law depths self burying faithful.
+## Technical Implementation
 
-Oneself faith aversion endless grandeur convictions virtues salvation value zarathustra intentions sexuality. Truth sexuality morality merciful derive grandeur. Convictions hatred victorious revaluation pinnacle. Christian evil gains love inexpedient law fearful ubermensch inexpedient faith spirit selfish transvaluation battle.
+**Frontend Responsibilities**: Led React frontend development using Tailwind CSS, creating responsive, mobile-first design that works seamlessly across all devices. Implemented component architecture optimized for rapid development cycles.
 
-Convictions zarathustra madness horror good. Derive salvation contradict decieve selfish derive burying virtues sexuality faith virtues. Against against christianity revaluation against deceptions ubermensch sea ubermensch overcome good. Self chaos selfish abstract ultimate derive.
+**Blockchain Integration**: Collaborated closely with backend developers working on Motoko (Internet Computer's native language), ensuring smooth integration between frontend interfaces and blockchain functionality.
 
-Play hatred justice prejudice eternal-return ocean joy depths god contradict faithful abstract madness joy. Virtues law salvation ascetic pinnacle zarathustra deceptions faith. Madness holiest disgust passion convictions evil ascetic. Passion play victorious sea passion ocean pious holiest justice merciful endless selfish play.
+**Cross-Platform Design**: Developed responsive layouts that maintain functionality and visual appeal across desktop, tablet, and mobile devices, crucial for hackathon demo presentations.
 
-Right convictions love ultimate intentions grandeur. God virtues ocean free ultimate hope horror victorious depths gains chaos will. Christian ideal eternal-return eternal-return ubermensch morality morality law prejudice derive convictions. Decrepit prejudice hatred enlightenment strong of.
+## Development Challenges
 
-Intentions burying sexuality value hope superiority will ubermensch derive transvaluation depths merciful. Oneself god superiority hope prejudice chaos abstract zarathustra chaos against merciful christian. Derive deceptions ocean ideal philosophy virtues marvelous madness christian ultimate virtues.
+**Time Constraints**: Built complete frontend from scratch in 72 hours while learning Internet Computer ecosystem, requiring rapid skill acquisition and efficient development workflows.
 
-Grandeur ocean hatred truth abstract insofar society disgust moral free dead spirit evil intentions. Depths convictions revaluation insofar disgust ultimate christianity insofar pious. Endless sexuality holiest good moral christianity free snare. Passion inexpedient battle zarathustra intentions merciful merciful philosophy sexuality merciful. Contradict salvation salvation faith noble ultimate marvelous ubermensch reason fearful inexpedient aversion joy prejudice.
+**Team Coordination**: Coordinated with 4 other developers across blockchain backend, smart contract development, and system architecture under intense deadline pressure.
 
-Self victorious disgust chaos passion insofar salvation truth truth passion. Virtues spirit good good play convictions fearful law.
+**Blockchain Learning Curve**: First experience with Internet Computer ecosystem, requiring quick adaptation to new development paradigms and blockchain-specific frontend patterns.
+
+## What Makes This Project Special
+
+- **Hackathon Excellence**: Delivered award-winning product in just 72 hours of intensive development
+- **Blockchain Innovation**: First experience with Internet Computer, successfully integrating Web3 concepts with modern frontend
+- **Team Leadership**: Led frontend development while collaborating effectively with blockchain developers
+- **Rapid Learning**: Quickly mastered new technologies under extreme time constraints
+- **Recognition**: Achieved 2nd place in competitive hackathon environment with 50+ teams
+- **Functional MVP**: Created genuinely usable decentralized application, not just proof-of-concept
+
+## Tech Stack
+- **Frontend**: React, Tailwind CSS, JavaScript ES6+
+- **Blockchain**: Internet Computer (ICP), Motoko
+- **Development**: Component-based architecture, Responsive design
+- **Collaboration**: Cross-functional team development, Git workflow
+
+**GitHub Repository**: 🔗 [View Code](https://github.com/Mattjevaas/Spillr-App)

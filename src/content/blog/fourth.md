@@ -1,19 +1,85 @@
 ---
-title: 'Third post'
-description:  '
-        Foto de <a  class="underline" href="https://unsplash.com/es/fotos/flores-rojas-azules-y-blancas-5TK1F5VfdIk">Europeana </a> en <a  href="https://unsplash.com/es/fotos/flores-rojas-azules-y-blancas-5TK1F5VfdIk"  class="underline">Unsplash</a>
-'
+title: 'Perkantas Yogyakarta'
+description: 'Foto de <a class="underline" href="https://unsplash.com/es/fotos/flores-rojas-azules-y-blancas-5TK1F5VfdIk">Europeana</a> en <a href="https://unsplash.com/es/fotos/flores-rojas-azules-y-blancas-5TK1F5VfdIk" class="underline">Unsplash</a>'
 icon: '2'
 pubDate: 'Jul 08 2022'
 heroImage: "/src/assets/fran.jpg"
+tags: ["Laravel", "Bootstrap", "Frontend", "Community Platform"]
+pageSkills:
+  - category: "Freelance & Project Management"
+    icon: "1"
+    skills: ["First Full Freelance", "End-to-end Project", "ERD Discussions", "Database Planning", "Client Communication", "Project Lifecycle"]
+  - category: "Technical Learning & Growth"
+    icon: "2"
+    skills: ["Email Notifications (First Time)", "Laravel Email System", "Production Experience", "Platform Maintenance", "Technical Problem Solving"]
+  - category: "Frontend Development"
+    icon: "3"
+    skills: ["Laravel Blade", "Bootstrap", "Design Collaboration", "Responsive Design", "Component Architecture", "UI Implementation"]
+  - category: "Full-Stack Development"
+    icon: "4"
+    skills: ["Book Borrowing System", "User Management", "Admin Functionality", "Database Integration", "Feature Development"]
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing. In hac habitasse platea dictumst vestibulum. Sagittis purus sit amet volutpat. Netus et malesuada fames ac turpis egestas. Eget magna fermentum iaculis eu non diam phasellus vestibulum lorem. Varius sit amet mattis vulputate enim. Habitasse platea dictumst quisque sagittis. Integer quis auctor elit sed vulputate mi. Dictumst quisque sagittis purus sit amet.
+# Perkantas Yogyakarta - Christian Discipleship Platform
 
-Morbi tristique senectus et netus. Id semper risus in hendrerit gravida rutrum quisque non tellus. Habitasse platea dictumst quisque sagittis purus sit amet. Tellus molestie nunc non blandit massa. Cursus vitae congue mauris rhoncus. Accumsan tortor posuere ac ut. Fringilla urna porttitor rhoncus dolor. Elit ullamcorper dignissim cras tincidunt lobortis. In cursus turpis massa tincidunt dui ut ornare lectus. Integer feugiat scelerisque varius morbi enim nunc. Bibendum neque egestas congue quisque egestas diam. Cras ornare arcu dui vivamus arcu felis bibendum. Dignissim suspendisse in est ante in nibh mauris. Sed tempus urna et pharetra pharetra massa massa ultricies mi.
+**Perkantas Yogyakarta** is a web platform for a **Christian discipleship movement** that serves students, alumni, and medical professionals. This project marks my **first full-flow freelance experience**, involving complete project lifecycle from planning to maintenance.
 
-Mollis nunc sed id semper risus in. Convallis a cras semper auctor neque. Diam sit amet nisl suscipit. Lacus viverra vitae congue eu consequat ac felis donec. Egestas integer eget aliquet nibh praesent tristique magna sit amet. Eget magna fermentum iaculis eu non diam. In vitae turpis massa sed elementum. Tristique et egestas quis ipsum suspendisse ultrices. Eget lorem dolor sed viverra ipsum. Vel turpis nunc eget lorem dolor sed viverra. Posuere ac ut consequat semper viverra nam. Laoreet suspendisse interdum consectetur libero id faucibus. Diam phasellus vestibulum lorem sed risus ultricies tristique. Rhoncus dolor purus non enim praesent elementum facilisis. Ultrices tincidunt arcu non sodales neque. Tempus egestas sed sed risus pretium quam vulputate. Viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare. Fringilla urna porttitor rhoncus dolor purus non. Amet dictum sit amet justo donec enim.
+## Project Links
+- **🌐 Web User**: [http://perkantasjogja.com/](http://perkantasjogja.com/)
+- **⚙️ Web Admin**: [http://perkantasjogja.com/cms](http://perkantasjogja.com/cms)
 
-Mattis ullamcorper velit sed ullamcorper morbi tincidunt. Tortor posuere ac ut consequat semper viverra. Tellus mauris a diam maecenas sed enim ut sem viverra. Venenatis urna cursus eget nunc scelerisque viverra mauris in. Arcu ac tortor dignissim convallis aenean et tortor at. Curabitur gravida arcu ac tortor dignissim convallis aenean et tortor. Egestas tellus rutrum tellus pellentesque eu. Fusce ut placerat orci nulla pellentesque dignissim enim sit amet. Ut enim blandit volutpat maecenas volutpat blandit aliquam etiam. Id donec ultrices tincidunt arcu. Id cursus metus aliquam eleifend mi.
+## Full-Cycle Freelance Experience
 
-Tempus quam pellentesque nec nam aliquam sem. Risus at ultrices mi tempus imperdiet. Id porta nibh venenatis cras sed felis eget velit. Ipsum a arcu cursus vitae. Facilisis magna etiam tempor orci eu lobortis elementum. Tincidunt dui ut ornare lectus sit. Quisque non tellus orci ac. Blandit libero volutpat sed cras. Nec tincidunt praesent semper feugiat nibh sed pulvinar proin gravida. Egestas integer eget aliquet nibh praesent tristique magna.
+### First Complete Freelance Project
+**End-to-End Involvement**: This project represents my **first full-flow freelance experience**, participating in every phase from initial planning discussions to ongoing maintenance and security improvements.
+
+### Database Planning & ERD Discussions
+**Database Architecture**: Actively participated in **ERD (Entity Relationship Diagram) discussions**, contributing to database schema planning and table relationships design for optimal data structure and platform scalability.
+
+### UI Collaboration & Design Input
+**Design Collaboration**: While not creating the UI designs myself, I actively participated in **UI discussions and provided technical input** on feasibility, responsive design considerations, and implementation approaches during the design phase.
+
+## Technical Implementation
+
+### Cross-Functional Collaboration
+**Team Coordination**: Collaborated cross-functionally with **UI/UX designers** and **software engineers** to align design implementation with backend functionality, ensuring seamless integration between visual design and technical requirements.
+
+### Design System Implementation
+**Component Architecture**: Sliced design system and style guide into **reusable Blade components** and **Bootstrap-based elements**, ensuring consistency and maintainability across the entire platform.
+
+**Responsive Development**: Converted static UI designs into **dynamic views**, applying responsive design principles to support mobile, tablet, and desktop experiences for diverse user accessibility.
+
+## Feature Development
+
+### Book Borrowing System
+**Library Management**: Developed comprehensive **book borrowing system** allowing users to browse available resources, select materials, and submit book loan requests through intuitive interface.
+
+### Email Notification System - First Implementation
+**Learning New Technology**: Built my **first email notification system**, implementing automated admin alerts for book loan requests. This was a completely new technical challenge that required learning email integration and notification logic.
+
+**Technical Growth**: Gained hands-on experience with Laravel's email functionality, notification queues, and automated messaging systems, expanding my backend development capabilities.
+
+### Web User Module
+## Quality Assurance & Standards
+
+### Accessibility & Compatibility
+**Universal Access**: Ensured accessibility and **cross-browser compatibility** throughout the development process, making the platform available to all community members regardless of their technical setup.
+
+**Clean Architecture**: Maintained clean project structure, scoped styles, and component-based layout for easier handoff and scaling, supporting long-term platform maintenance and future development.
+
+## What Makes This Project Special
+
+- **First Full-Flow Freelance**: Complete freelance project lifecycle experience from planning to maintenance
+- **Database Architecture Participation**: Actively involved in ERD discussions and database schema planning
+- **UI Collaboration Experience**: Provided technical input during design phase while working with UI designers
+- **First Email Notification System**: Learned and implemented automated email functionality from scratch
+- **Production Experience**: Gained valuable insights about live platform maintenance and real-world challenges
+- **Community Impact**: Supporting Christian discipleship and spiritual growth through technology
+- **Full-Stack Growth**: Expanded from frontend-focused to full-stack development capabilities
+
+## Tech Stack
+- **Backend**: Laravel
+- **Frontend**: Laravel Blade Templates
+- **Styling**: Bootstrap
+- **Features**: Email notifications, User management, Admin functionality
+- **Development**: Component-based architecture, Responsive design

@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/BlogPost.astro';
+
 const tags = ['Frontend Developer', 'React', 'Laravel', 'Tailwind CSS', 'UI/UX'];
 const description = `
   <p class="text-left">
@@ -12,8 +13,36 @@ const description = `
     >Unsplash</a>
   </p>
 `;
----
 
+// Custom skills for About page - using safe icons
+const aboutSkills = [
+  {
+    category: "Frontend Development",
+    icon: "1",
+    skills: ["React", "Next.js", "Astro", "JavaScript ES6+", "TypeScript"]
+  },
+  {
+    category: "Styling & Design",
+    icon: "2",
+    skills: ["Tailwind CSS", "Bootstrap", "Sass/SCSS", "CSS3", "Responsive Design", "Mobile-First"]
+  },
+  {
+    category: "Backend & Database",
+    icon: "3", 
+    skills: ["MySQL", "PostgreSQL", "Laravel", "PHP", "Node.js", "Redis",  "REST APIs"]
+  },
+  {
+    category: "Tools & Workflow",
+    icon: "4",
+    skills: ["Git", "Webpack", "Vite", "NPM/Yarn", "Figma", "Adobe XD"]
+  },
+  {
+    category: "Mobile & Performance",
+    icon: "5",
+    skills: ["PWA", "Mobile Web", "Performance Optimization", "Lighthouse", "SEO"]
+  }
+];
+---
 <Layout
   tags={tags}
   icon="beach"
@@ -21,18 +50,18 @@ const description = `
   description={description}
   pubDate={new Date('July 01 2025')}
   heroImage="/src/assets/fran.jpg"
+  pageSkills={aboutSkills}
 >
   <p>
-    Hello, I’m <strong>Riani</strong> — a <strong>Frontend Developer</strong> with a strong foundation in UX engineering, 
+    Hello, I'm <strong>Riani</strong> — a <strong>Frontend Developer</strong> with a strong foundation in UX engineering, 
     currently working full-time at <strong>PT Indomarco Prismatama (Indomaret Group)</strong>. I specialize in 
     <strong>user interface development</strong>, <strong>design-to-code implementation</strong>, and maintaining 
     <strong>high-performance, scalable frontends</strong> for internal systems and public-facing platforms.
   </p>
   <div>
 	<p>
-		At Indomaret, I’ve contributed to multiple web and mobile products. Some of my key work includes:
+		At Indomaret, I've contributed to multiple web and mobile products. Some of my key work includes:
 	</p>
-
 	<ul class="list-disc ml-6 space-y-1">
 		<li>
 		Leading <strong>UI revamp initiatives</strong> for both internal and external platforms, ensuring 
@@ -63,19 +92,16 @@ const description = `
 		</li>
 	</ul>
   </div>
-
   <p>
     I regularly work across the stack — from <strong>design reviews</strong> and <strong>UI slicing</strong> 
     to collaborating on <strong>ERD discussions</strong> and occasionally handling <strong>backend tasks when needed</strong>. 
     While my core focus is frontend, I'm comfortable stepping into backend development (Laravel, MongoDB) to ensure seamless product delivery.
   </p>
-
   <p>
-    I thrive in cross-functional teams and fast-paced environments, and I’m always looking to improve digital experiences 
-    through thoughtful code, collaborative design, and clear structure. Whether it’s refactoring a legacy system or building 
+    I thrive in cross-functional teams and fast-paced environments, and I'm always looking to improve digital experiences 
+    through thoughtful code, collaborative design, and clear structure. Whether it's refactoring a legacy system or building 
     from scratch, I value both detail and impact.
   </p>
-
   <p>
     If you're looking for someone who can take ownership of frontend development, align with business needs, and 
     contribute effectively in international teams — feel free to  
