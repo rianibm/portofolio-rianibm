@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+
+const ndaProjects = [
+  {
+    icon: "1",
+    title: "Event Ticketing Marketplace Platform (User + Seller + HQ)",
+    description: "Designed multi-role responsive UI for a concert ticketing system, including customer purchase flow, seller dashboard, and internal HQ tools."
+  },
+  {
+    icon: "2", 
+    title: "Race Event Ticketing System (User + EO + Validator)",
+    description: "Created UI for race event ticketing and validation. Includes customer ticket display, EO access, validator scan interface, and admin panel for monitoring."
+  },
+  {
+    icon: "3",
+    title: "Desktop App for Electronic ID (E-KTP)",
+    description: "Designed desktop user interface for data input, verification, and administrative functions for an electronic identity system."
+  },
+  {
+    icon: "4",
+    title: "Monitoring Dashboard for Urban Railway System", 
+    description: "Developed high-visibility UI for real-time monitoring of LRT devices, terminals, and server health, optimized for large screen display in control rooms."
+  },
+  {
+    icon: "5",
+    title: "Tray Catering Management System",
+    description: "Created UI for desktop and web dashboard for tray-based airline catering, with focus on workflow visualization and operational data input."
+  },
+  {
+    icon: "1",
+    title: "Railway Operation Tools (Web, AVM, PEM, PG)",
+    description: "Contributed to UI development of multiple tools in a light rail ecosystem, including internal admin web, ticket machines (AVM), passenger equipment monitoring (PEM), and gate control systems (PG)."
+  }
+];
+
+const bgClasses = [
+  "bg-pgreen rounded-full",
+  "bg-pblue rounded-2xl",
+  "bg-ppink",
+  "bg-pyellow rounded-md",
+];
+
+const getRandomClass = () => {
+  return bgClasses[Math.floor(Math.random() * bgClasses.length)];
+};
+---
+
+<section class="flex flex-col text-center gap-8 py-20">
+  <div class="flex flex-col gap-4">
+    <p class="text-pblack">Confidential client work:</p>
+    <h2 class="text-4xl font-bold">UI Projects (NDA)</h2>
+  </div>
+  
+  <div class="flex justify-center">
+    <div class="max-w-4xl w-full">
+      <ul class="flex flex-col gap-4 text-left">
+        {ndaProjects.map((project) => {
+          const randomClass = getRandomClass();
+          return (
+            <li class="border border-black rounded-lg p-4 shadow-card hover:shadow-hover transition-all duration-300">
+              <div class="flex items-start gap-4">
+                <div class={`${randomClass} p-2 border border-black shadow-card1 flex-shrink-0 mt-1`}>
+                  <Icon name={project.icon} class="text-lg" />
+                </div>
+                <div class="flex-1">
+                  <h3 class="text-lg font-semibold text-black mb-2">{project.title}</h3>
+                  <p class="text-sm text-gray-600 leading-relaxed">{project.description}</p>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
+      
+      <div class="mt-8 p-4 bg-gray-100 rounded-lg border border-gray-300">
+        <p class="text-sm text-gray-700 text-center">
+          <strong>Note:</strong> These projects are under Non-Disclosure Agreement (NDA). 
+          Details and specific implementations cannot be shared publicly due to confidentiality requirements.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
