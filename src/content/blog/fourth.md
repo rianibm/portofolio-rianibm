@@ -1,6 +1,6 @@
 ---
 title: 'Perkantas Yogyakarta'
-description: 'Foto de <a class="underline" href="https://unsplash.com/es/fotos/flores-rojas-azules-y-blancas-5TK1F5VfdIk">Europeana</a> en <a href="https://unsplash.com/es/fotos/flores-rojas-azules-y-blancas-5TK1F5VfdIk" class="underline">Unsplash</a>'
+description: 'Web platform for Christian discipleship movement serving students, alumni, and medical professionals. First full-flow freelance experience involving complete project lifecycle.'
 icon: '2'
 pubDate: 'Jul 08 2022'
 heroImage: "/src/assets/fran.jpg"

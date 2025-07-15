@@ -1,0 +1,44 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section class="flex flex-col text-center gap-8 py-20">
+  <div class="flex flex-col gap-4">
+    <p class="text-pblack">My educational background:</p>
+    <h2 class="text-4xl font-bold">Education</h2>
+  </div>
+  
+  <div class="flex justify-center">
+    <div class="max-w-2xl w-full">
+      <div class="bg-pgreen rounded-2xl border-1 border-black shadow-card hover:shadow-hover transition-all duration-300 p-6 md:p-8">
+        <div class="flex flex-col gap-4">
+          <!-- Degree & Institution -->
+          <div class="flex items-start gap-3">
+            <div class="bg-pyellow rounded-full p-2 border-1 border-black shadow-card1 flex-shrink-0 mt-1">
+              <Icon name="1" class="text-xl" />
+            </div>
+            <div class="text-left">
+              <h3 class="text-xl md:text-2xl font-bold text-black">Bachelor of Informatics</h3>
+              <p class="text-lg font-medium text-black opacity-80">(7 Semesters)</p>
+              <p class="text-base text-black opacity-70">Duta Wacana Christian University</p>
+              <p class="text-sm font-semibold text-black mt-2">GPA: 3.62 out of 4.00</p>
+            </div>
+          </div>
+          
+          <!-- Thesis Section -->
+          <div class="mt-4 p-4 bg-white bg-opacity-50 rounded-lg border-1 border-black">
+            <h4 class="text-lg font-bold text-black mb-2">Thesis:</h4>
+            <h5 class="text-base font-semibold text-black mb-3">Inclusive Design for Website-Based Learning</h5>
+            <p class="text-sm text-black text-left leading-relaxed mb-3">
+              My thesis involved designing and coding an inclusive e-learning platform for users with contrast sensitivity, light sensitivity, low vision, and blindness. I conducted rapid ethnography and in-depth interviews. For accessibility testing, I used NVDA (laptop) and TalkBack (mobile).
+            </p>
+            <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-black hover:text-ppink transition-colors">
+              <Icon name="2" class="text-base" />
+              Click here for detail
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

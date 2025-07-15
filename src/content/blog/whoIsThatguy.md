@@ -1,6 +1,6 @@
 ---
 title: "Web 3PL"
-description: 'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>'
+description: "My first deep dive into 3PL (Third-Party Logistics) industry, working directly with land and air transportation partners. Built comprehensive platform supporting multi-modal routing."
 pubDate: "Jun 19, 2024"
 heroImage: "/src/assets/adriana.jpg"
 icon: "1"

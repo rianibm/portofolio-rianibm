@@ -1,0 +1,120 @@
+---
+import { Icon } from "astro-icon/components";
+
+const skills = [
+  { name: "HTML", icon: "1", category: "frontend" },
+  { name: "TypeScript", icon: "2", category: "frontend" },
+  { name: "JavaScript", icon: "3", category: "frontend" },
+  { name: "CSS", icon: "4", category: "frontend" },
+  { name: "React", icon: "5", category: "frontend" },
+  { name: "Next.js", icon: "1", category: "frontend" },
+  { name: "Tailwind CSS", icon: "2", category: "styling" },
+  { name: "Astro", icon: "3", category: "frontend" },
+  { name: "Node.js", icon: "4", category: "backend" },
+  { name: "Laravel", icon: "5", category: "backend" },
+  { name: "Redis", icon: "1", category: "database" },
+  { name: "Vercel", icon: "2", category: "deployment" },
+  { name: "Git", icon: "3", category: "tools" },
+  { name: "Hotjar", icon: "4", category: "tools" },
+  { name: "Figma", icon: "5", category: "design" },
+];
+
+const bgClasses = [
+  "bg-pgreen rounded-full",
+  "bg-pblue rounded-2xl", 
+  "bg-ppink",
+  "bg-pyellow rounded-md",
+];
+
+const getRandomClass = () => {
+  return bgClasses[Math.floor(Math.random() * bgClasses.length)];
+};
+---
+
+<section class="flex flex-col text-center gap-8 py-20">
+  <div class="flex flex-col gap-4">
+    <p class="text-pblack">Here are some of the skills I use:</p>
+    <h2 class="text-4xl font-bold">Skills</h2>
+  </div>
+  
+  <div class="skills-container relative">
+    <!-- Floating Skills Animation -->
+    <div class="skills-floating flex flex-wrap justify-center gap-4 md:gap-6 px-4">
+      {skills.map((skill, index) => {
+        const randomClass = getRandomClass();
+        return (
+          <div 
+            class={`skill-badge ${randomClass} px-4 py-2 border-1 border-black shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer group`}
+            style={`animation-delay: ${index * 0.1}s;`}
+          >
+            <div class="flex items-center gap-2">
+              <Icon name={skill.icon} class="text-lg group-hover:scale-110 transition-transform duration-300" />
+              <span class="font-medium text-sm md:text-base">{skill.name}</span>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .skill-badge {
+    animation: skillFloat 4s ease-in-out infinite;
+  }
+  
+  .skill-badge:nth-child(odd) {
+    animation-direction: alternate;
+  }
+  
+  .skill-badge:nth-child(even) {
+    animation-direction: alternate-reverse;
+  }
+  
+  .skill-badge:hover {
+    animation-play-state: paused;
+    transform: translateX(-3px) scale(1.05);
+  }
+  
+  @keyframes skillFloat {
+    0%, 100% {
+      transform: translateX(0px);
+    }
+    50% {
+      transform: translateX(6px);
+    }
+  }
+  
+  /* Staggered animation delays for wave effect */
+  .skill-badge:nth-child(1) { animation-delay: 0s; }
+  .skill-badge:nth-child(2) { animation-delay: 0.1s; }
+  .skill-badge:nth-child(3) { animation-delay: 0.2s; }
+  .skill-badge:nth-child(4) { animation-delay: 0.3s; }
+  .skill-badge:nth-child(5) { animation-delay: 0.4s; }
+  .skill-badge:nth-child(6) { animation-delay: 0.5s; }
+  .skill-badge:nth-child(7) { animation-delay: 0.6s; }
+  .skill-badge:nth-child(8) { animation-delay: 0.7s; }
+  .skill-badge:nth-child(9) { animation-delay: 0.8s; }
+  .skill-badge:nth-child(10) { animation-delay: 0.9s; }
+  .skill-badge:nth-child(11) { animation-delay: 1s; }
+  .skill-badge:nth-child(12) { animation-delay: 1.1s; }
+  .skill-badge:nth-child(13) { animation-delay: 1.2s; }
+  .skill-badge:nth-child(14) { animation-delay: 1.3s; }
+  .skill-badge:nth-child(15) { animation-delay: 1.4s; }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .skill-badge {
+      animation-duration: 3s;
+    }
+    
+    @keyframes skillFloat {
+      0%, 100% {
+        transform: translateX(0px);
+      }
+      50% {
+        transform: translateX(4px);
+      }
+    }
+  }
+</style>

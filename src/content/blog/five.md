@@ -1,6 +1,6 @@
 ---
 title: "HiRE - Green Jobs Platform"
-description: 'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>'
+description: 'Platform under Society of Renewable Energy (SRE) dedicated to green jobs. First project using Next.js framework - demonstrating willingness to learn and adapt to new technologies.'
 icon: "1"
 pubDate: "Jul 08 2022"
 heroImage: "/src/assets/adriana.jpg"
@@ -21,6 +21,8 @@ pageSkills:
 ---
 
 # HiRE - Hiring for a Better Earth
+
+![HiRE Logo](/src/assets/logo-hireidn-removebg-preview.png)
 
 **HiRE** is a platform under the **Society of Renewable Energy (SRE)** that is dedicated to searching, preparing, and providing information about **green jobs**. HiRE recently organized a series of events called Career Fair, which included webinars and a virtual career fair.
 

@@ -1,6 +1,6 @@
 ---
 title: 'Spillr - Decentralized Q&A Platform'
-description: 'Foto de <a class="underline" href="https://unsplash.com/es/@adrigeo_?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Adrianna Geo</a> en <a href="https://unsplash.com/es/fotos/una-pintura-en-el-techo-de-un-edificio-1rBg5YSi00c?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash" class="underline">Unsplash</a>'
+description: 'Decentralized anonymous Q&A platform built on Internet Computer ecosystem. Developed during ICP Hackathon Indonesia 2025, achieving 2nd place in 72 hours.'
 icon: "4"
 pubDate: 'Jul 15 2022'
 heroImage: "/src/assets/fran.jpg"

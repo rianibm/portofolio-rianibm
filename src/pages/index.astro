@@ -5,8 +5,11 @@ import Footer from "@/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Hero from "@/components/Hero.astro";
 import WhatIDo from "@/components/WhatIDo.astro";
+import Skills from "@/components/Skills.astro";
+import Education from "@/components/Education.astro";
+import Certification from "@/components/Certification.astro";
+import LookingFor from "@/components/LookingFor.astro";
 ---
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -17,6 +20,10 @@ import WhatIDo from "@/components/WhatIDo.astro";
     <main class="container mx-auto md:px-10">
       <Hero />
       <WhatIDo />
+      <Skills />
+      <Education />
+      <Certification />
+      <LookingFor />
     </main>
     <Footer />
   </body>
