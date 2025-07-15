@@ -28,7 +28,7 @@ pageSkills:
 **Sky Explorer** is a comprehensive flight booking application that allows users to search, compare, and book flights with an intuitive interface. This project is my **bootcamp final project**, where **only 2 frontend developers** handled the entire complex application while working full-time jobs - coding exclusively during evening hours in **less than a month**.
 
 ## Project Status & Links
-- **🔗 Previous Frontend Code**: [View Repository] *(Available upon request)*
+- **🔗 Previous Frontend Code**: [View Repository](https://github.com/SkyExplorer-Team/FSW_FE_WEB_USER_NEW)
 - **🚧 Next.js Development**: [https://github.com/rianibm/sky-explorer](https://github.com/rianibm/sky-explorer) *(Currently on hold due to work commitments)*
 
 ## Development Challenges & Timeline
