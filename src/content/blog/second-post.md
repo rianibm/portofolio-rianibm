@@ -41,8 +41,6 @@ pageSkills:
 
 **Blockchain Integration**: Collaborated closely with backend developers working on Motoko (Internet Computer's native language), ensuring smooth integration between frontend interfaces and blockchain functionality.
 
-**Cross-Platform Design**: Developed responsive layouts that maintain functionality and visual appeal across desktop, tablet, and mobile devices, crucial for hackathon demo presentations.
-
 ## Development Challenges
 
 **Time Constraints**: Built complete frontend from scratch in 72 hours while learning Internet Computer ecosystem, requiring rapid skill acquisition and efficient development workflows.
@@ -64,6 +62,6 @@ pageSkills:
 - **Frontend**: React, Tailwind CSS, JavaScript ES6+
 - **Blockchain**: Internet Computer (ICP), Motoko
 - **Development**: Component-based architecture, Responsive design
-- **Collaboration**: Cross-functional team development, Git workflow
+- **Collaboration**: Cross-functional team development, Git workflow, ICP ecosystem
 
 **GitHub Repository**: 🔗 [View Code](https://github.com/Mattjevaas/Spillr-App)

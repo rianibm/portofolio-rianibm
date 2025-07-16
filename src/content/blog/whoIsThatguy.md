@@ -38,20 +38,6 @@ My first deep dive into **3PL (Third-Party Logistics)** industry, working direct
 
 **Precision Implementation**: Hand-coded every component for logistics-specific use cases - from partner dashboards to shipment coordination interfaces, ensuring seamless integration between land and air transportation modes.
 
-## Technical Deep Dive
-
-**3PL System Architecture**: Built comprehensive platform supporting:
-- **Multi-modal routing**: Seamless coordination between land and air transportation
-- **Partner integration**: APIs and interfaces for various carrier systems
-- **Cross-modal tracking**: Unified tracking across different transportation modes
-- **Dynamic carrier selection**: Algorithm-based partner assignment for optimal routes
-
-**Logistics-Specific Features**: 
-- **Partner onboarding workflows** for land and air carriers
-- **Capacity management** across different transportation modes  
-- **Rate comparison** between land vs air shipping options
-- **Real-time coordination** between multiple carriers in single shipment
-
 ## What Makes This Project Special
 
 - **First 3PL Experience**: Deep dive into logistics industry and multi-modal transportation
