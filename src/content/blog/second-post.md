@@ -2,7 +2,7 @@
 title: 'Spillr - Decentralized Q&A Platform'
 description: 'Decentralized anonymous Q&A platform built on Internet Computer ecosystem. Developed during ICP Hackathon Indonesia 2025, achieving 2nd place in 72 hours.'
 icon: "4"
-pubDate: 'Jul 15 2022'
+pubDate: 'Mar 27 2025'
 heroImage: "/src/assets/fran.jpg"
 tags: ["React", "Blockchain", "Hackathon", "Tailwind CSS", "Frontend"]
 pageSkills:

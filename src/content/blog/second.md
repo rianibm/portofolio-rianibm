@@ -2,7 +2,7 @@
 title: 'Sky Explorer - Flight Booking App'
 description: 'Comprehensive flight booking application. Bootcamp final project where only 2 frontend developers handled the entire complex application while working full-time jobs during evening hours.'
 icon: '3'
-pubDate: 'Jul 08 2022'
+pubDate: 'Jan 1 2024'
 heroImage: "/src/assets/euro.jpg"
 tags: ["React", "TypeScript", "Recoil", "Frontend", "Bootcamp"]
 pageSkills:

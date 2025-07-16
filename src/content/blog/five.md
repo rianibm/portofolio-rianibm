@@ -2,7 +2,7 @@
 title: "HiRE - Green Jobs Platform"
 description: 'Platform under Society of Renewable Energy (SRE) dedicated to green jobs. First project using Next.js framework - demonstrating willingness to learn and adapt to new technologies.'
 icon: "1"
-pubDate: "Jul 08 2022"
+pubDate: "Dec 29 2023"
 heroImage: "/src/assets/adriana.jpg"
 tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Frontend"]
 pageSkills:

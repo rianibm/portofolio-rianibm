@@ -2,7 +2,7 @@
 title: 'Perkantas Yogyakarta'
 description: 'Web platform for Christian discipleship movement serving students, alumni, and medical professionals. First full-flow freelance experience involving complete project lifecycle.'
 icon: '2'
-pubDate: 'Jul 08 2022'
+pubDate: 'May 28 2023'
 heroImage: "/src/assets/fran.jpg"
 tags: ["Laravel", "Bootstrap", "Frontend", "Community Platform"]
 pageSkills:
