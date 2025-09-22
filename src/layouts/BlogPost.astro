@@ -137,8 +137,41 @@ const relevantSkills = getPageRelevantSkills();
 ---
 
 <html lang="en">
-  <head>
+    <head>
     <BaseHead title={title} description={description} />
+
+    <!-- 🔥 SEO tambahan -->
+    <meta name="keywords" content="Rianibm, Riani BM, UX Engineer, Frontend Developer, Portfolio, React, Laravel, Tailwind, UI/UX" />
+    <meta name="author" content="Rianibm" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content={title ? `${title} | Rianibm` : "Rianibm - UX Engineer & Frontend Developer"} />
+    <meta property="og:description" content={description ?? "Portofolio resmi Rianibm. UX Engineer & Frontend Developer dari Indonesia."} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://rianibm.com/" />
+    <meta property="og:image" content="https://rianibm.com/thumbnail.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title ? `${title} | Rianibm` : "Rianibm - UX Engineer & Frontend Developer"} />
+    <meta name="twitter:description" content={description ?? "Portofolio resmi Rianibm. UX Engineer & Frontend Developer dari Indonesia."} />
+    <meta name="twitter:image" content="https://rianibm.com/thumbnail.jpg" />
+
+    <!-- Schema.org JSON-LD (Google Rich Results) -->
+    <script type="application/ld+json">
+      {JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Riani BM",
+        "alternateName": "Rianibm",
+        "url": "https://rianibm.com",
+        "jobTitle": "UX Engineer & Frontend Developer",
+        "sameAs": [
+          "https://www.linkedin.com/in/rianibm",
+          "https://github.com/rianibm"
+        ]
+      })}
+    </script>
   </head>
   <body>
     <Header />

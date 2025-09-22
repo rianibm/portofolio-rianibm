@@ -1,7 +1,7 @@
 ---
 title: "Web 3PL"
 description: "My first deep dive into 3PL (Third-Party Logistics) industry, working directly with land and air transportation partners. Built comprehensive platform supporting multi-modal routing."
-pubDate: "Jun 19, 2024"
+pubDate: "Sept 2025"
 heroImage: "/src/assets/adriana.jpg"
 icon: "1"
 tags: ["Frontend Developer", "UI/UX", "React"]
@@ -14,7 +14,7 @@ pageSkills:
     skills: ["Carrier APIs", "Partner Onboarding", "System Integration", "Cross-modal Coordination", "Rate Management"]
   - category: "Frontend Development"
     icon: "3"
-    skills: ["Next.js", "React", "Tailwind CSS", "Custom UI Design", "Logistics-specific Interfaces"]
+    skills: ["React", "Typescript", "Tailwind CSS", "Custom UI Design", "Logistics-specific Interfaces"]
   - category: "System Architecture"
     icon: "4"
     skills: ["Multi-modal Routing", "Real-time Tracking", "Dynamic Carrier Selection", "Capacity Management", "Performance Optimization"]

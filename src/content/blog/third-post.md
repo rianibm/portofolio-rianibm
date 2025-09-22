@@ -2,7 +2,7 @@
 title: "Gamified Tiering Loyalty System"
 description: "Complete UI ownership from creating detailed Figma designs to pixel-perfect Blade template implementation. Built 5-tier progression system with interactive sliders and real-time progress tracking."
 icon: "2"
-pubDate: "Jul 22 2022"
+pubDate: "Jun 2025"
 heroImage: "/src/assets/adriana.jpg"
 tags: ["Laravel", "JavaScript", "CSS", "Gamification", "UX"]
 pageSkills:
