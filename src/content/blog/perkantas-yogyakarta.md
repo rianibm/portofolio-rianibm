@@ -1,85 +1,102 @@
 ---
-title: 'Perkantas Yogyakarta'
-description: 'Web platform for Christian discipleship movement serving students, alumni, and medical professionals. First full-flow freelance experience involving complete project lifecycle.'
-icon: '2'
-pubDate: 'May 28 2023'
+title: "Perkantas Yogyakarta"
+description: "Frontend and full-cycle web development for a community-based platform supporting Christian discipleship activities for students, alumni, and medical professionals."
+icon: "2"
+pubDate: "May 28 2023"
 heroImage: "/src/assets/fran.jpg"
-tags: ["Laravel", "Bootstrap", "Frontend", "Community Platform"]
+tags: ["Frontend Developer", "Laravel", "Bootstrap", "Community Platform"]
 pageSkills:
-  - category: "Freelance & Project Management"
+  - category: "Project & Collaboration"
     icon: "1"
-    skills: ["First Full Freelance", "End-to-end Project", "ERD Discussions", "Database Planning", "Client Communication", "Project Lifecycle"]
-  - category: "Technical Learning & Growth"
-    icon: "2"
-    skills: ["Email Notifications (First Time)", "Laravel Email System", "Production Experience", "Platform Maintenance", "Technical Problem Solving"]
+    skills: ["First Full-cycle Freelance", "Client Communication", "Requirement Discussion", "Project Lifecycle Awareness"]
   - category: "Frontend Development"
+    icon: "2"
+    skills: ["Laravel Blade", "Bootstrap", "Responsive UI", "Component-based Layout"]
+  - category: "Backend Exposure"
     icon: "3"
-    skills: ["Laravel Blade", "Bootstrap", "Design Collaboration", "Responsive Design", "Component Architecture", "UI Implementation"]
-  - category: "Full-Stack Development"
+    skills: ["Laravel", "User Management", "Admin Module", "Database Integration"]
+  - category: "Technical Growth"
     icon: "4"
-    skills: ["Book Borrowing System", "User Management", "Admin Functionality", "Database Integration", "Feature Development"]
+    skills: ["Email Notification (First Implementation)", "Production Deployment", "Platform Maintenance"]
 ---
 
-# Perkantas Yogyakarta - Christian Discipleship Platform
+# Perkantas Yogyakarta – Community-Based Web Platform
 
-**Perkantas Yogyakarta** is a web platform for a **Christian discipleship movement** that serves students, alumni, and medical professionals. This project marks my **first full-flow freelance experience**, involving complete project lifecycle from planning to maintenance.
+I worked on the **design-to-code implementation and development** of the **Perkantas Yogyakarta web platform**, a community-based system supporting **Christian discipleship activities** for students, alumni, and medical professionals.
 
-## Project Links
-- **🌐 Web User**: [http://perkantasjogja.com/](http://perkantasjogja.com/)
-- **⚙️ Web Admin**: [http://perkantasjogja.com/cms](http://perkantasjogja.com/cms)
+This project marked my **first full-cycle freelance experience**, where I was involved from early discussions through development and post-launch maintenance.
+
+---
+
+## Context & Project Scope
+
+Perkantas Yogyakarta required a web platform to manage community activities, internal resources, and administrative workflows. The platform needed to be accessible across devices and simple enough to be used by a wide range of users with varying technical familiarity.
+
+From the start, the project emphasized **clarity, maintainability, and long-term usability** over complex interactions.
+
+---
 
 ## Full-Cycle Freelance Experience
 
-### First Complete Freelance Project
-**End-to-End Involvement**: This project represents my **first full-flow freelance experience**, participating in every phase from initial planning discussions to ongoing maintenance and security improvements.
+**End-to-End Involvement**  
+I was involved throughout the full project lifecycle, including requirement discussions, implementation, testing, deployment, and ongoing maintenance. This provided early exposure to real-world constraints such as changing requirements, stakeholder feedback, and production stability.
 
-### Database Planning & ERD Discussions
-**Database Architecture**: Actively participated in **ERD (Entity Relationship Diagram) discussions**, contributing to database schema planning and table relationships design for optimal data structure and platform scalability.
+**Client Communication**  
+Worked directly with non-technical stakeholders, translating functional needs into implementable features and aligning expectations around scope and timelines.
 
-### UI Collaboration & Design Input
-**Design Collaboration**: While not creating the UI designs myself, I actively participated in **UI discussions and provided technical input** on feasibility, responsive design considerations, and implementation approaches during the design phase.
+---
 
-## Technical Implementation
+## Frontend & UI Implementation
 
-### Cross-Functional Collaboration
-**Team Coordination**: Collaborated cross-functionally with **UI/UX designers** and **software engineers** to align design implementation with backend functionality, ensuring seamless integration between visual design and technical requirements.
+**Design-to-Code Execution**  
+While UI designs were not created by me, I collaborated closely during the design phase, providing technical input on feasibility and responsive behavior. I then translated approved designs into production-ready interfaces using **Laravel Blade** and **Bootstrap**.
 
-### Design System Implementation
-**Component Architecture**: Sliced design system and style guide into **reusable Blade components** and **Bootstrap-based elements**, ensuring consistency and maintainability across the entire platform.
+**Responsive Layouts**  
+Implemented responsive layouts to ensure the platform could be accessed comfortably on desktop and mobile devices, focusing on readability and straightforward navigation.
 
-**Responsive Development**: Converted static UI designs into **dynamic views**, applying responsive design principles to support mobile, tablet, and desktop experiences for diverse user accessibility.
+**Component-based Structure**  
+Structured the frontend using reusable Blade components to improve consistency and maintainability across the platform.
 
-## Feature Development
+---
 
-### Book Borrowing System
-**Library Management**: Developed comprehensive **book borrowing system** allowing users to browse available resources, select materials, and submit book loan requests through intuitive interface.
+## Backend Exposure & Feature Development
 
-### Email Notification System - First Implementation
-**Learning New Technology**: Built my **first email notification system**, implementing automated admin alerts for book loan requests. This was a completely new technical challenge that required learning email integration and notification logic.
+**User & Admin Modules**  
+Implemented core features such as user management and admin functionality, integrating frontend views with backend logic using Laravel.
 
-**Technical Growth**: Gained hands-on experience with Laravel's email functionality, notification queues, and automated messaging systems, expanding my backend development capabilities.
+**Book Borrowing Feature**  
+Developed a book borrowing workflow allowing users to browse available resources and submit loan requests through the platform.
 
-### Web User Module
-## Quality Assurance & Standards
+**Email Notification System (First Experience)**  
+Built my first email notification feature to notify admins of book loan requests. This required learning Laravel’s email system and understanding how notifications behave in a production environment.
 
-### Accessibility & Compatibility
-**Universal Access**: Ensured accessibility and **cross-browser compatibility** throughout the development process, making the platform available to all community members regardless of their technical setup.
+---
 
-**Clean Architecture**: Maintained clean project structure, scoped styles, and component-based layout for easier handoff and scaling, supporting long-term platform maintenance and future development.
+## Production & Maintenance Experience
 
-## What Makes This Project Special
+**Live Platform Responsibility**  
+Gained hands-on experience maintaining a live system, including handling minor bug fixes, improving UI clarity, and ensuring ongoing platform stability after launch.
 
-- **First Full-Flow Freelance**: Complete freelance project lifecycle experience from planning to maintenance
-- **Database Architecture Participation**: Actively involved in ERD discussions and database schema planning
-- **UI Collaboration Experience**: Provided technical input during design phase while working with UI designers
-- **First Email Notification System**: Learned and implemented automated email functionality from scratch
-- **Production Experience**: Gained valuable insights about live platform maintenance and real-world challenges
-- **Community Impact**: Supporting Christian discipleship and spiritual growth through technology
-- **Full-Stack Growth**: Expanded from frontend-focused to full-stack development capabilities
+**Clean Structure & Maintainability**  
+Maintained organized project structure, scoped styles, and consistent layouts to support future updates and easier maintenance.
+
+---
+
+## Key Takeaways
+
+- **First full-cycle freelance project**
+- **Design-to-code frontend implementation**
+- **Early exposure to backend integration**
+- **First experience implementing email notifications**
+- **Working with real users and live production constraints**
+- **Building technology for community-focused impact**
+
+---
 
 ## Tech Stack
-- **Backend**: Laravel
-- **Frontend**: Laravel Blade Templates
-- **Styling**: Bootstrap
-- **Features**: Email notifications, User management, Admin functionality
-- **Development**: Component-based architecture, Responsive design
+
+- **Backend**: Laravel  
+- **Frontend**: Laravel Blade  
+- **Styling**: Bootstrap  
+- **Features**: User management, admin module, book borrowing, email notifications  
+- **Approach**: Component-based layout, responsive design

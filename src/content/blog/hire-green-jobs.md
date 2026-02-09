@@ -1,81 +1,94 @@
 ---
-title: "HiRE - Green Jobs Platform"
-description: 'Platform under Society of Renewable Energy (SRE) dedicated to green jobs. First project using Next.js framework - demonstrating willingness to learn and adapt to new technologies.'
+title: "HiRE – Green Jobs Platform"
+description: "Frontend implementation for a green jobs platform under the Society of Renewable Energy (SRE), covering responsive UI development, dynamic routing, and production deployment using Next.js."
 icon: "1"
 pubDate: "Dec 29 2023"
 heroImage: "/src/assets/adriana.jpg"
-tags: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Frontend"]
+tags: ["Frontend Developer", "React", "Next.js", "TypeScript", "Tailwind CSS"]
 pageSkills:
-  - category: "Learning & Adaptability"
+  - category: "Frontend Development"
     icon: "1"
-    skills: ["Next.js (First Time)", "TypeScript Learning", "Technology Adaptability", "Learning Mindset", "New Framework Mastery"]
-  - category: "Frontend Implementation"
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Component-based UI"]
+  - category: "UI Implementation"
     icon: "2"
-    skills: ["React", "Tailwind CSS", "UI Implementation", "Responsive Design", "Component Architecture", "Figma to Code"]
-  - category: "Deployment & CI/CD"
+    skills: ["Figma-to-code", "Responsive Layouts", "Design Collaboration", "Accessibility Awareness"]
+  - category: "Routing & Data Handling"
     icon: "3"
-    skills: ["Vercel Deployment", "CI/CD Pipeline", "Environment Variables", "Preview Deployment", "Production Release"]
-  - category: "Team Collaboration"
+    skills: ["Dynamic Routing", "SEO-friendly Pages", "State Management", "Conditional Rendering"]
+  - category: "Deployment & Workflow"
     icon: "4"
-    skills: ["UI/UX Collaboration", "Backend Integration", "Firebase Integration", "Cross-team Communication", "Code Quality"]
+    skills: ["Vercel Deployment", "CI/CD Workflow", "Environment Variables", "Production Release"]
 ---
 
-# HiRE - Hiring for a Better Earth
+# HiRE – Green Jobs Platform
 
-![HiRE Logo](/src/assets/logo-hireidn-removebg-preview.png)
+I worked on the **frontend implementation** of **HiRE**, a web platform under the **Society of Renewable Energy (SRE)** that provides information about **green jobs, internships, and career preparation**.
 
-**HiRE** is a platform under the **Society of Renewable Energy (SRE)** that is dedicated to searching, preparing, and providing information about **green jobs**. HiRE recently organized a series of events called Career Fair, which included webinars and a virtual career fair.
+This project marked my **first production experience using Next.js**, where I was responsible for translating designs into a production-ready frontend and managing the deployment workflow.
 
-## Project Links
-- **🚀 Production**: [https://www.sre-hireidn.com/](https://www.sre-hireidn.com/)
-- **🔧 Development**: [https://sre-hireidn-migrate.vercel.app/](https://sre-hireidn-migrate.vercel.app/)
+---
 
-## Project Mission
+## Context & Project Scope
 
-The purpose of these events was to allow the younger generation to explore information about **job vacancies** and **career preparation**. Additionally, HiRE provides information on internships in various companies. The main focus is to facilitate the search for information on green jobs in order to **prevent environmental damage**.
+HiRE was built to support a series of career-related initiatives, including webinars and a virtual career fair, aimed at helping younger generations explore opportunities in sustainability-focused careers.
 
-## Technical Implementation
+From a frontend perspective, the platform needed to be:
+- accessible across devices  
+- content-driven and easy to navigate  
+- ready for public-facing production use  
 
-### Frontend Development (UI Implementation)
+---
 
-**Design Implementation**: Translated UI/UX team's high-fidelity Figma designs into fully responsive and accessible UI using **React (Next.js)** with **TypeScript** and **Tailwind CSS**. Collaborated closely with dedicated UI/UX designer to ensure pixel-perfect implementation.
+## Frontend & UI Implementation
 
-**Critical Page Implementation**:
-- **Landing Page**: Hero section, testimonials, call-to-action components
-- **Course Listing Page**: Advanced filtering, pagination, responsive grid layout
-- **Learning Dashboard**: Progress tracking, navigation, integrated video player
-- **Course Detail Page**: Comprehensive syllabus, instructor information, enrollment logic
-- **Career Page**: Job listings, application forms, candidate management
+**Design-to-Code Execution**  
+Worked closely with a UI/UX designer to translate high-fidelity Figma designs into responsive and accessible UI using **React (Next.js)**, **TypeScript**, and **Tailwind CSS**.
 
-### Advanced Routing & Dynamic Content
+The implementation focused on maintaining layout consistency, visual clarity, and usability across different screen sizes.
 
-**Next.js Architecture**: Utilized **file-based routing** and **dynamic routing** to support course detail pages with SEO optimization. Managed client-side navigation and conditional rendering using TypeScript props and states for enhanced user experience.
+**Key Pages Implemented**
+- **Landing Page** — hero sections, testimonials, and call-to-action components  
+- **Career Page** — job listings and application-related views  
+- **Course Listing & Detail Pages** — structured content layout, pagination, and detail views  
+- **Learning Dashboard** — navigation and progress-oriented layout  
 
-### CI/CD & Deployment Leadership
+---
 
-**Vercel Pipeline Management**: Took complete ownership of **CI/CD workflow using Vercel**, including preview deployment per branch, environment variable management, and automated production release pipeline. Ensured build success across environments and handled staging/production branching strategies.
+## Routing & Page Structure
 
-**Backend Collaboration**: Worked with backend team using Firebase, focusing on frontend integration while the backend team handled Firebase architecture and data management.
+**Next.js Routing**  
+Utilized **file-based routing** and **dynamic routes** to support content-driven pages while keeping URLs SEO-friendly.
 
-### Code Quality & Development Standards
+**State & Conditional Rendering**  
+Handled UI states and conditional rendering to ensure smooth navigation and clear feedback across different user flows.
 
-**Type Safety & Tooling**: Enforced rigorous code quality standards using **ESLint**, **Prettier**, and **TypeScript strict types**. Applied type safety in API integration and props/state management for better developer experience and fewer runtime errors.
+---
 
-**Cross-Team Collaboration**: Worked with dedicated UI/UX designer for design implementation and collaborated with backend team managing Firebase architecture, while taking full ownership of Vercel CI/CD pipeline and frontend development.
+## Deployment & Development Workflow
 
-## What Makes This Project Special
+**Vercel Deployment**  
+Managed deployment using **Vercel**, including preview deployments for development branches and production releases. Handled environment variable configuration and ensured builds were stable across environments.
 
-- **First Next.js Experience**: My first project using Next.js framework - demonstrating willingness to learn and adapt to new technologies
-- **Learning Mindset**: Successfully delivered production-ready application while learning Next.js from scratch during development
-- **Technology Adaptability**: Proves ability to handle projects with unfamiliar tech stack, always open to learning new languages and frameworks
-- **CI/CD Ownership**: Took complete responsibility for Vercel deployment pipeline, ensuring smooth development workflow
-- **Environmental Impact**: Contributing to green job accessibility and environmental sustainability through technology
-- **Cross-Team Collaboration**: Successfully worked with dedicated UI/UX designer and backend team for seamless project delivery
-- **Type-Safe Implementation**: Learned and applied TypeScript best practices while building production application
+**Backend Integration Awareness**  
+Collaborated with the backend team using **Firebase**, focusing on frontend integration while backend logic and data handling were managed separately.
+
+---
+
+## Key Takeaways
+
+- **First production project using Next.js**
+- **Strong design-to-code frontend implementation**
+- **Hands-on experience with dynamic routing and SEO-friendly pages**
+- **Ownership of deployment workflow using Vercel**
+- **Collaboration with UI/UX and backend teams**
+- **Building a public-facing platform for sustainability-focused initiatives**
+
+---
 
 ## Tech Stack
-- **Frontend**: React, Next.js, TypeScript, Tailwind CSS
-- **Backend Integration**: Firebase
-- **Deployment**: Vercel
-- **Development**: ESLint, Prettier, Git workflow
-- **Design**: Figma-to-code implementation
+
+- **Frontend**: React, Next.js, TypeScript  
+- **Styling**: Tailwind CSS  
+- **Backend Integration**: Firebase  
+- **Deployment**: Vercel  
+- **Approach**: Component-based UI, responsive layouts, CI/CD workflow

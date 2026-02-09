@@ -1,67 +1,90 @@
 ---
-title: 'Spillr - Decentralized Q&A Platform'
-description: 'Decentralized anonymous Q&A platform built on Internet Computer ecosystem. Developed during ICP Hackathon Indonesia 2025, achieving 2nd place in 72 hours.'
+title: "Spillr – Decentralized Q&A Platform"
+description: "Frontend implementation of a decentralized anonymous Q&A platform built during ICP Hackathon Indonesia 2025, focusing on rapid delivery, responsive UI, and blockchain integration."
 icon: "4"
-pubDate: 'Mar 27 2025'
+pubDate: "Mar 27 2025"
 heroImage: "/src/assets/fran.jpg"
-tags: ["React", "Blockchain", "Hackathon", "Tailwind CSS", "Frontend"]
+tags: ["Frontend Developer", "React", "Web3", "Hackathon"]
 pageSkills:
   - category: "Frontend Development"
     icon: "1"
-    skills: ["React", "Tailwind CSS", "Responsive Design", "Component Architecture", "JavaScript ES6+", "Fast Development"]
-  - category: "Blockchain & Web3"
+    skills: ["React", "Tailwind CSS", "Responsive UI", "Component Architecture"]
+  - category: "Web3 Integration"
     icon: "2"
-    skills: ["Internet Computer", "Motoko Integration", "Blockchain Identity", "Decentralized Apps", "Web3 Frontend", "Anonymous Systems"]
-  - category: "Hackathon & Collaboration"
+    skills: ["Internet Computer", "Blockchain-aware UI", "Anonymous Interaction Patterns"]
+  - category: "Hackathon Execution"
     icon: "3"
-    skills: ["72-hour Development", "Team Collaboration", "Cross-functional Work", "Rapid Prototyping", "Deadline Management", "MVP Development"]
-  - category: "Achievement & Recognition"
+    skills: ["Rapid Prototyping", "72-hour Delivery", "Cross-functional Collaboration"]
+  - category: "Achievement"
     icon: "4"
-    skills: ["2nd Place Winner", "ICP Hackathon", "Competitive Development", "Problem Solving", "Innovation", "Technical Excellence"]
+    skills: ["2nd Place – ICP Hackathon Indonesia 2025", "Competitive Development"]
 ---
 
-# Spillr - Decentralized Anonymous Q&A Platform
+# Spillr – Decentralized Anonymous Q&A Platform
 
-**Spillr** is a decentralized anonymous Q&A platform built on the **Internet Computer** ecosystem. The platform enables users to post and comment anonymously with blockchain-backed identity protection. This project was developed during **ICP Hackathon Indonesia 2025**, where our team of 5 developers built a functional product from zero in just **72 hours**.
+I worked on the **frontend implementation** of **Spillr**, a decentralized anonymous Q&A platform built on the **Internet Computer (ICP)** ecosystem.
 
-## 🏆 Achievement
-**2nd Place - Internet Identity Category, ICP Hackathon Indonesia 2025**
+This project was developed during **ICP Hackathon Indonesia 2025**, where our team built a functional MVP in **72 hours** and achieved **2nd place** in the Internet Identity category.
 
-## Project Overview
+---
 
-**Decentralized Architecture**: Built on Internet Computer blockchain, providing true decentralization with anonymous user interactions, blockchain-backed identity protection, and censorship-resistant content posting.
+## Context & Scope
 
-**Anonymous Q&A System**: Created intuitive interface allowing users to ask questions and provide answers completely anonymously, with blockchain ensuring data integrity and user privacy protection.
+Spillr was designed to explore how anonymous Q&A interactions could be supported in a decentralized environment. From a frontend perspective, the challenge was to design an interface that feels familiar and easy to use, while operating on top of blockchain-based identity and data storage.
 
-**Rapid Development**: Successfully delivered a fully functional decentralized application in 72 hours, demonstrating ability to work under extreme time pressure while maintaining code quality and user experience standards.
+The scope focused on delivering a **usable MVP**, not just a proof-of-concept.
 
-## Technical Implementation
+---
 
-**Frontend Responsibilities**: Led React frontend development using Tailwind CSS, creating responsive, mobile-first design that works seamlessly across all devices. Implemented component architecture optimized for rapid development cycles.
+## Frontend Responsibilities
 
-**Blockchain Integration**: Collaborated closely with backend developers working on Motoko (Internet Computer's native language), ensuring smooth integration between frontend interfaces and blockchain functionality.
+**UI Implementation**  
+Implemented the frontend using **React** and **Tailwind CSS**, focusing on a clean, mobile-first interface that supports anonymous posting and commenting flows.
 
-## Development Challenges
+**Component Architecture**  
+Built reusable UI components to support rapid iteration during the hackathon, allowing the team to adjust flows and layouts quickly as requirements evolved.
 
-**Time Constraints**: Built complete frontend from scratch in 72 hours while learning Internet Computer ecosystem, requiring rapid skill acquisition and efficient development workflows.
+**Responsive Design**  
+Ensured the interface worked reliably across different screen sizes, prioritizing usability under time constraints.
 
-**Team Coordination**: Coordinated with 4 other developers across blockchain backend, smart contract development, and system architecture under intense deadline pressure.
+---
 
-**Blockchain Learning Curve**: First experience with Internet Computer ecosystem, requiring quick adaptation to new development paradigms and blockchain-specific frontend patterns.
+## Blockchain Integration Awareness
 
-## What Makes This Project Special
+**Frontend–Blockchain Coordination**  
+Worked closely with backend developers implementing smart contract logic in **Motoko**, aligning frontend interactions with blockchain-backed identity and data constraints.
 
-- **Hackathon Excellence**: Delivered award-winning product in just 72 hours of intensive development
-- **Blockchain Innovation**: First experience with Internet Computer, successfully integrating Web3 concepts with modern frontend
-- **Team Leadership**: Led frontend development while collaborating effectively with blockchain developers
-- **Rapid Learning**: Quickly mastered new technologies under extreme time constraints
-- **Recognition**: Achieved 2nd place in competitive hackathon environment with 50+ teams
-- **Functional MVP**: Created genuinely usable decentralized application, not just proof-of-concept
+The frontend was designed to:
+- reflect anonymous interaction states clearly  
+- handle loading and error states from decentralized operations  
+- avoid exposing blockchain complexity to end users  
+
+---
+
+## Hackathon Constraints & Collaboration
+
+**72-hour Development Window**  
+The entire product was built within a strict 72-hour timeframe, requiring fast decision-making, prioritization, and trade-offs between completeness and usability.
+
+**Cross-functional Teamwork**  
+Collaborated with a five-person team covering frontend, blockchain backend, and system architecture, coordinating changes and integration under tight deadlines.
+
+---
+
+## Key Takeaways
+
+- **Rapid frontend delivery under extreme time constraints**
+- **First hands-on experience with Internet Computer ecosystem**
+- **Designing user-friendly UI on top of decentralized systems**
+- **Effective collaboration in a cross-functional hackathon team**
+- **Building a functional MVP that earned competitive recognition**
+
+---
 
 ## Tech Stack
-- **Frontend**: React, Tailwind CSS, JavaScript ES6+
-- **Blockchain**: Internet Computer (ICP), Motoko
-- **Development**: Component-based architecture, Responsive design
-- **Collaboration**: Cross-functional team development, Git workflow, ICP ecosystem
+
+- **Frontend**: React, Tailwind CSS, JavaScript  
+- **Blockchain**: Internet Computer (ICP), Motoko  
+- **Approach**: Component-based UI, responsive design, rapid prototyping  
 
 **GitHub Repository**: 🔗 [View Code](https://github.com/Mattjevaas/Spillr-App)
