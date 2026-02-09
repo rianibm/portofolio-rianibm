@@ -20,7 +20,7 @@ pageSkills:
     skills: ["Multi-modal Routing", "Real-time Tracking", "Dynamic Carrier Selection", "Capacity Management", "Performance Optimization"]
 ---
 
-# 3PL Logistics Platform - Multi-Modal Transportation
+# Web 3PL – Frontend & UI Ownership in Multi-Modal Logistics
 
 My first deep dive into **3PL (Third-Party Logistics)** industry, working directly with **land and air transportation partners**. This project opened up entirely new domain knowledge in logistics operations and multi-modal shipping coordination.
 

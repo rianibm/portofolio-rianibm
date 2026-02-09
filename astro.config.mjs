@@ -4,7 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
 
-import vercel from "@astrojs/vercel/static"; // versi static
+import vercel from "@astrojs/vercel"; // versi static
 
 export default defineConfig({
   site: 'https://portofolio-rianibm.vercel.app',

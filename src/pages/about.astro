@@ -1,20 +1,38 @@
 ---
-import Layout from '@/layouts/BlogPost.astro';
+import BaseHead from "@/components/BaseHead.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { getCollection } from "astro:content";
 
-const tags = ['Frontend Developer', 'React', 'Laravel', 'Tailwind CSS', 'UI/UX'];
-const description = `
-  <p class="text-left">
-    Photo by <a
-      href="https://unsplash.com/es/@francescobiancoo?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-    >Francesco Bianco</a> on 
-    <a
-      class="text-pgreen font-bold"
-      href="https://unsplash.com/es/fotos/arte-mural-floral-dorado-y-azul-TVsgRyKJDc0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash"
-    >Unsplash</a>
-  </p>
-`;
+const title = "About Me";
+const description = "Portofolio of Rianibm. UX Engineer & Frontend Developer based in Jakarta, Indonesia.";
 
-// Custom skills for About page - using safe icons
+const posts = (await getCollection("blog")).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}');
+
+const bgClasses = [
+  "hover:shadow-ppinkHover",
+  "hover:shadow-pgreenHover",
+  "hover:shadow-pblueHover",
+  "hover:shadow-pyellow",
+];
+
+const skillBgClasses = [
+  "bg-pgreen rounded-full",
+  "bg-pblue rounded-2xl",
+  "bg-ppink",
+  "bg-pyellow rounded-md",
+];
+
+const getRandomClass = () => bgClasses[Math.floor(Math.random() * bgClasses.length)];
+const getRandomSkillClass = () => skillBgClasses[Math.floor(Math.random() * skillBgClasses.length)];
+
 const aboutSkills = [
   {
     category: "Frontend Development",
@@ -28,8 +46,8 @@ const aboutSkills = [
   },
   {
     category: "Backend & Database",
-    icon: "3", 
-    skills: ["MySQL", "PostgreSQL", "Laravel", "PHP", "Node.js", "Redis", "Golang",  "REST APIs"]
+    icon: "3",
+    skills: ["MySQL", "PostgreSQL", "Laravel", "PHP", "Node.js", "Express JS", "REST APIs"]
   },
   {
     category: "Tools & Workflow",
@@ -43,63 +61,150 @@ const aboutSkills = [
   }
 ];
 ---
-<Layout
-  tags={tags}
-  icon="beach"
-  title="About Me"
-  description={description}
-  pubDate={new Date('July 01 2025')}
-  heroImage="/src/assets/fran.jpg"
-  pageSkills={aboutSkills}
->
-  <p>
-    Hello, I'm <strong>Riani</strong> — a <strong>Frontend Developer</strong> with a strong foundation in UX engineering, 
-    currently working full-time at <strong>PT Indomarco Prismatama (Indomaret Group)</strong>. I specialize in 
-    <strong>user interface development</strong>, <strong>design-to-code implementation</strong>, and maintaining 
-    <strong>high-performance, scalable frontends</strong> for internal systems and public-facing platforms.
-  </p>
-  <div>
-	<p>
-		At Indomaret, I've contributed to multiple web and mobile products. Some of my key work includes:
-	</p>
-	<ul class="list-disc ml-6 space-y-1">
-		<li>
-		Leading <strong>UI revamp initiatives</strong> for both internal and external platforms, ensuring 
-		<strong>responsive</strong>, <strong>accessible</strong>, and <strong>user-centric</strong> experiences.
-		</li>
-		<li>
-		Developing frontends for:
-		<ul class="list-disc ml-6">
-			<li><strong>Warehouse handheld systems</strong> — interface designs tailored for embedded logistics devices.</li>
-			<li><strong>3PL logistics platforms</strong> — frontend implementation using <strong>React</strong> and <strong>Next.js</strong>.</li>
-			<li>
-			<a href="http://indopaket.co.id" class="underline text-pblue font-bold" target="_blank">Indopaket website</a> & 
-			<a href="https://play.google.com/store/apps/details?id=app.indopaket" class="underline text-pblue font-bold" target="_blank">mobile web</a> — built using 
-			<strong>Laravel Blade</strong>, <strong>vanilla JS</strong>, <strong>Bootstrap</strong>, and now being 
-			migrated to <strong>Tailwind CSS</strong>.
-			</li>
-		</ul>
-		</li>
-		<li>
-		Driving a <strong>design system modernization</strong> by:
-		<ul class="list-disc ml-6">
-			<li>Migrating from <strong>Bootstrap 3 to Tailwind CSS</strong> for scalability and code consistency.</li>
-			<li>Refactoring legacy code for <strong>performance optimization</strong> and improved Lighthouse scores.</li>
-		</ul>
-		</li>
-		<li>
-		Producing visual assets for <strong>Google Play</strong> and <strong>Apple App Store</strong> listings, ensuring brand compliance and design quality.
-		</li>
-	</ul>
-  </div>
-  <p>
-    I regularly work across the stack — from <strong>design reviews</strong> and <strong>UI slicing</strong> 
-    to collaborating on <strong>ERD discussions</strong> and occasionally handling <strong>backend tasks when needed</strong>. 
-    While my core focus is frontend, I'm comfortable stepping into backend development (Laravel) to ensure seamless product delivery.
-  </p>
-  <p>
-    If you're looking for someone who can take ownership of frontend development, align with business needs, and 
-    contribute effectively in international teams — feel free to  
-    <a href="mailto:rianimatialu@gmail.com" class="text-ppink font-bold underline">get in touch</a>.
-  </p>
-</Layout>
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+    <meta name="keywords" content="Rianibm, Riani BM, UX Engineer, Frontend Developer, Portfolio, React, Laravel, Tailwind, UI/UX" />
+    <meta name="author" content="Rianibm" />
+    <meta name="google-site-verification" content="RCc1MVKPhX5dC6D2cAtvSUNTKVPZemBb-O5jEo7czuY" />
+  </head>
+  <body>
+    <Header />
+    <main class="container mx-auto md:px-10">
+      <article>
+        <!-- Photo + Title -->
+        <div class="flex flex-col items-center py-16 gap-6" transition:animate="fade">
+          <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-black shadow-card">
+            <Image
+              src={images["/src/assets/rianibm-removebg-preview.png"]()}
+              alt="Riani BM"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h1 class="text-4xl md:text-6xl font-semibold text-center">
+            <span class="font-kablamo text-ppink">A</span>bout Me
+          </h1>
+          <p class="text-pblack text-center text-sm md:text-base">Frontend Developer with UX Engineering background, based in Indonesia</p>
+        </div>
+
+        <div class="text-black px-6 md:px-0">
+          <div class="flex flex-col py-10">
+            <div class="flex flex-col gap-10">
+              <!-- What I Do -->
+              <section class="flex flex-col gap-4">
+                <h2 class="text-2xl md:text-3xl font-bold"><span class="font-kablamo text-ppink">W</span>hat I Do</h2>
+                <p>I build scalable, accessible frontend systems with a strong UX foundation.</p>
+                <ul class="list-disc ml-6 space-y-1">
+                  <li><strong>User interface development</strong> — from design to production-ready code</li>
+                  <li><strong>Design-to-code implementation</strong> — pixel-perfect, responsive, and accessible</li>
+                  <li><strong>High-performance frontends</strong> — optimized for speed and scalability</li>
+                </ul>
+              </section>
+
+              <!-- What I've Worked On -->
+            <section class="flex flex-col gap-4">
+              <h2 class="text-2xl md:text-3xl font-bold">
+                <span class="font-kablamo text-ppink">W</span>hat I've Worked On
+              </h2>
+              <p>
+                I work on core frontend systems across retail and logistics, focusing on scalable UI, maintainable code, and real production use cases.
+              </p>
+              <ul class="list-disc ml-6 space-y-1">
+                <li>
+                  <strong>Member+</strong> — web application built with <strong>React + Next.js</strong>, including <strong>SSO integration</strong> for member authentication
+                </li>
+                <li>
+                  <strong>3PL logistics platform</strong> — frontend built with <strong>React + TypeScript</strong>, with <strong>unit testing</strong> for critical flows
+                </li>
+                <li>
+                  <strong>Affiliator platform</strong> — user-facing dashboards developed using <strong>React.js</strong>
+                </li>
+                <li>
+                  <strong>Web applications</strong> — leading UI migration from <strong>Bootstrap 3 to Tailwind CSS</strong>, implementing <strong>CSS variables</strong> for scalable and maintainable styling
+                </li>
+                <li>
+                  <strong>UI web & mobile</strong> — handling <strong>UI slicing</strong> and <strong>mobile-first interfaces</strong> to ensure responsive and consistent user experiences
+                </li>
+              </ul>
+            </section>
+
+
+              <!-- Experience -->
+              <section class="flex flex-col gap-4">
+                <h2 class="text-2xl md:text-3xl font-bold"><span class="font-kablamo text-ppink">E</span>xperience</h2>
+                <div class="border border-black rounded-lg p-4 shadow-card">
+                  <h3 class="font-semibold text-lg">Frontend Developer</h3>
+                  <p class="text-pblack text-sm">PT Indomarco Prismatama (Indomaret Group)</p>
+                  <ul class="list-disc ml-6 space-y-1 mt-3">
+                    <li>Building and maintaining frontends for internal systems and public-facing platforms</li>
+                    <li>Leading UI revamp and design system modernization across multiple products</li>
+                    <li>Developing web and mobile interfaces for logistics, warehouse, and 3PL platforms</li>
+                    <li>Collaborating cross-functionally on ERD discussions, design reviews, and backend tasks</li>
+                  </ul>
+                </div>
+              </section>
+
+              <!-- How I Work -->
+              <section class="flex flex-col gap-4">
+                <h2 class="text-2xl md:text-3xl font-bold"><span class="font-kablamo text-ppink">H</span>ow I Work</h2>
+                <p>I work across the stack, bridging design and engineering to ship polished products.</p>
+                <ul class="list-disc ml-6 space-y-1">
+                  <li><strong>Design reviews</strong> and <strong>UI slicing</strong> — translating designs into clean code</li>
+                  <li><strong>ERD discussions</strong> and <strong>backend collaboration</strong> — comfortable when needed</li>
+                  <li><strong>Cross-functional teamwork</strong> — effective in international and multidisciplinary teams</li>
+                </ul>
+                <p>
+                  If you're looking for someone who can take ownership of frontend development and align with business needs — feel free to
+                  <a href="mailto:rianimatialu@gmail.com" class="text-ppink font-bold underline">get in touch</a>.
+                </p>
+              </section>
+            </div>
+            <div class="flex flex-col gap-6" transition:animate="slide">
+              <!-- Related Skills Section -->
+              <div class="flex flex-col gap-4 pt-10 md:pt-0">
+                <p class="md:hidden font-semibold">Related Skills:</p>
+                <h3 class="hidden md:block text-lg font-semibold mb-2">Technologies Used</h3>
+                <div class="flex flex-col gap-3">
+                  {aboutSkills.map((skillGroup) => {
+                    const randomClass = getRandomSkillClass();
+                    return (
+                      <div class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200">
+                        <div class="flex items-center gap-2 mb-2">
+                          <div class={`${randomClass} p-1 border border-black shadow-card1 text-sm`}>
+                            <Icon name={skillGroup.icon} />
+                          </div>
+                          <h4 class="font-semibold text-sm">{skillGroup.category}</h4>
+                        </div>
+                        <div class="flex flex-wrap gap-1">
+                          {skillGroup.skills.map((skill) => (
+                            <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
+                              {skill}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              <hr />
+              <p>Portfolio of</p>
+              <div class="flex -mt-4 gap-2">
+                <div class="bg-pgreen rounded-full w-12 h-12 aspect-square object-contain overflow-hidden">
+                  <Image src={images["/src/assets/rianibm-removebg-preview.png"]()} alt="Riani BM" />
+                </div>
+                <div>
+                  <h3>Riani BM</h3>
+                  <p class="text-pblack">Frontend Developer<br />from Indonesia</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>
