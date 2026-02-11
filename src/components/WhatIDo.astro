@@ -1,44 +1,82 @@
 ---
 import { getCollection } from "astro:content";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
-);
+const allPosts = await getCollection("blog");
 import FormattedDate from "@/components/FormattedDate.astro";
 import { Icon } from "astro-icon/components";
+
+interface Props {
+  compact?: boolean;
+}
+const { compact = false } = Astro.props;
+
 const bgClasses = [
   "bg-pgreen rounded-full",
   "bg-pblue rounded-2xl",
   "bg-ppink ",
   "bg-pyellow rounded-md",
 ];
-const getRandomClass = () => {
-  return bgClasses[Math.floor(Math.random() * bgClasses.length)];
-};
+const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
+
+const groups = [
+  {
+    label: "Core Products",
+    slugs: ["affiliator", "web-3pl", "memberplus", "gamified-tiering", "gamified-reward"],
+  },
+  {
+    label: "Side Projects",
+    slugs: ["hire-green-jobs", "perkantas-yogyakarta"],
+  },
+  {
+    label: "Exploratory & Personal Projects",
+    slugs: ["spillr", "sky-explorer"],
+  },
+];
+
+const displayGroups = compact
+  ? [{ label: "Core Products", slugs: groups[0].slugs.slice(0, 3) }]
+  : groups;
+
+const postMap = new Map(allPosts.map((p) => [p.id, p]));
 ---
-<section class="flex flex-col text-center gap-4 " >
+<section class="flex flex-col text-center gap-4">
   <p class="text-pblack animate-on-scroll">Meet My</p>
-  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll" style="--delay: 0.1s">Previous Projects</h2>
-  <ul class="flex flex-wrap justify-center gap-6 md:gap-8 py-20 px-4 md:px-0">
-    {
-      posts.map((post, i) => {
-        const randomClass = getRandomClass();
-        return (
-          <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6 animate-on-scroll" style={`--delay: ${i * 0.1}s`}>
-            <a href={`/works/${post.id}/`} class="flex flex-col gap-4">
-              <div
-                class={`${randomClass} text-4xl p-2 self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}
-              >
-                <Icon name={post.data.icon} />
-              </div>
-              <h4 class="text-xl font-semibold">{post.data.title}</h4>
-              <p class="date -mt-4 text-sm font-light">
-                <FormattedDate date={post.data.pubDate} />
-              </p>
-            </a>
-            <div class="text-sm text-gray-600 line-clamp-3 leading-relaxed" set:html={post.data.description} />
-          </li>
-        );
-      })
-    }
-  </ul>
+  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll" style="--delay: 0.1s">Selected Work</h2>
+
+  {displayGroups.map((group, gi) => (
+    <div class="py-10">
+      {!compact && <h3 class="text-lg md:text-2xl font-semibold mb-6 animate-on-scroll">{group.label}</h3>}
+      <ul class="flex flex-wrap justify-center gap-6 md:gap-8 px-4 md:px-0">
+        {group.slugs.map((slug, i) => {
+          const post = postMap.get(slug);
+          if (!post) return null;
+          const bgClass = getBgClass(gi * 5 + i);
+          return (
+            <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6 animate-on-scroll" style={`--delay: ${i * 0.1}s`}>
+              <a href={`/works/${post.id}/`} class="flex flex-col gap-4">
+                <div
+                  class={`${bgClass} text-4xl p-2 self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}
+                >
+                  <Icon name={post.data.icon} />
+                </div>
+                <h4 class="text-xl font-semibold">{post.data.title}</h4>
+                <p class="date -mt-4 text-sm font-light">
+                  <FormattedDate date={post.data.pubDate} />
+                </p>
+              </a>
+              <div class="text-sm text-gray-600 line-clamp-3 leading-relaxed" set:html={post.data.description} />
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  ))}
+
+  {compact && (
+    <a
+      href="/works/"
+      class="self-center bg-pgreen px-6 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition font-medium animate-on-scroll"
+    >
+      View All Projects
+    </a>
+  )}
 </section>

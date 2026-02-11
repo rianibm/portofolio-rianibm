@@ -25,9 +25,7 @@ const bgClasses = [
   "bg-pyellow rounded-md",
 ];
 
-const getRandomClass = () => {
-  return bgClasses[Math.floor(Math.random() * bgClasses.length)];
-};
+const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
 ---
 
 <section class="flex flex-col text-center gap-8 py-20">
@@ -40,10 +38,10 @@ const getRandomClass = () => {
     <!-- Floating Skills Animation -->
     <div class="skills-floating flex flex-wrap justify-center gap-4 md:gap-6 px-4">
       {skills.map((skill, index) => {
-        const randomClass = getRandomClass();
+        const bgClass = getBgClass(index);
         return (
-          <div 
-            class={`skill-badge ${randomClass} px-4 py-2 border-1 border-black shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer group`}
+          <div
+            class={`skill-badge ${bgClass} px-4 py-2 border-1 border-black shadow-card hover:shadow-hover transition-all duration-300 cursor-pointer group`}
             style={`animation-delay: ${index * 0.1}s;`}
           >
             <div class="flex items-center gap-2">

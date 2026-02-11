@@ -31,13 +31,13 @@ const skillBgClasses = [
 ];
 
 const getRandomClass = () => bgClasses[Math.floor(Math.random() * bgClasses.length)];
-const getRandomSkillClass = () => skillBgClasses[Math.floor(Math.random() * skillBgClasses.length)];
+const getSkillClass = (i: number) => skillBgClasses[i % skillBgClasses.length];
 
 const aboutSkills = [
   {
     category: "Frontend Development",
     icon: "1",
-    skills: ["React", "Next.js", "Astro", "JavaScript ES6+", "TypeScript"]
+    skills: ["React", "TypeScript", "Next.js", "JavaScript ES6+", "Astro"]
   },
   {
     category: "Styling & Design",
@@ -45,14 +45,14 @@ const aboutSkills = [
     skills: ["Tailwind CSS", "Bootstrap", "Sass/SCSS", "CSS3", "Responsive Design", "Mobile-First"]
   },
   {
-    category: "Backend & Database",
+    category: "Backend (Supporting)",
     icon: "3",
     skills: ["MySQL", "PostgreSQL", "Laravel", "PHP", "Node.js", "Express JS", "REST APIs"]
   },
   {
     category: "Tools & Workflow",
     icon: "4",
-    skills: ["Git", "Webpack", "Vite", "NPM/Yarn", "Figma", "Adobe XD"]
+    skills: ["Git", "Webpack", "Vite", "NPM/Yarn", "Figma"]
   },
   {
     category: "Mobile & Performance",
@@ -89,9 +89,9 @@ const aboutSkills = [
         </div>
 
         <div class="text-black px-6 md:px-0">
-          <div class="flex flex-col gap-8">
+          <div class="flex flex-col">
               <!-- What I Do -->
-              <section class="flex flex-col gap-3 animate-on-scroll">
+              <section class="flex flex-col gap-3 animate-on-scroll bg-white rounded-xl p-6">
                 <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">W</span>hat I Do</h2>
                 <p>I build scalable, accessible frontend systems with a strong UX foundation.</p>
                 <ul class="list-disc ml-6 space-y-1">
@@ -101,56 +101,18 @@ const aboutSkills = [
                 </ul>
               </section>
 
-              <section class="flex flex-col gap-3 animate-on-scroll">
-                <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">W</span>hat I've Worked On</h2>
-                <p>I work on core frontend systems across retail and logistics, focusing on scalable UI, maintainable code, and real production use cases.</p>
-                <ul class="list-disc ml-6 space-y-1">
-                  <li><strong>Member+</strong> — web application built with <strong>React + Next.js</strong>, including <strong>SSO integration</strong> for member authentication</li>
-                  <li><strong>3PL logistics platform</strong> — frontend built with <strong>React + TypeScript</strong>, with <strong>unit testing</strong> for critical flows</li>
-                  <li><strong>Affiliator platform</strong> — user-facing dashboards developed using <strong>React.js</strong></li>
-                  <li><strong>Web applications</strong> — leading UI migration from <strong>Bootstrap 3 to Tailwind CSS</strong>, implementing <strong>CSS variables</strong> for scalable and maintainable styling</li>
-                  <li><strong>UI web & mobile</strong> — handling <strong>UI slicing</strong> and <strong>mobile-first interfaces</strong> to ensure responsive and consistent user experiences</li>
-                </ul>
-              </section>
-
-              <section class="flex flex-col gap-3 animate-on-scroll">
-                <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">E</span>xperience</h2>
-                <div class="border border-black rounded-lg p-4 shadow-card">
-                  <h3 class="font-semibold text-lg">Frontend Developer</h3>
-                  <p class="text-pblack text-sm">PT Indomarco Prismatama (Indomaret Group)</p>
-                  <ul class="list-disc ml-6 space-y-1 mt-2">
-                    <li>Building and maintaining frontends for internal systems and public-facing platforms</li>
-                    <li>Leading UI revamp and design system modernization across multiple products</li>
-                    <li>Developing web and mobile interfaces for logistics, warehouse, and 3PL platforms</li>
-                    <li>Collaborating cross-functionally on ERD discussions, design reviews, and backend tasks</li>
-                  </ul>
-                </div>
-              </section>
-
-              <section class="flex flex-col gap-3 animate-on-scroll">
-                <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">H</span>ow I Work</h2>
-                <p>I work across the stack, bridging design and engineering to ship polished products.</p>
-                <ul class="list-disc ml-6 space-y-1">
-                  <li><strong>Design reviews</strong> and <strong>UI slicing</strong> — translating designs into clean code</li>
-                  <li><strong>ERD discussions</strong> and <strong>backend collaboration</strong> — comfortable when needed</li>
-                  <li><strong>Cross-functional teamwork</strong> — effective in international and multidisciplinary teams</li>
-                </ul>
-                <p>
-                  If you're looking for someone who can take ownership of frontend development and align with business needs — feel free to
-                  <a href="mailto:rianimatialu@gmail.com" class="text-ppink font-bold underline">get in touch</a>.
-                </p>
-              </section>
+              <div class="section-divider" aria-hidden="true"><span></span></div>
 
               <!-- Technologies Used -->
-              <section class="flex flex-col gap-3 animate-on-scroll">
+              <section class="flex flex-col gap-3 animate-on-scroll p-6">
                 <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">T</span>echnologies</h2>
                 <div class="flex flex-col gap-2">
                   {aboutSkills.map((skillGroup, i) => {
-                    const randomClass = getRandomSkillClass();
+                    const skillClass = getSkillClass(i);
                     return (
                       <div class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll" style={`--delay: ${i * 0.1}s`}>
                         <div class="flex items-center gap-2 mb-1">
-                          <div class={`${randomClass} p-1 border border-black shadow-card1 text-sm`}>
+                          <div class={`${skillClass} p-1 border border-black shadow-card1 text-sm`}>
                             <Icon name={skillGroup.icon} />
                           </div>
                           <h4 class="font-semibold text-sm">{skillGroup.category}</h4>
@@ -168,8 +130,55 @@ const aboutSkills = [
                 </div>
               </section>
 
-              <hr />
-              <div class="flex gap-2 items-center">
+              <div class="section-divider" aria-hidden="true"><span></span></div>
+
+              <section class="flex flex-col gap-3 animate-on-scroll bg-white rounded-xl p-6">
+                <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">W</span>hat I've Worked On</h2>
+                <p>I work on core frontend systems across retail and logistics, focusing on scalable UI, maintainable code, and real production use cases.</p>
+                <ul class="list-disc ml-6 space-y-1">
+                  <li><strong>Member+</strong> — web application built with <strong>React + Next.js</strong>, including <strong>SSO integration</strong> for member authentication</li>
+                  <li><strong>3PL logistics platform</strong> — frontend built with <strong>React + TypeScript</strong>, with <strong>unit testing</strong> for critical flows</li>
+                  <li><strong>Affiliator platform</strong> — user-facing dashboards developed using <strong>React.js</strong></li>
+                  <li><strong>Web applications</strong> — leading UI migration from <strong>Bootstrap 3 to Tailwind CSS</strong>, implementing <strong>CSS variables</strong> for scalable and maintainable styling</li>
+                  <li><strong>UI web & mobile</strong> — handling <strong>UI slicing</strong> and <strong>mobile-first interfaces</strong> to ensure responsive and consistent user experiences</li>
+                </ul>
+              </section>
+
+              <div class="section-divider" aria-hidden="true"><span></span></div>
+
+              <section class="flex flex-col gap-3 animate-on-scroll p-6">
+                <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">E</span>xperience</h2>
+                <div class="border border-black rounded-lg p-4 shadow-card">
+                  <h3 class="font-semibold text-lg">Frontend Developer</h3>
+                  <p class="text-pblack text-sm">PT Indomarco Prismatama (Indomaret Group) · 2023 - Current</p>
+                  <ul class="list-disc ml-6 space-y-1 mt-2">
+                    <li>Building and maintaining frontends for internal systems and public-facing platforms</li>
+                    <li>Leading UI revamp and design system modernization across multiple products</li>
+                    <li>Developing web and mobile interfaces for logistics, warehouse, and 3PL platforms</li>
+                    <li>Collaborating cross-functionally on ERD discussions, design reviews, and backend tasks</li>
+                  </ul>
+                </div>
+              </section>
+
+              <div class="section-divider" aria-hidden="true"><span></span></div>
+
+              <section class="flex flex-col gap-3 animate-on-scroll bg-white rounded-xl p-6">
+                <h2 class="text-xl md:text-2xl font-bold"><span class="font-kablamo text-ppink">H</span>ow I Work</h2>
+                <p>I work across the stack, bridging design and engineering to ship polished products.</p>
+                <ul class="list-disc ml-6 space-y-1">
+                  <li><strong>Design reviews</strong> and <strong>UI slicing</strong> — translating designs into clean code</li>
+                  <li><strong>ERD discussions</strong> and <strong>backend collaboration</strong> — comfortable when needed</li>
+                  <li><strong>Cross-functional teamwork</strong> — effective in international and multidisciplinary teams</li>
+                </ul>
+                <p>
+                  If you're looking for someone who can take ownership of frontend development and align with business needs — feel free to
+                  <a href="mailto:rianimatialu@gmail.com" class="text-ppink font-bold underline">get in touch</a>.
+                </p>
+              </section>
+
+              <div class="section-divider" aria-hidden="true"><span></span></div>
+
+              <div class="flex gap-2 items-center p-6 animate-on-scroll">
                 <div class="bg-pgreen rounded-full w-10 h-10 aspect-square object-contain overflow-hidden">
                   <Image src={images["/src/assets/rianibm-removebg-preview.png"]()} alt="Riani BM" />
                 </div>
@@ -183,6 +192,21 @@ const aboutSkills = [
       </article>
     </main>
     <Footer />
+    <style>
+      .section-divider {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+      .section-divider span {
+        display: block;
+        width: 40px;
+        height: 3px;
+        border-radius: 9999px;
+        background: linear-gradient(90deg, #f9a8d4, #93c5fd, #86efac);
+      }
+    </style>
     <script>
       function initScrollAnimations() {
         const elements = document.querySelectorAll('.animate-on-scroll');
