@@ -3,13 +3,13 @@ import { Icon } from "astro-icon/components";
 ---
 
 <section class="flex flex-col text-center gap-8 py-20">
-  <div class="flex flex-col gap-4">
+  <div class="flex flex-col gap-4 animate-on-scroll">
     <p class="text-pblack">Ready for new opportunities:</p>
     <h2 class="text-2xl md:text-4xl font-bold">What I'm Looking For</h2>
   </div>
-  
+
   <div class="flex justify-center">
-    <div class="max-w-3xl w-full">
+    <div class="max-w-3xl w-full animate-on-scroll" style="--delay: 0.1s">
       <div class="bg-pyellow rounded-2xl border-1 border-black shadow-card hover:shadow-hover transition-all duration-300 p-6 md:p-8">
         <div class="flex items-start gap-4">
           <div class="bg-pgreen rounded-full p-3 border-1 border-black shadow-card1 flex-shrink-0 mt-1">
@@ -17,13 +17,12 @@ import { Icon } from "astro-icon/components";
           </div>
           <div class="text-left flex-1">
             <p class="text-lg md:text-xl leading-relaxed text-black">
-              I'm seeking <strong>Frontend</strong> or <strong>JavaScript-heavy Fullstack roles</strong> where I can build meaningful, accessible products, grow technically, and contribute to high-impact teams.
+              I'm seeking <strong>Frontend</strong> or <strong>UX Engineer/UI Engineer roles</strong> where I can build meaningful, accessible products, grow technically, and contribute to high-impact teams.
             </p>
             <div class="mt-6 flex flex-wrap gap-3 justify-center md:justify-start">
-              <span class="px-3 py-1 bg-pblue rounded-full text-sm font-medium border-1 border-black">Frontend Developer</span>
-              <span class="px-3 py-1 bg-ppink rounded-full text-sm font-medium border-1 border-black">Fullstack JavaScript</span>
-              <span class="px-3 py-1 bg-pgreen rounded-full text-sm font-medium border-1 border-black">UX Engineer</span>
-              <span class="px-3 py-1 bg-white rounded-full text-sm font-medium border-1 border-black">UI Developer</span>
+              <span class="px-3 py-1 bg-pblue rounded-full text-sm font-medium border-1 border-black animate-on-scroll scale-in" style="--delay: 0.2s">Frontend Developer</span>
+              <span class="px-3 py-1 bg-pgreen rounded-full text-sm font-medium border-1 border-black animate-on-scroll scale-in" style="--delay: 0.4s">UX Engineer</span>
+              <span class="px-3 py-1 bg-white rounded-full text-sm font-medium border-1 border-black animate-on-scroll scale-in" style="--delay: 0.5s">UI Developer</span>
             </div>
           </div>
         </div>

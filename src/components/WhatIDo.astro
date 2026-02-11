@@ -16,14 +16,14 @@ const getRandomClass = () => {
 };
 ---
 <section class="flex flex-col text-center gap-4 " >
-  <p class="text-pblack">Meet My</p>
-  <h2 class="text-2xl md:text-4xl font-bold">Previous Projects</h2>
+  <p class="text-pblack animate-on-scroll">Meet My</p>
+  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll" style="--delay: 0.1s">Previous Projects</h2>
   <ul class="flex flex-wrap justify-center gap-6 md:gap-8 py-20 px-4 md:px-0">
     {
-      posts.map((post) => {
+      posts.map((post, i) => {
         const randomClass = getRandomClass();
         return (
-          <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6">
+          <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6 animate-on-scroll" style={`--delay: ${i * 0.1}s`}>
             <a href={`/works/${post.id}/`} class="flex flex-col gap-4">
               <div
                 class={`${randomClass} text-4xl p-2 self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}

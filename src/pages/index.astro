@@ -26,5 +26,21 @@ import LookingFor from "@/components/LookingFor.astro";
       <LookingFor />
     </main>
     <Footer />
+    <script>
+      function initScrollAnimations() {
+        const elements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('animated');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+        elements.forEach((el) => observer.observe(el));
+      }
+      initScrollAnimations();
+      document.addEventListener('astro:after-swap', initScrollAnimations);
+    </script>
   </body>
 </html>
