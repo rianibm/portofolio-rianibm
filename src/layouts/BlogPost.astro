@@ -212,6 +212,13 @@ const relevantSkills = getPageRelevantSkills();
             </div>
             <hr />
           </div>
+          <div
+            id="blog-section-label"
+            class="hidden md:block sticky top-0 z-20 bg-white/80 backdrop-blur-sm py-1.5 text-[11px] text-black/40 tracking-widest font-normal uppercase transition-opacity duration-300 opacity-0 pointer-events-none"
+            aria-hidden="true"
+          >
+            <span id="blog-section-label-text"></span>
+          </div>
           <div class="flex gap-10 py-10 md:flex-row flex-col">
             <div class="prose max-w-none prose-h2:mt-8 prose-p:my-3 prose-ul:my-3">
               <slot />
@@ -315,5 +322,43 @@ const relevantSkills = getPageRelevantSkills();
       </article>
     </main>
     <Footer />
+    <script>
+      function initBlogSectionLabel() {
+        const label = document.getElementById("blog-section-label") as HTMLElement | null;
+        const labelText = document.getElementById("blog-section-label-text") as HTMLElement | null;
+        const headings = document.querySelectorAll<HTMLElement>(".prose h2");
+
+        if (!label || !labelText || headings.length === 0) return;
+
+        const _label = label;
+        const _labelText = labelText;
+
+        let currentSection = "";
+        function onScroll() {
+          let active = "";
+          headings.forEach((h) => {
+            if (h.getBoundingClientRect().top <= 80) {
+              active = h.textContent?.trim() || "";
+            }
+          });
+
+          if (active && active !== currentSection) {
+            currentSection = active;
+            _labelText.textContent = "Section \u2014 " + active;
+            _label.classList.remove("opacity-0");
+            _label.classList.add("opacity-100");
+          } else if (!active && currentSection) {
+            currentSection = "";
+            _label.classList.remove("opacity-100");
+            _label.classList.add("opacity-0");
+          }
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+
+      initBlogSectionLabel();
+      document.addEventListener("astro:after-swap", initBlogSectionLabel);
+    </script>
   </body>
 </html>

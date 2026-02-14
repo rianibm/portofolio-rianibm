@@ -43,9 +43,19 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
   <p class="text-pblack animate-on-scroll from-bottom">Meet My</p>
   <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">Selected Work</h2>
 
+  {!compact && (
+    <div
+      id="section-label"
+      class="hidden md:block sticky top-0 z-20 bg-white/80 backdrop-blur-sm py-2 text-xs text-gray-400 tracking-wide uppercase transition-opacity duration-300 opacity-0 pointer-events-none"
+      aria-hidden="true"
+    >
+      <span id="section-label-text"></span>
+    </div>
+  )}
+
   {displayGroups.map((group, gi) => (
     <div class="py-10">
-      {!compact && <h3 class="text-lg md:text-2xl font-semibold mb-6 animate-on-scroll from-bottom">{group.label}</h3>}
+      {!compact && <h3 class="section-heading text-lg md:text-2xl font-semibold mb-6 animate-on-scroll from-bottom" data-section={group.label}>{group.label}</h3>}
       <ul class="flex flex-wrap justify-center gap-6 md:gap-8 px-4 md:px-0">
         {group.slugs.map((slug, i) => {
           const post = postMap.get(slug);

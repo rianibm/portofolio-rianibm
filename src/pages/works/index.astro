@@ -74,5 +74,57 @@ const posts = (await getCollection("blog")).sort(
         initScrollAnimations();
       });
     </script>
+    <script>
+      function initSectionLabel() {
+        const label = document.getElementById("section-label") as HTMLElement | null;
+        const labelText = document.getElementById("section-label-text") as HTMLElement | null;
+        const headings = document.querySelectorAll<HTMLElement>(".section-heading");
+
+        if (!label || !labelText || headings.length === 0) return;
+
+        const _label = label;
+        const _labelText = labelText;
+
+        const sectionObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const heading = entry.target as HTMLElement;
+              if (entry.isIntersecting) {
+                heading.style.opacity = "1";
+              }
+            });
+          },
+          { threshold: 0.5 },
+        );
+
+        headings.forEach((h) => sectionObserver.observe(h));
+
+        let currentSection = "";
+        function onScroll() {
+          let active = "";
+          headings.forEach((h) => {
+            if (h.getBoundingClientRect().top <= 80) {
+              active = h.dataset.section || "";
+            }
+          });
+
+          if (active && active !== currentSection) {
+            currentSection = active;
+            _labelText.textContent = "You\u2019re viewing: " + active;
+            _label.classList.remove("opacity-0");
+            _label.classList.add("opacity-100");
+          } else if (!active && currentSection) {
+            currentSection = "";
+            _label.classList.remove("opacity-100");
+            _label.classList.add("opacity-0");
+          }
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+      }
+
+      initSectionLabel();
+      document.addEventListener("astro:after-swap", initSectionLabel);
+    </script>
   </body>
 </html>
