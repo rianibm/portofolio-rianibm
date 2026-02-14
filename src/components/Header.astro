@@ -7,7 +7,8 @@ import "../styles/hamburgers.css";
   <nav
     class="flex items-center justify-between
          mx-auto max-w-6xl
-         px-6 py-4 md:px-10"
+         px-6 py-4 md:px-10
+         overflow-hidden"
     aria-label="Main navigation"
   >
     <a class="flex items-center gap-2" href="/" aria-label="Riani BM homepage">
@@ -16,7 +17,7 @@ import "../styles/hamburgers.css";
         <span class="hidden md:block">Riani</span> BM
       </p>
     </a>
-    <ul class="items-center md:gap-8 text-nowrap hidden md:flex">
+    <ul class="hidden md:flex items-center gap-8 text-nowrap">
       <li><Link href="/" text="Home" style="primary" /></li>
       <li><Link href="/about" text="About me" style="secondary" /></li>
       <li><Link href="/works" text="My work" style="tertiary" /></li>
@@ -49,7 +50,7 @@ import "../styles/hamburgers.css";
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
         </button>
         <ul
-          class="flex flex-col items-center justify-center h-full gap-8 text-nowrap"
+          class="hidden flex-col items-center justify-center h-full gap-8 text-nowrap"
         >
           <li><Link href="/" text="Home" style="primary" /></li>
           <li><Link href="/about" text="About me" style="secondary" /></li>
@@ -93,6 +94,12 @@ import "../styles/hamburgers.css";
 
         menu.classList.toggle("-translate-y-full", !isOpen);
         menu.classList.toggle("translate-y-0", isOpen);
+
+        var menuList = menu.querySelector("ul");
+        if (menuList) {
+          menuList.classList.toggle("hidden", !isOpen);
+          menuList.classList.toggle("flex", isOpen);
+        }
 
         var header = document.querySelector(".site-header");
         if (header) header.classList.toggle("menu-open", isOpen);
