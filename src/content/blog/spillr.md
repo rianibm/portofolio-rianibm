@@ -8,16 +8,51 @@ tags: ["Frontend Developer", "React", "Web3", "Hackathon"]
 pageSkills:
   - category: "Frontend Development"
     icon: "1"
-    skills: ["React", "Tailwind CSS", "Responsive UI", "Component Architecture"]
-  - category: "Web3 Integration"
+    skills:
+      [
+        "React",
+        "JavaScript",
+        "Component Architecture",
+        "Responsive UI",
+        "Tailwind CSS",
+      ]
+
+  - category: "Web3 & Blockchain Awareness"
     icon: "2"
-    skills: ["Internet Computer", "Blockchain-aware UI", "Anonymous Interaction Patterns"]
-  - category: "Hackathon Execution"
+    skills:
+      [
+        "Internet Computer (ICP)",
+        "Blockchain-aware UI",
+        "Anonymous Interaction Patterns",
+        "Smart Contract Coordination",
+      ]
+
+  - category: "Data & State Handling"
     icon: "3"
-    skills: ["Rapid Prototyping", "72-hour Delivery", "Cross-functional Collaboration"]
-  - category: "Achievement"
+    skills:
+      [
+        "Async Data Handling",
+        "Loading & Error States",
+        "Decentralized Data Feedback",
+      ]
+
+  - category: "Hackathon Execution"
     icon: "4"
-    skills: ["2nd Place – ICP Hackathon Indonesia 2025", "Competitive Development"]
+    skills:
+      [
+        "Rapid Prototyping",
+        "72-hour Delivery",
+        "Cross-functional Collaboration",
+        "MVP-focused Scoping",
+      ]
+
+  - category: "Achievement"
+    icon: "5"
+    skills:
+      [
+        "2nd Place – ICP Hackathon Indonesia 2025",
+        "Competitive Development",
+      ]
 ---
 
 # Spillr – Decentralized Anonymous Q&A Platform
@@ -80,11 +115,5 @@ Collaborated with a five-person team covering frontend, blockchain backend, and 
 - **Building a functional MVP that earned competitive recognition**
 
 ---
-
-## Tech Stack
-
-- **Frontend**: React, Tailwind CSS, JavaScript  
-- **Blockchain**: Internet Computer (ICP), Motoko  
-- **Approach**: Component-based UI, responsive design, rapid prototyping  
 
 **GitHub Repository**: 🔗 [View Code](https://github.com/Mattjevaas/Spillr-App)

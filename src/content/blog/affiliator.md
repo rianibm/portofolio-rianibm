@@ -1,89 +1,112 @@
 ---
 title: "Indopaket Affiliator"
-description: "Frontend and UX implementation for Indopaket’s Affiliator Program, covering both web and mobile app interfaces for commission-based promotion flows."
-pubDate: "Dec 2025"
+description: "Frontend and UX implementation for a low-barrier affiliate program, focused on commission visibility and trust-driven referral experiences."
+pubDate: "Jun 2025"
 heroImage: "/src/assets/fran.jpg"
 icon: "2"
-tags: ["Frontend Developer", "UI/UX", "React", "Mobile UI"]
+tags: ["Frontend Developer", "UX Engineering", "React", "Mobile UI"]
 pageSkills:
-  - category: "Affiliate & Business Domain"
+  - category: "Affiliate & Growth Domain"
     icon: "1"
-    skills: ["Affiliate Program Flow", "Commission-based UX", "Referral Journey", "Business Rule Awareness"]
-  - category: "UX Research & Design"
+    skills: ["Open Affiliate Flow", "Commission-based Incentives", "Referral Mechanics", "Growth-oriented UX"]
+  - category: "UX Thinking & Exploration"
     icon: "2"
-    skills: ["User Journey Mapping", "Competitor Benchmarking", "Flow Design", "Dashboard UX"]
+    skills: ["User Journey Mapping", "Gamification Study", "Incentive Framing", "Dashboard UX"]
   - category: "Frontend & Mobile UI"
     icon: "3"
-    skills: ["React", "JavaScript", "Tailwind CSS", "Responsive UI", "Mobile App UI"]
+    skills: ["React", "Next.js", "JavaScript", "Tailwind CSS", "Responsive UI"]
   - category: "UX Constraints & Validation"
     icon: "4"
-    skills: ["Role-aware UI", "Error States", "Form Validation", "Trust-focused UI"]
+    skills: ["Low-friction Onboarding", "Error States", "Form Validation", "Trust-focused UI"]
 ---
 
-# Indopaket Affiliator – Affiliate Program for a Shipping Platform
+# Affiliate Program UI for a Shipping Platform
 
-I worked on the **frontend and UX implementation** of the **Indopaket Affiliator Program**, delivering interfaces for both **web and mobile app experiences**. The program enables **KOLs and content creators** to earn commission by promoting Indopaket’s shipping services through referral codes.
+Indopaket Affiliator is a **low-barrier affiliate program** that allows users to earn commission by sharing referral codes for Indopaket’s shipping services.
 
-My role focused on translating **business rules and commission mechanics** into clear, consistent user flows across platforms, ensuring affiliators could understand their performance and earnings without confusion.
+Unlike existing membership-based referral programs, this flow is designed to work **without requiring prior seller or membership context**. Incentives are applied automatically when referral conditions are met, benefiting both the affiliator and the end user.
 
----
+I worked on the **frontend and UX implementation** for this program, delivering interfaces for both **web and mobile experiences**. The main challenge was designing a system that feels trustworthy, understandable, and motivating, while staying intentionally simple.
 
-## Context & Business Goals
-
-Before the Affiliator Program, Indopaket already had a **Referral Program** and **Member+** flow. The Affiliator Program was introduced as an additional growth channel targeting users who actively create promotional content.
-
-From a frontend and UX perspective, this required designing a flow that:
-- clearly communicates commission and discount mechanics  
-- avoids confusion with existing referral programs  
-- minimizes friction for users whose primary goal is shipping, not promotion  
+This project is **ongoing** and planned for release around **Q2**.
 
 ---
 
-## UX Challenges & Decisions
+## Context & Product Intent
 
-**Separate Registration Flow**  
-Rather than merging affiliator registration into the main app signup, the affiliator journey was designed as a **separate entry point**. This reduced cognitive load for regular users while providing a focused onboarding experience for serious affiliators.
+Indopaket already operates internal referral and membership-based programs.
+The Affiliator Program was introduced as an **alternative growth channel** with a simplified entry experience.
+The intent was clear:
+- no role complexity
+- no requirement to become a seller or member
+- minimal setup before sharing
+From a UX standpoint, this meant removing assumptions about prior knowledge and designing flows that work even for first-time users with no existing relationship to the platform.
 
-**Affiliator-first Dashboard Hierarchy**  
-Early dashboard designs leaned too heavily toward analytics. UX evaluation shifted the hierarchy to prioritize what affiliators care about most:  
-**commission visibility first**, followed by transaction context and campaign tools.
+---
 
-**Data Visualization on Limited Screen Space**  
-Commission and transaction metrics differed significantly in scale. Displaying both in a single chart made commission appear visually insignificant. This was resolved through toggle-based views, allowing users to switch context without misleading visual emphasis — especially important on mobile screens.
+## UX Challenges & Key Decisions
+
+**Designing for First-time Users**  
+Because affiliators may have no prior context with the platform, onboarding needed to be:
+- short
+- self-explanatory
+- confidence-building
+The UI avoids internal terminology and focuses on what matters immediately:
+**share code → usage → reward visibility**.
+
+
+**Learning and Applying Gamification Thoughtfully**  
+This project pushed me to study gamification patterns more deeply, including reading references and benchmarking similar affiliate systems.
+
+Rather than adding surface-level rewards, the focus stayed on:
+- clear progress and earnings visibility
+- simple mental models for “how I earn”
+- incentives that support repeated sharing, not distraction
+Gamification here is subtle and functional, not decorative.
+Specific mechanics are intentionally kept high-level in this description.
+
+**Commission Visibility Over Everything Else**  
+Early design iterations experimented with broader analytics. These were later reduced to keep the primary focus on:
+- commission earned
+- pending vs. confirmed rewards
+- clear transaction context
+Anything that did not support these goals was deprioritized.
 
 ---
 
 ## Frontend & Mobile UI Implementation
 
 **Web & Mobile Interfaces**  
-I implemented UI for both the **web dashboard** and **mobile app views**, ensuring feature consistency where required while adapting layouts and interactions for mobile usage patterns.
+I implemented the UI across web and mobile contexts using a React-based architecture, ensuring consistent behavior while adapting layouts for smaller screens. Revenue and discount information remains immediately visible across device sizes.
 
-This included:
-- prioritizing revenue and payout information on smaller screens  
-- simplifying data-dense views for mobile readability  
-- maintaining consistent behavior between web and mobile experiences  
+**Onboarding & Sharing Flow**  
+Designed a straightforward onboarding and sharing flow:
+**Register → Get Code → Share → Earn**, supported by inline validation and clear feedback states.
 
-**Landing Page & Registration UI**  
-Designed a guided onboarding flow with step visualization (Registration → Get Referral → Campaign → Revenue), inline validation, and pre-filled user data when applicable.
-
-**Dashboard UI**  
-Built interfaces for referral links and codes with one-tap copy/share, commission summaries (confirmed vs. pending), transaction overviews, and campaign assets such as banners and messaging templates.
-
-**Transaction History UI**  
-Implemented per-transaction breakdowns that remain consistent with summary totals, helping maintain user trust in commission calculations.
+**Dashboard & Transaction UI**  
+Built interfaces for:
+- referral codes with one-tap copy and share
+- commission summaries (earned vs. pending)
+- transaction lists that clearly explain why a reward was granted
+Consistency between summary and detail views was essential to maintain trust.
 
 **Fraud-aware UX Constraints**  
-Frontend UI reflects backend validation rules such as self-referral prevention, usage limits, and device-related restrictions, with clear messaging to explain blocked actions without exposing sensitive system logic.
-
-**Account Awareness**  
-Designed UI flows that acknowledge existing Indopaket accounts, allowing affiliator features to coexist with other user roles without creating conflicting experiences.
+Frontend UI reflects system constraints such as:
+- self-use prevention
+- usage limits
+- abnormal activity handling
+Messaging explains blocked actions clearly, without exposing internal system logic.
 
 ---
 
 ## Key Takeaways
 
-- **End-to-end UI implementation for both web and mobile app**
-- **Strong UX decision-making under real business constraints**
-- **Designing trust-sensitive, commission-focused interfaces**
-- **Balancing data density with mobile usability**
-- **Ensuring consistency across multiple growth programs within one ecosystem**
+- **Designing UX for users with no prior system context**
+- **Implementing commission-based flows with trust as a priority**
+- **Applying gamification in a restrained, purpose-driven way**
+- **Balancing growth goals with clarity and simplicity**
+- **End-to-end UI implementation using React / Next.js**
+This project sharpened my understanding that sometimes the hardest UX work is making things feel obvious, especially when users have no reason to learn your system deeply.
+
+Implementation details are presented at a conceptual level to respect platform security and business boundaries. Specific eligibility rules and incentive calculations are intentionally abstracted in this overview.
+

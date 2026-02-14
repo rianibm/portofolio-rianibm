@@ -2,23 +2,62 @@
 title: "Sky Explorer – Flight Booking App"
 description: "Frontend implementation of a flight booking application, focusing on complex booking flows, state management, and responsive UI under tight time constraints."
 icon: "3"
-pubDate: "Jan 1 2024"
+pubDate: "2024"
 heroImage: "/src/assets/euro.jpg"
 tags: ["Frontend Developer", "React", "TypeScript", "Recoil"]
 pageSkills:
   - category: "Frontend Development"
     icon: "1"
-    skills: ["React", "TypeScript", "Component Architecture", "Custom Hooks"]
-  - category: "State & Performance"
+    skills:
+      [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Component Architecture",
+        "Custom Hooks",
+      ]
+
+  - category: "State Management & Performance"
     icon: "2"
-    skills: ["Recoil", "State Modeling", "Code Splitting", "Lazy Loading"]
-  - category: "Complex UI Implementation"
+    skills:
+      [
+        "Recoil",
+        "State Modeling",
+        "Code Splitting",
+        "Lazy Loading",
+      ]
+
+  - category: "UI & Interaction"
     icon: "3"
-    skills: ["Multi-step Forms", "Booking Flows", "Responsive UI", "Error States"]
-  - category: "Team & Delivery Context"
+    skills:
+      [
+        "Ant Design",
+        "Tailwind CSS",
+        "Multi-step Forms",
+        "Responsive UI",
+        "Error States",
+      ]
+
+  - category: "Motion & Data Integration"
     icon: "4"
-    skills: ["Small Team Collaboration", "Time-boxed Delivery", "Frontend Ownership"]
+    skills:
+      [
+        "Framer Motion",
+        "REST API Integration",
+        "Async Data Handling",
+        "Loading & Empty States",
+      ]
+
+  - category: "Team & Delivery Context"
+    icon: "5"
+    skills:
+      [
+        "Small Team Collaboration",
+        "Time-boxed Delivery",
+        "Frontend Ownership",
+      ]
 ---
+
 
 # Sky Explorer – Flight Booking Application
 
@@ -91,14 +130,3 @@ Development was completed within a limited timeframe due to external constraints
 - **Managing global state with Recoil**
 - **Balancing feature completeness with delivery constraints**
 - **Collaborating effectively in a small frontend team**
-
----
-
-## Tech Stack
-
-- **Frontend**: React, TypeScript, Vite  
-- **State Management**: Recoil  
-- **UI**: Ant Design, Tailwind CSS  
-- **Animation**: Framer Motion  
-- **API Integration**: REST APIs  
-- **Performance**: Code splitting, lazy loading

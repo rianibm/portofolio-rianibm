@@ -1,94 +1,119 @@
 ---
 title: "HiRE – Green Jobs Platform"
-description: "Frontend implementation for a green jobs platform under the Society of Renewable Energy (SRE), covering responsive UI development, dynamic routing, and production deployment using Next.js."
+description: "Frontend implementation of a public-facing green jobs platform under the Society of Renewable Energy (SRE), focusing on scalable UI, content-driven pages, and production deployment."
 icon: "1"
 pubDate: "Dec 29 2023"
 heroImage: "/src/assets/adriana.jpg"
-tags: ["Frontend Developer", "React", "Next.js", "TypeScript", "Tailwind CSS"]
+tags: ["Frontend Developer", "Next.js", "React", "TypeScript", "Tailwind CSS"]
 pageSkills:
   - category: "Frontend Development"
     icon: "1"
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Component-based UI"]
+    skills:
+      [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Component-based Architecture",
+      ]
   - category: "UI Implementation"
     icon: "2"
-    skills: ["Figma-to-code", "Responsive Layouts", "Design Collaboration", "Accessibility Awareness"]
-  - category: "Routing & Data Handling"
+    skills:
+      [
+        "Figma-to-code",
+        "Responsive Layouts",
+        "Design System Consistency",
+        "Accessibility Awareness",
+      ]
+  - category: "Routing & Content Handling"
     icon: "3"
-    skills: ["Dynamic Routing", "SEO-friendly Pages", "State Management", "Conditional Rendering"]
-  - category: "Deployment & Workflow"
+    skills:
+      [
+        "Dynamic Routing",
+        "SEO-friendly Pages",
+        "Conditional Rendering",
+        "Content-driven UI",
+      ]
+  - category: "Deployment & Production"
     icon: "4"
-    skills: ["Vercel Deployment", "CI/CD Workflow", "Environment Variables", "Production Release"]
+    skills:
+      [
+        "Production Deployment",
+        "Environment Configuration",
+        "Preview & Release Workflow",
+        "Post-launch Stability",
+      ]
 ---
 
 # HiRE – Green Jobs Platform
 
-I worked on the **frontend implementation** of **HiRE**, a web platform under the **Society of Renewable Energy (SRE)** that provides information about **green jobs, internships, and career preparation**.
+HiRE is a **public-facing green jobs platform** developed under the **Society of Renewable Energy (SRE)**, aimed at connecting job seekers with opportunities in sustainability-focused careers.
 
-This project marked my **first production experience using Next.js**, where I was responsible for translating designs into a production-ready frontend and managing the deployment workflow.
+I worked on this project as a **frontend developer**, responsible for implementing production-ready UI, structuring content-driven pages, and supporting deployment to a live environment. This project became my **first real production experience using Next.js**.
 
 ---
 
-## Context & Project Scope
+## Context & Product Scope
 
-HiRE was built to support a series of career-related initiatives, including webinars and a virtual career fair, aimed at helping younger generations explore opportunities in sustainability-focused careers.
+HiRE was built to support multiple career initiatives, including job listings, learning resources, webinars, and virtual career events.
 
-From a frontend perspective, the platform needed to be:
-- accessible across devices  
-- content-driven and easy to navigate  
-- ready for public-facing production use  
+From a frontend perspective, the platform needed to:
+- scale across content-heavy pages  
+- remain accessible and readable on all devices  
+- support SEO-friendly public pages  
+- feel stable and trustworthy for first-time visitors  
+
+The emphasis was not on experimental UI, but on **clarity, performance, and production readiness**.
 
 ---
 
 ## Frontend & UI Implementation
 
 **Design-to-Code Execution**  
-Worked closely with a UI/UX designer to translate high-fidelity Figma designs into responsive and accessible UI using **React (Next.js)**, **TypeScript**, and **Tailwind CSS**.
+I worked closely with a UI/UX designer to translate high-fidelity designs into responsive and maintainable interfaces using **Next.js**, **TypeScript**, and **Tailwind CSS**.
 
-The implementation focused on maintaining layout consistency, visual clarity, and usability across different screen sizes.
+The focus was on:
+- layout consistency across pages  
+- predictable component behavior  
+- clean separation between layout, content, and interaction  
 
-**Key Pages Implemented**
-- **Landing Page** — hero sections, testimonials, and call-to-action components  
-- **Career Page** — job listings and application-related views  
-- **Course Listing & Detail Pages** — structured content layout, pagination, and detail views  
-- **Learning Dashboard** — navigation and progress-oriented layout  
+**Key Areas Implemented**
+- Landing and campaign pages for public outreach  
+- Job and career-related listing and detail pages  
+- Learning-related pages with structured navigation  
+- Dashboard-style layouts for logged-in users  
 
----
-
-## Routing & Page Structure
-
-**Next.js Routing**  
-Utilized **file-based routing** and **dynamic routes** to support content-driven pages while keeping URLs SEO-friendly.
-
-**State & Conditional Rendering**  
-Handled UI states and conditional rendering to ensure smooth navigation and clear feedback across different user flows.
+Details around internal logic and data handling are intentionally kept at a high level.
 
 ---
 
-## Deployment & Development Workflow
+## Routing, State & Content Handling
 
-**Vercel Deployment**  
-Managed deployment using **Vercel**, including preview deployments for development branches and production releases. Handled environment variable configuration and ensured builds were stable across environments.
+**Dynamic Routing & SEO Awareness**  
+Implemented dynamic routes for content-driven pages while maintaining clean, SEO-friendly URLs suitable for public indexing.
 
-**Backend Integration Awareness**  
-Collaborated with the backend team using **Firebase**, focusing on frontend integration while backend logic and data handling were managed separately.
+**UI State & Conditional Rendering**  
+Handled various UI states to ensure smooth transitions, clear feedback, and predictable behavior across different user flows, including logged-in and public contexts.
+
+---
+
+## Deployment & Workflow
+
+**Production Deployment**  
+Supported deployment to a live production environment, including environment configuration and preview-based release workflows.
+
+**Collaboration with Backend**  
+Worked alongside backend engineers handling authentication and data services. My responsibility stayed on frontend integration and presentation, ensuring backend complexity was not exposed to users.
 
 ---
 
 ## Key Takeaways
 
-- **First production project using Next.js**
-- **Strong design-to-code frontend implementation**
-- **Hands-on experience with dynamic routing and SEO-friendly pages**
-- **Ownership of deployment workflow using Vercel**
-- **Collaboration with UI/UX and backend teams**
-- **Building a public-facing platform for sustainability-focused initiatives**
+- **First production-scale project using Next.js**
+- **Strong design-to-code frontend execution**
+- **Experience building SEO-friendly, content-heavy pages**
+- **Exposure to real production deployment workflows**
+- **Collaboration with designers and backend engineers**
+- **Building a public platform with real users and visibility**
 
----
-
-## Tech Stack
-
-- **Frontend**: React, Next.js, TypeScript  
-- **Styling**: Tailwind CSS  
-- **Backend Integration**: Firebase  
-- **Deployment**: Vercel  
-- **Approach**: Component-based UI, responsive layouts, CI/CD workflow
+Specific implementation details are intentionally described at a conceptual level to respect organizational and platform boundaries.

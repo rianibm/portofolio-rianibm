@@ -1,102 +1,81 @@
 ---
 title: "Perkantas Yogyakarta"
-description: "Frontend and full-cycle web development for a community-based platform supporting Christian discipleship activities for students, alumni, and medical professionals."
+description: "Frontend development and long-term maintenance for a community-based web platform supporting Christian discipleship activities."
 icon: "2"
 pubDate: "May 28 2023"
 heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "Laravel", "Bootstrap", "Community Platform"]
 pageSkills:
-  - category: "Project & Collaboration"
+  - category: "Project & Communication"
     icon: "1"
-    skills: ["First Full-cycle Freelance", "Client Communication", "Requirement Discussion", "Project Lifecycle Awareness"]
+    skills: ["First Freelance Project", "Client Communication", "Requirement Discussion", "Project Ownership"]
   - category: "Frontend Development"
     icon: "2"
-    skills: ["Laravel Blade", "Bootstrap", "Responsive UI", "Component-based Layout"]
-  - category: "Backend Exposure"
+    skills: ["Laravel Blade", "Bootstrap", "Responsive UI", "Reusable Layouts"]
+  - category: "System & Platform Handling"
     icon: "3"
-    skills: ["Laravel", "User Management", "Admin Module", "Database Integration"]
+    skills: ["Domain Management", "Hosting Setup", "Email Configuration", "Ongoing Maintenance"]
   - category: "Technical Growth"
     icon: "4"
-    skills: ["Email Notification (First Implementation)", "Production Deployment", "Platform Maintenance"]
+    skills: ["First Production Deployment", "Live System Maintenance", "Operational Responsibility"]
 ---
+
 
 # Perkantas Yogyakarta – Community-Based Web Platform
 
-I worked on the **design-to-code implementation and development** of the **Perkantas Yogyakarta web platform**, a community-based system supporting **Christian discipleship activities** for students, alumni, and medical professionals.
+Perkantas Yogyakarta is a **community-based web platform** built to support Christian discipleship activities for students, alumni, and medical professionals.
 
-This project marked my **first full-cycle freelance experience**, where I was involved from early discussions through development and post-launch maintenance.
-
----
-
-## Context & Project Scope
-
-Perkantas Yogyakarta required a web platform to manage community activities, internal resources, and administrative workflows. The platform needed to be accessible across devices and simple enough to be used by a wide range of users with varying technical familiarity.
-
-From the start, the project emphasized **clarity, maintainability, and long-term usability** over complex interactions.
+I worked on this project primarily as a **frontend developer**, focusing on turning agreed requirements into a usable and maintainable interface. This was also my **first freelance project**, which meant the work extended beyond code into long-term responsibility for the live platform.
 
 ---
 
-## Full-Cycle Freelance Experience
+## Project Context
 
-**End-to-End Involvement**  
-I was involved throughout the full project lifecycle, including requirement discussions, implementation, testing, deployment, and ongoing maintenance. This provided early exposure to real-world constraints such as changing requirements, stakeholder feedback, and production stability.
+The platform was designed to support internal community activities, shared resources, and simple administrative workflows. Users came from varied backgrounds and technical familiarity, so the interface needed to be straightforward, readable, and accessible across devices.
 
-**Client Communication**  
-Worked directly with non-technical stakeholders, translating functional needs into implementable features and aligning expectations around scope and timelines.
+From the beginning, the focus was not on visual complexity, but on **clarity, stability, and ease of use** for a real community.
 
 ---
 
-## Frontend & UI Implementation
+## Role & Responsibilities
 
-**Design-to-Code Execution**  
-While UI designs were not created by me, I collaborated closely during the design phase, providing technical input on feasibility and responsive behavior. I then translated approved designs into production-ready interfaces using **Laravel Blade** and **Bootstrap**.
+**Frontend-focused Work**  
+My core responsibility was on frontend implementation.
+- Translating approved designs into working interfaces
+- Implementing responsive layouts using Laravel Blade and Bootstrap
+- Structuring reusable layout components to keep the UI consistent and maintainable
 
-**Responsive Layouts**  
-Implemented responsive layouts to ensure the platform could be accessed comfortably on desktop and mobile devices, focusing on readability and straightforward navigation.
+I was involved in ERD discussions to understand data structure and flows, but I did not design the database nor implement backend architecture.
 
-**Component-based Structure**  
-Structured the frontend using reusable Blade components to improve consistency and maintainability across the platform.
-
----
-
-## Backend Exposure & Feature Development
-
-**User & Admin Modules**  
-Implemented core features such as user management and admin functionality, integrating frontend views with backend logic using Laravel.
-
-**Book Borrowing Feature**  
-Developed a book borrowing workflow allowing users to browse available resources and submit loan requests through the platform.
-
-**Email Notification System (First Experience)**  
-Built my first email notification feature to notify admins of book loan requests. This required learning Laravel’s email system and understanding how notifications behave in a production environment.
+UI designs were provided externally. My role was to ensure those designs could be implemented cleanly and worked well across screen sizes.
 
 ---
 
-## Production & Maintenance Experience
+## Platform & Operational Responsibility
 
-**Live Platform Responsibility**  
-Gained hands-on experience maintaining a live system, including handling minor bug fixes, improving UI clarity, and ensuring ongoing platform stability after launch.
+Beyond development, I handled several operational aspects of the platform:
+- Domain setup and management
+- Hosting configuration
+- Email service configuration for platform notifications
+- Ongoing maintenance and small fixes after launch
+This meant being responsible not just for shipping the site, but for keeping it running over time. Maintenance work is still handled when needed.
 
-**Clean Structure & Maintainability**  
-Maintained organized project structure, scoped styles, and consistent layouts to support future updates and easier maintenance.
+---
+
+## What This Project Taught Me
+
+- How frontend decisions affect real users in a live system
+- Communicating with non-technical stakeholders clearly and patiently
+- Owning a project beyond delivery, including post-launch stability
+- Understanding system boundaries without overstepping them
 
 ---
 
 ## Key Takeaways
 
-- **First full-cycle freelance project**
-- **Design-to-code frontend implementation**
-- **Early exposure to backend integration**
-- **First experience implementing email notifications**
-- **Working with real users and live production constraints**
-- **Building technology for community-focused impact**
+- First freelance project with real user
+- Frontend-focused role with long-term ownership
+- Exposure to production environments and maintenance work
+- Building technology to support a community, not a product demo
 
----
-
-## Tech Stack
-
-- **Backend**: Laravel  
-- **Frontend**: Laravel Blade  
-- **Styling**: Bootstrap  
-- **Features**: User management, admin module, book borrowing, email notifications  
-- **Approach**: Component-based layout, responsive design
+Specific implementation details are kept high-level to respect community and platform boundaries.
