@@ -211,6 +211,7 @@ body {
   transition: top 200ms ease;
 }
 .site-header.is-scrolled {
+  position: sticky;
   top: 0.5rem;
 }
 .site-header nav {
