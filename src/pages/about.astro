@@ -7,6 +7,10 @@ import { Image } from "astro:assets";
 import type { ImageMetadata } from "astro";
 import { getCollection } from "astro:content";
 
+import avatarAvif from "@/assets/images/avatar/about.avif";
+import avatarWebp from "@/assets/images/avatar/about.webp";
+import avatarPng from "@/assets/images/avatar/about.png";
+
 const title = "About Riani BM";
 const description =
   "Portofolio of Rianibm. UX Engineer & Frontend Developer based in Jakarta, Indonesia.";
@@ -110,13 +114,13 @@ const aboutSkills = [
           transition:animate="fade"
         >
           <div
-            class="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-black shadow-card"
+            class="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-black shadow-card settle"
           >
-            <Image
-              src={images["/src/assets/rianibm-removebg-preview.png"]()}
-              alt="Riani BM"
-              class="w-full h-full object-cover"
-            />
+            <picture>
+              <source srcset={avatarAvif.src} type="image/avif" />
+              <source srcset={avatarWebp.src} type="image/webp" />
+              <img src={avatarPng.src} alt="Riani BM" class="w-full h-full object-cover" width={avatarPng.width} height={avatarPng.height} loading="eager" />
+            </picture>
           </div>
           <h1 class="text-3xl md:text-5xl font-semibold text-center">
             <span class="font-kablamo text-ppink">A</span>bout Me
@@ -131,7 +135,7 @@ const aboutSkills = [
           <div class="flex flex-col">
             <!-- What I Do -->
             <section
-              class="flex flex-col gap-3 animate-on-scroll bg-white rounded-xl p-6"
+              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
               <h2 class="text-xl md:text-2xl font-bold">
                 <span class="font-kablamo text-ppink">W</span>hat I Do
@@ -159,7 +163,7 @@ const aboutSkills = [
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
             <!-- Technologies Used -->
-            <section class="flex flex-col gap-3 animate-on-scroll p-6">
+            <section class="flex flex-col gap-3 animate-on-scroll from-bottom p-6">
               <h2 class="text-xl md:text-2xl font-bold">
                 <span class="font-kablamo text-ppink">T</span>echnologies
               </h2>
@@ -169,7 +173,7 @@ const aboutSkills = [
                     const skillClass = getSkillClass(i);
                     return (
                       <div
-                        class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll"
+                        class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll from-bottom"
                         style={`--delay: ${i * 0.1}s`}
                       >
                         <div class="flex items-center gap-2 mb-1">
@@ -199,7 +203,7 @@ const aboutSkills = [
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
             <section
-              class="flex flex-col gap-3 animate-on-scroll bg-white rounded-xl p-6"
+              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
               <h2 class="text-xl md:text-2xl font-bold">
                 <span class="font-kablamo text-ppink">W</span>hat I've Worked On
@@ -241,7 +245,7 @@ const aboutSkills = [
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <section class="flex flex-col gap-3 animate-on-scroll p-6">
+            <section class="flex flex-col gap-3 animate-on-scroll from-bottom p-6">
               <h2 class="text-xl md:text-2xl font-bold">
                 <span class="font-kablamo text-ppink">E</span>xperience
               </h2>
@@ -274,7 +278,7 @@ const aboutSkills = [
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
             <section
-              class="flex flex-col gap-3 animate-on-scroll bg-white rounded-xl p-6"
+              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
               <h2 class="text-xl md:text-2xl font-bold">
                 <span class="font-kablamo text-ppink">H</span>ow I Work
@@ -310,14 +314,15 @@ const aboutSkills = [
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <div class="flex gap-2 items-center p-6 animate-on-scroll">
+            <div class="flex gap-2 items-center p-6 animate-on-scroll from-bottom">
               <div
                 class="bg-pgreen rounded-full w-10 h-10 aspect-square object-contain overflow-hidden"
               >
-                <Image
-                  src={images["/src/assets/rianibm-removebg-preview.png"]()}
-                  alt="Riani BM"
-                />
+                <picture>
+                  <source srcset={avatarAvif.src} type="image/avif" />
+                  <source srcset={avatarWebp.src} type="image/webp" />
+                  <img src={avatarPng.src} alt="Riani BM" width={avatarPng.width} height={avatarPng.height} loading="lazy" />
+                </picture>
               </div>
               <div>
                 <h3 class="font-semibold text-sm">Riani BM</h3>
@@ -347,20 +352,24 @@ const aboutSkills = [
       }
     </style>
     <script>
+      let observer: IntersectionObserver | null = null;
       function initScrollAnimations() {
-        const elements = document.querySelectorAll(".animate-on-scroll");
-        const observer = new IntersectionObserver(
-          (entries) => {
-            entries.forEach((entry) => {
-              if (entry.isIntersecting) {
-                entry.target.classList.add("animated");
-                observer.unobserve(entry.target);
-              }
-            });
-          },
-          { threshold: 0.15 },
-        );
-        elements.forEach((el) => observer.observe(el));
+        if (!observer) {
+          observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animated");
+                  observer?.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 },
+          );
+        }
+        document
+          .querySelectorAll(".animate-on-scroll:not(.animated)")
+          .forEach((el) => observer?.observe(el));
       }
       initScrollAnimations();
       document.addEventListener("astro:after-swap", initScrollAnimations);

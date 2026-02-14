@@ -39,19 +39,19 @@ const displayGroups = compact
 const postMap = new Map(allPosts.map((p) => [p.id, p]));
 ---
 <section class="flex flex-col text-center gap-4">
-  <p class="text-pblack animate-on-scroll">Meet My</p>
-  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll" style="--delay: 0.1s">Selected Work</h2>
+  <p class="text-pblack animate-on-scroll from-bottom">Meet My</p>
+  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">Selected Work</h2>
 
   {displayGroups.map((group, gi) => (
     <div class="py-10">
-      {!compact && <h3 class="text-lg md:text-2xl font-semibold mb-6 animate-on-scroll">{group.label}</h3>}
+      {!compact && <h3 class="text-lg md:text-2xl font-semibold mb-6 animate-on-scroll from-bottom">{group.label}</h3>}
       <ul class="flex flex-wrap justify-center gap-6 md:gap-8 px-4 md:px-0">
         {group.slugs.map((slug, i) => {
           const post = postMap.get(slug);
           if (!post) return null;
           const bgClass = getBgClass(gi * 5 + i);
           return (
-            <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6 animate-on-scroll" style={`--delay: ${i * 0.1}s`}>
+            <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6 animate-on-scroll from-bottom settle" style={`--delay: ${i * 0.1}s`}>
               <a href={`/works/${post.id}/`} class="flex flex-col gap-4">
                 <div
                   class={`${bgClass} text-4xl p-2 self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}
@@ -74,7 +74,7 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
   {compact && (
     <a
       href="/works/"
-      class="self-center bg-pgreen px-6 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition font-medium animate-on-scroll"
+      class="self-center bg-pgreen px-6 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition font-medium animate-on-scroll from-bottom settle"
     >
       View All Projects
     </a>
