@@ -3,9 +3,11 @@ import Link from "./HeaderLink.astro";
 import "../styles/hamburgers.css";
 ---
 
-<header>
+<header class="site-header sticky top-0 z-50">
   <nav
-    class="flex container mx-auto md:p-10 px-4 py-6 items-center justify-between"
+    class="flex items-center justify-between
+         mx-auto max-w-6xl
+         px-6 py-4 md:px-10"
     aria-label="Main navigation"
   >
     <a class="flex items-center gap-2" href="/" aria-label="Riani BM homepage">
@@ -39,6 +41,13 @@ import "../styles/hamburgers.css";
         aria-hidden="true"
         class="fixed top-0 left-0 w-full h-full bg-white transform -translate-y-full transition-transform duration-300 ease-in-out"
       >
+        <button
+          class="menu-close absolute top-6 right-6 w-10 h-10 flex items-center justify-center rounded-full border border-black/10 text-black/60 hover:text-black hover:bg-black/5 transition-colors"
+          type="button"
+          aria-label="Close main menu"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
         <ul
           class="flex flex-col items-center justify-center h-full gap-8 text-nowrap"
         >
@@ -51,23 +60,47 @@ import "../styles/hamburgers.css";
   </nav>
 </header>
 <script is:inline>
+  function initHeaderScroll() {
+    const header = document.querySelector(".site-header");
+    if (!header) return;
+
+    function onScroll() {
+
+      if (window.scrollY > 12) {
+        header.classList.add("is-scrolled");
+      } else {
+        header.classList.remove("is-scrolled");
+      }
+    }
+
+    window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+  }
+
+  document.addEventListener("astro:page-load", initHeaderScroll);
+
   function init() {
     const hamburger = document.querySelector(".hamburger");
     const menu = document.getElementById("navigation");
 
     if (hamburger && menu) {
       function toggleMenu(open) {
-        var isOpen = typeof open === "boolean"
-          ? (hamburger.classList.toggle("is-active", open), open)
-          : hamburger.classList.toggle("is-active");
+        var isOpen =
+          typeof open === "boolean"
+            ? (hamburger.classList.toggle("is-active", open), open)
+            : hamburger.classList.toggle("is-active");
 
         menu.classList.toggle("-translate-y-full", !isOpen);
         menu.classList.toggle("translate-y-0", isOpen);
 
+        var header = document.querySelector(".site-header");
+        if (header) header.classList.toggle("menu-open", isOpen);
+
         hamburger.setAttribute("aria-expanded", String(isOpen));
         hamburger.setAttribute(
           "aria-label",
-          isOpen ? "Close main menu" : "Open main menu"
+          isOpen ? "Close main menu" : "Open main menu",
         );
         menu.setAttribute("aria-hidden", String(!isOpen));
 
@@ -82,6 +115,13 @@ import "../styles/hamburgers.css";
       hamburger.addEventListener("click", function () {
         toggleMenu();
       });
+
+      var closeBtn = menu.querySelector(".menu-close");
+      if (closeBtn) {
+        closeBtn.addEventListener("click", function () {
+          toggleMenu(false);
+        });
+      }
 
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && hamburger.classList.contains("is-active")) {

@@ -76,9 +76,14 @@ const posts = (await getCollection("blog")).sort(
     </script>
     <script>
       function initSectionLabel() {
-        const label = document.getElementById("section-label") as HTMLElement | null;
-        const labelText = document.getElementById("section-label-text") as HTMLElement | null;
-        const headings = document.querySelectorAll<HTMLElement>(".section-heading");
+        const label = document.getElementById(
+          "section-label",
+        ) as HTMLElement | null;
+        const labelText = document.getElementById(
+          "section-label-text",
+        ) as HTMLElement | null;
+        const headings =
+          document.querySelectorAll<HTMLElement>(".section-heading");
 
         if (!label || !labelText || headings.length === 0) return;
 
@@ -102,8 +107,10 @@ const posts = (await getCollection("blog")).sort(
         let currentSection = "";
         function onScroll() {
           let active = "";
+          var header = document.querySelector(".site-header");
+          var headerBottom = header ? header.getBoundingClientRect().bottom : 72;
           headings.forEach((h) => {
-            if (h.getBoundingClientRect().top <= 80) {
+            if (h.getBoundingClientRect().top <= headerBottom) {
               active = h.dataset.section || "";
             }
           });

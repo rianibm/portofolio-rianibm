@@ -205,3 +205,33 @@ body {
     outline: 2px solid #000;
     outline-offset: 2px;
 }
+
+/* CUSTOM NAVBAR STYLING */
+.site-header {
+  transition: top 200ms ease;
+}
+.site-header.is-scrolled {
+  top: 0.5rem;
+}
+.site-header nav {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  border-radius: 0;
+  transition: background 200ms ease, box-shadow 200ms ease, backdrop-filter 200ms ease, border-radius 200ms ease, padding 200ms ease;
+}
+.site-header.is-scrolled nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  border-radius: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+.site-header.menu-open nav {
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+

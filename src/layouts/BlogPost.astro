@@ -214,7 +214,7 @@ const relevantSkills = getPageRelevantSkills();
           </div>
           <div
             id="blog-section-label"
-            class="hidden md:block sticky top-0 z-20 bg-white/80 backdrop-blur-sm py-1.5 text-[11px] text-black/40 tracking-widest font-normal uppercase transition-opacity duration-300 opacity-0 pointer-events-none"
+            class="hidden md:block sticky top-[4.5rem] z-20 bg-white/80 backdrop-blur-sm py-1.5 text-[11px] text-black/40 tracking-widest font-normal uppercase transition-opacity duration-300 opacity-0 pointer-events-none"
             aria-hidden="true"
           >
             <span id="blog-section-label-text"></span>
@@ -336,8 +336,10 @@ const relevantSkills = getPageRelevantSkills();
         let currentSection = "";
         function onScroll() {
           let active = "";
+          var header = document.querySelector(".site-header");
+          var headerBottom = header ? header.getBoundingClientRect().bottom : 72;
           headings.forEach((h) => {
-            if (h.getBoundingClientRect().top <= 80) {
+            if (h.getBoundingClientRect().top <= headerBottom) {
               active = h.textContent?.trim() || "";
             }
           });
