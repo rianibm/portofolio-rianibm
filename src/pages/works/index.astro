@@ -6,7 +6,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import WhatIDo from "@/components/WhatIDo.astro";
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -17,13 +17,39 @@ const posts = (await getCollection("blog")).sort(
   </head>
   <body>
     <Header />
-    <main class="container mx-auto md:px-10 py-20">
+    <main
+      id="main-content"
+      tabindex="-1"
+      class="container mx-auto md:px-10 py-5"
+    >
+      <a
+        href="/"
+        aria-label="Go back to homepage"
+        class="inline-block px-6 py-3 bg-pgreen text-black rounded-lg font-semibold text-sm hover:shadow-hover transition-all duration-200 border border-black"
+      >
+        Back to Home
+      </a>
+      <h1 class="sr-only">What I Do</h1>
       <WhatIDo />
     </main>
     <Footer />
     <script>
       let observer: IntersectionObserver | null = null;
       function initScrollAnimations() {
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+
+        if (
+          prefersReducedMotion ||
+          document.documentElement.classList.contains("reduce-motion")
+        ) {
+          document
+            .querySelectorAll(".animate-on-scroll")
+            .forEach((el) => el.classList.add("animated"));
+          return;
+        }
+
         if (!observer) {
           observer = new IntersectionObserver(
             (entries) => {
@@ -42,7 +68,11 @@ const posts = (await getCollection("blog")).sort(
           .forEach((el) => observer?.observe(el));
       }
       initScrollAnimations();
-      document.addEventListener("astro:after-swap", initScrollAnimations);
+      document.addEventListener("astro:after-swap", () => {
+        observer?.disconnect();
+        observer = null;
+        initScrollAnimations();
+      });
     </script>
   </body>
 </html>

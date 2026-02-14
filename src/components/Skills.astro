@@ -45,7 +45,7 @@ const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
             style={`animation-delay: ${index * 0.1}s;`}
           >
             <div class="flex items-center gap-2">
-              <Icon name={skill.icon} class="text-lg group-hover:scale-110 transition-transform duration-300" />
+              <Icon name={skill.icon} class="text-lg group-hover:scale-110 transition-transform duration-300" aria-hidden="true" />
               <span class="font-medium text-sm md:text-base">{skill.name}</span>
             </div>
           </div>

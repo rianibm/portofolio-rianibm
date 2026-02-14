@@ -9,5 +9,11 @@ import vercel from "@astrojs/vercel"; // versi static
 export default defineConfig({
   site: 'https://rianibm.com',
   integrations: [mdx(), tailwind(), icon()],
-  adapter: vercel(), // static build (tanpa output: 'server')
+  adapter: vercel(),
+  build: {
+    inlineStylesheets: 'always',
+  },
+  prefetch: {
+    defaultStrategy: 'hover',
+  },
 });

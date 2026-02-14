@@ -11,18 +11,26 @@ import errorPng from "@/assets/images/errors/500.png";
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title="500 – Server Error" description="Something went wrong on our end." />
+    <BaseHead
+      title="500 – Server Error"
+      description="Something went wrong on our end."
+    />
     <meta name="robots" content="noindex, nofollow" />
   </head>
   <body class="p-0 m-0 max-w-screen">
     <Header />
-    <main class="container mx-auto md:px-10 flex flex-col items-center justify-center min-h-[60vh] text-center px-6 py-16 gap-6">
+    <main
+      id="main-content"
+      tabindex="-1"
+      class="container mx-auto md:px-10 flex flex-col items-center justify-center min-h-[60vh] text-center px-6 py-16 gap-6"
+    >
       <picture>
         <source srcset={errorAvif.src} type="image/avif" />
         <source srcset={errorWebp.src} type="image/webp" />
         <img
           src={errorPng.src}
-          alt="500 - Server error"
+          alt=""
+          role="presentation"
           class="w-64 md:w-80 h-auto"
           width={errorPng.width}
           height={errorPng.height}
@@ -37,6 +45,7 @@ import errorPng from "@/assets/images/errors/500.png";
       </p>
       <a
         href="/"
+        aria-label="Go back to homepage"
         class="inline-block px-6 py-3 bg-black text-white rounded-lg font-semibold text-sm hover:shadow-hover transition-all duration-200 border border-black"
       >
         Back to Home

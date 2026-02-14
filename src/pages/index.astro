@@ -18,7 +18,7 @@ import LookingFor from "@/components/LookingFor.astro";
   </head>
   <body class="p-0 m-0 max-w-screen">
     <Header />
-    <main class="container mx-auto md:px-10">
+    <main id="main-content" tabindex="-1" class="container mx-auto md:px-10">
       <Hero />
       <WhatIDo compact />
       <Skills />
@@ -30,6 +30,20 @@ import LookingFor from "@/components/LookingFor.astro";
     <script>
       let observer: IntersectionObserver | null = null;
       function initScrollAnimations() {
+        const prefersReducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (
+          prefersReducedMotion ||
+          document.documentElement.classList.contains("reduce-motion")
+        ) {
+          document
+            .querySelectorAll(".animate-on-scroll")
+            .forEach((el) => el.classList.add("animated"));
+          return;
+        }
+
         if (!observer) {
           observer = new IntersectionObserver(
             (entries) => {
@@ -48,7 +62,11 @@ import LookingFor from "@/components/LookingFor.astro";
           .forEach((el) => observer?.observe(el));
       }
       initScrollAnimations();
-      document.addEventListener("astro:after-swap", initScrollAnimations);
+      document.addEventListener("astro:after-swap", () => {
+        observer?.disconnect();
+        observer = null;
+        initScrollAnimations();
+      });
     </script>
   </body>
 </html>

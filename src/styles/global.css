@@ -9,6 +9,7 @@
          url('/fonts/Alexandria-Black.woff') format('woff');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -17,6 +18,7 @@
          url('/fonts/Alexandria-Bold.woff') format('woff');
     font-weight: 700;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -25,6 +27,7 @@
          url('/fonts/Alexandria-ExtraBold.woff') format('woff');
     font-weight: 800;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -33,6 +36,7 @@
          url('/fonts/Alexandria-ExtraLight.woff') format('woff');
     font-weight: 200;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -41,6 +45,7 @@
          url('/fonts/Alexandria-Light.woff') format('woff');
     font-weight: 300;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -49,6 +54,7 @@
          url('/fonts/Alexandria-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -57,6 +63,7 @@
          url('/fonts/Alexandria-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -65,6 +72,7 @@
          url('/fonts/Alexandria-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -73,6 +81,7 @@
          url('/fonts/Alexandria-Thin.woff') format('woff');
     font-weight: 100;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -81,6 +90,7 @@
          url('/fonts/Kablammo-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 body {
     font-family: 'Alexandria', sans-serif;
@@ -163,13 +173,35 @@ body {
     transform: translateY(-3px);
 }
 
-/* Respect reduced motion */
+/* Respect reduced motion — OS preference (bypassable with .force-motion) */
 @media (prefers-reduced-motion: reduce) {
-    .animate-on-scroll,
-    .hero-entrance {
-        opacity: 1;
-        transform: none;
-        transition: none;
-        animation: none;
+    :root:not(.force-motion) .animate-on-scroll,
+    :root:not(.force-motion) .hero-entrance {
+        animation: none !important;
+        transition: none !important;
+        opacity: 1 !important;
+        transform: none !important;
     }
+
+    :root:not(.force-motion) .settle:hover {
+        transform: none !important;
+    }
+}
+
+/* Respect reduced motion — manual toggle */
+.reduce-motion .animate-on-scroll,
+.reduce-motion .hero-entrance {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+.reduce-motion .settle:hover {
+    transform: none !important;
+}
+
+#reduce-motion-toggle:focus-visible {
+    outline: 2px solid #000;
+    outline-offset: 2px;
 }

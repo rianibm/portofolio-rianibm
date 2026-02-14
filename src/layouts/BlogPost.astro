@@ -176,7 +176,14 @@ const relevantSkills = getPageRelevantSkills();
   </head>
   <body>
     <Header />
-    <main class="container mx-auto md:px-10 text-white">
+    <main id="main-content" tabindex="-1" class="container mx-auto md:px-10 text-white">
+      <a
+        href="/works"
+        aria-label="Go back to works"
+        class="inline-block px-6 py-3 bg-pgreen text-black rounded-lg font-semibold text-sm hover:shadow-hover transition-all duration-200 border border-black mb-4"
+      >
+        Back to Works
+      </a>
       <article>
         <div class="relative mb-12" transition:animate="fade">
           <span class="bg-black bg-opacity-25 w-full h-full absolute"></span>
@@ -201,7 +208,7 @@ const relevantSkills = getPageRelevantSkills();
                   </div>
                 )
               }
-              <Icon name={icon} class="text-5xl" transition:animate="fade" />
+              <Icon name={icon} class="text-5xl" transition:animate="fade" aria-hidden="true" />
             </div>
             <hr />
           </div>
@@ -221,12 +228,12 @@ const relevantSkills = getPageRelevantSkills();
                       <div class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200">
                         <div class="flex items-center gap-2 mb-2">
                           <div class={`${randomClass} p-1 border border-black shadow-card1 text-sm`}>
-                            <Icon name={skillGroup.icon} />
+                            <Icon name={skillGroup.icon} aria-hidden="true" />
                           </div>
                           <h4 class="font-semibold text-sm">{skillGroup.category}</h4>
                         </div>
                         <div class="flex flex-wrap gap-1">
-                          {skillGroup.skills.map((skill) => (
+                          {skillGroup.skills.map((skill: string) => (
                             <span class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
                               {skill}
                             </span>
@@ -276,23 +283,29 @@ const relevantSkills = getPageRelevantSkills();
                   <a
                     href="mailto:rianimatialu@gmail.com"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Email Riani BM"
                     class="py-1 pl-3 rounded-md border-1 border-black bg-ppink shadow-card hover:shadow-hover transition"
                   >
-                    <Icon name="web" />
+                    <Icon name="web" aria-hidden="true" />
                   </a>
                   <a
                     href="https://github.com/rianibm"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub Riani BM"
                     class="border-1 p-1 border-black rounded-full bg-pblue shadow-card hover:shadow-hover transition"
                   >
-                    <Icon name="github" />
+                    <Icon name="github" aria-hidden="true" />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/rianibm/"
                     target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn Riani BM"
                     class="border-1 p-1 border-black rounded-full bg-pgreen shadow-card hover:shadow-hover transition"
                   >
-                    <Icon name="linkedin" />
+                    <Icon name="linkedin" aria-hidden="true" />
                   </a>
                 </div>
               </div>

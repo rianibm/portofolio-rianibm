@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 const allPosts = await getCollection("blog");
 import FormattedDate from "@/components/FormattedDate.astro";
 import { Icon } from "astro-icon/components";
+import UIProjectsNDA from "@/components/UIProjectsNDA.astro";
 
 interface Props {
   compact?: boolean;
@@ -56,7 +57,7 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
                 <div
                   class={`${bgClass} text-4xl p-2 self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}
                 >
-                  <Icon name={post.data.icon} />
+                  <Icon name={post.data.icon} aria-hidden="true" />
                 </div>
                 <h4 class="text-xl font-semibold">{post.data.title}</h4>
                 <p class="date -mt-4 text-sm font-light">
@@ -79,4 +80,6 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
       View All Projects
     </a>
   )}
+
+  {!compact && <UIProjectsNDA />}
 </section>

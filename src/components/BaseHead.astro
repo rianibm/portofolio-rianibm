@@ -29,18 +29,17 @@ const seoTitle = title.includes("Riani")
 <link rel="canonical" href={Astro.url.href} />
 <meta name="robots" content="index, follow" />
 
+<!-- Accessibility if someone uses screen reader -->
+<meta name="color-scheme" content="light dark" />
 
-<!-- Font preloads -->
-<link rel="preload" href="/fonts/Alexandria-Bold.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Alexandria-Bold.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/Alexandria-Light.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Alexandria-Light.woff" as="font" type="font/woff" crossorigin />
+<!-- Early hints: preconnect to third-party origins -->
+<link rel="dns-prefetch" href="https://static.hotjar.com" />
+<link rel="preconnect" href="https://static.hotjar.com" crossorigin />
+
+<!-- Font preloads (only above-the-fold critical weights) -->
 <link rel="preload" href="/fonts/Alexandria-Regular.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Alexandria-Regular.woff" as="font" type="font/woff" crossorigin />
-<link rel="preload" href="/fonts/Alexandria-SemiBold.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Alexandria-SemiBold.woff" as="font" type="font/woff" crossorigin />
+<link rel="preload" href="/fonts/Alexandria-Bold.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="preload" href="/fonts/Kablammo-Regular.woff2" as="font" type="font/woff2" crossorigin />
-<link rel="preload" href="/fonts/Kablammo-Regular.woff" as="font" type="font/woff" crossorigin />
 
 
 <!-- Primary Meta Tags -->
@@ -51,7 +50,7 @@ const seoTitle = title.includes("Riani")
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/site.webmanifest">
+<link rel="manifest" href="/favicon/site.webmanifest" crossorigin="use-credentials">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
@@ -67,16 +66,23 @@ const seoTitle = title.includes("Riani")
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.url)} />
 
-<!-- Hotjar Tracking Code for Site 3644251 -->
+<!-- Hotjar Tracking Code — deferred to idle time -->
 <script is:inline>
-(function(h,o,t,j,a,r){
-    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-    h._hjSettings={hjid:3644251,hjsv:6};
-    a=o.getElementsByTagName('head')[0];
-    r=o.createElement('script');r.async=1;
-    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-    a.appendChild(r);
-})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+function loadHotjar() {
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:3644251,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+}
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(loadHotjar, { timeout: 3500 });
+} else {
+    setTimeout(loadHotjar, 3500);
+}
 </script>
 
 <!-- Person Schema -->
@@ -97,3 +103,12 @@ const seoTitle = title.includes("Riani")
     "https://github.com/rianibm",
   ],
 })}</script>
+
+<script is:inline>
+  document.addEventListener("astro:after-swap", function () {
+    var main = document.querySelector("main");
+    if (main) main.focus();
+    // Re-init Hotjar on page swap
+    if (window.hj) window.hj("stateChange", location.pathname);
+  });
+</script>
