@@ -2,16 +2,32 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 const images = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/*.{jpeg,jpg,png,gif}"
+  "/src/assets/*.{jpeg,jpg,png,gif}",
 );
+
+const startDate = new Date("2023-03-05");
+const now = new Date();
+
+let years = now.getFullYear() - startDate.getFullYear();
+const hasNotPassedAnniversary =
+  now.getMonth() < startDate.getMonth() ||
+  (now.getMonth() === startDate.getMonth() && now.getDate() < startDate.getDate());
+
+if (hasNotPassedAnniversary) {
+  years -= 1;
+}
 ---
 
 <section class="py-20 flex md:flex-row flex-col px-4 md:px-0 gap-10 md:gap-0">
   <div class="flex flex-col gap-6 justify-start items-start md:w-1/2">
     <h1 class="text-pblack hero-entrance" style="--delay: 0s">Riani BM</h1>
-    <p class="text-6xl font-bold hero-entrance" style="--delay: 0.1s">UX Engineer</p>
+    <p class="text-6xl font-bold hero-entrance" style="--delay: 0.1s">
+      UX Engineer
+    </p>
     <p class="hero-entrance" style="--delay: 0.2s">
-      A Frontend Developer from Indonesia who specializes in frontend development and design. While my core focus is crafting intuitive, responsive UIs, I'm also comfortable working with backend technologies to deliver full, seamless experiences.
+      A Frontend Developer from Indonesia with {years}+ years of experience who enjoys
+      thinking through user context and behavior before turning it into
+      interface decisions.
     </p>
     <a
       rel="noopener noreferrer"
