@@ -2,6 +2,7 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
+import Analytics from '@vercel/analytics/astro';
 
 interface Props {
   title: string;
@@ -85,3 +86,6 @@ const seoTitle = title.includes("Riani")
     "https://github.com/rianibm",
   ],
 })}</script>
+
+<!-- Vercel Web Analytics -->
+<Analytics />
