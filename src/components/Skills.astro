@@ -36,7 +36,7 @@ const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
   
   <div class="skills-container relative">
     <!-- Floating Skills Animation -->
-    <div class="skills-floating flex flex-wrap justify-center gap-4 md:gap-6 px-4">
+    <div class="skills-floating flex flex-wrap justify-center gap-4 md:gap-6">
       {skills.map((skill, index) => {
         const bgClass = getBgClass(index);
         return (

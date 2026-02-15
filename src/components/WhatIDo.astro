@@ -56,7 +56,7 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
   {displayGroups.map((group, gi) => (
     <div class="py-10">
       {!compact && <h3 class="section-heading text-lg md:text-2xl font-semibold mb-6 animate-on-scroll from-bottom" data-section={group.label}>{group.label}</h3>}
-      <ul class="flex flex-wrap justify-center gap-6 md:gap-8 px-4 md:px-0">
+      <ul class="flex flex-wrap justify-center gap-6 md:gap-8">
         {group.slugs.map((slug, i) => {
           const post = postMap.get(slug);
           if (!post) return null;
