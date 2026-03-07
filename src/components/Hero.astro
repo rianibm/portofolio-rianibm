@@ -5,17 +5,6 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
   "/src/assets/*.{jpeg,jpg,png,gif}",
 );
 
-const startDate = new Date("2023-03-05");
-const now = new Date();
-
-let years = now.getFullYear() - startDate.getFullYear();
-const hasNotPassedAnniversary =
-  now.getMonth() < startDate.getMonth() ||
-  (now.getMonth() === startDate.getMonth() && now.getDate() < startDate.getDate());
-
-if (hasNotPassedAnniversary) {
-  years -= 1;
-}
 ---
 
 <section class="py-20 flex md:flex-row flex-col gap-10 md:gap-0">
@@ -25,7 +14,7 @@ if (hasNotPassedAnniversary) {
       UX Engineer
     </p>
     <p class="hero-entrance" style="--delay: 0.2s">
-      A Frontend Developer from Indonesia with {years}+ years of experience who enjoys
+      A Frontend Developer from Indonesia with <span id="years-exp"></span>+ years of experience who enjoys
       thinking through user context and behavior before turning it into
       interface decisions.
     </p>
@@ -83,3 +72,21 @@ if (hasNotPassedAnniversary) {
     >
   </div>
 </section>
+
+<script>
+  function setYears() {
+    const el = document.getElementById("years-exp");
+    if (!el) return;
+    const start = new Date("2023-03-05");
+    const now = new Date();
+    let years = now.getFullYear() - start.getFullYear();
+    const notYet =
+      now.getMonth() < start.getMonth() ||
+      (now.getMonth() === start.getMonth() && now.getDate() < start.getDate());
+    if (notYet) years -= 1;
+    el.textContent = String(years);
+  }
+
+  setYears();
+  document.addEventListener("astro:page-load", setYears);
+</script>
