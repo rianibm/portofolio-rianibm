@@ -80,6 +80,25 @@ From a frontend perspective, the main challenges were:
 
 ---
 
+## UX Principles Applied
+
+**Visibility of System Status** *(Nielsen's Heuristic #1)*
+A multi-step booking flow always risks users losing track of where they are. Step indicators, loading states during search, and confirmation states at each transition kept users oriented throughout — search → select → passenger details → cabin → confirm.
+
+**Progressive Disclosure**
+Flight booking is inherently complex. Rather than showing everything at once, the flow reveals information progressively: search results first, flight details on demand, passenger forms only after a flight is selected. This manages cognitive load and keeps each screen focused.
+
+**Error Prevention** *(Nielsen's Heuristic #5)*
+Passenger forms, date selection, and filter interactions were all validated inline before submission. The UI prevented obviously invalid states — like submitting with missing required fields or selecting a return date before the departure date — rather than catching them after the fact.
+
+**User Control and Freedom** *(Nielsen's Heuristic #3)*
+Users can step back between booking stages without losing previously entered data. Recoil's state model made it possible to preserve booking context across navigation, so returning to an earlier step doesn't mean starting over.
+
+**Feedback for State Transitions**
+Data-heavy UI — search results, seat availability, loading between steps — required explicit loading and empty states at every async boundary. Users should always know whether the system is thinking, has no results, or has encountered an error.
+
+---
+
 ## Frontend Responsibilities
 
 **Booking Flow Implementation**  

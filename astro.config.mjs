@@ -1,15 +1,16 @@
 import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
-
-import tailwind from "@astrojs/tailwind";
 import icon from "astro-icon";
-
-import vercel from "@astrojs/vercel"; // versi static
+import vercel from "@astrojs/vercel";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
   site: 'https://rianibm.com',
-  integrations: [mdx(), tailwind(), icon()],
+  integrations: [mdx(), icon()],
   adapter: vercel(),
+  vite: {
+    plugins: [tailwindcss()],
+  },
   build: {
     inlineStylesheets: 'always',
   },

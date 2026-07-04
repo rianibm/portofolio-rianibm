@@ -1,139 +1,126 @@
 ---
 title: "Gamified Reward Module"
-description: "Internal CMS module for running live, lottery-based reward campaigns, used by marketing teams during real-time events."
+description: "Internal CMS roulette draw system for Member+ live campaigns — designed for dual audiences: the operator running the event and Instagram Live viewers watching the winner reveal in real time."
 icon: "2"
 pubDate: "Jun 01 2024"
 heroImage: "/src/assets/euro.jpg"
-tags: ["Frontend", "Laravel", "JavaScript", "CMS", "Gamification"]
+tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]
 pageSkills:
-  - category: "System & Data Understanding"
+  - category: "UX Design for Live Contexts"
     icon: "1"
     skills:
       [
-        "ERD Review",
-        "Data Flow Understanding",
-        "Business Rule Translation",
-        "Backend Collaboration",
-        "Feature Scoping",
+        "Dual-audience Design",
+        "Visibility of System Status",
+        "Emotional Pacing",
+        "Legibility at Stream Quality",
+        "Motion & Animation Design",
+        "Error Prevention",
       ]
   - category: "Frontend & UI Implementation"
     icon: "2"
     skills:
       [
-        "CMS UI Design",
         "Laravel Blade",
         "JavaScript / jQuery",
-        "UI Slicing",
-        "Interactive Animations",
-        "State Persistence",
+        "AJAX",
+        "Bootstrap",
+        "Slot-style Animations",
+        "Interactive CMS UI",
       ]
-  - category: "Data Handling & Performance Awareness"
+  - category: "State & Resilience"
     icon: "3"
     skills:
       [
-        "Large Dataset Handling",
-        "Excel-based Input",
-        "Query Impact Awareness",
-        "State Recovery",
+        "Client-side State Persistence",
+        "Retry & Fallback Handling",
+        "Offline Detection",
+        "Modal Stack Management",
         "Operational Stability",
       ]
-  - category: "Gamification Logic"
+  - category: "Operational UX"
     icon: "4"
     skills:
       [
-        "Lottery Flow",
-        "Multi-tier Reward Logic",
-        "Winner Allocation Rules",
-        "Admin Controls",
+        "Drag & Drop Upload",
+        "Dynamic Form Rows",
+        "Progress Tracking UI",
+        "Event Resume / Continue Draw",
         "Event Finalization Flow",
       ]
 ---
 
+# Gamified Reward Module – Designing for Two Audiences at Once
 
-# Gamified Reward Module – End-to-End Feature Implementation
-**Internal CMS for Live Campaign Execution**
-This project involved building a **gamified reward module inside an internal CMS**, used by the **marketing team** to run reward campaigns during **live events**, where results are revealed in real time.
+An internal CMS roulette draw system for **Member+ live reward campaigns (Undian Member Plus)** — where marketing teams run lottery draws on **Instagram Live**, and winners are revealed in real time to a public audience.
 
-The module was created to support **Member+ campaigns**, initially branded as Seller Idaman, where rewards are distributed through a controlled draw mechanism. My role focused on the **frontend and UI implementation**, while working closely with backend engineers to align system rules, data constraints, and live operational needs.
+My role was **UX Engineering**: thinking through who was watching, what they needed to feel, and then building that experience in code.
 
-## Project Context
-Unlike public-facing features, this module was designed for **internal operators**, not end users.
+---
 
-Marketing users needed a tool that:
-- could handle large participant lists
-- allowed controlled, fair reward distribution
-- stayed stable during live usage
-- was easy to operate under real-time pressure
-Because the module was used **live**, reliability and clarity were far more important than visual polish.
+## The Core UX Problem
 
-## CMS & Operational Flow
+Most CMS tools are designed for one person: the operator. This one had two:
 
-Participants were prepared in advance and imported in bulk, usually from Excel files. During live sessions, marketing operators would trigger the roulette draw, announce winners in real time, and finalize results immediately after the event.
+**The operator** — running the event backstage. They needed clarity, control, and zero room for error. A wrong tap during a live stream has no undo.
 
-From a frontend perspective, this meant designing UI that:
-- clearly reflects system state at all times
-- prevents accidental duplicate actions
-- supports recovery if the page is refreshed or interrupted
+**The IG Live viewers** — watching on their phones through a streamed screen. They needed to *feel* the excitement of the draw, read the winner name clearly, and immediately understand what just happened — without anyone explaining it to them.
 
-## Design-to-Code Implementation
+Designing for both at once, in a single interface, is the real challenge this project solved.
 
-**CMS UI & Interaction Design**
-I translated functional requirements into clear, operational CMS interfaces, including:
-- participant management views
-- reward configuration screens
-- live roulette display
-- event control and finalization panels
-The UI was intentionally straightforward, optimized for speed and confidence rather than decoration.
+---
 
-**Interactive Roulette & Animations**
-The roulette experience was implemented using **Laravel Blade** with **JavaScript / jQuery**, including:
-- slot-style animations for live draws
-- reward reveal states
-- controlled transitions between draw phases
-Animations were designed to feel engaging on stream, while remaining predictable for operators.
+## UX Principles Applied
 
-**State Persistence for Live Usage**
-To avoid issues during live events, I implemented **client-side state persistence** to ensure continuity during live usage. This ensured that:
-- the current draw state is preserved on refresh
-- accidental reloads do not break the flow
-- operators can resume safely without data loss
-This was critical for maintaining trust during live campaigns.
+**Visibility of System Status** *(Nielsen's Heuristic #1)*
+The roulette state had to be unambiguous at every moment — spinning, stopping, winner revealed. Viewers watching a compressed IG Live stream can't hover or zoom in. If the state isn't obvious in the first second, it's lost.
 
-## Feature Highlights
+**Legibility at Stream Quality**
+IG Live compresses video, reduces contrast, and renders on small screens. Typography choices, element sizing, and color contrast were all considered through the lens of "will this read clearly on a phone screen watching a livestream?" — not just on the designer's monitor.
 
-**Participant Import & Validation**
-- Excel-based participant upload
-- Validation feedback and status indicators
-- UI aligned with backend processing constraints
+**Emotional Pacing**
+The spin animation had to build anticipation without dragging. Too short and it feels cheap; too long and viewers lose attention. The timing and easing of the slot-style animation was tuned to create a natural tension-and-release moment at the winner reveal.
 
-**Lottery & Reward Distribution**
-- Multi-tier reward logic visualization
-- Clear indication of selected winners
-- Transparent flow from draw → confirmation → finalization
+**Error Prevention** *(Nielsen's Heuristic #5)*
+Operators cannot accidentally retrigger a draw or skip a step during a live broadcast. The UI prevents double-actions, requires confirmation before critical steps, and auto-merges duplicate gift configurations before the draw begins.
 
-**Admin Controls**
-- Event state management
-- Manual control over draw progression
-- Final result review and locking
-All controls were designed to reduce operator error during high-pressure live usage.
+**Recovery Without Disruption**
+If the operator's browser refreshes mid-event — which happens — the draw state is preserved client-side so the session can resume exactly where it left off. Viewers never see the disruption.
 
-## Collaboration & Technical Awareness
+---
 
-Although my role was frontend-focused, this project required close coordination with backend engineers to:
-- review ERD and data relationships
-- understand performance implications of large datasets
-- adapt UI behavior to backend processing limits
-This helped ensure the frontend stayed responsive and predictable, even when handling heavy data operations.
+## CMS Module Structure
 
-## What Makes This Project Special
+**Roulette Gifts** — gift catalog management. Operators add, edit, and delete available rewards with name and image. Used to populate the draw configuration.
 
-- **Real-time, live-use CMS**, not a static admin panel
-- **Used during Instagram Live events**, where failure is visible
-- **Gamification under strict operational constraints**
-- **Strong focus on stability, clarity, and operator confidence**
-- **Frontend decisions tightly coupled with backend realities**
-- **Practical problem-solving in a high-pressure environment**
-This project sharpened my understanding that good frontend work is not always about visuals, but about **making complex systems behave calmly when it matters most**.
+**Roulette Events** — the core draw page. Operators create an event, upload participants (Excel, drag & drop), configure gift types and quotas via dynamic rows, and launch the draw from here.
+
+---
+
+## Operational Flow
+
+**Before the event:** participants are uploaded in bulk, gifts are configured per event with individual quotas, duplicate gift rows are automatically merged.
+
+**During the event:** the roulette runs per gift type with slot-style animation. The operator controls pacing. Winners are revealed one by one.
+
+**After the event:** the event is finalized and locked. If a session was interrupted, operators can resume via Continue Draw — the system shows current draw state before proceeding.
+
+---
+
+## Resilience for Live Contexts
+
+Because this ran live, several resilience measures were built in:
+
+- **Client-side state persistence** — survives accidental page refresh mid-draw
+- **AJAX retry with exponential delay** — gift data reloads automatically up to 3 times before falling back gracefully
+- **Offline detection banner** — visible warning if connection drops during a live session
+- **Modal stack management** — prevents z-index and backdrop conflicts when multiple modals are involved in the flow
+
+---
+
+## What This Project Taught Me
+
+Designing for a live broadcast context forced me to think beyond the screen in front of me. The user is not just the person clicking — it's also the audience watching what they click. That shift in perspective — from *interface* to *experience for all people in the room* — is something I carried into every project after this.
 
 Specific implementation details are intentionally kept at a high level to respect internal system boundaries.
 

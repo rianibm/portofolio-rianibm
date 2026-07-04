@@ -71,6 +71,25 @@ The scope focused on delivering a **usable MVP**, not just a proof-of-concept.
 
 ---
 
+## UX Principles Applied
+
+**Aesthetic and Minimalist Design** *(Nielsen's Heuristic #8)*
+Blockchain infrastructure should be invisible to the user. Smart contracts, ICP identity, and decentralized storage are all working under the hood — but the interface shows a familiar Q&A flow: post a question, get answers, stay anonymous. Every technical detail that wasn't necessary for a user to do their task was hidden.
+
+**Match Between System and Real World** *(Nielsen's Heuristic #2)*
+The interaction model was designed to match patterns users already know from social Q&A platforms — not to introduce a "Web3 experience." Anonymity, question threads, and reply flows follow conventions users recognize, with blockchain complexity abstracted behind familiar UI.
+
+**Trust through Anonymity Cues**
+For an anonymous platform, users need to *feel* genuinely anonymous — not just be told they are. UI decisions reinforced this: no visible identity markers, no pressure to reveal information, and transparent loading states from decentralized operations that set expectations around latency without creating anxiety.
+
+**Error Prevention and Latency Awareness** *(Nielsen's Heuristic #5)*
+Decentralized operations are inherently slower than centralized ones. Loading and error states were consistently handled to distinguish between "still processing" and "something went wrong," preventing users from double-submitting or abandoning valid interactions due to unexpected delays.
+
+**MVP Scoping as UX**
+In a 72-hour window, the UX decision was to deliver fewer features that work clearly rather than more features that confuse. Every cut was intentional — focusing the experience on the core anonymous Q&A loop that the platform exists to enable.
+
+---
+
 ## Frontend Responsibilities
 
 **UI Implementation**  

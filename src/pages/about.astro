@@ -4,6 +4,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
+import { getRandomClass as _getRandomClass, getSkillClass as _getSkillClass } from "@/utils/helpers";
 
 import avatarAvif from "@/assets/images/avatar/about.avif";
 import avatarWebp from "@/assets/images/avatar/about.webp";
@@ -32,9 +33,8 @@ const skillBgClasses = [
   "bg-pyellow rounded-md",
 ];
 
-const getRandomClass = () =>
-  bgClasses[Math.floor(Math.random() * bgClasses.length)];
-const getSkillClass = (i: number) => skillBgClasses[i % skillBgClasses.length];
+const getRandomClass = () => _getRandomClass(bgClasses);
+const getSkillClass = (i: number) => _getSkillClass(i, skillBgClasses);
 
 const aboutSkills = [
   {
@@ -231,7 +231,7 @@ const aboutSkills = [
               class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
               <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">W</span>hat I've Worked On
+                <span class="font-kablamo text-ppink">W</span>hat I’ve Worked On
               </h2>
               <p>
                 Most of my work lives in real production systems, the kind that
@@ -241,23 +241,27 @@ const aboutSkills = [
               </p>
               <ul class="list-disc ml-6 space-y-1">
                 <li>
-                  <strong>Member+</strong> — internal web application built with
-                  <strong>React + Next.js</strong>, focusing on frontend
-                  authentication flows and state handling based on backend SSO
-                  APIs
+                  <strong>Indopaket website revamp</strong> — redesigning user flows to create a more intuitive experience for end users
                 </li>
                 <li>
-                  <strong>3PL logistics platform</strong> — complex dashboards built
-                  with
+                  <strong>Affiliate platform</strong> — leading UI design for the mobile app and website, working closely with frontend developers to build and improve the platform
+                </li>
+                <li>
+                  <strong>Package Claim web platform</strong> — designing the UI for an internal claim management workflow
+                </li>
+                <li>
+                  <strong>Car Attendance & Monitoring</strong> — collaborating on UI design for the mobile app, CMS, and reporting dashboard
+                </li>
+                <li>
+                  <strong>Member+</strong> — internal web application built with
+                  <strong>React + Next.js</strong>, focusing on frontend
+                  authentication flows and state handling based on backend SSO APIs
+                </li>
+                <li>
+                  <strong>3PL logistics platform</strong> — complex dashboards built with
                   <strong>React + TypeScript</strong>, including data-heavy
                   views and critical operational flows
                 </li>
-
-                <li>
-                  <strong>Affiliator platform</strong> — user-facing dashboards and
-                  mobile-first interfaces, balancing business metrics with usability
-                </li>
-
                 <li>
                   <strong>UI migration work</strong> — moving legacy interfaces from
                   <strong>Bootstrap 3 to Tailwind CSS</strong>, focusing on
@@ -266,7 +270,8 @@ const aboutSkills = [
               </ul>
               <p class="text-sm text-pblack mt-3">
                 Working in a large organization taught me how much clarity in UI
-                can affect real operations, not just aesthetics.
+                can affect real operations — and how much product thinking shapes
+                what gets built.
               </p>
             </section>
 
@@ -278,28 +283,76 @@ const aboutSkills = [
               <h2 class="text-xl md:text-2xl font-bold">
                 <span class="font-kablamo text-ppink">E</span>xperience
               </h2>
+
+              <!-- Product Team Lead -->
               <div class="border border-black rounded-lg p-4 shadow-card">
-                <h3 class="font-semibold text-lg">Frontend Developer</h3>
+                <h3 class="font-semibold text-lg">Product Team Lead</h3>
                 <p class="text-pblack text-sm">
-                  PT Indomarco Prismatama (Indomaret Group) · 2023 - Current
+                  PT Indomarco Prismatama (Indomaret Group) · Apr 2026 – Present · Full-time · Hybrid
                 </p>
                 <ul class="list-disc ml-6 space-y-1 mt-2">
                   <li>
-                    Building and maintaining frontends for internal systems and
-                    public-facing platforms
+                    Work alongside UI/UX Designers and Frontend Developers to build products that are useful, intuitive, and aligned with business needs
                   </li>
                   <li>
-                    Leading UI revamp and design system modernization across
-                    multiple products
+                    Remain actively involved in product discussions, UI/UX design, and frontend development while supporting the team
                   </li>
                   <li>
-                    Developing web and mobile interfaces for logistics,
-                    warehouse, and 3PL platforms
+                    Collaborate with stakeholders, solve user problems, and help team members develop a stronger product mindset
                   </li>
                   <li>
-                    Collaborating cross-functionally on ERD discussions, design
-                    reviews, and backend tasks
+                    Revamping the Indopaket website, leading UI design for the affiliate mobile app and website, and designing the Package Claim web platform
                   </li>
+                  <li>
+                    Collaborating on the Car Attendance &amp; Monitoring mobile app, CMS, and reporting dashboard
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Frontend Developer -->
+              <div class="border border-black rounded-lg p-4 shadow-card">
+                <h3 class="font-semibold text-lg">Frontend Developer</h3>
+                <p class="text-pblack text-sm">
+                  PT Indomarco Prismatama (Indomaret Group) · Jul 2024 – Mar 2026 · 1 yr 9 mos · Full-time · North Jakarta
+                </p>
+                <ul class="list-disc ml-6 space-y-1 mt-2">
+                  <li>
+                    Built web applications, dashboards, and mobile interfaces that are intuitive, reliable, and used in real operational workflows
+                  </li>
+                  <li>
+                    Built and maintained scalable design systems to ensure consistency as products grow
+                  </li>
+                  <li>
+                    Developed complex, data-heavy dashboards and operational tools used daily by internal teams
+                  </li>
+                  <li>
+                    Created reusable front-end components and navigation using React and Next.js
+                  </li>
+                  <li>
+                    Worked closely with backend engineers to understand APIs and define efficient UI flows
+                  </li>
+                  <li>
+                    Optimized performance through asset handling, loading strategies, and rendering efficiency
+                  </li>
+                </ul>
+                <p class="text-pblack text-xs mt-2 italic">
+                  Projects: logistics & shipment platforms, membership & affiliate platforms, 3PL system, warehouse handheld interfaces, CMS and internal tools
+                </p>
+              </div>
+
+              <!-- Management Development Program Specialist IT -->
+              <div class="border border-black rounded-lg p-4 shadow-card">
+                <h3 class="font-semibold text-lg">Management Development Program Specialist IT</h3>
+                <p class="text-pblack text-sm">
+                  PT Indomarco Prismatama (Indomaret Group) · Jun 2023 – Jun 2024 · 1 yr 1 mo · Contract · North Jakarta
+                </p>
+                <ul class="list-disc ml-6 space-y-1 mt-2">
+                  <li>Conducted competitor analysis to identify UI improvement areas</li>
+                  <li>Analyzed user behavior using Hotjar and Google Analytics to enhance UX</li>
+                  <li>Developed a scalable design system for consistency and efficiency</li>
+                  <li>Redesigned website and mobile app UI for better usability and responsiveness</li>
+                  <li>Conducted A/B testing by implementing design variations and analyzing user interactions</li>
+                  <li>Translated UI designs into code and optimized performance via asset loading and PageSpeed</li>
                 </ul>
               </div>
             </section>

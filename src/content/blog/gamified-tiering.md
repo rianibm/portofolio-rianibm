@@ -1,96 +1,107 @@
 ---
 title: "Gamified Tiering Loyalty System"
-description: "Early frontend and UI implementation of a gamified tiering system within the Member+ ecosystem, focusing on design-to-code execution and multi-state user interfaces."
+description: "Frontend implementation of a gamified tiering and incentive system for courier partners — from early Laravel prototype to a full Next.js rebuild with real-time progression, multi-tier tracking, and incentive history."
 icon: "2"
-pubDate: "Jun 2025"
+pubDate: "Jul 4 2026"
 heroImage: "/src/assets/adriana.jpg"
-tags: ["Frontend Developer", "UI/UX", "Laravel", "Gamification"]
+tags: ["Frontend Developer", "UI/UX", "Next.js", "React", "Gamification", "Laravel"]
 pageSkills:
   - category: "UI/UX Design & Implementation"
     icon: "1"
-    skills: ["Design-to-code", "UI Slicing", "Pixel-accurate UI", "Responsive Layouts"]
+    skills: ["Design-to-code", "UI Slicing", "Pixel-accurate UI", "Responsive Layouts", "Multi-state UI"]
   - category: "Frontend Development"
     icon: "2"
-    skills: ["Laravel Blade", "JavaScript", "CSS", "Interactive UI"]
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"]
   - category: "Gamified UI Patterns"
     icon: "3"
-    skills: ["Tier Progression UI", "Progress Indicators", "Interactive Sliders", "Micro-interactions"]
-  - category: "Implementation Quality"
+    skills: ["Tier Progression UI", "Progress Indicators", "Interactive Tier Navigation", "Lock/Unlock States", "Incentive Display"]
+  - category: "API & Data Integration"
     icon: "4"
-    skills: ["Visual Consistency", "State-based Rendering", "Mobile-first UI", "Detail-oriented Development"]
+    skills: ["REST API Integration", "Real-time Data Fetching", "Data Formatting", "Error Handling"]
+  - category: "Implementation Quality"
+    icon: "5"
+    skills: ["Mobile-first UI", "State-based Rendering", "Visual Consistency", "Performance-aware UI"]
 ---
 
 # Gamified Tiering Loyalty System
 
-This project represents an **early implementation of the tiering and loyalty system** that later became part of the **Member+ platform**.
-
-At the time, the system was built using a **Laravel-based frontend**, before the platform was consolidated into a unified **Next.js application**. My role focused on the **frontend and UI implementation**, translating gamified tier concepts into interactive, mobile-friendly interfaces.
-
-This phase played an important role in understanding how progression, rewards, and visual feedback could motivate users without overwhelming them.
+A tiering and incentive system built for courier partners — helping them understand their current standing, track progress toward the next tier, and view their incentive history. This work spanned two phases: an **early Laravel prototype** and a **full Next.js rebuild** as the platform matured.
 
 ---
 
-## Context & Scope
+## UX Principles Applied
 
-The goal of this system was to present a clear and engaging **tier progression experience**, helping users understand their current level, progress, and available benefits.
+**Visibility of System Status** *(Nielsen's Heuristic #1)*
+A partner's current tier, live AWB count, and progress toward the next tier are always present on the main page — no navigation required. The system's current state is answerable at a glance, which matters when partners are actively trying to hit shipment targets before a period ends.
 
-From a frontend perspective, this meant building interfaces that could handle:
-- multiple visual and interaction states
-- dynamic progress updates
-- interactive navigation patterns
-All while remaining usable and readable on smaller screens.
+**Goal Gradient Effect**
+The closer someone is to a goal, the more motivated they are to complete it. The progress indicator and tier timeline were designed to make "how far am I from the next tier" immediately readable — not buried in numbers. Showing both current count and target together, rather than just a percentage, keeps the goal concrete.
 
-This project also became my first deeper exposure to gamification, which led me to study references and patterns beyond day-to-day UI work to better understand how progression systems affect user understanding and engagement.
+**Recognition Over Recall** *(Nielsen's Heuristic #6)*
+Tier icons, colors, and lock/unlock states are visually distinct so partners recognize their standing without having to remember tier names or thresholds. Bronze → Silver → Gold → Platinum → Diamond is a progression you *see*, not something you mentally decode.
 
----
+**Positive Reinforcement at Achievement**
+Tiers that have been reached are displayed differently from tiers in progress and locked tiers. The completed state in the progression timeline gives partners visible acknowledgment of what they've earned — not just what they haven't reached yet.
 
-## Design-to-Code Execution
-
-**UI Design Preparation**
-UI designs were prepared in Figma with detailed specifications for tier states, progress indicators, and interaction behavior. These designs became the primary reference for implementation.
-
-**UI Slicing & Implementation**
-All screens and components were translated into **Laravel Blade templates**, with careful attention to layout accuracy, spacing, typography, and responsive behavior.
-
-**Detail-focused Implementation**
-The interface included tier badges, progress bars, sliders, and state-based indicators. Each element required precise handling to ensure visual consistency and predictable behavior across different states.
+**Aesthetic and Minimalist Design** *(Nielsen's Heuristic #8)*
+Incentive data involves a lot of numbers — AWB counts, rates, periods, history. The design keeps this scannable by surfacing only the most relevant data at the top level, with full history and detailed terms accessible via expand or a separate page. Information is layered, not dumped.
 
 ---
 
-## Tier Progression Interface
+## Context & Background
 
-**Tier Structure**
-Implemented a multi-level tier structure, with distinct visual representations and progress states for each level. The UI was designed to clearly communicate where the user stands and what is required to reach the next tier.
+The system was designed to motivate courier partners through a clear tier progression model. Partners earn tiers based on shipment volume (AWB count), and each tier unlocks a different incentive rate. The UI needed to make this progression feel tangible, readable, and worth engaging with — without overwhelming users with numbers.
 
-Many of these patterns were later **simplified and refined** when the system evolved inside Member+, but this phase was critical in identifying what worked and what needed adjustment.
-
-**Interactive Navigation**
-Built an interactive slider component to help users explore tier-related information more intuitively, especially on mobile devices.
-
-**Progress Feedback**
-Implemented dynamic progress indicators that update based on user state, allowing users to understand advancement without relying on dense explanations.
+This project gave me early exposure to gamification design thinking, which pushed me to study progression systems beyond day-to-day UI work to understand what actually drives engagement vs. what creates noise.
 
 ---
 
-## Frontend Implementation Considerations
+## Phase 1 – Laravel Prototype
 
-**State-based Rendering**
-UI components were rendered based on the user’s current tier and progress, ensuring only relevant information and actions were visible.
+The first implementation was built using **Laravel Blade templates**, translating Figma designs into a working interface before the platform architecture was finalized.
 
-**Mobile-first Layout**
-Layouts and interactions were optimized for mobile usage, with attention to spacing, touch targets, and animation timing.
+- Implemented tier badges, progress bars, and interactive sliders for tier exploration
+- Handled multiple visual states per tier (locked, in-progress, achieved)
+- Mobile-first layout with attention to spacing, typography, and touch targets
+- This phase was critical in identifying what worked and what needed adjustment before the Next.js rebuild
 
-**Performance-aware UI**
-Animations and transitions were implemented carefully to maintain smooth interactions without unnecessary visual noise.
+---
+
+## Phase 2 – Next.js Rebuild
+
+The system was rebuilt from the ground up in **Next.js** as part of the consolidated Member+ platform. The rebuild carried forward the learnings from Phase 1 while handling real API data and more complex state management.
+
+**Tier Status Page**
+
+The main page displays the partner’s current tier, live progress, and the full tier progression timeline.
+
+- **Tier carousel** — interactive navigation through all tier levels (Bronze → Silver → Gold → Platinum → Diamond), each with its own icon, incentive value, and lock state
+- **Live progress counter** — shows current AWB count vs. target, with a progress indicator updating per API response
+- **Progression timeline** — visual list of all tiers with completed, current, and upcoming states; mobile view shows a condensed view with an expand option
+- **Tier period expiry** — displays when the current tier period ends
+- **Redirect to Indopaket** — CTA linking partners to indopaket.co.id to make shipments, with a confirmation modal before redirect
+- **Bonus info modal** — expandable terms & conditions for the incentive system
+
+**Tier History Page**
+
+A separate page showing the partner’s monthly incentive history.
+
+- Lists past periods with AWB count, incentive earned, and formatted dates
+- Includes a summary of total incentive across all recorded periods
+- Displays an information banner about incentive disbursement timing
+
+**Service & Data Layer**
+
+- Built a tiering service layer to centralize API calls, data formatting, and business logic (progress calculation, tier color mapping, next tier lookup)
+- Handled loading, error, and empty states across all views
 
 ---
 
 ## Key Takeaways
 
-- **Strong design-to-code execution**
-- **Early experience implementing gamified UI patterns**
-- **Deeper understanding of multi-state interfaces**
-- **Attention to UI detail and consistency**
-- **Foundation for later, more mature implementations in Member+**
+- **Full lifecycle ownership** — from early prototype to production rebuild
+- **Gamification in practice** — designing progression that communicates clearly without over-explaining
+- **API-driven UI** — real data with real edge cases (missing tiers, max tier reached, empty history)
+- **Mobile-first execution** — both pages optimized for mobile-first usage patterns
 
-Implementation details are intentionally kept at a conceptual level, as this work represents an early exploratory phase within a larger platform.
+Implementation details are kept at a functional level to respect platform and partner data boundaries.

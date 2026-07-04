@@ -22,6 +22,9 @@
       ],
       "@/data/*": [
         "src/data/*"
+      ],
+      "@/utils/*": [
+        "src/utils/*"
       ]
     },
     "strictNullChecks": true

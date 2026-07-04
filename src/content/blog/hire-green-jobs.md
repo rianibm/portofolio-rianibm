@@ -67,6 +67,25 @@ The emphasis was not on experimental UI, but on **clarity, performance, and prod
 
 ---
 
+## UX Principles Applied
+
+**Recognition Over Recall** *(Nielsen's Heuristic #6)*
+Job seekers visiting a public platform for the first time should not need to learn the system. Listings, categories, and navigation patterns follow familiar conventions — users recognize what to do rather than having to figure it out. Clean URL structures and scannable page layouts reduce the mental work of finding relevant opportunities.
+
+**Aesthetic and Minimalist Design** *(Nielsen's Heuristic #8)*
+Content-heavy pages (job listings, learning resources, event pages) stay readable by prioritizing hierarchy and whitespace over decoration. The platform's goal is to connect people with opportunities — every UI element either supports that goal or gets removed.
+
+**Trust Signals for First-time Visitors**
+A public platform's biggest UX challenge is earning trust from people who have no prior relationship with it. Consistency across pages, predictable navigation, and stable layout choices all contribute to an impression of reliability. Users should feel the platform is legitimate without being told it is.
+
+**Match Between System and Real World** *(Nielsen's Heuristic #2)*
+Language and structure follow how job seekers already think — job titles, locations, categories — rather than internal platform terminology. SEO-friendly URL structures match how people search, not how the backend organizes data.
+
+**Accessibility Awareness**
+A public-facing platform serves a wide, unknown audience. Responsive layouts, readable typography, and semantic structure were treated as baseline requirements, not optional polish.
+
+---
+
 ## Frontend & UI Implementation
 
 **Design-to-Code Execution**  

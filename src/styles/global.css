@@ -1,7 +1,40 @@
-/* The integration's default injected base.css file */
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* Colors */
+  --color-pblue: #96C7F2;
+  --color-pgreen: #ADF296;
+  --color-ppink: #F396E5;
+  --color-pyellow: #F2CF96;
+  --color-ppurlple: #9D859A;
+  --color-pblack: #4E6273;
+  --color-white: #F2F2F2;
+
+  /* Box shadows */
+  --shadow-card1: 2px 2px #000000;
+  --shadow-card: 4px 4px #000000;
+  --shadow-hover: 10px 10px #000000;
+  --shadow-pblue: 7px 7px #96C7F2;
+  --shadow-pgreen: 7px 7px #ADF296;
+  --shadow-ppink: 7px 7px #F396E5;
+  --shadow-pblueHover: 10px 10px #96C7F2;
+  --shadow-pgreenHover: 10px 10px #ADF296;
+  --shadow-ppinkHover: 10px 10px #F396E5;
+  --shadow-pyellow: 7px 7px #F2CF96;
+
+  /* Fonts */
+  --font-sans: Alexandria, sans-serif;
+  --font-mono: Alexandria, monospace;
+  --font-kablamo: Kablammo, serif;
+
+  /* Custom border widths */
+  --border-width-1: 1px;
+  --border-width-3: 3px;
+
+  /* Custom spacing (used for -mt-30, m-30) */
+  --spacing-30: 7.3rem;
+}
 
 @font-face {
     font-family: 'Alexandria';

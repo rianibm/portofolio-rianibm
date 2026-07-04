@@ -41,7 +41,7 @@ pageSkills:
     icon: "4"
     skills:
       [
-        "Zustand",
+        "Custom React Hooks",
         "React Hook Form",
         "Zod Validation",
         "Async Data Handling",
@@ -77,6 +77,36 @@ Web 3PL is an **internal logistics platform** used to manage **Third-Party Logis
 
 This project became my first deep exposure to the **3PL domain**, where frontend work is tightly coupled with operational accuracy, data consistency, and system reliability. My role focused on frontend and UI ownership, translating complex logistics processes into interfaces that can be used safely in daily operations.
 
+## UX Principles Applied
+
+**Visibility of System Status** *(Nielsen's Heuristic #1)*
+Operators and logistics partners need to know where a shipment stands at all times. The dashboard shows live statistics, and each shipment exposes only the actions valid for its current state — so there's no guessing about what step comes next.
+
+**Error Prevention** *(Nielsen's Heuristic #5)*
+The 3-step POD workflow (Arrived → Departed → Delivered) is enforced in the UI — you cannot skip or reverse steps. Date range filters are capped in the request layer (14 days for land, 30 for air), not just visually. Invalid actions are structurally unavailable, not just warned against.
+
+**Match Between System and Real World** *(Nielsen's Heuristic #2)*
+Land and air shipments behave differently in real logistics operations, and the UI reflects that directly. Air shipments expose multi-step transitions and placeholder fields for incomplete flight data. Land shipments follow a more linear flow. The UI mirrors the operational reality rather than forcing a uniform model onto different processes.
+
+**User Control and Freedom** *(Nielsen's Heuristic #3)*
+Role-based access (Darat, Udara, Admin) ensures each actor only sees what's relevant to their responsibility. This isn't just security — it reduces decision overhead. Operators working on land shipments aren't distracted by air shipment actions that don't apply to them.
+
+**Consistency and Standards** *(Nielsen's Heuristic #4)*
+Custom hooks (`useShipments`, `useDaratAPI`, `usePodAPI`) enforce consistent data handling patterns across features. Forms behave the same way across shipment types. Validation rules are config-driven, so they apply uniformly without UI-by-UI divergence.
+
+---
+
+## Dashboard & Core Features
+
+The application includes a **real-time dashboard** that gives operators an immediate overview of shipment statistics, helping them monitor daily operations at a glance.
+
+Beyond shipment management, the platform supports:
+- **Tracking history** — creating and retrieving per-AWB tracking records, supporting audit and status transparency
+- **CSV export** — allowing operators to export shipment data for reporting and reconciliation
+- **DateTime range filtering** with built-in business logic — 14-day limit for Darat, 30-day for Udara, enforced both in the UI and request layer
+
+These features were designed for real operational workflows, not generic data tooling.
+
 ## Understanding the Domain
 ### Entering the 3PL Context
 Working in 3PL required understanding that **land and air shipments behave very differently**.
@@ -106,6 +136,9 @@ Access is strictly controlled through role-based permissions, ensuring each user
 
 
 ## Frontend Architecture & Reliability
+**State Management via Custom React Hooks**
+Rather than a global state library, the project uses a structured set of custom hooks — `useShipments`, `useDaratAPI`, `usePodAPI`, `useDashboard`, `useTrackingAPI`, and others — each scoped to a specific domain. This kept state co-located with the features that needed it and made the codebase easier to maintain as the product evolved.
+
 **Custom API Client & Error Handling**
 
 Instead of relying directly on Axios, the frontend uses a **custom API client built on native** fetch, allowing finer control over request behavior.

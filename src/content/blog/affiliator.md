@@ -28,7 +28,7 @@ Unlike existing membership-based referral programs, this flow is designed to wor
 
 I worked on the **frontend and UX implementation** for this program, delivering interfaces for both **web and mobile experiences**. The main challenge was designing a system that feels trustworthy, understandable, and motivating, while staying intentionally simple.
 
-This project is **ongoing** and planned for release around **Q2**.
+This project is **ongoing** and planned for release around **late August 2025**.
 
 ---
 
@@ -41,6 +41,25 @@ The intent was clear:
 - no requirement to become a seller or member
 - minimal setup before sharing
 From a UX standpoint, this meant removing assumptions about prior knowledge and designing flows that work even for first-time users with no existing relationship to the platform.
+
+---
+
+## UX Principles Applied
+
+**Recognition Over Recall** *(Nielsen's Heuristic #6)*
+Commission status, referral codes, and pending rewards surface immediately on the dashboard — users should not need to navigate or remember where to find them. One glance answers "did I earn anything?"
+
+**Progressive Disclosure**
+The flow is broken into stages — **Register → Get Code → Share → Earn** — revealing only what's relevant at each step. New users are never confronted with advanced analytics or full commission breakdowns before they've had a chance to complete even one referral.
+
+**Mental Model Clarity**
+"How I earn" must be self-evident without reading instructions. The UI is structured around the user's mental model: share a code, someone uses it, you get paid. Anything that disrupted that story was deprioritized or removed from the flow.
+
+**Error Prevention** *(Nielsen's Heuristic #5)*
+Fraud-aware constraints — self-use prevention, usage limits, abnormal activity handling — are surfaced to users as clear, plain-language explanations rather than opaque error codes. Users understand what's blocked and why, without exposing internal system logic.
+
+**Trust through Transparency**
+Commission states are always explicit: pending vs. confirmed, with transaction context explaining why a reward was or wasn't granted. Ambiguity in earnings erodes trust fast — this design treats clarity as a trust signal.
 
 ---
 
