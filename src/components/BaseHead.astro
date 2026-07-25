@@ -66,6 +66,19 @@ const seoTitle = title.includes("Riani")
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={new URL(image, Astro.url)} />
 
+<!-- Google Analytics (GA4) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6WW2XLFBXG"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-6WW2XLFBXG');
+  // Re-fire page_view on Astro view transitions, since gtag's initial pageview only fires on the first hard load
+  document.addEventListener('astro:after-swap', function () {
+    gtag('config', 'G-6WW2XLFBXG', { page_path: location.pathname + location.search });
+  });
+</script>
+
 <!-- Hotjar Tracking Code — deferred to idle time -->
 <script is:inline>
 function loadHotjar() {
@@ -92,7 +105,7 @@ if ('requestIdleCallback' in window) {
   "@type": "Person",
   name: "Riani BM",
   url: Astro.site,
-  jobTitle: "UX Engineer",
+  jobTitle: "Design Engineer",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Jakarta",

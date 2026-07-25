@@ -1,5 +1,6 @@
 ---
 import Link from "./HeaderLink.astro";
+import { Icon } from "astro-icon/components";
 import "../styles/hamburgers.css";
 ---
 
@@ -21,6 +22,18 @@ import "../styles/hamburgers.css";
       <li><Link href="/" text="Home" style="primary" /></li>
       <li><Link href="/about" text="About me" style="secondary" /></li>
       <li><Link href="/works" text="My work" style="tertiary" /></li>
+      <li>
+        <a
+          href="https://medium.com/@rianimatialu"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Riani BM on Medium"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-full border-1 border-black hover:bg-pgreen transition"
+        >
+          <Icon name="medium" class="text-lg" aria-hidden="true" />
+          <span>Medium</span>
+        </a>
+      </li>
     </ul>
     <div class="md:hidden z-40">
       <button
@@ -55,6 +68,18 @@ import "../styles/hamburgers.css";
           <li><Link href="/" text="Home" style="primary" /></li>
           <li><Link href="/about" text="About me" style="secondary" /></li>
           <li><Link href="/works" text="My work" style="tertiary" /></li>
+          <li>
+            <a
+              href="https://medium.com/@rianimatialu"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Riani BM on Medium"
+              class="flex items-center gap-2"
+            >
+              <Icon name="medium" class="text-lg" aria-hidden="true" />
+              <span>Medium</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>

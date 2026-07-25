@@ -45,7 +45,7 @@ The dashboard is structured around distinct modules, each with its own routes an
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Visibility of System Status** *(Nielsen's Heuristic #1)*
 Sellers check their tier, referral earnings, and transaction counts regularly — sometimes under time pressure. The dashboard surfaces these at a glance through `StatsCards`, `TieringWidget`, and `ReferralWidget`, so the system's current state is always answerable in under a second.

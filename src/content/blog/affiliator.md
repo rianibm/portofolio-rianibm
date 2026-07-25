@@ -44,7 +44,7 @@ From a UX standpoint, this meant removing assumptions about prior knowledge and 
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Recognition Over Recall** *(Nielsen's Heuristic #6)*
 Commission status, referral codes, and pending rewards surface immediately on the dashboard — users should not need to navigate or remember where to find them. One glance answers "did I earn anything?"

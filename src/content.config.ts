@@ -14,6 +14,12 @@ const blog = defineCollection({
         updatedDate: z.coerce.date().optional(),
         heroImage: z.string().optional(),
         tags: z.array(z.string()).optional(),
+        // Optional scope label for work that is a feature/module within a larger project, not the whole project
+        scope: z.string().optional(),
+        // Highlight this post as the featured case study on the /works listing
+        featured: z.boolean().optional(),
+        // Short, concrete highlight bullets shown on the featured card (only used when featured is true)
+        highlights: z.array(z.string()).optional(),
         // Add pageSkills support
         pageSkills: z.array(z.object({
             category: z.string(),

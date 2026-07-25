@@ -3,6 +3,7 @@ title: "Gamified Tiering Loyalty System"
 description: "Frontend implementation of a gamified tiering and incentive system for courier partners — from early Laravel prototype to a full Next.js rebuild with real-time progression, multi-tier tracking, and incentive history."
 icon: "2"
 pubDate: "Jul 4 2026"
+scope: "Feature Module"
 heroImage: "/src/assets/adriana.jpg"
 tags: ["Frontend Developer", "UI/UX", "Next.js", "React", "Gamification", "Laravel"]
 pageSkills:
@@ -29,7 +30,7 @@ A tiering and incentive system built for courier partners — helping them under
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Visibility of System Status** *(Nielsen's Heuristic #1)*
 A partner's current tier, live AWB count, and progress toward the next tier are always present on the main page — no navigation required. The system's current state is answerable at a glance, which matters when partners are actively trying to hit shipment targets before a period ends.

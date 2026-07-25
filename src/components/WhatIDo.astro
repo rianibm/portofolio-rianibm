@@ -20,28 +20,58 @@ const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
 
 const groups = [
   {
-    label: "Core Products",
+    label: "Indomaret Group Ecosystem",
     slugs: ["affiliator", "web-3pl", "memberplus", "gamified-tiering", "gamified-reward"],
   },
   {
-    label: "Side Projects",
-    slugs: ["hire-green-jobs", "perkantas-yogyakarta"],
+    label: "Revamp Projects",
+    slugs: ["indopaket-web", "indopaket-mobile", "perkantas-yogyakarta"],
   },
   {
-    label: "Exploratory & Personal Projects",
+    label: "Side Projects",
+    slugs: ["hire-green-jobs"],
+  },
+  {
+    label: "Personal Experiments",
     slugs: ["spillr", "sky-explorer"],
   },
 ];
 
-const displayGroups = compact
-  ? [{ label: "Core Products", slugs: groups[0].slugs.slice(0, 3) }]
-  : groups;
-
 const postMap = new Map(allPosts.map((p) => [p.id, p]));
+const featuredPost = allPosts.find((p) => p.data.featured);
+
+const displayGroups = compact
+  ? [{ label: "Indomaret Group Ecosystem", slugs: groups[0].slugs.slice(0, 3) }]
+  : groups.map((g) => ({
+      ...g,
+      slugs: g.slugs.filter((slug) => slug !== featuredPost?.id),
+    }));
 ---
 <section class="flex flex-col text-center gap-4">
-  <p class="text-pblack animate-on-scroll from-bottom">Meet My</p>
-  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">Selected Work</h2>
+  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">Design Engineering Projects</h2>
+  <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">Frontend & UX Engineer specializing in production web platforms — from logistics and e-commerce tools to loyalty systems and community platforms.</p>
+
+  {!compact && featuredPost && (
+    <a
+      href={`/works/${featuredPost.id}/`}
+      class="max-w-2xl mx-auto w-full text-left rounded-3xl border-1 border-black shadow-card hover:shadow-hover transition px-6 py-8 flex flex-col gap-4 bg-pyellow animate-on-scroll from-bottom settle mt-4"
+    >
+      <span class="text-xs font-semibold uppercase tracking-widest">⭐ Featured Case Study</span>
+      <h3 class="text-2xl md:text-3xl font-bold">{featuredPost.data.title}</h3>
+      <p class="text-sm md:text-base text-black/80" set:html={featuredPost.data.description} />
+      {featuredPost.data.highlights && (
+        <ul class="flex flex-col gap-1 text-sm">
+          {featuredPost.data.highlights.map((h: string) => (
+            <li class="flex items-start gap-2">
+              <span aria-hidden="true">✓</span>
+              <span>{h}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      <span class="font-semibold underline underline-offset-4">Read Case Study →</span>
+    </a>
+  )}
 
   {!compact && (
     <div
@@ -69,9 +99,23 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
                 >
                   <Icon name={post.data.icon} aria-hidden="true" />
                 </div>
+                {post.data.tags && (
+                  <div class="flex flex-wrap gap-1 -mb-2">
+                    {post.data.tags.slice(0, 2).map((tag: string) => (
+                      <span class="text-[10px] font-semibold uppercase tracking-wide bg-black text-white rounded-full px-2 py-0.5">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
                 <h4 class="text-xl font-semibold">{post.data.title}</h4>
-                <p class="date -mt-4 text-sm font-light">
+                <p class="date -mt-4 text-sm font-light flex items-center gap-2">
                   <FormattedDate date={post.data.pubDate} />
+                  {post.data.scope && (
+                    <span class="text-[10px] uppercase tracking-wide text-gray-400 border border-gray-300 rounded-full px-2 py-0.5">
+                      {post.data.scope}
+                    </span>
+                  )}
                 </p>
               </a>
               <div class="text-sm text-gray-600 line-clamp-3 leading-relaxed" set:html={post.data.description} />

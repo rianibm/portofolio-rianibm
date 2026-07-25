@@ -77,7 +77,7 @@ Web 3PL is an **internal logistics platform** used to manage **Third-Party Logis
 
 This project became my first deep exposure to the **3PL domain**, where frontend work is tightly coupled with operational accuracy, data consistency, and system reliability. My role focused on frontend and UI ownership, translating complex logistics processes into interfaces that can be used safely in daily operations.
 
-## UX Principles Applied
+## UX Analysis
 
 **Visibility of System Status** *(Nielsen's Heuristic #1)*
 Operators and logistics partners need to know where a shipment stands at all times. The dashboard shows live statistics, and each shipment exposes only the actions valid for its current state — so there's no guessing about what step comes next.

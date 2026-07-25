@@ -71,7 +71,7 @@ The scope focused on delivering a **usable MVP**, not just a proof-of-concept.
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Aesthetic and Minimalist Design** *(Nielsen's Heuristic #8)*
 Blockchain infrastructure should be invisible to the user. Smart contracts, ICP identity, and decentralized storage are all working under the hood — but the interface shows a familiar Q&A flow: post a question, get answers, stay anonymous. Every technical detail that wasn't necessary for a user to do their task was hidden.

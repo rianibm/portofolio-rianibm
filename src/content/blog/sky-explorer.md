@@ -80,7 +80,7 @@ From a frontend perspective, the main challenges were:
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Visibility of System Status** *(Nielsen's Heuristic #1)*
 A multi-step booking flow always risks users losing track of where they are. Step indicators, loading states during search, and confirmation states at each transition kept users oriented throughout — search → select → passenger details → cabin → confirm.

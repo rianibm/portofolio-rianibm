@@ -3,6 +3,7 @@ title: "Gamified Reward Module"
 description: "Internal CMS roulette draw system for Member+ live campaigns — designed for dual audiences: the operator running the event and Instagram Live viewers watching the winner reveal in real time."
 icon: "2"
 pubDate: "Jun 01 2024"
+scope: "Feature Module"
 heroImage: "/src/assets/euro.jpg"
 tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]
 pageSkills:
@@ -70,7 +71,7 @@ Designing for both at once, in a single interface, is the real challenge this pr
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Visibility of System Status** *(Nielsen's Heuristic #1)*
 The roulette state had to be unambiguous at every moment — spinning, stopping, winner revealed. Viewers watching a compressed IG Live stream can't hover or zoom in. If the state isn't obvious in the first second, it's lost.

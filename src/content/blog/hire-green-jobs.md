@@ -67,7 +67,7 @@ The emphasis was not on experimental UI, but on **clarity, performance, and prod
 
 ---
 
-## UX Principles Applied
+## UX Analysis
 
 **Recognition Over Recall** *(Nielsen's Heuristic #6)*
 Job seekers visiting a public platform for the first time should not need to learn the system. Listings, categories, and navigation patterns follow familiar conventions — users recognize what to do rather than having to figure it out. Clean URL structures and scannable page layouts reduce the mental work of finding relevant opportunities.

@@ -13,7 +13,7 @@ import rianibmAvatar from "@/assets/rianibm-removebg-preview.png";
 
 const title = "About Riani BM";
 const description =
-  "Portofolio of Rianibm. UX Engineer & Frontend Developer based in Jakarta, Indonesia.";
+  "Portofolio of Rianibm. Design Engineer based in Jakarta, Indonesia, working at the intersection of UX and frontend engineering.";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -38,50 +38,19 @@ const getSkillClass = (i: number) => _getSkillClass(i, skillBgClasses);
 
 const aboutSkills = [
   {
-    category: "Frontend Development",
-    icon: "1",
-    skills: ["React", "TypeScript", "Next.js", "JavaScript ES6+", "Astro"],
-  },
-  {
-    category: "Styling & Design",
+    category: "Design",
     icon: "2",
-    skills: [
-      "Tailwind CSS",
-      "Bootstrap",
-      "Sass/SCSS",
-      "CSS3",
-      "Responsive Design",
-      "Mobile-First",
-    ],
+    skills: ["Figma", "Design Systems", "Accessibility"],
   },
   {
-    category: "Backend (Supporting)",
+    category: "Frontend",
+    icon: "1",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    category: "Backend",
     icon: "3",
-    skills: [
-      "MySQL",
-      "PostgreSQL",
-      "Laravel",
-      "PHP",
-      "Node.js",
-      "Express JS",
-      "REST APIs",
-    ],
-  },
-  {
-    category: "Tools & Workflow",
-    icon: "4",
-    skills: ["Git", "Webpack", "Vite", "NPM/Yarn", "Figma"],
-  },
-  {
-    category: "Mobile & Performance",
-    icon: "5",
-    skills: [
-      "PWA",
-      "Mobile Web",
-      "Performance Optimization",
-      "Lighthouse",
-      "SEO",
-    ],
+    skills: ["Laravel", "REST APIs", "PostgreSQL"],
   },
 ];
 ---
@@ -135,9 +104,9 @@ const aboutSkills = [
             <span class="font-kablamo text-ppink">A</span>bout Me
           </h1>
           <p class="text-pblack text-center text-sm md:text-base">
-            Frontend-focused UX Engineer who spends most days shaping complex
-            interfaces into something calm, usable, and real. Based in
-            Indonesia.
+            Design Engineer who bridges product thinking, UX design, and
+            frontend engineering — turning complex business workflows into
+            intuitive, scalable digital products. Based in Indonesia.
           </p>
         </div>
 
@@ -164,17 +133,35 @@ const aboutSkills = [
 
               <ul class="list-disc ml-6 space-y-1">
                 <li>
-                  <strong>UI-heavy frontend development</strong> — dashboards, data
+                  <strong>Complex product interfaces</strong> — dashboards, data
                   tables, and multi-role systems with real-world constraints
                 </li>
                 <li>
-                  <strong>Design-to-code translation</strong> — turning design intent
+                  <strong>Design systems & implementation</strong> — turning design intent
                   into maintainable, readable frontend code
                 </li>
                 <li>
-                  <strong>UX-aware implementation</strong> — small decisions in spacing,
+                  <strong>Interaction quality & accessibility</strong> — small decisions in spacing,
                   hierarchy, and interaction that quietly reduce friction
                 </li>
+              </ul>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"><span></span></div>
+
+            <!-- Core Strengths -->
+            <section
+              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
+            >
+              <h2 class="text-xl md:text-2xl font-bold">
+                <span class="font-kablamo text-ppink">C</span>ore Strengths
+              </h2>
+              <ul class="list-disc ml-6 space-y-1">
+                <li>Turning complex workflows into intuitive interfaces</li>
+                <li>Bridging designers and engineers</li>
+                <li>Accessibility-first thinking</li>
+                <li>Design systems</li>
+                <li>Frontend implementation</li>
               </ul>
             </section>
 
@@ -241,31 +228,31 @@ const aboutSkills = [
               </p>
               <ul class="list-disc ml-6 space-y-1">
                 <li>
-                  <strong>Indopaket website revamp</strong> — redesigning user flows to create a more intuitive experience for end users
+                  <strong>Indopaket website revamp</strong> — redesigned website flows for a more intuitive shipping experience
                 </li>
                 <li>
-                  <strong>Affiliate platform</strong> — leading UI design for the mobile app and website, working closely with frontend developers to build and improve the platform
+                  <strong>Affiliate platform</strong> — led UI/UX design for the mobile app and website, working closely with frontend engineers to ship it
                 </li>
                 <li>
-                  <strong>Package Claim web platform</strong> — designing the UI for an internal claim management workflow
+                  <strong>Package Claim web platform</strong> — designed the internal claim management workflow used by operations teams
                 </li>
                 <li>
-                  <strong>Car Attendance & Monitoring</strong> — collaborating on UI design for the mobile app, CMS, and reporting dashboard
+                  <strong>Car Attendance & Monitoring</strong> — collaborated on UI for a fleet monitoring system spanning mobile app, CMS, and reporting dashboard
                 </li>
                 <li>
-                  <strong>Member+</strong> — internal web application built with
-                  <strong>React + Next.js</strong>, focusing on frontend
-                  authentication flows and state handling based on backend SSO APIs
+                  <strong>Member+</strong> — built frontend authentication and
+                  state handling for an internal SSO-integrated web app
+                  (<strong>React + Next.js</strong>)
                 </li>
                 <li>
-                  <strong>3PL logistics platform</strong> — complex dashboards built with
-                  <strong>React + TypeScript</strong>, including data-heavy
-                  views and critical operational flows
+                  <strong>3PL logistics platform</strong> — built complex,
+                  data-heavy dashboards for logistics operations
+                  (<strong>React + TypeScript</strong>)
                 </li>
                 <li>
-                  <strong>UI migration work</strong> — moving legacy interfaces from
-                  <strong>Bootstrap 3 to Tailwind CSS</strong>, focusing on
-                  consistency and long-term maintainability
+                  <strong>UI migration work</strong> — migrated legacy interfaces from
+                  <strong>Bootstrap 3 to Tailwind CSS</strong> for long-term
+                  consistency and maintainability
                 </li>
               </ul>
               <p class="text-sm text-pblack mt-3">
@@ -287,6 +274,9 @@ const aboutSkills = [
               <!-- Product Team Lead -->
               <div class="border border-black rounded-lg p-4 shadow-card">
                 <h3 class="font-semibold text-lg">Product Team Lead</h3>
+                <p class="text-ppink text-xs font-semibold uppercase tracking-wide">
+                  Design Engineering
+                </p>
                 <p class="text-pblack text-sm">
                   PT Indomarco Prismatama (Indomaret Group) · Apr 2026 – Present · Full-time · Hybrid
                 </p>
@@ -372,16 +362,13 @@ const aboutSkills = [
               </p>
               <ul class="list-disc ml-6 space-y-1">
                 <li>
-                  <strong>Careful UI slicing</strong> — respecting design intent while
-                  keeping code practical
+                  Interfaces should be understandable before they become beautiful
                 </li>
                 <li>
-                  <strong>Thoughtful collaboration</strong> — asking questions early
-                  to avoid friction later
+                  Every interaction should reduce cognitive load
                 </li>
                 <li>
-                  <strong>Ownership mindset</strong> — I stay with a feature until
-                  it feels right, not just done
+                  I optimize for maintainability as much as usability
                 </li>
               </ul>
               <p>
@@ -405,28 +392,9 @@ const aboutSkills = [
                 <span class="font-kablamo text-ppink">A</span> Bit More About Me
               </h2>
               <p>
-                Outside of work, I’m fairly reflective and observant. I recharge
-                through quiet routines, stories, and visual details.
-              </p>
-
-              <p>
-                I enjoy reading fiction novels as well as UI/UX books, depending
-                on my mood. I also like watching films — from rom-coms and
-                horror to slice-of-life stories.
-              </p>
-              <p>
-                I do enjoy going out sometimes, but I’m more comfortable in
-                calmer spaces where I can observe, think, and recharge.
-              </p>
-              <p>
-                I also enjoy photography. I’ve explored street photography
-                focused on human moments, and once worked as a freelance sports
-                photographer for basketball events in Jakarta.
-              </p>
-              <p>
-                Visually, I’m naturally drawn to colorful interfaces, as long as
-                they stay balanced and still match the overall tone of the
-                product.
+                Outside of work: photography (street photography and freelance
+                sports photography for basketball events in Jakarta), fiction
+                and UI/UX books, and films across genres.
               </p>
             </section>
 
