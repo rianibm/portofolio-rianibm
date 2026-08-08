@@ -13,7 +13,7 @@ import rianibmAvatar from "@/assets/rianibm-removebg-preview.png";
 
 const title = "About Riani BM";
 const description =
-  "Portofolio of Rianibm. Design Engineer based in Jakarta, Indonesia, working at the intersection of UX and frontend engineering.";
+  "Portofolio of Rianibm. UX Engineer based in Jakarta, Indonesia, working at the intersection of UX and frontend engineering.";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -43,14 +43,17 @@ const aboutSkills = [
     skills: ["Figma", "UI Systems", "Accessibility"],
   },
   {
-    category: "Frontend",
+    category: "Engineering",
     icon: "1",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    category: "Backend",
-    icon: "3",
-    skills: ["Laravel", "REST APIs", "PostgreSQL"],
+    skills: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Laravel",
+      "REST APIs",
+      "PostgreSQL",
+    ],
   },
 ];
 ---
@@ -103,10 +106,10 @@ const aboutSkills = [
           <h1 class="text-3xl md:text-5xl font-semibold text-center">
             <span class="font-kablamo text-ppink">A</span>bout Me
           </h1>
-          <p class="text-pblack text-center text-sm md:text-base">
-            Design Engineer who bridges product thinking, UX design, and
-            frontend engineering — turning complex business workflows into
-            intuitive, scalable digital products. Based in Indonesia.
+          <p class="text-pblack text-center text-sm md:text-base max-w-xl">
+            UX Engineer who bridges product thinking, UX design, and frontend
+            engineering — turning complex business workflows into intuitive,
+            scalable digital products. Based in Indonesia.
           </p>
         </div>
 
@@ -116,8 +119,8 @@ const aboutSkills = [
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">W</span>hat I Do
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>What I Do
               </h2>
               <p>
                 I work at the intersection of UI design and frontend
@@ -133,156 +136,35 @@ const aboutSkills = [
 
               <ul class="list-disc ml-6 space-y-1">
                 <li>
-                  <strong>Complex product interfaces</strong> — dashboards, data
-                  tables, and multi-role systems with real-world constraints
+                  <strong>Complex product interfaces</strong> — dashboards, operational
+                  workflows, data-heavy tables, and multi-role systems
                 </li>
                 <li>
-                  <strong>Design systems & implementation</strong> — turning design intent
-                  into maintainable, readable frontend code
+                  <strong>UX architecture & implementation</strong> — turning ambiguous
+                  business requirements into flows, reusable patterns, and production interfaces
                 </li>
                 <li>
-                  <strong>Interaction quality & accessibility</strong> — small decisions in spacing,
-                  hierarchy, and interaction that quietly reduce friction
+                  <strong>Interaction quality & accessibility</strong> — reducing friction
+                  through hierarchy, states, validation, and accessible interaction patterns
                 </li>
               </ul>
             </section>
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <!-- Core Strengths -->
+            <!-- Experience -->
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">C</span>ore Strengths
-              </h2>
-              <ul class="list-disc ml-6 space-y-1">
-                <li>Turning complex workflows into intuitive interfaces</li>
-                <li>Bridging designers and engineers</li>
-                <li>Accessibility-first thinking</li>
-                <li>Design systems</li>
-                <li>Frontend implementation</li>
-              </ul>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
-            <!-- Technologies Used -->
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">T</span>echnologies
-              </h2>
-              <p>
-                Tools are just tools. I use what helps me ship clear interfaces
-                and maintain them without creating future pain.
-              </p>
-
-              <div class="flex flex-col gap-2">
-                {
-                  aboutSkills.map((skillGroup, i) => {
-                    const skillClass = getSkillClass(i);
-                    return (
-                      <div
-                        class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll from-bottom"
-                        style={`--delay: ${i * 0.1}s`}
-                      >
-                        <div class="flex items-center gap-2 mb-1">
-                          <div
-                            class={`${skillClass} p-1 border border-black shadow-card1 text-sm`}
-                          >
-                            <Icon name={skillGroup.icon} aria-hidden="true" />
-                          </div>
-                          <div class="font-semibold text-sm">
-                            {skillGroup.category}
-                          </div>
-                        </div>
-                        <ul class="flex flex-wrap gap-1">
-                          {skillGroup.skills.map((skill) => (
-                            <li class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
-                              {skill}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    );
-                  })
-                }
-              </div>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">C</span>ertification
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Experience
               </h2>
               <p class="text-sm text-pblack">
-                IT Specialist: HTML & CSS — Certiport / Pearson VUE, Oct 2022. <a href="https://www.credly.com/badges/24e87d52-873b-482e-90c5-4b9ecae2291d/linked_in_profile" target="_blank" rel="noopener noreferrer" aria-label="View credential on Credly" class="text-ppink font-semibold underline">View credential</a>.
+                My path has moved from IT/product analysis into frontend
+                engineering and now UX and product ownership — giving me
+                context across the full lifecycle, from problem framing to
+                production.
               </p>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">W</span>hat I’ve Worked On
-              </h2>
-              <p>
-                Most of my work lives in real production systems, the kind that
-                are used daily by different roles with different needs. A lot of
-                it isn’t flashy, but it has to be clear, resilient, and kind to
-                its users.
-              </p>
-              <ul class="list-disc ml-6 space-y-1">
-                <li>
-                  <strong>Indopaket website revamp</strong> — redesigned website flows for a more intuitive shipping experience
-                </li>
-                <li>
-                  <strong>Affiliate platform</strong> — led UI/UX design for the mobile app and website, working closely with frontend engineers to ship it
-                </li>
-                <li>
-                  <strong>Package Claim web platform</strong> — designed the internal claim management workflow used by operations teams
-                </li>
-                <li>
-                  <strong>Car Attendance & Monitoring</strong> — collaborated on UI for a fleet monitoring system spanning mobile app, CMS, and reporting dashboard
-                </li>
-                <li>
-                  <strong>Member+</strong> — built frontend authentication and
-                  state handling for an internal SSO-integrated web app
-                  (<strong>React + Next.js</strong>)
-                </li>
-                <li>
-                  <strong>3PL logistics platform</strong> — built complex,
-                  data-heavy dashboards for logistics operations
-                  (<strong>React + TypeScript</strong>)
-                </li>
-                <li>
-                  <strong>UI migration work</strong> — migrated legacy interfaces from
-                  <strong>Bootstrap 3 to Tailwind CSS</strong> for long-term
-                  consistency and maintainability
-                </li>
-              </ul>
-              <p class="text-sm text-pblack mt-3">
-                Working in a large organization taught me how much clarity in UI
-                can affect real operations — and how much product thinking shapes
-                what gets built.
-              </p>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">E</span>xperience
-              </h2>
 
               <!-- Product Team Lead -->
               <div class="border border-black rounded-lg p-4 shadow-card">
@@ -292,6 +174,9 @@ const aboutSkills = [
                 </p>
                 <p class="text-pblack text-sm">
                   PT Indomarco Prismatama (Indomaret Group) · Apr 2026 – Present · Full-time · Hybrid
+                </p>
+                <p class="text-pblack text-xs mt-1 font-semibold">
+                  Leading a team of 1 UI/UX Designer and 2 Frontend Developers
                 </p>
                 <ul class="list-disc ml-6 space-y-1 mt-2">
                   <li>
@@ -365,8 +250,8 @@ const aboutSkills = [
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">H</span>ow I Work
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>How I Work
               </h2>
               <p>
                 I work best when design and engineering are not treated as
@@ -397,17 +282,142 @@ const aboutSkills = [
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
+            <!-- Core Strengths -->
+            <section
+              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
+            >
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Core Strengths
+              </h2>
+              <ul class="list-disc ml-6 space-y-1">
+                <li>
+                  <strong>Systems thinking</strong> — connecting user flows, business rules,
+                  and technical constraints
+                </li>
+                <li>
+                  <strong>Cross-functional ownership</strong> — working across product,
+                  design, engineering, and operations
+                </li>
+                <li>
+                  <strong>UX-to-code execution</strong> — carrying decisions from
+                  interaction design into production
+                </li>
+                <li>
+                  <strong>Complex workflow design</strong> — operational, multi-role,
+                  and data-heavy products
+                </li>
+                <li>
+                  <strong>Accessibility-first thinking</strong> — refining shipped
+                  experiences based on real usage and product constraints
+                </li>
+              </ul>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"><span></span></div>
+
+            <!-- Selected Experience -->
+            <section
+              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
+            >
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Selected Experience
+              </h2>
+              <p>
+                Most of my production work has been in logistics, enterprise
+                operations, and multi-role systems where UX decisions have
+                direct operational consequences.
+              </p>
+              <p class="border-l-4 border-ppink pl-3 text-sm font-semibold">
+                9 core journeys redesigned across the Indopaket web platform
+                — restructuring navigation, task entry points, tracking,
+                store discovery, authentication, and error states.
+              </p>
+              <ul class="list-disc ml-6 space-y-1">
+                <li>
+                  <strong>Logistics & Operations</strong> — Indopaket website revamp,
+                  Package Claim web platform, Car Attendance & Monitoring, 3PL
+                  logistics platform
+                </li>
+                <li>
+                  <strong>Product & Growth</strong> — Affiliate platform (mobile app
+                  & website), Member+ (SSO-integrated authentication)
+                </li>
+                <li>
+                  <strong>Platform Modernization</strong> — migrated legacy interfaces
+                  from Bootstrap 3 to Tailwind CSS for long-term consistency and
+                  maintainability
+                </li>
+              </ul>
+              <p class="text-sm text-pblack mt-3">
+                On the Indopaket revamp, that meant consolidating a
+                feature-by-feature platform into a coherent, task-oriented
+                experience — removing extraneous cognitive load while keeping
+                the domain's inherent complexity legible, shipped as
+                production code the team can extend.
+              </p>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"><span></span></div>
+
+            <!-- Technologies Used -->
+            <section
+              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
+            >
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Technologies
+              </h2>
+              <p>
+                Tools are just tools. I use what helps me ship clear interfaces
+                and maintain them without creating future pain.
+              </p>
+
+              <div class="flex flex-col gap-2">
+                {
+                  aboutSkills.map((skillGroup, i) => {
+                    const skillClass = getSkillClass(i);
+                    return (
+                      <div
+                        class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll from-bottom"
+                        style={`--delay: ${i * 0.1}s`}
+                      >
+                        <div class="flex items-center gap-2 mb-1">
+                          <div
+                            class={`${skillClass} p-1 border border-black shadow-card1 text-sm`}
+                          >
+                            <Icon name={skillGroup.icon} aria-hidden="true" />
+                          </div>
+                          <div class="font-semibold text-sm">
+                            {skillGroup.category}
+                          </div>
+                        </div>
+                        <ul class="flex flex-wrap gap-1">
+                          {skillGroup.skills.map((skill) => (
+                            <li class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
+                              {skill}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })
+                }
+              </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"><span></span></div>
+
             <!-- For fun -->
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold">
-                <span class="font-kablamo text-ppink">A</span> Bit More About Me
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Outside Work
               </h2>
               <p>
-                Outside of work: photography (street photography and freelance
-                sports photography for basketball events in Jakarta), fiction
-                and UI/UX books, and films across genres.
+                Outside product work, I do street photography and freelance
+                sports photography, mostly around basketball events in
+                Jakarta. I also spend a lot of time with fiction, UI/UX
+                books, and films across genres.
               </p>
             </section>
 
