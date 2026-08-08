@@ -5,6 +5,7 @@ icon: "4"
 pubDate: "Mar 27 2025"
 heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "React", "Web3", "Hackathon"]
+role: "Frontend implementation · Rapid prototyping"
 pageSkills:
   - category: "Frontend Development"
     icon: "1"

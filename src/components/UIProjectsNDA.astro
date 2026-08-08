@@ -1,42 +1,60 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const ndaProjects = [
-  {
-    icon: "1",
-    title: "Event Ticketing Marketplace Platform",
-    description:
-      "Multi-role interfaces for purchase flows, seller dashboards, and internal ops tools.",
-  },
-  {
-    icon: "2",
-    title: "Race Event Ticketing & Validation System",
-    description:
-      "Ticket access, organizer views, and validator scanning flows for real-time, on-site use.",
-  },
+const enterpriseProjects = [
   {
     icon: "3",
-    title: "Desktop Application for Identity Management",
+    title: "e-KTP Identity Management System",
+    meta: "Desktop · Identity · Enterprise",
     description:
-      "Desktop interface for data input, verification, and admin workflows in a large-scale identity system.",
+      "Designed the UX and UI for identity data input, verification, and administrative workflows in a desktop e-KTP identity system.",
+    role: "UX Design · UI Design",
+    focus: "Complex forms · Validation · Desktop workflows",
   },
   {
     icon: "4",
-    title: "Real-Time Monitoring Dashboard for Transportation Systems",
+    title: "LRT Jakarta — Ticketing & Operations Dashboard",
+    meta: "Web · Transportation · Operations",
     description:
-      "High-visibility dashboard for monitoring system status and device health in real time.",
+      "Worked across LRT Jakarta 1B digital systems — web ticketing and an operational monitoring dashboard for passenger and operations teams.",
+    role: "UI Design · Frontend Implementation",
+    focus: "Web ticketing · Operational dashboard · Monitoring UI",
+  },
+  {
+    icon: "5",
+    title: "Telkomsel Perso Reporting Platform",
+    meta: "Web · Reporting · Enterprise",
+    description:
+      "UI design for reporting interfaces covering operational data and internal workflows for Telkomsel Perso.",
+    role: "UI Design",
+    focus: "Reporting · Data-heavy UI · Information hierarchy",
   },
   {
     icon: "5",
     title: "Airline Catering Operations Management System",
+    meta: "Web & Desktop · Operations",
     description:
-      "Web and desktop dashboards for airline catering operations and workflow visualization.",
+      "UI design for web and desktop dashboards covering airline catering operations and workflow visualization.",
+    role: "UI Design",
+    focus: "Dashboard UI · Workflow visualization",
   },
   {
     icon: "1",
-    title: "Operational Support Tools for Transportation Ecosystem",
+    title: "Event Ticketing Marketplace Platform",
+    meta: "Web · Marketplace · Multi-role",
     description:
-      "UI across multiple ops tools — admin systems, passenger-facing, and monitoring interfaces.",
+      "Multi-role interfaces for purchase flows, seller dashboards, and internal ops tools.",
+    role: "UI Design",
+    focus: "Multi-role interface design",
+  },
+  {
+    icon: "2",
+    title: "Race Event Ticketing & Validation System",
+    meta: "Web · Real-time · On-site",
+    description:
+      "Ticket access, organizer views, and validator scanning flows for real-time, on-site use.",
+    role: "UI Design",
+    focus: "Real-time interface design",
   },
 ];
 
@@ -46,17 +64,14 @@ const bgClasses = [
   "bg-ppink",
   "bg-pyellow rounded-md",
 ];
-
-const getRandomClass = () => {
-  return bgClasses[Math.floor(Math.random() * bgClasses.length)];
-};
+const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
 ---
 
-<section class="flex flex-col text-center gap-8 py-20">
+<section class="flex flex-col text-center gap-8 py-14">
   <div class="flex flex-col gap-4">
-    <p class="text-pblack">Selected confidential client work</p>
-    <h2 class="section-heading text-2xl md:text-4xl font-bold" data-section="Enterprise Projects (NDA)">
-      Enterprise Projects (NDA)
+    <p class="text-pblack">Selected client and enterprise work across identity, transportation, operations, and ticketing platforms</p>
+    <h2 class="section-heading scroll-mt-28 text-2xl md:text-4xl font-bold" data-section="Enterprise & Client Work">
+      Enterprise & Client Work
     </h2>
   </div>
 
@@ -64,13 +79,13 @@ const getRandomClass = () => {
     <div class="max-w-4xl w-full">
       <ul class="flex flex-col gap-4 text-left">
         {
-          ndaProjects.map((project) => {
-            const randomClass = getRandomClass();
+          enterpriseProjects.map((project, i) => {
+            const bgClass = getBgClass(i);
             return (
               <li class="border border-black rounded-lg p-4 shadow-card hover:shadow-hover transition-all duration-300">
                 <div class="flex items-start gap-4">
                   <div
-                    class={`${randomClass} p-2 border border-black shadow-card1 flex-shrink-0 mt-1`}
+                    class={`${bgClass} p-2 border border-black shadow-card1 flex-shrink-0 mt-1`}
                   >
                     <Icon
                       name={project.icon}
@@ -79,11 +94,20 @@ const getRandomClass = () => {
                     />
                   </div>
                   <div class="flex-1">
-                    <h3 class="text-lg font-semibold text-black mb-2">
+                    <span class="text-[10px] font-semibold uppercase tracking-wide text-gray-400">
+                      {project.meta}
+                    </span>
+                    <h3 class="text-lg font-semibold text-black mt-1 mb-2">
                       {project.title}
                     </h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                       {project.description}
+                    </p>
+                    <p class="text-[11px] font-semibold uppercase tracking-wide text-gray-500 mt-2">
+                      Role: {project.role}
+                    </p>
+                    <p class="text-[11px] font-semibold uppercase tracking-wide text-gray-400">
+                      Focus: {project.focus}
                     </p>
                   </div>
                 </div>
@@ -92,14 +116,6 @@ const getRandomClass = () => {
           })
         }
       </ul>
-
-      <div class="mt-8 p-4 bg-gray-100 rounded-lg border border-gray-300">
-        <p class="text-sm text-gray-700 text-center">
-          <strong>Note:</strong> These projects were delivered under Non-Disclosure
-          Agreements (NDA). Detailed designs and implementations cannot be shared
-          publicly due to confidentiality constraints.
-        </p>
-      </div>
     </div>
   </div>
 </section>

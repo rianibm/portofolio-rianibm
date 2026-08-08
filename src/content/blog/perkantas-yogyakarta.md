@@ -5,6 +5,7 @@ icon: "2"
 pubDate: "Jul 4 2026"
 heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "Laravel", "Bootstrap", "Tailwind CSS", "REST APIs", "Community Platform"]
+role: "Frontend engineering · API migration · System stabilization"
 pageSkills:
   - category: "Project & Communication"
     icon: "1"

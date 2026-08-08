@@ -5,6 +5,7 @@ icon: "3"
 pubDate: "2024"
 heroImage: "/src/assets/euro.jpg"
 tags: ["Frontend Developer", "React", "TypeScript", "Recoil"]
+role: "Frontend implementation · State management"
 pageSkills:
   - category: "Frontend Development"
     icon: "1"

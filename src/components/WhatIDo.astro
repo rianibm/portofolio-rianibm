@@ -18,22 +18,28 @@ const bgClasses = [
 ];
 const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
 
-const groups = [
+interface ProjectGroup {
+  label: string;
+  slugs: string[];
+  sublabel?: string;
+  compactCards?: boolean;
+}
+
+const groups: ProjectGroup[] = [
   {
-    label: "Indomaret Group Ecosystem",
-    slugs: ["affiliator", "web-3pl", "memberplus", "gamified-tiering", "gamified-reward"],
+    label: "Indomaret Group — Production Work",
+    sublabel: "Production work across logistics, seller platforms, loyalty, and operational systems",
+    slugs: ["affiliator", "web-3pl", "memberplus", "gamified-tiering", "gamified-reward", "indopaket-mobile"],
   },
   {
-    label: "Revamp Projects",
-    slugs: ["indopaket-web", "indopaket-mobile", "perkantas-yogyakarta"],
+    label: "System Ownership",
+    slugs: ["indopaket-web", "perkantas-yogyakarta"],
   },
   {
-    label: "Side Projects",
-    slugs: ["hire-green-jobs"],
-  },
-  {
-    label: "Personal Experiments",
-    slugs: ["spillr", "sky-explorer"],
+    label: "Additional Work",
+    sublabel: "Side projects & personal experiments, outside client production",
+    compactCards: true,
+    slugs: ["hire-green-jobs", "spillr", "sky-explorer"],
   },
 ];
 
@@ -41,15 +47,16 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
 const featuredPost = allPosts.find((p) => p.data.featured);
 
 const displayGroups = compact
-  ? [{ label: "Indomaret Group Ecosystem", slugs: groups[0].slugs.slice(0, 3) }]
+  ? [{ label: "Indomaret Group — Production Work", slugs: groups[0].slugs.slice(0, 3) }]
   : groups.map((g) => ({
       ...g,
       slugs: g.slugs.filter((slug) => slug !== featuredPost?.id),
     }));
 ---
 <section class="flex flex-col text-center gap-4">
-  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">Design Engineering Projects</h2>
-  <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">Frontend & UX Engineer specializing in production web platforms — from logistics and e-commerce tools to loyalty systems and community platforms.</p>
+  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">UX Engineering — Selected Work</h2>
+  <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">I work across product design and frontend engineering to build production-ready digital experiences — from logistics and e-commerce tools to loyalty systems and enterprise operations platforms.</p>
+  <p class="text-xs md:text-sm font-semibold uppercase tracking-widest text-pblack/60 animate-on-scroll from-bottom">UX Architecture · Interaction Design · UI Systems · Frontend Implementation</p>
 
   {!compact && featuredPost && (
     <a
@@ -58,6 +65,9 @@ const displayGroups = compact
     >
       <span class="text-xs font-semibold uppercase tracking-widest">⭐ Featured Case Study</span>
       <h3 class="text-2xl md:text-3xl font-bold">{featuredPost.data.title}</h3>
+      {featuredPost.data.role && (
+        <span class="text-xs font-semibold uppercase tracking-wide text-black/60">{featuredPost.data.role}</span>
+      )}
       <p class="text-sm md:text-base text-black/80" set:html={featuredPost.data.description} />
       {featuredPost.data.highlights && (
         <ul class="flex flex-col gap-1 text-sm">
@@ -83,34 +93,64 @@ const displayGroups = compact
     </div>
   )}
 
-  {displayGroups.map((group, gi) => (
-    <div class="py-10">
-      {!compact && <h3 class="section-heading text-lg md:text-2xl font-semibold mb-6 animate-on-scroll from-bottom" data-section={group.label}>{group.label}</h3>}
+  {displayGroups.map((group, gi) => {
+    const groupPosts = group.slugs.map((slug) => postMap.get(slug)).filter(Boolean);
+    const isSingle = groupPosts.length === 1;
+    return (
+    <>
+    <div class="py-8">
+      {!compact && (
+        <div class="mb-6">
+          <h3 class="section-heading scroll-mt-28 text-lg md:text-2xl font-semibold animate-on-scroll from-bottom" data-section={group.label}>{group.label}</h3>
+          {group.sublabel && <p class="text-xs md:text-sm text-gray-500 mt-1 animate-on-scroll from-bottom">{group.sublabel}</p>}
+        </div>
+      )}
+      {isSingle ? (
+        <a
+          href={`/works/${groupPosts[0]!.id}/`}
+          class="max-w-2xl mx-auto w-full text-left rounded-3xl border-1 border-black shadow-card hover:shadow-hover transition px-6 py-6 md:py-8 flex flex-col md:flex-row gap-6 animate-on-scroll from-bottom settle"
+        >
+          <div class={`${getBgClass(gi)} text-4xl p-2 self-start border-1 border-black shadow-card1`}>
+            <Icon name={groupPosts[0]!.data.icon} aria-hidden="true" />
+          </div>
+          <div class="flex flex-col gap-2">
+            <h4 class="text-xl md:text-2xl font-semibold">{groupPosts[0]!.data.title}</h4>
+            {groupPosts[0]!.data.role && (
+              <span class="text-[11px] font-semibold uppercase tracking-wide text-gray-500">{groupPosts[0]!.data.role}</span>
+            )}
+            <p class="date text-sm font-light">
+              <FormattedDate date={groupPosts[0]!.data.pubDate} monthYear />
+            </p>
+            <div class="text-sm text-gray-600 leading-relaxed" set:html={groupPosts[0]!.data.description} />
+          </div>
+        </a>
+      ) : (
       <ul class="flex flex-wrap justify-center gap-6 md:gap-8">
         {group.slugs.map((slug, i) => {
           const post = postMap.get(slug);
           if (!post) return null;
           const bgClass = getBgClass(gi * 5 + i);
+          const isCompact = group.compactCards;
           return (
-            <li class="w-full max-w-sm md:w-72 text-left rounded-3xl border-1 border-black shadow-card group hover:shadow-hover transition px-4 py-6 flex flex-col gap-6 animate-on-scroll from-bottom settle" style={`--delay: ${i * 0.1}s`}>
-              <a href={`/works/${post.id}/`} class="flex flex-col gap-4">
+            <li class={`w-full text-left border-1 border-black transition animate-on-scroll from-bottom settle ${isCompact ? "max-w-xs md:w-60 rounded-2xl shadow-card1 hover:shadow-card px-4 py-4 flex flex-col gap-3 opacity-90" : "max-w-sm md:w-72 rounded-3xl shadow-card group hover:shadow-hover px-4 py-6 flex flex-col gap-6"}`} style={`--delay: ${i * 0.1}s`}>
+              <a href={`/works/${post.id}/`} class={`flex flex-col ${isCompact ? "gap-2" : "gap-4"}`}>
                 <div
-                  class={`${bgClass} text-4xl p-2 self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}
+                  class={`${bgClass} ${isCompact ? "text-2xl p-1.5" : "text-4xl p-2"} self-start border-1 border-black shadow-card1 group-hover:shadow-card transition`}
                 >
                   <Icon name={post.data.icon} aria-hidden="true" />
                 </div>
-                {post.data.tags && (
-                  <div class="flex flex-wrap gap-1 -mb-2">
-                    {post.data.tags.slice(0, 2).map((tag: string) => (
-                      <span class="text-[10px] font-semibold uppercase tracking-wide bg-black text-white rounded-full px-2 py-0.5">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <h4 class={isCompact ? "text-base font-semibold" : "text-xl font-semibold"}>{post.data.title}</h4>
+                {!isCompact && post.data.role && (
+                  <span class="text-[11px] font-semibold uppercase tracking-wide text-gray-500">{post.data.role}</span>
                 )}
-                <h4 class="text-xl font-semibold">{post.data.title}</h4>
-                <p class="date -mt-4 text-sm font-light flex items-center gap-2">
-                  <FormattedDate date={post.data.pubDate} />
+                <p class="date text-sm font-light flex items-center gap-2">
+                  <FormattedDate date={post.data.pubDate} monthYear />
+                  {isCompact && (
+                    <>
+                      <span aria-hidden="true">·</span>
+                      <span>Independent</span>
+                    </>
+                  )}
                   {post.data.scope && (
                     <span class="text-[10px] uppercase tracking-wide text-gray-400 border border-gray-300 rounded-full px-2 py-0.5">
                       {post.data.scope}
@@ -118,13 +158,19 @@ const displayGroups = compact
                   )}
                 </p>
               </a>
-              <div class="text-sm text-gray-600 line-clamp-3 leading-relaxed" set:html={post.data.description} />
+              {!isCompact && (
+                <div class="text-sm text-gray-600 leading-relaxed line-clamp-3" set:html={post.data.description} />
+              )}
             </li>
           );
         })}
       </ul>
+      )}
     </div>
-  ))}
+    {gi === 0 && !compact && <UIProjectsNDA />}
+    </>
+    );
+  })}
 
   {compact && (
     <a
@@ -134,6 +180,4 @@ const displayGroups = compact
       View All Projects
     </a>
   )}
-
-  {!compact && <UIProjectsNDA />}
 </section>

@@ -6,11 +6,12 @@ heroImage: "/src/assets/euro.jpg"
 icon: "1"
 tags: ["Design Engineer", "UX Engineer", "Laravel", "Logistics"]
 featured: true
+role: "UX Engineer · Product Team Lead"
 highlights:
   [
-    "6 documented flows: Homepage, Store Locator, Shipping, Tracking, Registration, OTP",
-    "Full before/after evidence with heuristic analysis",
-    "Restructured navigation & information hierarchy",
+    "9 core flows redesigned across 6 customer journeys — homepage, store locator, shipping, tracking, registration, and OTP",
+    "Before/after comparison informed by heuristic evaluation",
+    "Restructured navigation to reduce fragmented entry points across core shipping tasks",
   ]
 pageSkills:
   - category: "UX Analysis"

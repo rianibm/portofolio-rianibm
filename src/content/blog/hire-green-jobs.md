@@ -5,6 +5,7 @@ icon: "1"
 pubDate: "Dec 29 2023"
 heroImage: "/src/assets/adriana.jpg"
 tags: ["Frontend Developer", "Next.js", "React", "TypeScript", "Tailwind CSS"]
+role: "Frontend implementation · Production deployment"
 pageSkills:
   - category: "Frontend Development"
     icon: "1"

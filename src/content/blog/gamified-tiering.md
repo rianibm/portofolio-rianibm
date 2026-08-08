@@ -2,10 +2,11 @@
 title: "Gamified Tiering Loyalty System"
 description: "Frontend implementation of a gamified tiering and incentive system for courier partners — from early Laravel prototype to a full Next.js rebuild with real-time progression, multi-tier tracking, and incentive history."
 icon: "2"
-pubDate: "Jul 4 2026"
+pubDate: "Dec 2024"
 scope: "Feature Module"
 heroImage: "/src/assets/adriana.jpg"
 tags: ["Frontend Developer", "UI/UX", "Next.js", "React", "Gamification", "Laravel"]
+role: "UI/UX design-to-code · Frontend implementation"
 pageSkills:
   - category: "UI/UX Design & Implementation"
     icon: "1"

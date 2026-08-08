@@ -25,6 +25,7 @@ const {
   heroImage = "/fran.jpg",
   icon,
   tags,
+  role,
   pageSkills,
 } = Astro.props;
 
@@ -194,6 +195,7 @@ const relevantSkills = getPageRelevantSkills();
                 title.slice(1)
               }
             </h1>
+            {role && <p class="text-xs md:text-sm font-semibold uppercase tracking-wide text-white/70 mb-1">{role}</p>}
             <p set:html={description} />
           </div>
           <Image src={images[heroImage]()} alt={title} class="h-72 md:h-80 w-full object-cover"/>
@@ -221,7 +223,7 @@ const relevantSkills = getPageRelevantSkills();
             <span id="blog-section-label-text"></span>
           </div>
           <div class="flex flex-col gap-10 py-10">
-            <div class="prose max-w-none prose-h2:mt-16 prose-h3:mt-10 prose-p:my-4 prose-ul:my-4 prose-img:my-6 prose-table:my-6">
+            <div class="prose max-w-none prose-h2:mt-16 prose-h2:scroll-mt-28 prose-h3:mt-10 prose-h3:scroll-mt-28 prose-p:my-4 prose-ul:my-4 prose-img:my-6 prose-table:my-6">
               <slot />
             </div>
             <div class="flex flex-col gap-6" transition:animate="slide">
@@ -337,10 +339,9 @@ const relevantSkills = getPageRelevantSkills();
         let currentSection = "";
         function onScroll() {
           let active = "";
-          var header = document.querySelector(".site-header");
-          var headerBottom = header ? header.getBoundingClientRect().bottom : 72;
+          var triggerLine = _label.getBoundingClientRect().bottom;
           headings.forEach((h) => {
-            if (h.getBoundingClientRect().top <= headerBottom) {
+            if (h.getBoundingClientRect().top <= triggerLine) {
               active = h.textContent?.trim() || "";
             }
           });

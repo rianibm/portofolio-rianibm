@@ -2,10 +2,12 @@
 title: "Gamified Reward Module"
 description: "Internal CMS roulette draw system for Member+ live campaigns — designed for dual audiences: the operator running the event and Instagram Live viewers watching the winner reveal in real time."
 icon: "2"
-pubDate: "Jun 01 2024"
+pubDate: "Jul 1 2025"
+updatedDate: "Apr 14 2026"
 scope: "Feature Module"
 heroImage: "/src/assets/euro.jpg"
 tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]
+role: "UX design for live, dual-audience contexts · Frontend implementation"
 pageSkills:
   - category: "UX Design for Live Contexts"
     icon: "1"
@@ -116,6 +118,18 @@ Because this ran live, several resilience measures were built in:
 - **AJAX retry with exponential delay** — gift data reloads automatically up to 3 times before falling back gracefully
 - **Offline detection banner** — visible warning if connection drops during a live session
 - **Modal stack management** — prevents z-index and backdrop conflicts when multiple modals are involved in the flow
+
+---
+
+## Timeline & Ongoing Ownership
+
+This wasn't a one-off build — it's a system I've owned and iterated on across multiple live campaign cycles, from the initial build through the most recent release:
+
+- **Jul 2025** — Initial build: gift catalog management, event configuration, and the core roulette draw flow
+- **Aug 2025 – Feb 2026** — Live iterations across several campaign cycles — fixes and refinements driven by real usage on active broadcasts, not staging
+- **Apr 2026** — Most recent live release
+
+Each cycle ran during an active IG Live event, so changes had to hold up under real operational conditions the first time.
 
 ---
 

@@ -107,10 +107,9 @@ const posts = (await getCollection("blog")).sort(
         let currentSection = "";
         function onScroll() {
           let active = "";
-          var header = document.querySelector(".site-header");
-          var headerBottom = header ? header.getBoundingClientRect().bottom : 72;
+          var triggerLine = _label.getBoundingClientRect().bottom;
           headings.forEach((h) => {
-            if (h.getBoundingClientRect().top <= headerBottom) {
+            if (h.getBoundingClientRect().top <= triggerLine) {
               active = h.dataset.section || "";
             }
           });
