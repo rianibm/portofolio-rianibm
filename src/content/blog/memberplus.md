@@ -5,6 +5,7 @@ pubDate: "2025"
 heroImage: "/src/assets/adriana.jpg"
 icon: "1"
 tags: ["Frontend Developer", "UX Engineering", "Next.js"]
+identity: "UX Engineer · Frontend"
 role: "Frontend architecture · Auth integration"
 pageSkills:
   - category: "Seller & Platform Context"

@@ -5,6 +5,7 @@ pubDate: "Sept 2025"
 heroImage: "/src/assets/adriana.jpg"
 icon: "1"
 tags: ["Frontend Developer", "React", "Logistics"]
+identity: "Frontend Developer"
 role: "Frontend architecture · Operational UI systems"
 pageSkills:
   - category: "3PL & Logistics Domain"

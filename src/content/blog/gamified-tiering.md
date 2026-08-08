@@ -6,6 +6,7 @@ pubDate: "Dec 2024"
 scope: "Feature Module"
 heroImage: "/src/assets/adriana.jpg"
 tags: ["Frontend Developer", "UI/UX", "Next.js", "React", "Gamification", "Laravel"]
+identity: "UX Engineer · Frontend"
 role: "UI/UX design-to-code · Frontend implementation"
 pageSkills:
   - category: "UI/UX Design & Implementation"

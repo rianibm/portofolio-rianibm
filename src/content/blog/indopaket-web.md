@@ -10,7 +10,7 @@ role: "UX Engineer · Product Team Lead"
 highlights:
   [
     "9 core flows redesigned across 6 customer journeys — homepage, store locator, shipping, tracking, registration, and OTP",
-    "Before/after comparison informed by heuristic evaluation",
+    "Redesign decisions informed by Hotjar behavioral analysis and heuristic evaluation",
     "Restructured navigation to reduce fragmented entry points across core shipping tasks",
   ]
 pageSkills:

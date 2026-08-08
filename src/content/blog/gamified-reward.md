@@ -7,6 +7,7 @@ updatedDate: "Apr 14 2026"
 scope: "Feature Module"
 heroImage: "/src/assets/euro.jpg"
 tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]
+identity: "UX Engineer · Frontend"
 role: "UX design for live, dual-audience contexts · Frontend implementation"
 pageSkills:
   - category: "UX Design for Live Contexts"

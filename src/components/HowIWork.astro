@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+
+const steps = [
+  {
+    icon: "1",
+    bg: "bg-pgreen rounded-full",
+    title: "Understand",
+    description: "Map user needs, business rules, and technical constraints before defining the solution.",
+  },
+  {
+    icon: "2",
+    bg: "bg-pblue rounded-2xl",
+    title: "Design",
+    description: "Shape flows, information architecture, and interaction patterns around real user tasks.",
+  },
+  {
+    icon: "3",
+    bg: "bg-ppink",
+    title: "Build",
+    description: "Translate UX decisions into maintainable, production-ready interfaces.",
+  },
+];
+---
+
+<section class="flex flex-col text-center gap-8 py-20">
+  <div class="flex flex-col gap-4 animate-on-scroll from-bottom">
+    <p class="text-pblack">My process:</p>
+    <h2 class="text-2xl md:text-4xl font-bold">How I Work</h2>
+  </div>
+
+  <ul class="flex flex-col md:flex-row justify-center gap-6 max-w-4xl mx-auto w-full">
+    {steps.map((step, i) => (
+      <li
+        class="flex-1 text-left rounded-2xl border-1 border-black shadow-card hover:shadow-hover transition px-6 py-6 flex flex-col gap-3 animate-on-scroll from-bottom settle"
+        style={`--delay: ${i * 0.1}s`}
+      >
+        <div class={`${step.bg} text-2xl p-2 self-start border-1 border-black shadow-card1`}>
+          <Icon name={step.icon} aria-hidden="true" />
+        </div>
+        <h3 class="text-lg font-semibold">{step.title}</h3>
+        <p class="text-sm text-gray-600 leading-relaxed">{step.description}</p>
+      </li>
+    ))}
+  </ul>
+</section>

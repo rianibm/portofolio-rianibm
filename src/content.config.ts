@@ -18,6 +18,8 @@ const blog = defineCollection({
         scope: z.string().optional(),
         // Ownership/contribution line shown on cards and the case study header (e.g. "UX architecture · Frontend implementation")
         role: z.string().optional(),
+        // Short role/discipline title shown above `role` on production-work cards (e.g. "UX Engineer · Frontend")
+        identity: z.string().optional(),
         // Highlight this post as the featured case study on the /works listing
         featured: z.boolean().optional(),
         // Short, concrete highlight bullets shown on the featured card (only used when featured is true)

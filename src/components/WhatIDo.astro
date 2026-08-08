@@ -47,18 +47,18 @@ const postMap = new Map(allPosts.map((p) => [p.id, p]));
 const featuredPost = allPosts.find((p) => p.data.featured);
 
 const displayGroups = compact
-  ? [{ label: "Indomaret Group — Production Work", slugs: groups[0].slugs.slice(0, 3) }]
+  ? [{ label: "Selected Production Work", slugs: groups[0].slugs.filter((slug) => slug !== featuredPost?.id).slice(0, 3) }]
   : groups.map((g) => ({
       ...g,
       slugs: g.slugs.filter((slug) => slug !== featuredPost?.id),
     }));
 ---
-<section class="flex flex-col text-center gap-4">
+<section id="selected-work" class="flex flex-col text-center gap-4 scroll-mt-24">
   <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">UX Engineering — Selected Work</h2>
   <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">I work across product design and frontend engineering to build production-ready digital experiences — from logistics and e-commerce tools to loyalty systems and enterprise operations platforms.</p>
   <p class="text-xs md:text-sm font-semibold uppercase tracking-widest text-pblack/60 animate-on-scroll from-bottom">UX Architecture · Interaction Design · UI Systems · Frontend Implementation</p>
 
-  {!compact && featuredPost && (
+  {featuredPost && (
     <a
       href={`/works/${featuredPost.id}/`}
       class="max-w-2xl mx-auto w-full text-left rounded-3xl border-1 border-black shadow-card hover:shadow-hover transition px-6 py-8 flex flex-col gap-4 bg-pyellow animate-on-scroll from-bottom settle mt-4"
@@ -66,7 +66,7 @@ const displayGroups = compact
       <span class="text-xs font-semibold uppercase tracking-widest">⭐ Featured Case Study</span>
       <h3 class="text-2xl md:text-3xl font-bold">{featuredPost.data.title}</h3>
       {featuredPost.data.role && (
-        <span class="text-xs font-semibold uppercase tracking-wide text-black/60">{featuredPost.data.role}</span>
+        <span class="text-xs font-bold uppercase tracking-wide text-black">{featuredPost.data.role}</span>
       )}
       <p class="text-sm md:text-base text-black/80" set:html={featuredPost.data.description} />
       {featuredPost.data.highlights && (
@@ -99,7 +99,7 @@ const displayGroups = compact
     return (
     <>
     <div class="py-8">
-      {!compact && (
+      {(!compact || gi === 0) && (
         <div class="mb-6">
           <h3 class="section-heading scroll-mt-28 text-lg md:text-2xl font-semibold animate-on-scroll from-bottom" data-section={group.label}>{group.label}</h3>
           {group.sublabel && <p class="text-xs md:text-sm text-gray-500 mt-1 animate-on-scroll from-bottom">{group.sublabel}</p>}
@@ -115,6 +115,9 @@ const displayGroups = compact
           </div>
           <div class="flex flex-col gap-2">
             <h4 class="text-xl md:text-2xl font-semibold">{groupPosts[0]!.data.title}</h4>
+            {groupPosts[0]!.data.identity && (
+              <span class="text-xs font-bold uppercase tracking-wide text-black">{groupPosts[0]!.data.identity}</span>
+            )}
             {groupPosts[0]!.data.role && (
               <span class="text-[11px] font-semibold uppercase tracking-wide text-gray-500">{groupPosts[0]!.data.role}</span>
             )}
@@ -140,6 +143,9 @@ const displayGroups = compact
                   <Icon name={post.data.icon} aria-hidden="true" />
                 </div>
                 <h4 class={isCompact ? "text-base font-semibold" : "text-xl font-semibold"}>{post.data.title}</h4>
+                {!isCompact && post.data.identity && (
+                  <span class="text-xs font-bold uppercase tracking-wide text-black">{post.data.identity}</span>
+                )}
                 {!isCompact && post.data.role && (
                   <span class="text-[11px] font-semibold uppercase tracking-wide text-gray-500">{post.data.role}</span>
                 )}

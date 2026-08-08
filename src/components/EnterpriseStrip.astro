@@ -1,0 +1,31 @@
+---
+const systems = [
+  "e-KTP Identity Management",
+  "LRT Jakarta Operations",
+  "Telkomsel Perso Reporting",
+  "Airline Operations",
+  "Ticketing Platforms",
+];
+---
+
+<section class="flex flex-col text-center gap-6 py-14">
+  <div class="flex flex-col gap-2 animate-on-scroll from-bottom">
+    <p class="text-sm font-medium text-pblack/70">Beyond the featured work</p>
+    <h2 class="text-xl md:text-2xl font-bold">Enterprise & Production Systems</h2>
+  </div>
+  <p class="text-xl md:text-2xl font-semibold max-w-3xl mx-auto leading-relaxed animate-on-scroll from-bottom" style="--delay: 0.1s">
+    {systems.map((name, i) => (
+      <>
+        <span>{name}</span>
+        {i < systems.length - 1 && <span class="text-pblack/40 mx-2" aria-hidden="true">·</span>}
+      </>
+    ))}
+  </p>
+  <a
+    href="/works/#enterprise-work"
+    class="text-sm font-semibold underline underline-offset-4 animate-on-scroll from-bottom"
+    style="--delay: 0.2s"
+  >
+    View enterprise & client work →
+  </a>
+</section>

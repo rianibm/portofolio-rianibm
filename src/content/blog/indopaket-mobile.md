@@ -5,6 +5,7 @@ pubDate: "Apr 2026"
 heroImage: "/src/assets/adriana.jpg"
 icon: "1"
 tags: ["Design Engineer", "UX Engineer", "Mobile", "Logistics"]
+identity: "UX Engineer"
 role: "Heuristic evaluation · Navigation redesign"
 pageSkills:
   - category: "UX Analysis"

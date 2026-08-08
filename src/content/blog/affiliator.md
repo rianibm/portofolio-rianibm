@@ -5,6 +5,7 @@ pubDate: "Sept 2026"
 heroImage: "/src/assets/fran.jpg"
 icon: "2"
 tags: ["Frontend Developer", "UX Engineering", "React", "Mobile UI"]
+identity: "UX Engineer · Frontend"
 role: "UX design exploration · Frontend implementation"
 pageSkills:
   - category: "Affiliate & Growth Domain"
