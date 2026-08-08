@@ -196,7 +196,7 @@ const relevantSkills = getPageRelevantSkills();
               }
             </h1>
             {role && <p class="text-xs md:text-sm font-semibold uppercase tracking-wide text-white/70 mb-1">{role}</p>}
-            <p set:html={description} />
+            <p>{description}</p>
           </div>
           <Image src={images[heroImage]()} alt={title} class="h-72 md:h-80 w-full object-cover"/>
         </div>

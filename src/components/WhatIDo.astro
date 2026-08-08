@@ -68,7 +68,7 @@ const displayGroups = compact
       {featuredPost.data.role && (
         <span class="text-xs font-bold uppercase tracking-wide text-black">{featuredPost.data.role}</span>
       )}
-      <p class="text-sm md:text-base text-black/80" set:html={featuredPost.data.description} />
+      <p class="text-sm md:text-base text-black/80">{featuredPost.data.description}</p>
       {featuredPost.data.highlights && (
         <ul class="flex flex-col gap-1 text-sm">
           {featuredPost.data.highlights.map((h: string) => (
@@ -124,7 +124,7 @@ const displayGroups = compact
             <p class="date text-sm font-light">
               <FormattedDate date={groupPosts[0]!.data.pubDate} monthYear />
             </p>
-            <div class="text-sm text-gray-600 leading-relaxed" set:html={groupPosts[0]!.data.description} />
+            <div class="text-sm text-gray-600 leading-relaxed">{groupPosts[0]!.data.description}</div>
           </div>
         </a>
       ) : (
@@ -165,7 +165,7 @@ const displayGroups = compact
                 </p>
               </a>
               {!isCompact && (
-                <div class="text-sm text-gray-600 leading-relaxed line-clamp-3" set:html={post.data.description} />
+                <div class="text-sm text-gray-600 leading-relaxed line-clamp-3">{post.data.description}</div>
               )}
             </li>
           );

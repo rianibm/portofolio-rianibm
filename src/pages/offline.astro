@@ -45,12 +45,17 @@ import offlinePng from "@/assets/images/errors/no-internet.png";
         again.
       </p>
       <button
-        onclick="window.location.reload()"
+        id="retry-btn"
         class="inline-block px-6 py-3 bg-black text-white rounded-lg font-semibold text-sm hover:shadow-hover transition-all duration-200 border border-black cursor-pointer"
       >
         Try Again
       </button>
     </main>
     <Footer />
+    <script>
+      document.getElementById("retry-btn")?.addEventListener("click", () => {
+        window.location.reload();
+      });
+    </script>
   </body>
 </html>
