@@ -4,7 +4,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { Icon } from "astro-icon/components";
 import { getCollection } from "astro:content";
-import { getRandomClass as _getRandomClass, getSkillClass as _getSkillClass } from "@/utils/helpers";
+import { getRandomClass as _getRandomClass, getSkillClass as _getSkillClass, calcYearsExp } from "@/utils/helpers";
 
 import avatarAvif from "@/assets/images/avatar/about.avif";
 import avatarWebp from "@/assets/images/avatar/about.webp";
@@ -14,6 +14,8 @@ import rianibmAvatar from "@/assets/rianibm-removebg-preview.png";
 const title = "About Riani BM";
 const description =
   "Portofolio of Rianibm. UX Engineer based in Jakarta, Indonesia, working at the intersection of UX and frontend engineering.";
+
+const yearsExp = calcYearsExp(new Date("2023-03-05"));
 
 const posts = (await getCollection("works")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
@@ -111,9 +113,14 @@ const aboutSkills = [
             engineering — turning complex business workflows into intuitive,
             scalable digital products. Based in Indonesia.
           </p>
+          <div class="flex flex-wrap items-center justify-center gap-2 text-sm">
+            <span class="px-3 py-1 bg-pgreen rounded-full border-1 border-black font-semibold">{yearsExp}+ yrs experience</span>
+            <span class="px-3 py-1 bg-pblue rounded-full border-1 border-black font-semibold">React · TypeScript · Figma</span>
+            <span class="px-3 py-1 bg-pyellow rounded-full border-1 border-black font-semibold">9 core journeys redesigned</span>
+          </div>
         </div>
 
-        <div class="text-black">
+        <div class="text-black max-w-3xl mx-auto">
           <div class="flex flex-col">
             <!-- What I Do -->
             <section
@@ -130,8 +137,7 @@ const aboutSkills = [
 
               <p>
                 My core strength is building interfaces that make sense
-                structurally
-                <em>and</em> feel right when people actually use them.
+                structurally <em>and</em> feel right when people actually use them.
               </p>
 
               <ul class="list-disc ml-6 space-y-1">
@@ -195,6 +201,18 @@ const aboutSkills = [
                     Collaborating on the Car Attendance &amp; Monitoring mobile app, CMS, and reporting dashboard
                   </li>
                 </ul>
+                <p class="border-l-4 border-ppink pl-3 text-sm font-semibold mt-3">
+                  9 core journeys redesigned across the Indopaket web platform
+                  — restructuring navigation, task entry points, tracking,
+                  store discovery, authentication, and error states.
+                </p>
+                <p class="text-sm text-pblack mt-2">
+                  That meant consolidating a feature-by-feature platform into
+                  a coherent, task-oriented experience — removing extraneous
+                  cognitive load while keeping the domain's inherent
+                  complexity legible, shipped as production code the team can
+                  extend.
+                </p>
               </div>
 
               <!-- Frontend Developer -->
@@ -242,6 +260,53 @@ const aboutSkills = [
                   <li>Conducted A/B testing by implementing design variations and analyzing user interactions</li>
                   <li>Translated UI designs into code and optimized performance via asset loading and PageSpeed</li>
                 </ul>
+              </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"><span></span></div>
+
+            <!-- Technologies Used -->
+            <section
+              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
+            >
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Technologies
+              </h2>
+              <p>
+                Tools are just tools. I use what helps me ship clear interfaces
+                and maintain them without creating future pain.
+              </p>
+
+              <div class="flex flex-col gap-2">
+                {
+                  aboutSkills.map((skillGroup, i) => {
+                    const skillClass = getSkillClass(i);
+                    return (
+                      <div
+                        class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll from-bottom"
+                        style={`--delay: ${i * 0.1}s`}
+                      >
+                        <div class="flex items-center gap-2 mb-1">
+                          <div
+                            class={`${skillClass} p-1 border border-black shadow-card1 text-sm`}
+                          >
+                            <Icon name={skillGroup.icon} aria-hidden="true" />
+                          </div>
+                          <div class="font-semibold text-sm">
+                            {skillGroup.category}
+                          </div>
+                        </div>
+                        <ul class="flex flex-wrap gap-1">
+                          {skillGroup.skills.map((skill) => (
+                            <li class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
+                              {skill}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    );
+                  })
+                }
               </div>
             </section>
 
@@ -315,97 +380,6 @@ const aboutSkills = [
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <!-- Selected Experience -->
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Selected Experience
-              </h2>
-              <p>
-                Most of my production work has been in logistics, enterprise
-                operations, and multi-role systems where UX decisions have
-                direct operational consequences.
-              </p>
-              <p class="border-l-4 border-ppink pl-3 text-sm font-semibold">
-                9 core journeys redesigned across the Indopaket web platform
-                — restructuring navigation, task entry points, tracking,
-                store discovery, authentication, and error states.
-              </p>
-              <ul class="list-disc ml-6 space-y-1">
-                <li>
-                  <strong>Logistics & Operations</strong> — Indopaket website revamp,
-                  Package Claim web platform, Car Attendance & Monitoring, 3PL
-                  logistics platform
-                </li>
-                <li>
-                  <strong>Product & Growth</strong> — Affiliate platform (mobile app
-                  & website), Member+ (SSO-integrated authentication)
-                </li>
-                <li>
-                  <strong>Platform Modernization</strong> — migrated legacy interfaces
-                  from Bootstrap 3 to Tailwind CSS for long-term consistency and
-                  maintainability
-                </li>
-              </ul>
-              <p class="text-sm text-pblack mt-3">
-                On the Indopaket revamp, that meant consolidating a
-                feature-by-feature platform into a coherent, task-oriented
-                experience — removing extraneous cognitive load while keeping
-                the domain's inherent complexity legible, shipped as
-                production code the team can extend.
-              </p>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
-            <!-- Technologies Used -->
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Technologies
-              </h2>
-              <p>
-                Tools are just tools. I use what helps me ship clear interfaces
-                and maintain them without creating future pain.
-              </p>
-
-              <div class="flex flex-col gap-2">
-                {
-                  aboutSkills.map((skillGroup, i) => {
-                    const skillClass = getSkillClass(i);
-                    return (
-                      <div
-                        class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200 animate-on-scroll from-bottom"
-                        style={`--delay: ${i * 0.1}s`}
-                      >
-                        <div class="flex items-center gap-2 mb-1">
-                          <div
-                            class={`${skillClass} p-1 border border-black shadow-card1 text-sm`}
-                          >
-                            <Icon name={skillGroup.icon} aria-hidden="true" />
-                          </div>
-                          <div class="font-semibold text-sm">
-                            {skillGroup.category}
-                          </div>
-                        </div>
-                        <ul class="flex flex-wrap gap-1">
-                          {skillGroup.skills.map((skill) => (
-                            <li class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
-                              {skill}
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    );
-                  })
-                }
-              </div>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
             <!-- Education -->
             <section
               class="flex flex-col gap-2 animate-on-scroll from-bottom p-6"
@@ -445,11 +419,27 @@ const aboutSkills = [
               <h2 class="text-xl md:text-2xl font-bold flex items-center">
                 <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>A Bit More About Me
               </h2>
-              <p>
-                Outside of work: photography (street photography and freelance
-                sports photography for basketball events in Jakarta), fiction
-                and UI/UX books, and films across genres.
+              <p class="text-sm text-pblack">
+                When I'm not shipping interfaces, you'll probably find me
+                doing one of these:
               </p>
+              <ul class="flex flex-wrap gap-2">
+                <li class="flex items-center gap-2 px-3 py-2 bg-pgreen rounded-full border-1 border-black text-sm font-medium">
+                  <span aria-hidden="true">📷</span> Photography
+                </li>
+                <li class="flex items-center gap-2 px-3 py-2 bg-pblue rounded-full border-1 border-black text-sm font-medium">
+                  <span aria-hidden="true">📚</span> Reading novels
+                </li>
+                <li class="flex items-center gap-2 px-3 py-2 bg-ppink rounded-full border-1 border-black text-sm font-medium">
+                  <span aria-hidden="true">🎬</span> Films & shows
+                </li>
+                <li class="flex items-center gap-2 px-3 py-2 bg-pyellow rounded-full border-1 border-black text-sm font-medium">
+                  <span aria-hidden="true">🎵</span> Vinyl records
+                </li>
+                <li class="flex items-center gap-2 px-3 py-2 bg-white rounded-full border-1 border-black text-sm font-medium">
+                  <span aria-hidden="true">🚲🌅</span> Cycling & sunrise-chasing
+                </li>
+              </ul>
             </section>
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
@@ -472,7 +462,7 @@ const aboutSkills = [
               <div>
                 <div class="font-semibold text-sm">Riani BM</div>
                 <p class="text-pblack text-xs">
-                  Frontend Developer from Indonesia
+                  UX Engineer from Indonesia
                 </p>
               </div>
             </div>

@@ -59,17 +59,3 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
     >
   </div>
 </section>
-
-<script>
-  import { calcYearsExp } from "@/utils/helpers";
-
-  function setYears() {
-    const el = document.getElementById("years-exp");
-    if (!el) return;
-    const start = new Date("2023-03-05");
-    el.textContent = String(calcYearsExp(start));
-  }
-
-  setYears();
-  document.addEventListener("astro:page-load", setYears);
-</script>
