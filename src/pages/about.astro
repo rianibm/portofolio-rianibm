@@ -15,7 +15,7 @@ const title = "About Riani BM";
 const description =
   "Portofolio of Rianibm. UX Engineer based in Jakarta, Indonesia, working at the intersection of UX and frontend engineering.";
 
-const posts = (await getCollection("blog")).sort(
+const posts = (await getCollection("works")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 
