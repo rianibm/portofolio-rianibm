@@ -53,19 +53,53 @@ import Analytics from "@vercel/analytics/astro";
 <script is:inline>
   (function () {
     var KEY = "reduce-motion";
+    var observer = null;
+
+    // Scroll-triggered reveal for `.animate-on-scroll` elements, shared
+    // across every page via Footer (which every layout includes) instead
+    // of being duplicated per top-level page.
+    function initScrollAnimations() {
+      var reduced =
+        document.documentElement.classList.contains("reduce-motion") ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reduced) {
+        document.querySelectorAll(".animate-on-scroll").forEach(function (el) {
+          el.classList.add("animated");
+        });
+        return;
+      }
+
+      if (!observer) {
+        observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animated");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+      }
+      document
+        .querySelectorAll(".animate-on-scroll:not(.animated)")
+        .forEach(function (el) {
+          observer.observe(el);
+        });
+    }
 
     function apply(enabled) {
       document.documentElement.classList.toggle("reduce-motion", enabled);
-
-      document.querySelectorAll(".animate-on-scroll").forEach(function (el) {
-        if (enabled) el.classList.add("animated");
-      });
 
       var btn = document.getElementById("reduce-motion-toggle");
       if (btn) {
         btn.setAttribute("aria-pressed", String(enabled));
         btn.textContent = enabled ? "Enable animations" : "Reduce animations";
       }
+
+      initScrollAnimations();
     }
 
     // OS preference
@@ -92,6 +126,7 @@ import Analytics from "@vercel/analytics/astro";
 
     initToggle();
     document.addEventListener("astro:after-swap", function () {
+      observer = null;
       apply(enabled);
       initToggle();
     });

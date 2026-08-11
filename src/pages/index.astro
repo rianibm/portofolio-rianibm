@@ -29,46 +29,5 @@ import LookingFor from "@/components/LookingFor.astro";
       <LookingFor />
     </main>
     <Footer />
-    <script>
-      let observer: IntersectionObserver | null = null;
-      function initScrollAnimations() {
-        const prefersReducedMotion = window.matchMedia(
-          "(prefers-reduced-motion: reduce)"
-        ).matches;
-
-        if (
-          prefersReducedMotion ||
-          document.documentElement.classList.contains("reduce-motion")
-        ) {
-          document
-            .querySelectorAll(".animate-on-scroll")
-            .forEach((el) => el.classList.add("animated"));
-          return;
-        }
-
-        if (!observer) {
-          observer = new IntersectionObserver(
-            (entries) => {
-              entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                  entry.target.classList.add("animated");
-                  observer?.unobserve(entry.target);
-                }
-              });
-            },
-            { threshold: 0.15 },
-          );
-        }
-        document
-          .querySelectorAll(".animate-on-scroll:not(.animated)")
-          .forEach((el) => observer?.observe(el));
-      }
-      initScrollAnimations();
-      document.addEventListener("astro:after-swap", () => {
-        observer?.disconnect();
-        observer = null;
-        initScrollAnimations();
-      });
-    </script>
   </body>
 </html>
