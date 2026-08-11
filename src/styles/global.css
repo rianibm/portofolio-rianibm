@@ -11,17 +11,19 @@
   --color-pblack: #4E6273;
   --color-white: #F2F2F2;
 
-  /* Box shadows */
-  --shadow-card1: 2px 2px #000000;
-  --shadow-card: 4px 4px #000000;
-  --shadow-hover: 10px 10px #000000;
-  --shadow-pblue: 7px 7px #96C7F2;
-  --shadow-pgreen: 7px 7px #ADF296;
-  --shadow-ppink: 7px 7px #F396E5;
-  --shadow-pblueHover: 10px 10px #96C7F2;
-  --shadow-pgreenHover: 10px 10px #ADF296;
-  --shadow-ppinkHover: 10px 10px #F396E5;
-  --shadow-pyellow: 7px 7px #F2CF96;
+  /* Box shadows — kept as flat, non-blurred offsets (the site's signature
+     graphic-outline look) but shrunk from the original "comic sticker"
+     scale down to something calmer for enterprise-facing content. */
+  --shadow-card1: 1px 1px #000000;
+  --shadow-card: 3px 3px #000000;
+  --shadow-hover: 5px 5px #000000;
+  --shadow-pblue: 4px 4px #96C7F2;
+  --shadow-pgreen: 4px 4px #ADF296;
+  --shadow-ppink: 4px 4px #F396E5;
+  --shadow-pblueHover: 6px 6px #96C7F2;
+  --shadow-pgreenHover: 6px 6px #ADF296;
+  --shadow-ppinkHover: 6px 6px #F396E5;
+  --shadow-pyellow: 4px 4px #F2CF96;
 
   /* Fonts */
   --font-sans: Alexandria, sans-serif;

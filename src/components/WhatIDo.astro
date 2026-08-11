@@ -11,10 +11,10 @@ interface Props {
 const { compact = false } = Astro.props;
 
 const bgClasses = [
-  "bg-pgreen rounded-full",
-  "bg-pblue rounded-2xl",
-  "bg-ppink ",
-  "bg-pyellow rounded-md",
+  "bg-pgreen rounded-xl",
+  "bg-pblue rounded-xl",
+  "bg-ppink rounded-xl",
+  "bg-pyellow rounded-xl",
 ];
 const getBgClass = (i: number) => bgClasses[i % bgClasses.length];
 
@@ -56,7 +56,6 @@ const displayGroups = compact
 <section id="selected-work" class="flex flex-col text-center gap-4 scroll-mt-24">
   <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">UX Engineering — Selected Work</h2>
   <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">I work across product design and frontend engineering to build production-ready digital experiences — from logistics and e-commerce tools to loyalty systems and enterprise operations platforms.</p>
-  <p class="text-xs md:text-sm font-semibold uppercase tracking-widest text-pblack/60 animate-on-scroll from-bottom">UX Architecture · Interaction Design · UI Systems · Frontend Implementation</p>
 
   {featuredPost && (
     <a

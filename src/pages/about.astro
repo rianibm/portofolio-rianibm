@@ -27,10 +27,10 @@ const bgClasses = [
 ];
 
 const skillBgClasses = [
-  "bg-pgreen rounded-full",
-  "bg-pblue rounded-2xl",
-  "bg-ppink",
-  "bg-pyellow rounded-md",
+  "bg-pgreen rounded-xl",
+  "bg-pblue rounded-xl",
+  "bg-ppink rounded-xl",
+  "bg-pyellow rounded-xl",
 ];
 
 const getRandomClass = () => _getRandomClass(bgClasses);
@@ -402,6 +402,38 @@ const aboutSkills = [
                   })
                 }
               </div>
+            </section>
+
+            <div class="section-divider" aria-hidden="true"><span></span></div>
+
+            <!-- Education -->
+            <section
+              class="flex flex-col gap-2 animate-on-scroll from-bottom p-6"
+            >
+              <h2 class="text-xl md:text-2xl font-bold flex items-center">
+                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Education
+              </h2>
+              <p class="font-semibold">
+                B.Sc. Informatics
+                <span class="font-normal text-pblack">— Duta Wacana Christian University · GPA 3.62/4.00</span>
+              </p>
+              <details class="group">
+                <summary class="cursor-pointer text-sm font-semibold text-black underline underline-offset-4 list-none">
+                  Thesis: Inclusive Design for Website-Based Learning →
+                </summary>
+                <p class="text-sm text-pblack leading-relaxed mt-2">
+                  Designed and coded an inclusive e-learning platform for users with contrast sensitivity, light sensitivity, low vision, and blindness. Conducted rapid ethnography and in-depth interviews; accessibility-tested with NVDA (laptop) and TalkBack (mobile).
+                </p>
+                <a
+                  href="https://repository.ukdw.ac.id/7746/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="View thesis on UKDW repository"
+                  class="inline-flex items-center gap-2 text-sm font-medium text-black hover:text-ppink transition-colors mt-2"
+                >
+                  View Thesis
+                </a>
+              </details>
             </section>
 
             <div class="section-divider" aria-hidden="true"><span></span></div>

@@ -5,7 +5,7 @@ import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import { Icon } from "astro-icon/components";
-import { getRandomClass as _getRandomClass } from "@/utils/helpers";
+import { getSkillClass as _getSkillClass } from "@/utils/helpers";
 
 type Props = CollectionEntry<"works">["data"] & {
   id?: string;
@@ -46,20 +46,18 @@ const bgClasses = [
 ];
 
 const skillBgClasses = [
-  "bg-pgreen rounded-full",
-  "bg-pblue rounded-2xl",
-  "bg-ppink",
-  "bg-pyellow rounded-md",
+  "bg-pgreen rounded-xl",
+  "bg-pblue rounded-xl",
+  "bg-ppink rounded-xl",
+  "bg-pyellow rounded-xl",
 ];
 
 const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/**/*.{jpeg,jpg,png,gif}')
 if (!images[heroImage]) throw new Error(`"${heroImage}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 
-const getRandomClass = () => _getRandomClass(bgClasses);
+const getBgClass = (i: number) => _getSkillClass(i, bgClasses);
 
-const getRandomSkillClass = () => {
-  return skillBgClasses[Math.floor(Math.random() * skillBgClasses.length)];
-};
+const getSkillBgClass = (i: number) => _getSkillClass(i, skillBgClasses);
 
 // Function to get skills based on tags or page content
 const getPageRelevantSkills = () => {
@@ -232,12 +230,12 @@ const relevantSkills = getPageRelevantSkills();
                 <p class="md:hidden font-semibold">Related Skills:</p>
                 <h3 class="hidden md:block text-lg font-semibold mb-2">Technologies Used</h3>
                 <div class="flex flex-col gap-3">
-                  {relevantSkills.map((skillGroup) => {
-                    const randomClass = getRandomSkillClass();
+                  {relevantSkills.map((skillGroup, i) => {
+                    const skillClass = getSkillBgClass(i);
                     return (
                       <div class="border border-black rounded-lg p-3 shadow-card hover:shadow-hover transition-all duration-200">
                         <div class="flex items-center gap-2 mb-2">
-                          <div class={`${randomClass} p-1 border border-black shadow-card1 text-sm`}>
+                          <div class={`${skillClass} p-1 border border-black shadow-card1 text-sm`}>
                             <Icon name={skillGroup.icon} aria-hidden="true" />
                           </div>
                           <h4 class="font-semibold text-sm">{skillGroup.category}</h4>
@@ -262,9 +260,9 @@ const relevantSkills = getPageRelevantSkills();
                 <p class="font-semibold text-sm">More Posts:</p>
                 <ul class="flex flex-col gap-1">
                   {
-                    posts.filter((post) => post.id !== id).slice(0, 3).map((post) => {
+                    posts.filter((post) => post.id !== id).slice(0, 3).map((post, i) => {
                       return (
-                        <li class={`text-left rounded-md border-1 border-black shadow-card group hover:shadow-hover transition px-2 py-1 text-sm ${getRandomClass()}`}>
+                        <li class={`text-left rounded-md border-1 border-black shadow-card group hover:shadow-hover transition px-2 py-1 text-sm ${getBgClass(i)}`}>
                           <a href={`/works/${post.id}/`}>
                             <h5 class="text-xs font-medium">{post.data.title}</h5>
                           </a>
