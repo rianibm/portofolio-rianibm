@@ -2,7 +2,6 @@
 title: "Dashboard Member Plus"
 description: "Seller-facing web dashboard built with Next.js 15, covering tiering progression, referral visibility, transaction history, and SSO authentication from a Laravel backend."
 pubDate: "2025"
-heroImage: "/src/assets/adriana.jpg"
 icon: "heroicons:squares-2x2"
 tags: ["Frontend Developer", "UX Engineering", "Next.js"]
 identity: "UX Engineer · Frontend"
@@ -127,3 +126,10 @@ All UI was implemented using a component-based approach with Next.js 15 App Rout
 
 This project sits very close to my core strength:
 **building frontend interfaces that make complex operational systems feel understandable and usable in everyday work.**
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1">Riani BM <span class="text-black/50 font-normal">· UX Engineer</span></span>
+  <a href="https://www.linkedin.com/in/aedentrisa-yasmanda-paulindino-64b805193/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Aeden <span class="text-black/50 font-normal">· Frontend</span></a>
+  <a href="https://www.linkedin.com/in/wayanberdyanto/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Wayan Berdyanto <span class="text-black/50 font-normal">· Backend</span></a>
+</div>

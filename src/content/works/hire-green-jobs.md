@@ -3,7 +3,6 @@ title: "HiRE – Green Jobs Platform"
 description: "Frontend implementation of a public-facing green jobs platform under the Society of Renewable Energy (SRE), focusing on scalable UI, content-driven pages, and production deployment."
 icon: "heroicons:briefcase"
 pubDate: "Dec 2023"
-heroImage: "/src/assets/adriana.jpg"
 tags: ["Frontend Developer", "Next.js", "React", "TypeScript", "Tailwind CSS"]
 role: "Frontend implementation · Production deployment"
 pageSkills:
@@ -124,6 +123,14 @@ Supported deployment to a live production environment, including environment con
 
 **Collaboration with Backend**  
 Worked alongside backend engineers handling authentication and data services. My responsibility stayed on frontend integration and presentation, ensuring backend complexity was not exposed to users.
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <a href="https://www.linkedin.com/in/maria-amanda-0205/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Maria Amanda <span class="text-black/50 font-normal">· UI/UX</span></a>
+  <a href="https://www.linkedin.com/in/michael-mgp-s/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Michael <span class="text-black/50 font-normal">· Backend</span></a>
+  <a href="https://www.linkedin.com/in/bernadetanaftalina/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Bernadeta Naftalina <span class="text-black/50 font-normal">· Backend</span></a>
+  <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-ppink rounded-full border-1 border-black text-xs font-semibold shadow-card1">Deta <span class="text-black/50 font-normal">· PM/PO</span></span>
+</div>
 
 ---
 

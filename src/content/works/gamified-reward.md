@@ -5,7 +5,6 @@ icon: "heroicons:gift"
 pubDate: "Jul 2025"
 updatedDate: "Apr 2026"
 scope: "Feature Module"
-heroImage: "/src/assets/euro.jpg"
 tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]
 identity: "UX Engineer · Frontend"
 role: "UX design for live, dual-audience contexts · Frontend implementation"
@@ -131,6 +130,12 @@ This wasn't a one-off build — it's a system I've owned and iterated on across 
 - **Apr 2026** — Most recent live release
 
 Each cycle ran during an active IG Live event, so changes had to hold up under real operational conditions the first time.
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1">Riani BM <span class="text-black/50 font-normal">· UX Engineer</span></span>
+  <a href="https://www.linkedin.com/in/aedentrisa-yasmanda-paulindino-64b805193/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Aeden <span class="text-black/50 font-normal">· Backend</span></a>
+</div>
 
 ---
 

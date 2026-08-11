@@ -4,7 +4,6 @@ description: "Frontend implementation of a gamified tiering and incentive system
 icon: "heroicons:trophy"
 pubDate: "Dec 2024"
 scope: "Feature Module"
-heroImage: "/src/assets/adriana.jpg"
 tags: ["Frontend Developer", "UI/UX", "Next.js", "React", "Gamification", "Laravel"]
 identity: "UX Engineer · Frontend"
 role: "UI/UX design-to-code · Frontend implementation"
@@ -97,6 +96,12 @@ A separate page showing the partner’s monthly incentive history.
 
 - Built a tiering service layer to centralize API calls, data formatting, and business logic (progress calculation, tier color mapping, next tier lookup)
 - Handled loading, error, and empty states across all views
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1">Riani BM <span class="text-black/50 font-normal">· UX Engineer</span></span>
+  <a href="https://www.linkedin.com/in/aedentrisa-yasmanda-paulindino-64b805193/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Aeden <span class="text-black/50 font-normal">· Frontend</span></a>
+</div>
 
 ---
 

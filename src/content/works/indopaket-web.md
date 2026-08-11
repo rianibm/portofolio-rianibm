@@ -2,7 +2,7 @@
 title: "Indopaket — Web"
 description: "Revamped the Indopaket web platform used by sellers and internal operations, redesigning navigation and information hierarchy for a more intuitive experience."
 pubDate: "Apr 2026"
-heroImage: "/src/assets/euro.jpg"
+heroImage: "/src/assets/images/works/indopaket-web/after/beranda-upper.png"
 icon: "heroicons:globe-alt"
 tags: ["Design Engineer", "UX Engineer", "Laravel", "Logistics"]
 featured: true

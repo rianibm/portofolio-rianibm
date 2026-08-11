@@ -3,7 +3,6 @@ title: "Perkantas Yogyakarta"
 description: "Frontend development, long-term maintenance, and API migration & system stabilization for a community-based web platform supporting Christian discipleship activities."
 icon: "heroicons:wrench-screwdriver"
 pubDate: "Jul 2026"
-heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "Laravel", "Bootstrap", "Tailwind CSS", "REST APIs", "Community Platform"]
 role: "Frontend engineering · API migration · System stabilization"
 pageSkills:
@@ -29,7 +28,7 @@ pageSkills:
 
 Perkantas Yogyakarta is a **community-based web platform** built to support Christian discipleship activities for students, alumni, and medical professionals.
 
-I have been involved in this project across two distinct phases — starting as a **frontend developer** in 2023 for the initial build, and returning in **March 2026** to lead API migration and system stabilization efforts.
+I have been involved in this project across two distinct phases — starting as a **frontend developer** in 2023 for the initial build, and returning from **March to June 2026** to lead API migration and system stabilization efforts.
 
 ---
 
@@ -58,9 +57,15 @@ Beyond development, I handled several operational aspects:
 - Email service configuration for platform notifications
 - Ongoing maintenance and small fixes after launch
 
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <a href="https://www.linkedin.com/in/bantolostd/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Bantolo Setiadi <span class="text-black/50 font-normal">· Backend</span></a>
+  <a href="https://www.linkedin.com/in/maria-amanda-0205/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Maria Amanda <span class="text-black/50 font-normal">· UI/UX</span></a>
+</div>
+
 ---
 
-## Phase 2 – API Migration & System Stabilization (Mar 2026 – Present)
+## Phase 2 – API Migration & System Stabilization (Mar – Jun 2026)
 
 Returning to the project in 2026, the focus shifted to stabilizing the system, modernizing the tech stack, and preparing for API-based architecture.
 
@@ -78,6 +83,11 @@ Returning to the project in 2026, the focus shifted to stabilizing the system, m
 - Refactored components to improve consistency and maintainability
 - Performed unit testing for CMS CRUD functionality
 - Prepared the system architecture for future API-based implementation and scalability
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <a href="https://www.linkedin.com/in/gheawaworuntu/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-ppink rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Ghea Waworuntu <span class="text-black/50 font-normal">· QA</span></a>
+</div>
 
 ---
 

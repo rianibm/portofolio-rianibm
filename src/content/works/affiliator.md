@@ -2,7 +2,6 @@
 title: "Indopaket Affiliator"
 description: "Frontend and UX implementation for a low-barrier affiliate program, focused on commission visibility and trust-driven referral experiences."
 pubDate: "Sept 2026"
-heroImage: "/src/assets/fran.jpg"
 icon: "heroicons:user-group"
 tags: ["Frontend Developer", "UX Engineering", "React", "Mobile UI"]
 identity: "UX Engineer · Frontend"

@@ -2,7 +2,6 @@
 title: "Web 3PL"
 description: "Internal web platform for 3PL (Third-Party Logistics) operations, supporting land and air shipment workflows with role-based access and data-heavy processes."
 pubDate: "Sept 2025"
-heroImage: "/src/assets/adriana.jpg"
 icon: "heroicons:truck"
 tags: ["Frontend Developer", "React", "Logistics"]
 identity: "Frontend Developer"

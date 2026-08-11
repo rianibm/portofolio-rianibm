@@ -3,7 +3,6 @@ title: "Spillr – Decentralized Q&A Platform"
 description: "Frontend implementation of a decentralized anonymous Q&A platform built during ICP Hackathon Indonesia 2025, focusing on rapid delivery, responsive UI, and blockchain integration."
 icon: "heroicons:chat-bubble-left-right"
 pubDate: "Mar 2025"
-heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "React", "Web3", "Hackathon"]
 role: "Frontend implementation · Rapid prototyping"
 pageSkills:
@@ -123,6 +122,14 @@ The entire product was built within a strict 72-hour timeframe, requiring fast d
 
 **Cross-functional Teamwork**  
 Collaborated with a five-person team covering frontend, blockchain backend, and system architecture, coordinating changes and integration under tight deadlines.
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <a href="https://www.linkedin.com/in/johanes-wiku-sakti-9113a41b4/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pyellow rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Johanes Wiku Sakti <span class="text-black/50 font-normal">· Lead</span></a>
+  <a href="https://www.linkedin.com/in/ian-ismaya-572ab72b9/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Ian Ismaya <span class="text-black/50 font-normal">· Backend</span></a>
+  <a href="https://www.linkedin.com/in/alfrethanovchristianwijaya/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Alfrethan Ovchristian Wijaya <span class="text-black/50 font-normal">· Backend</span></a>
+  <a href="https://www.linkedin.com/in/aedentrisa-yasmanda-paulindino-64b805193/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Aedentrisa Yasmanda Paulindino <span class="text-black/50 font-normal">· Frontend & QA</span></a>
+</div>
 
 ---
 
