@@ -3,7 +3,6 @@ import { getCollection } from "astro:content";
 
 export const GET: APIRoute = async () => {
   const works = await getCollection("works");
-  const posts = await getCollection("posts");
   const site = "https://rianibm.com";
   const today = new Date().toISOString().split("T")[0];
 
@@ -11,7 +10,6 @@ export const GET: APIRoute = async () => {
     { url: "/", priority: "1.0" },
     { url: "/about", priority: "0.8" },
     { url: "/works", priority: "0.8" },
-    { url: "/blog", priority: "0.8" },
   ];
 
   const workPages = works.map((post) => ({
@@ -19,12 +17,7 @@ export const GET: APIRoute = async () => {
     priority: "0.6",
   }));
 
-  const blogPages = posts.map((post) => ({
-    url: `/blog/${post.id}`,
-    priority: "0.6",
-  }));
-
-  const allPages = [...staticPages, ...workPages, ...blogPages];
+  const allPages = [...staticPages, ...workPages];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">

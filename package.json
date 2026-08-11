@@ -17,6 +17,7 @@
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.3",
     "@astrojs/vercel": "11.0.5",
+    "@iconify-json/heroicons": "^1.2.3",
     "@tailwindcss/vite": "^4.3.2",
     "@vercel/analytics": "^1.6.1",
     "astro": "7.2.0",

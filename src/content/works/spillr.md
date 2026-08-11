@@ -1,8 +1,8 @@
 ---
 title: "Spillr – Decentralized Q&A Platform"
 description: "Frontend implementation of a decentralized anonymous Q&A platform built during ICP Hackathon Indonesia 2025, focusing on rapid delivery, responsive UI, and blockchain integration."
-icon: "4"
-pubDate: "Mar 27 2025"
+icon: "heroicons:chat-bubble-left-right"
+pubDate: "Mar 2025"
 heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "React", "Web3", "Hackathon"]
 role: "Frontend implementation · Rapid prototyping"

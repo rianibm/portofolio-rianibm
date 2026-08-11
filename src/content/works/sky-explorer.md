@@ -1,7 +1,7 @@
 ---
 title: "Sky Explorer – Flight Booking App"
 description: "Frontend implementation of a flight booking application, focusing on complex booking flows, state management, and responsive UI under tight time constraints."
-icon: "3"
+icon: "heroicons:paper-airplane"
 pubDate: "2024"
 heroImage: "/src/assets/euro.jpg"
 tags: ["Frontend Developer", "React", "TypeScript", "Recoil"]

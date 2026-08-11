@@ -1,8 +1,8 @@
 ---
 title: "Perkantas Yogyakarta"
 description: "Frontend development, long-term maintenance, and API migration & system stabilization for a community-based web platform supporting Christian discipleship activities."
-icon: "2"
-pubDate: "Jul 4 2026"
+icon: "heroicons:wrench-screwdriver"
+pubDate: "Jul 2026"
 heroImage: "/src/assets/fran.jpg"
 tags: ["Frontend Developer", "Laravel", "Bootstrap", "Tailwind CSS", "REST APIs", "Community Platform"]
 role: "Frontend engineering · API migration · System stabilization"

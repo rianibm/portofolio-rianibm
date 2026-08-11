@@ -1,9 +1,9 @@
 ---
 title: "Gamified Reward Module"
 description: "Internal CMS roulette draw system for Member+ live campaigns — designed for dual audiences: the operator running the event and Instagram Live viewers watching the winner reveal in real time."
-icon: "2"
-pubDate: "Jul 1 2025"
-updatedDate: "Apr 14 2026"
+icon: "heroicons:gift"
+pubDate: "Jul 2025"
+updatedDate: "Apr 2026"
 scope: "Feature Module"
 heroImage: "/src/assets/euro.jpg"
 tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]

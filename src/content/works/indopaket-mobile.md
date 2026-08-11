@@ -3,7 +3,7 @@ title: "Indopaket — Mobile App"
 description: "UX work on the Indopaket mobile app, focused on tracking clarity and reducing icon ambiguity in the main navigation."
 pubDate: "Apr 2026"
 heroImage: "/src/assets/adriana.jpg"
-icon: "1"
+icon: "heroicons:device-phone-mobile"
 tags: ["Design Engineer", "UX Engineer", "Mobile", "Logistics"]
 identity: "UX Engineer"
 role: "Heuristic evaluation · Navigation redesign"

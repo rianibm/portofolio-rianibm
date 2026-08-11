@@ -33,16 +33,4 @@ const works = defineCollection({
     }),
 });
 
-const posts = defineCollection({
-    // Load Markdown and MDX files in the `src/content/posts/` directory.
-    loader: glob({ base: './src/content/posts', pattern: '**/*.{md,mdx}' }),
-    schema: z.object({
-        title: z.string(),
-        description: z.string(),
-        pubDate: z.coerce.date(),
-        updatedDate: z.coerce.date().optional(),
-        tags: z.array(z.string()).optional(),
-    }),
-});
-
-export const collections = { works, posts };
+export const collections = { works };

@@ -3,7 +3,7 @@ title: "Dashboard Member Plus"
 description: "Seller-facing web dashboard built with Next.js 15, covering tiering progression, referral visibility, transaction history, and SSO authentication from a Laravel backend."
 pubDate: "2025"
 heroImage: "/src/assets/adriana.jpg"
-icon: "1"
+icon: "heroicons:squares-2x2"
 tags: ["Frontend Developer", "UX Engineering", "Next.js"]
 identity: "UX Engineer · Frontend"
 role: "Frontend architecture · Auth integration"
