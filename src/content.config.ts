@@ -24,6 +24,8 @@ const works = defineCollection({
         featured: z.boolean().optional(),
         // Short, concrete highlight bullets shown on the featured card (only used when featured is true)
         highlights: z.array(z.string()).optional(),
+        // Delivery context shown on project cards (e.g. "React · Production · Web & Mobile")
+        delivery: z.string().optional(),
         // Add pageSkills support
         pageSkills: z.array(z.object({
             category: z.string(),

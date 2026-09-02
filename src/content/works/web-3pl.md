@@ -6,6 +6,7 @@ icon: "heroicons:truck"
 tags: ["Frontend Developer", "React", "Logistics"]
 identity: "Frontend Developer"
 role: "Frontend architecture · Operational UI systems"
+delivery: "React · Production · Internal Platform"
 pageSkills:
   - category: "3PL & Logistics Domain"
     icon: "1"
@@ -74,6 +75,15 @@ pageSkills:
 
 # Web 3PL
 ### Frontend Ownership for Multi-Modal Logistics Operations
+
+## My Contribution
+
+**I owned:** Frontend architecture, operational UI systems, form and workflow design, error/empty state design, RBAC implementation, API client, testing setup
+
+**Collaborated with:** Backend engineers (API contracts, business rules) · Product · Operations teams
+
+---
+
 Web 3PL is an **internal logistics platform** used to manage **Third-Party Logistics (3PL)** operations for Indopaket, covering shipment workflows across **land (darat)** and **air (udara)** transportation.
 
 This project became my first deep exposure to the **3PL domain**, where frontend work is tightly coupled with operational accuracy, data consistency, and system reliability. My role focused on frontend and UI ownership, translating complex logistics processes into interfaces that can be used safely in daily operations.
@@ -176,6 +186,30 @@ To support long-term stability, the project includes:
 - linting and formatting enforced via ESLint, Prettier, and lint-staged
 This helped keep the codebase predictable as features evolved.
 
+
+## Design → Engineering
+
+**UX problem** — Logistics operators and external partners needed to manage multi-modal shipments (land and air) without confusion between different workflow rules, and without accidentally taking invalid actions on live operational data.
+
+**Design decision** — Separated land and air workflows explicitly to mirror real operational sequences. Role-based access (Darat, Udara, Admin) ensured each actor only sees what's relevant — reducing decision overhead and preventing invalid operations structurally rather than through warnings.
+
+**Engineering constraint** — Complex RBAC system with JWT auth, inconsistent backend field naming between endpoints, and business rules (POD workflow enforcement, date range caps) that had to be applied consistently across the UI without becoming UI-by-UI divergence.
+
+**Implementation** — Custom React hooks per domain (`useShipments`, `useDaratAPI`, `usePodAPI`) to keep state co-located with features. Custom API client on native fetch with retry/timeout logic and global 401 handling. Config-driven validation rules via environment variables so constraints apply uniformly without touching UI logic per screen.
+
+**Production** — Shipped as the internal 3PL management platform for Indopaket operations, used daily by internal teams and external logistics partners.
+
+---
+
+## Outcome
+
+**Before:** Internal 3PL operations managed without a dedicated web platform — no unified interface for land/air shipment management, no enforced POD workflow, no role-based access control per operational actor.
+
+**After:** A production internal platform handling multi-modal logistics workflows across role-based access, real-time shipment dashboards, enforced 3-step POD workflows that prevent invalid state transitions, and financial reconciliation-aware status tracking.
+
+Delivered with unit and component tests (Vitest + Testing Library), config-driven business rules, and a custom API client built for resilience in unstable network environments common in operational logistics.
+
+---
 
 ## What Makes This Project Meaningful
 - First hands-on experience with real 3PL logistics workflows

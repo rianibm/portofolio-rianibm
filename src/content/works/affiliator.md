@@ -6,6 +6,7 @@ icon: "heroicons:user-group"
 tags: ["Frontend Developer", "UX Engineering", "React", "Mobile UI"]
 identity: "UX Engineer · Frontend"
 role: "UX design exploration · Frontend implementation"
+delivery: "React · Production · Web & Mobile"
 pageSkills:
   - category: "Affiliate & Growth Domain"
     icon: "1"
@@ -23,110 +24,95 @@ pageSkills:
 
 # Affiliate Program UI for a Shipping Platform
 
-Indopaket Affiliator is a **low-barrier affiliate program** that allows users to earn commission by sharing referral codes for Indopaket’s shipping services.
+## My Contribution
+
+**I owned:** UX exploration, interaction design for commission visibility and trust flows, dashboard UX, frontend implementation across web and mobile
+
+**Collaborated with:** Product · Backend engineers · Business stakeholders
+
+---
+
+## 01 — Context
+
+Indopaket Affiliator is a **low-barrier affiliate program** that allows users to earn commission by sharing referral codes for Indopaket's shipping services.
 
 Unlike existing membership-based referral programs, this flow is designed to work **without requiring prior seller or membership context**. Incentives are applied automatically when referral conditions are met, benefiting both the affiliator and the end user.
-
-I worked on the **frontend and UX implementation** for this program, delivering interfaces for both **web and mobile experiences**. The main challenge was designing a system that feels trustworthy, understandable, and motivating, while staying intentionally simple.
 
 This project is **ongoing** and planned for release around **late August 2025**.
 
 ---
 
-## Context & Product Intent
+## 02 — Problem
 
-Indopaket already operates internal referral and membership-based programs.
-The Affiliator Program was introduced as an **alternative growth channel** with a simplified entry experience.
-The intent was clear:
-- no role complexity
-- no requirement to become a seller or member
-- minimal setup before sharing
-From a UX standpoint, this meant removing assumptions about prior knowledge and designing flows that work even for first-time users with no existing relationship to the platform.
+Indopaket already operates internal referral and membership-based programs — but all required users to already be sellers or members before participating. There was no growth channel for users with no prior platform relationship.
+
+The business need was clear: a simplified entry experience with no role complexity, no prerequisite membership, and minimal setup before sharing.
+
+The UX challenge: **designing for users who have no reason to learn your system** — and who will abandon the moment something feels confusing or untrustworthy.
 
 ---
 
-## UX Analysis
+## 03 — Evidence
 
-**Recognition Over Recall** *(Nielsen's Heuristic #6)*
-Commission status, referral codes, and pending rewards surface immediately on the dashboard — users should not need to navigate or remember where to find them. One glance answers "did I earn anything?"
+No direct user research was conducted on this project (it was net-new). Design decisions were driven by:
 
-**Progressive Disclosure**
-The flow is broken into stages — **Register → Get Code → Share → Earn** — revealing only what's relevant at each step. New users are never confronted with advanced analytics or full commission breakdowns before they've had a chance to complete even one referral.
-
-**Mental Model Clarity**
-"How I earn" must be self-evident without reading instructions. The UI is structured around the user's mental model: share a code, someone uses it, you get paid. Anything that disrupted that story was deprioritized or removed from the flow.
-
-**Error Prevention** *(Nielsen's Heuristic #5)*
-Fraud-aware constraints — self-use prevention, usage limits, abnormal activity handling — are surfaced to users as clear, plain-language explanations rather than opaque error codes. Users understand what's blocked and why, without exposing internal system logic.
-
-**Trust through Transparency**
-Commission states are always explicit: pending vs. confirmed, with transaction context explaining why a reward was or wasn't granted. Ambiguity in earnings erodes trust fast — this design treats clarity as a trust signal.
+- **Benchmarking** similar affiliate and referral systems for mental model patterns
+- **Studying gamification literature** to distinguish functional incentive design from decorative mechanics
+- **Product alignment** with business constraints — fraud prevention rules, self-use prevention, usage limits
+- **Direct observation** of how commission ambiguity erodes trust in comparable platforms
 
 ---
 
-## UX Challenges & Key Decisions
+## 04 — Key Insights
 
-**Designing for First-time Users**  
-Because affiliators may have no prior context with the platform, onboarding needed to be:
-- short
-- self-explanatory
-- confidence-building
-The UI avoids internal terminology and focuses on what matters immediately:
-**share code → usage → reward visibility**.
+**Mental model clarity is the entire job.** "How I earn" must be self-evident without reading instructions. The user's mental model is: share a code → someone uses it → you get paid. Any friction that disrupted that story was deprioritized or removed.
 
+**Commission ambiguity erodes trust fast.** Pending vs. confirmed states, with transaction context explaining why a reward was or wasn't granted, had to be explicit and immediate — one glance answers "did I earn anything?"
 
-**Learning and Applying Gamification Thoughtfully**  
-This project pushed me to study gamification patterns more deeply, including reading references and benchmarking similar affiliate systems.
+**First-time users have no tolerance for internal terminology.** The flow was designed to work for someone with zero prior relationship to the platform — short, self-explanatory, confidence-building.
 
-Rather than adding surface-level rewards, the focus stayed on:
-- clear progress and earnings visibility
-- simple mental models for “how I earn”
-- incentives that support repeated sharing, not distraction
-Gamification here is subtle and functional, not decorative.
-Specific mechanics are intentionally kept high-level in this description.
-
-**Commission Visibility Over Everything Else**  
-Early design iterations experimented with broader analytics. These were later reduced to keep the primary focus on:
-- commission earned
-- pending vs. confirmed rewards
-- clear transaction context
-Anything that did not support these goals was deprioritized.
+**Gamification here is functional, not decorative.** Rather than surface-level rewards, focus stayed on clear progress visibility, simple mental models, and incentives that support repeated sharing.
 
 ---
 
-## Frontend & Mobile UI Implementation
+## 05 — Design Decisions
 
-**Web & Mobile Interfaces**  
-I implemented the UI across web and mobile contexts using a React-based architecture, ensuring consistent behavior while adapting layouts for smaller screens. Revenue and discount information remains immediately visible across device sizes.
+**Progressive disclosure over full upfront complexity** — The flow is broken into stages: Register → Get Code → Share → Earn. New users are never confronted with analytics or commission breakdowns before they've completed their first referral.
 
-**Onboarding & Sharing Flow**  
-Designed a straightforward onboarding and sharing flow:
-**Register → Get Code → Share → Earn**, supported by inline validation and clear feedback states.
+**Commission states are always explicit** — Pending vs. confirmed, with transaction context. Ambiguity in earnings was treated as a trust failure, not just a UX gap.
 
-**Dashboard & Transaction UI**  
-Built interfaces for:
-- referral codes with one-tap copy and share
-- commission summaries (earned vs. pending)
-- transaction lists that clearly explain why a reward was granted
-Consistency between summary and detail views was essential to maintain trust.
+**Fraud-aware constraints surfaced as plain language** — Self-use prevention, usage limits, and abnormal activity handling are explained in clear user-facing messages, not opaque error codes. Users understand what's blocked and why, without exposing internal system logic.
 
-**Fraud-aware UX Constraints**  
-Frontend UI reflects system constraints such as:
-- self-use prevention
-- usage limits
-- abnormal activity handling
-Messaging explains blocked actions clearly, without exposing internal system logic.
+**Analytics reduced to what matters** — Early iterations experimented with broader dashboards. These were stripped back to focus on: commission earned, pending vs. confirmed rewards, and clear transaction context. Anything that didn't support the core mental model was cut.
 
 ---
 
-## Key Takeaways
+## 06 — Design → Engineering
 
-- **Designing UX for users with no prior system context**
-- **Implementing commission-based flows with trust as a priority**
-- **Applying gamification in a restrained, purpose-driven way**
-- **Balancing growth goals with clarity and simplicity**
-- **End-to-end UI implementation using React / Next.js**
-This project sharpened my understanding that sometimes the hardest UX work is making things feel obvious, especially when users have no reason to learn your system deeply.
+**UX problem** — Users with no prior platform context needed to understand and trust a commission-based system — and complete referrals — without reading instructions or encountering confusing error states.
 
-Implementation details are presented at a conceptual level to respect platform security and business boundaries. Specific eligibility rules and incentive calculations are intentionally abstracted in this overview.
+**Design decision** — Structured the entire flow around one mental model (share code → someone uses it → you get paid) with progressive disclosure, always-explicit commission states, and fraud constraints surfaced as plain language.
 
+**Engineering constraint** — React-based frontend across both web and mobile contexts, consistent with Indopaket's existing product patterns. Fraud-prevention and eligibility logic lives in the backend; the frontend only reflects constraints, never exposes internal rules.
+
+**Implementation** — Built commission dashboard (earned/pending split), referral code UI with one-tap copy and share, transaction history with reward context, and fraud-state messaging as reusable React components. Inline validation and clear feedback states cover the Register → Get Code → Share → Earn flow.
+
+**Production** — Shipped across web and mobile as part of the Indopaket platform.
+
+---
+
+## 07 — Outcome
+
+**Before:** No dedicated affiliate channel for users outside the seller/member ecosystem. New users had no low-friction path to participate in Indopaket's referral economy.
+
+**After:** A production affiliate program with a clear Register → Get Code → Share → Earn flow, explicit commission visibility (pending vs. confirmed), and fraud-aware UX constraints that explain rather than block — implemented as reusable React components across web and mobile.
+
+No post-launch metrics available yet (project recently shipped). Qualitative signal: the design team and product stakeholders validated that the flow felt understandable and trustworthy in internal review.
+
+---
+
+## 08 — Reflection
+
+This project sharpened one specific instinct: **the hardest UX work is making things feel obvious to users who have no reason to learn your system deeply.**
+
+What I'd refine next: earlier usability testing with real first-time users to validate the mental model before shipping — particularly around the commission confirmation states, where the distinction between pending and confirmed could still be clearer without a transaction detail view.

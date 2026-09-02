@@ -6,6 +6,7 @@ icon: "heroicons:device-phone-mobile"
 tags: ["Design Engineer", "UX Engineer", "Mobile", "Logistics"]
 identity: "UX Engineer"
 role: "Heuristic evaluation · Navigation redesign"
+delivery: "UX Analysis · In Progress"
 pageSkills:
   - category: "UX Analysis"
     icon: "1"

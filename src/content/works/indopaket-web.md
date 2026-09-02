@@ -47,18 +47,7 @@ pageSkills:
 # Indopaket — Web
 ### Redesigning the Shipping Experience for Sellers and Operations
 
-**Role:** UX Engineer · Product Team Lead
-
-**Scope:** Web platform · 9 core flows — navigation, homepage, tracking, rate check, shipping, store locator, history, authentication, OTP
-
-**My contribution:** Ran the UX analysis (heatmap review, heuristic evaluation), redesigned the core flows, and implemented the redesign within the existing Laravel frontend.
-
-**Ownership**
-
-- **UX direction** — defined the redesign scope and prioritized the highest-friction journeys
-- **Product alignment** — worked within operational and referral rules owned by other teams
-- **Design** — redesigned core flows and interaction patterns
-- **Engineering** — implemented the redesign in the production Laravel frontend
+**Role:** UX Engineer · Product Team Lead · **Scope:** Web platform · 9 core flows — navigation, homepage, tracking, rate check, shipping, store locator, history, authentication, OTP
 
 Indopaket is Indomaret Group's shipping platform, used daily by sellers to manage shipments and track referral/tier status, and by internal teams for operational visibility. The site had grown feature-by-feature over time and lost coherence. This revamp restructured navigation and information hierarchy — not just visuals — and I carried it from UX analysis through to shipped code.
 
@@ -210,6 +199,28 @@ The old screen only showed a countdown and a bare set of input boxes — no conf
 
 ---
 
+## My Contribution
+
+**I owned:** UX analysis (heatmap review, heuristic evaluation) · information architecture · interaction design across 9 core flows · frontend implementation (Laravel/Blade) · design-to-code translation
+
+**Collaborated with:** Product team · Backend engineers (API contracts and business rules) · Business stakeholders (operational and referral logic)
+
+---
+
+## Design → Engineering
+
+**UX problem** — A shipping platform grown feature-by-feature, with fragmented navigation, ambiguous form fields, and error/empty states that dead-ended users.
+
+**Design decision** — Restructured navigation around user tasks (track, check rate, find a store, ship) instead of internal product categories. Standardized empty and error state patterns so they felt consistent across journeys, not one-off.
+
+**Engineering constraint** — Existing Laravel/Blade frontend — no rebuild, no new framework. The redesign had to work within existing component patterns and backend contracts owned by other teams.
+
+**Implementation** — Translated interaction decisions directly into production Blade templates styled with Tailwind CSS. Built reusable empty-state components, store-selection card, and form layouts the team can extend.
+
+**Production** — Shipped across 9 core flows on the live Indopaket web platform.
+
+---
+
 ## Design Decisions
 
 - Clarified the single vs. multi-resi tracking entry points instead of one ambiguous field
@@ -237,4 +248,10 @@ The old screen only showed a countdown and a bare set of input boxes — no conf
 
 ## Outcome
 
-Clearer navigation, a more consistent information hierarchy, and error/empty states that guide users instead of dead-ending them — for a platform used daily by sellers and internal teams. Some friction points, like the single vs. multi-resi tracking ambiguity, were identified but intentionally left for a follow-up iteration rather than rushed into this pass.
+**Before:** A feature-by-feature platform where navigation was organized around internal categories, primary actions (track, check rate) were buried in unlabeled fields, store selection covered the map with a large popup, and error/empty states dead-ended users with no recovery path.
+
+**After:** A task-oriented web platform where sellers and internal teams can complete their core journeys without reorienting. Navigation reflects what users actually do. Empty and error states guide instead of dead-ending. The app-handoff flow gives stuck users a clear next step. Login and Register no longer compete on the same screen.
+
+Shipped as production Laravel/Blade code with reusable patterns the team can extend — not a Figma handoff that stops at design.
+
+Some friction points, like the single vs. multi-resi tracking ambiguity, were intentionally deferred to a follow-up iteration rather than rushed into this pass.
