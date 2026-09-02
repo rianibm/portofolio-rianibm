@@ -1,6 +1,6 @@
 ---
 title: "Gamified Tiering Loyalty System"
-description: "Frontend implementation of a gamified tiering and incentive system for courier partners — from early Laravel prototype to a full Next.js rebuild with real-time progression, multi-tier tracking, and incentive history."
+description: "Gamified tiering and incentive system for courier partners — from early Laravel prototype to a full Next.js rebuild with real-time progression, multi-tier tracking, and incentive history."
 icon: "heroicons:trophy"
 pubDate: "Dec 2024"
 scope: "Feature Module"

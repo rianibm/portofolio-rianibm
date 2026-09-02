@@ -2,21 +2,20 @@
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
 import "../styles/global.css";
+import { ClientRouter } from "astro:transitions";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
 }
-
-import { ClientRouter } from "astro:transitions";
 const {
   title,
   description,
   image = "/screenshot.jpg",
 } = Astro.props;
 
-const seoTitle = title.includes("Riani")
+const seoTitle = title.includes("Riani BM")
   ? title
   : `${title} | Riani BM – UX Engineer Indonesia`;
 
@@ -34,7 +33,6 @@ const seoTitle = title.includes("Riani")
 
 <!-- Early hints: preconnect to third-party origins -->
 <link rel="dns-prefetch" href="https://static.hotjar.com" />
-<link rel="preconnect" href="https://static.hotjar.com" crossorigin />
 
 <!-- Font preloads (only above-the-fold critical weights) -->
 <link rel="preload" href="/fonts/Alexandria-Regular.woff2" as="font" type="font/woff2" crossorigin />
@@ -45,8 +43,8 @@ const seoTitle = title.includes("Riani")
 <!-- Primary Meta Tags -->
 <title>{seoTitle}</title>
 <ClientRouter />
-<meta name="title" content={seoTitle} />
 <meta name="description" content={description} />
+<link rel="sitemap" href="/sitemap.xml" />
 <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
@@ -55,8 +53,8 @@ const seoTitle = title.includes("Riani")
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content={Astro.url.href} />
+<meta property="og:site_name" content="Riani BM" />
 <meta property="og:title" content={seoTitle} />
-
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
 
@@ -104,8 +102,10 @@ if ('requestIdleCallback' in window) {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Riani BM",
+  alternateName: "rianibm",
   url: Astro.site,
   jobTitle: "UX Engineer",
+  description: "UX Engineer based in Jakarta, Indonesia. Works at the intersection of UX design and frontend engineering.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Jakarta",

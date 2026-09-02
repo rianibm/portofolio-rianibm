@@ -1,6 +1,6 @@
 ---
 title: "HiRE – Green Jobs Platform"
-description: "Frontend implementation of a public-facing green jobs platform under the Society of Renewable Energy (SRE), focusing on scalable UI, content-driven pages, and production deployment."
+description: "Public-facing green jobs platform for the Society of Renewable Energy (SRE) — scalable UI, content-driven pages, and production deployment."
 icon: "heroicons:briefcase"
 pubDate: "Dec 2023"
 tags: ["Frontend Developer", "Next.js", "React", "TypeScript", "Tailwind CSS"]

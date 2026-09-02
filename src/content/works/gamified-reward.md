@@ -1,6 +1,6 @@
 ---
 title: "Gamified Reward Module"
-description: "Internal CMS roulette draw system for Member+ live campaigns — designed for dual audiences: the operator running the event and Instagram Live viewers watching the winner reveal in real time."
+description: "Internal CMS roulette draw system for Member+ live campaigns — built for dual audiences: the operator running the event and Live viewers watching the winner reveal."
 icon: "heroicons:gift"
 pubDate: "Jul 2025"
 updatedDate: "Apr 2026"
