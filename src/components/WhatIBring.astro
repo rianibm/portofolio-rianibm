@@ -1,0 +1,47 @@
+---
+const pillars = [
+  {
+    bg: "bg-ppink rounded-2xl",
+    label: "UX",
+    items: ["Complex flows", "Information architecture", "Interaction design", "Heuristic evaluation"],
+  },
+  {
+    bg: "bg-pblue rounded-2xl",
+    label: "Engineering",
+    items: ["React · Next.js", "Design systems", "Frontend architecture", "Production implementation"],
+  },
+  {
+    bg: "bg-pgreen rounded-2xl",
+    label: "Product",
+    items: ["Requirements framing", "Stakeholder alignment", "Operational constraints", "Cross-functional work"],
+  },
+  {
+    bg: "bg-pyellow rounded-2xl",
+    label: "Leadership",
+    items: ["UX direction", "Team mentoring", "Design–engineering collaboration"],
+  },
+];
+---
+
+<section class="flex flex-col text-center gap-8 py-14">
+  <div class="flex flex-col gap-2 animate-on-scroll from-bottom">
+    <p class="text-sm font-medium text-pblack/70">What I bring</p>
+    <h2 class="text-xl md:text-2xl font-bold">UX + Engineering + Product + Leadership</h2>
+  </div>
+
+  <ul class="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto w-full">
+    {pillars.map((p, i) => (
+      <li
+        class={`${p.bg} border border-black shadow-card hover:shadow-hover transition text-left rounded-2xl px-5 py-5 flex flex-col gap-3 w-full max-w-xs md:flex-1 animate-on-scroll from-bottom settle`}
+        style={`--delay: ${i * 0.08}s`}
+      >
+        <span class="text-xs font-bold uppercase tracking-widest text-black/60">{p.label}</span>
+        <ul class="flex flex-col gap-1">
+          {p.items.map((item) => (
+            <li class="text-sm font-medium text-black">{item}</li>
+          ))}
+        </ul>
+      </li>
+    ))}
+  </ul>
+</section>
