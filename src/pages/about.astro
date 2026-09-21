@@ -3,30 +3,17 @@ import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { Icon } from "astro-icon/components";
-import { getCollection } from "astro:content";
-import { getRandomClass as _getRandomClass, getSkillClass as _getSkillClass, calcYearsExp } from "@/utils/helpers";
+import { getSkillClass as _getSkillClass, calcYearsExp } from "@/utils/helpers";
 
 import avatarAvif from "@/assets/images/avatar/about.avif";
 import avatarWebp from "@/assets/images/avatar/about.webp";
 import avatarPng from "@/assets/images/avatar/about.png";
-import rianibmAvatar from "@/assets/rianibm-removebg-preview.png";
 
 const title = "About Riani BM";
 const description =
   "About Riani BM — UX Engineer based in Jakarta, Indonesia, working at the intersection of UX design and frontend engineering.";
 
 const yearsExp = calcYearsExp(new Date("2023-03-05"));
-
-const posts = (await getCollection("works")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
-
-const bgClasses = [
-  "hover:shadow-ppinkHover",
-  "hover:shadow-pgreenHover",
-  "hover:shadow-pblueHover",
-  "hover:shadow-pyellow",
-];
 
 const skillBgClasses = [
   "bg-pgreen rounded-xl",
@@ -35,26 +22,25 @@ const skillBgClasses = [
   "bg-pyellow rounded-xl",
 ];
 
-const getRandomClass = () => _getRandomClass(bgClasses);
 const getSkillClass = (i: number) => _getSkillClass(i, skillBgClasses);
 
 const aboutSkills = [
   {
     category: "Design",
     icon: "2",
+    description: "Shape clear flows, consistent interfaces, and accessible interactions.",
     skills: ["Figma", "UI Systems", "Accessibility"],
   },
   {
     category: "Engineering",
     icon: "1",
+    description: "Build responsive interfaces with reusable components and API integration.",
     skills: [
       "React",
       "Next.js",
       "TypeScript",
       "Tailwind CSS",
-      "Laravel",
       "REST APIs",
-      "PostgreSQL",
     ],
   },
 ];
@@ -86,9 +72,10 @@ const aboutSkills = [
         </a>
         <!-- Photo + Title -->
         <div
-          class="flex flex-col items-center pt-10 pb-6 gap-4"
+          class="flex flex-col items-center pt-12 md:pt-20 pb-10 md:pb-16 gap-4"
           transition:animate="fade"
         >
+          <p class="text-sm font-semibold uppercase tracking-widest">About</p>
           <div
             class="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-black shadow-card settle"
           >
@@ -106,18 +93,26 @@ const aboutSkills = [
             </picture>
           </div>
           <h1 class="text-3xl md:text-5xl font-semibold text-center">
-            <span class="font-kablamo text-ppink">A</span>bout Me
+            <span class="font-kablamo text-ppink">UX</span> Engineer
           </h1>
-          <p class="text-pblack text-center text-sm md:text-base max-w-xl">
-            UX Engineer who bridges product thinking, UX design, and frontend
-            engineering — turning complex business workflows into intuitive,
-            scalable digital products. Based in Indonesia.
+          <p class="text-pblack text-center text-lg md:text-xl max-w-xl leading-relaxed">
+            I bridge UX, product thinking,<br class="hidden sm:block" /> and frontend engineering.
           </p>
-          <div class="flex flex-wrap items-center justify-center gap-2 text-sm">
-            <span class="px-3 py-1 bg-pgreen rounded-full border-1 border-black font-semibold">{yearsExp}+ yrs experience</span>
-            <span class="px-3 py-1 bg-pblue rounded-full border-1 border-black font-semibold">React · TypeScript · Figma</span>
-            <span class="px-3 py-1 bg-pyellow rounded-full border-1 border-black font-semibold">9 core journeys redesigned</span>
-          </div>
+          <p class="text-sm text-pblack">Riani BM · Based in Indonesia</p>
+          <ul aria-label="Experience and delivery highlights" class="grid grid-cols-1 sm:grid-cols-3 w-full max-w-3xl mt-4 border-y border-black/20 divide-y sm:divide-y-0 sm:divide-x divide-black/20 text-center">
+            <li class="px-4 py-5">
+              <strong class="block text-xl md:text-2xl">{yearsExp}+ years</strong>
+              <span class="block text-sm font-semibold text-pblack mt-2">UX + Frontend</span>
+            </li>
+            <li class="px-4 py-5">
+              <strong class="block text-xl md:text-2xl">9 core journeys</strong>
+              <span class="block text-sm font-semibold text-pblack mt-2">Redesigned &amp; shipped</span>
+            </li>
+            <li class="px-4 py-5">
+              <strong class="block text-xl md:text-2xl">Product Team Lead</strong>
+              <span class="block text-sm font-semibold text-pblack mt-2">UX + Frontend</span>
+            </li>
+          </ul>
         </div>
 
         <div class="text-black max-w-3xl mx-auto">
@@ -126,141 +121,52 @@ const aboutSkills = [
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>What I Do
+              <h2 class="section-label">What I Do
               </h2>
-              <p>
-                I work at the intersection of UI design and frontend
-                engineering. Not as two separate roles, but as one continuous
-                process.
+              <p class="text-2xl md:text-3xl font-semibold leading-snug max-w-xl">
+                Turn complex workflows into usable, production-ready products.
               </p>
-
-              <p>
-                My core strength is building interfaces that make sense
-                structurally <em>and</em> feel right when people actually use them.
-              </p>
-
-              <ul class="list-disc ml-6 space-y-1">
-                <li>
-                  <strong>Complex product interfaces</strong> — dashboards, operational
-                  workflows, data-heavy tables, and multi-role systems
-                </li>
-                <li>
-                  <strong>UX architecture & implementation</strong> — turning ambiguous
-                  business requirements into flows, reusable patterns, and production interfaces
-                </li>
-                <li>
-                  <strong>Interaction quality & accessibility</strong> — reducing friction
-                  through hierarchy, states, validation, and accessible interaction patterns
-                </li>
+              <ul class="space-y-4 mt-2">
+                <li><strong class="block">Make complex tasks usable</strong><span class="text-pblack">Design dashboards, operational workflows, and data-heavy interfaces around what people need to do.</span></li>
+                <li><strong class="block">Give ambiguous requirements structure</strong><span class="text-pblack">Translate business rules into clear flows, interaction patterns, and reusable systems.</span></li>
+                <li><strong class="block">Bring UX decisions into production</strong><span class="text-pblack">Build with engineers and evaluate usability, accessibility, and real product constraints.</span></li>
               </ul>
             </section>
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <!-- Experience -->
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Experience
-              </h2>
-              <p class="text-sm text-pblack">
-                My path has moved from IT/product analysis into frontend
-                engineering and now UX and product ownership — giving me
-                context across the full lifecycle, from problem framing to
-                production.
-              </p>
+            <!-- Career narrative; role history stays available without dominating the page. -->
+            <section class="flex flex-col gap-4 animate-on-scroll from-bottom p-6">
+              <h2 class="section-label">My Path</h2>
+              <p class="text-2xl md:text-4xl font-semibold leading-tight max-w-xl">From code to product leadership.</p>
+              <p class="text-pblack leading-relaxed max-w-xl">My background in frontend engineering shapes how I approach UX, from understanding technical constraints to delivering production-ready experiences.</p>
+              <ol class="career-path">
+                <li><h3 class="font-semibold text-lg">Frontend Engineering</h3><p class="text-sm text-pblack mt-1">Built production interfaces, operational dashboards, and reusable components.</p></li>
+                <li><h3 class="font-semibold text-lg">UX / Product</h3><p class="text-sm text-pblack mt-1">Connected implementation with user needs, business rules, and interaction design.</p></li>
+                <li><h3 class="font-semibold text-lg">Product Team Lead</h3><p class="text-sm text-pblack mt-1">Now lead a UI/UX designer and two frontend developers across complex products.</p></li>
+              </ol>
+              <details class="rounded-lg border border-black p-4 mt-2">
+                <summary class="cursor-pointer font-semibold text-sm">Experience details · Indomaret Group</summary>
+                <p class="text-xs text-pblack mt-3">PT Indomarco Prismatama (Indomaret Group)</p>
+                <div class="space-y-4 mt-4">
+                  <div><h3 class="font-semibold">Product Team Lead</h3><p class="text-xs text-pblack">Apr 2026 – Present</p><p class="text-sm mt-1">Lead a team of 1 UI/UX designer and 2 frontend developers while staying hands-on in UX and frontend delivery. Current work spans the Indopaket website revamp, affiliate interfaces, and the Package Claim platform.</p></div>
+                  <div><h3 class="font-semibold">Frontend Developer</h3><p class="text-xs text-pblack">Jul 2024 – Mar 2026</p><p class="text-sm mt-1">Built and maintained interfaces and design systems for logistics, membership, affiliate platforms, and internal tools using React and Next.js.</p></div>
+                  <div><h3 class="font-semibold">Management Development Program Specialist IT</h3><p class="text-xs text-pblack">Jun 2023 – Jun 2024</p><p class="text-sm mt-1">Used competitor analysis, Hotjar, Google Analytics, and A/B testing to improve web and mobile experiences, translating UI designs into code.</p></div>
+                </div>
+              </details>
+            </section>
 
-              <!-- Product Team Lead -->
-              <div class="border border-black rounded-lg p-4 shadow-card">
-                <h3 class="font-semibold text-lg">Product Team Lead</h3>
-                <p class="text-ppink text-xs font-semibold uppercase tracking-wide">
-                  Design Engineering
-                </p>
-                <p class="text-pblack text-sm">
-                  PT Indomarco Prismatama (Indomaret Group) · Apr 2026 – Present · Full-time · Hybrid
-                </p>
-                <p class="text-pblack text-xs mt-1 font-semibold">
-                  Leading a team of 1 UI/UX Designer and 2 Frontend Developers
-                </p>
-                <ul class="list-disc ml-6 space-y-1 mt-2">
-                  <li>
-                    Work alongside UI/UX Designers and Frontend Developers to build products that are useful, intuitive, and aligned with business needs
-                  </li>
-                  <li>
-                    Remain actively involved in product discussions, UI/UX design, and frontend development while supporting the team
-                  </li>
-                  <li>
-                    Collaborate with stakeholders, solve user problems, and help team members develop a stronger product mindset
-                  </li>
-                  <li>
-                    Revamping the Indopaket website, leading UI design for the affiliate mobile app and website, and designing the Package Claim web platform
-                  </li>
-                  <li>
-                    Collaborating on the Car Attendance &amp; Monitoring mobile app, CMS, and reporting dashboard
-                  </li>
-                </ul>
-                <p class="border-l-4 border-ppink pl-3 text-sm font-semibold mt-3">
-                  9 core journeys redesigned across the Indopaket web platform
-                  — restructuring navigation, task entry points, tracking,
-                  store discovery, authentication, and error states.
-                </p>
-                <p class="text-sm text-pblack mt-2">
-                  That meant consolidating a feature-by-feature platform into
-                  a coherent, task-oriented experience — removing extraneous
-                  cognitive load while keeping the domain's inherent
-                  complexity legible, shipped as production code the team can
-                  extend.
-                </p>
-              </div>
+            <div class="section-divider" aria-hidden="true"><span></span></div>
 
-              <!-- Frontend Developer -->
-              <div class="border border-black rounded-lg p-4 shadow-card">
-                <h3 class="font-semibold text-lg">Frontend Developer</h3>
-                <p class="text-pblack text-sm">
-                  PT Indomarco Prismatama (Indomaret Group) · Jul 2024 – Mar 2026 · 1 yr 9 mos · Full-time · North Jakarta
-                </p>
-                <ul class="list-disc ml-6 space-y-1 mt-2">
-                  <li>
-                    Built web applications, dashboards, and mobile interfaces that are intuitive, reliable, and used in real operational workflows
-                  </li>
-                  <li>
-                    Built and maintained scalable design systems to ensure consistency as products grow
-                  </li>
-                  <li>
-                    Developed complex, data-heavy dashboards and operational tools used daily by internal teams
-                  </li>
-                  <li>
-                    Created reusable front-end components and navigation using React and Next.js
-                  </li>
-                  <li>
-                    Worked closely with backend engineers to understand APIs and define efficient UI flows
-                  </li>
-                  <li>
-                    Optimized performance through asset handling, loading strategies, and rendering efficiency
-                  </li>
-                </ul>
-                <p class="text-pblack text-xs mt-2 italic">
-                  Projects: logistics & shipment platforms, membership & affiliate platforms, 3PL system, warehouse handheld interfaces, CMS and internal tools
-                </p>
-              </div>
-
-              <!-- Management Development Program Specialist IT -->
-              <div class="border border-black rounded-lg p-4 shadow-card">
-                <h3 class="font-semibold text-lg">Management Development Program Specialist IT</h3>
-                <p class="text-pblack text-sm">
-                  PT Indomarco Prismatama (Indomaret Group) · Jun 2023 – Jun 2024 · 1 yr 1 mo · Contract · North Jakarta
-                </p>
-                <ul class="list-disc ml-6 space-y-1 mt-2">
-                  <li>Conducted competitor analysis to identify UI improvement areas</li>
-                  <li>Analyzed user behavior using Hotjar and Google Analytics to enhance UX</li>
-                  <li>Developed a scalable design system for consistency and efficiency</li>
-                  <li>Redesigned website and mobile app UI for better usability and responsiveness</li>
-                  <li>Conducted A/B testing by implementing design variations and analyzing user interactions</li>
-                  <li>Translated UI designs into code and optimized performance via asset loading and PageSpeed</li>
-                </ul>
-              </div>
+            <section class="flex flex-col gap-4 animate-on-scroll from-bottom p-6">
+              <h2 class="section-label">How I Work</h2>
+              <p>I use user needs, business rules, and technical constraints together to decide what should actually be built.</p>
+              <dl class="grid sm:grid-cols-2 gap-6">
+                <div><dt class="font-semibold">Systems thinking</dt><dd class="text-sm text-pblack mt-1">Make interfaces understandable before they become beautiful. Connect flows, rules, and states into a coherent whole.</dd></div>
+                <div><dt class="font-semibold">UX-to-code</dt><dd class="text-sm text-pblack mt-1">Carry design decisions into reusable components. Optimize for maintainability as much as usability.</dd></div>
+                <div><dt class="font-semibold">Cross-functional</dt><dd class="text-sm text-pblack mt-1">Bring product, design, and engineering perspectives together to align user needs with delivery constraints.</dd></div>
+                <div><dt class="font-semibold">Accessibility</dt><dd class="text-sm text-pblack mt-1">Reduce cognitive load through clear hierarchy, useful feedback, and accessible interaction patterns.</dd></div>
+              </dl>
             </section>
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
@@ -269,15 +175,13 @@ const aboutSkills = [
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Technologies
+              <h2 class="section-label">Technology
               </h2>
               <p>
-                Tools are just tools. I use what helps me ship clear interfaces
-                and maintain them without creating future pain.
+                The tools I use to turn design decisions into working products.
               </p>
 
-              <div class="flex flex-col gap-2">
+              <div class="grid sm:grid-cols-2 gap-4">
                 {
                   aboutSkills.map((skillGroup, i) => {
                     const skillClass = getSkillClass(i);
@@ -296,6 +200,7 @@ const aboutSkills = [
                             {skillGroup.category}
                           </div>
                         </div>
+                        <p class="text-sm text-pblack mb-3">{skillGroup.description}</p>
                         <ul class="flex flex-wrap gap-1">
                           {skillGroup.skills.map((skill) => (
                             <li class="px-2 py-1 bg-gray-100 text-gray-700 rounded-full text-xs border border-gray-300">
@@ -312,51 +217,15 @@ const aboutSkills = [
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <section
-              class="flex flex-col gap-3 animate-on-scroll from-bottom bg-white rounded-xl p-6"
-            >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>How I Work
-              </h2>
-              <p>
-                I work best when design and engineering are not treated as
-                separate silos. My process is usually quiet, detail-oriented,
-                and very iterative.
-              </p>
-              <ul class="list-disc ml-6 space-y-1">
-                <li>
-                  Interfaces should be understandable before they become beautiful
-                </li>
-                <li>
-                  Every interaction should reduce cognitive load
-                </li>
-                <li>
-                  I optimize for maintainability as much as usability
-                </li>
-              </ul>
-              <p>
-                If you're looking for someone who can take ownership of frontend
-                development and align with business needs — feel free to
-                <a
-                  href="mailto:rianimatialu@gmail.com"
-                  aria-label="Email Riani BM"
-                  class="text-ppink font-bold underline">get in touch</a
-                >.
-              </p>
-            </section>
-
-            <div class="section-divider" aria-hidden="true"><span></span></div>
-
             <!-- Education -->
             <section
               class="flex flex-col gap-2 animate-on-scroll from-bottom p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>Education
+              <h2 class="section-label">Education
               </h2>
               <p class="font-semibold">
                 B.Sc. Informatics
-                <span class="font-normal text-pblack">— Duta Wacana Christian University · GPA 3.62/4.00</span>
+                <span class="font-normal text-pblack">— Duta Wacana Christian University</span>
               </p>
               <details class="group">
                 <summary class="cursor-pointer text-sm font-semibold text-black underline underline-offset-4 list-none">
@@ -383,8 +252,7 @@ const aboutSkills = [
             <section
               class="flex flex-col gap-3 animate-on-scroll from-bottom p-6"
             >
-              <h2 class="text-xl md:text-2xl font-bold flex items-center">
-                <span class="inline-block w-2.5 h-2.5 rounded-full bg-ppink mr-2" aria-hidden="true"></span>A Bit More About Me
+              <h2 class="section-label">A Bit More About Me
               </h2>
               <p class="text-sm text-pblack">
                 When I'm not shipping interfaces, you'll probably find me
@@ -411,27 +279,9 @@ const aboutSkills = [
 
             <div class="section-divider" aria-hidden="true"><span></span></div>
 
-            <div
-              class="flex gap-2 items-center p-6 animate-on-scroll from-bottom"
-            >
-              <div
-                class="bg-pgreen rounded-full w-10 h-10 aspect-square object-contain overflow-hidden"
-              >
-                <img
-                  src={rianibmAvatar.src}
-                  alt="Riani BM"
-                  class="w-full h-full object-cover"
-                  width={rianibmAvatar.width}
-                  height={rianibmAvatar.height}
-                  loading="lazy"
-                />
-              </div>
-              <div>
-                <div class="font-semibold text-sm">Riani BM</div>
-                <p class="text-pblack text-xs">
-                  UX Engineer from Indonesia
-                </p>
-              </div>
+            <div class="flex flex-wrap items-center gap-4 p-6">
+              <a href="/works" class="inline-flex items-center gap-3 px-5 py-3 bg-pgreen border border-black rounded-lg font-semibold shadow-card hover:shadow-hover transition-shadow">View my work <span aria-hidden="true">→</span></a>
+              <a href="mailto:rianimatialu@gmail.com" class="inline-flex items-center gap-3 px-5 py-3 border border-black rounded-lg font-semibold hover:bg-pblue transition-colors">Get in touch <span aria-hidden="true">→</span></a>
             </div>
           </div>
         </div>
@@ -439,19 +289,20 @@ const aboutSkills = [
     </main>
     <Footer />
     <style>
-      .section-divider {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1rem 0;
+      .section-label {
+        font-size: 0.875rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
       }
-      .section-divider span {
-        display: block;
-        width: 40px;
-        height: 3px;
-        border-radius: 9999px;
-        background: linear-gradient(90deg, #f9a8d4, #93c5fd, #86efac);
-      }
+      .career-path { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+      .career-path li { position: relative; padding: 0 0 2.25rem 1.75rem; border-left: 2px solid var(--color-pblue); }
+      .career-path li::before { content: ""; position: absolute; left: -7px; top: 0.4rem; width: 12px; height: 12px; border: 1px solid black; border-radius: 50%; background: var(--color-pblue); }
+      .career-path li:not(:last-child)::after { content: "↓"; position: absolute; left: 1.75rem; bottom: 0.35rem; color: var(--color-pblack); }
+      .career-path li:last-child { padding-bottom: 0; border-color: transparent; }
+      .career-path li:last-child::before { background: var(--color-pgreen); }
+      .section-divider { padding: 1rem 1.5rem; }
+      .section-divider span { display: block; height: 1px; background: var(--color-pblack); opacity: 0.2; }
     </style>
   </body>
 </html>

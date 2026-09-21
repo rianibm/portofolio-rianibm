@@ -60,6 +60,7 @@ const getBgClass = (i: number) => _getSkillClass(i, bgClasses);
 const getSkillBgClass = (i: number) => _getSkillClass(i, skillBgClasses);
 
 const relevantSkills = pageSkills ?? [];
+const isEditorial = id === "indopaket-web";
 ---
 
 <html lang="en">
@@ -110,7 +111,7 @@ const relevantSkills = pageSkills ?? [];
       >
         Back to Works
       </a>
-      <article>
+      <article class:list={{ "editorial-case": isEditorial }}>
         <div class="relative mb-12 overflow-hidden" transition:animate="fade">
           {heroImage ? (
             <>
@@ -132,7 +133,7 @@ const relevantSkills = pageSkills ?? [];
             <p>{description}</p>
           </div>
         </div>
-        <div class="text-black max-w-3xl mx-auto">
+        <div class:list={["text-black mx-auto", isEditorial ? "editorial-content" : "max-w-3xl"]}>
           <div class="">
             <div class="text-sm text-pblack flex items-center justify-between">
               <FormattedDate date={pubDate} />
@@ -345,6 +346,30 @@ const relevantSkills = pageSkills ?? [];
       document.addEventListener("astro:after-swap", initImageLightbox);
     </script>
     <style>
+      .editorial-case > div:first-child { display: flex; flex-direction: column; gap: 2rem; overflow: visible; margin-top: 2rem; }
+      .editorial-case > div:first-child > span { display: none; }
+      .editorial-case > div:first-child > div { position: static; order: -1; color: black; max-width: 700px; width: 100%; margin-inline: 0 auto; }
+      .editorial-case > div:first-child :global(h1) { font-size: clamp(2.5rem, 6vw, 4.5rem); text-shadow: none; margin-bottom: 1rem; }
+      .editorial-case > div:first-child :global(p) { color: var(--color-pblack); line-height: 1.7; }
+      .editorial-case > div:first-child :global(img) { width: 100%; height: auto; border-radius: 0.75rem; border: 1px solid #ddd; }
+      .editorial-content { max-width: 1100px; }
+      .editorial-content > div:not(:last-child) { max-width: 700px; margin-inline: 0 auto; }
+      .editorial-content .prose { font-size: 1rem; line-height: 1.8; text-align: left; }
+      .editorial-content .prose > :global(*) { max-width: 700px; margin-inline: 0 auto; }
+      .editorial-content .prose > :global(table:has(img)) { max-width: none; margin-block: 2rem; }
+      .editorial-content .prose :global(table img) { aspect-ratio: auto; height: auto; border: 1px solid #ddd; }
+      .editorial-content .prose :global(h2) { font-size: clamp(1.75rem, 3vw, 2.25rem); line-height: 1.2; letter-spacing: -0.025em; margin-top: 1rem; }
+      .editorial-content .prose :global(h3) { font-size: clamp(1.25rem, 2.5vw, 1.75rem); margin-top: 4rem; }
+      .editorial-content .prose :global(.editorial-eyebrow) { margin-top: 6rem; margin-bottom: 1rem; font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-pblack); }
+      .editorial-content .prose :global(.editorial-eyebrow:first-child) { margin-top: 0; }
+      .editorial-content .prose :global(hr) { display: none; }
+      .editorial-content .prose :global(summary) { cursor: pointer; font-weight: 600; }
+      .editorial-content .prose :global(details) { padding-block: 1rem; border-block: 1px solid #ddd; }
+      .editorial-content .prose + div { max-width: 700px; width: 100%; margin-inline: 0 auto; }
+      @media (max-width: 639px) {
+        .editorial-content .prose :global(.editorial-eyebrow) { margin-top: 4rem; }
+        .editorial-content .prose :global(h3) { margin-top: 3rem; }
+      }
       .prose :global(table) {
         width: 100%;
       }

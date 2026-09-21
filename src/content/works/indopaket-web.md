@@ -44,60 +44,53 @@ pageSkills:
       ]
 ---
 
-# Indopaket — Web
-### Redesigning the Shipping Experience for Sellers and Operations
+<p class="editorial-eyebrow">01 / Context</p>
 
-**Role:** UX Engineer · Product Team Lead · **Scope:** Web platform · 9 core flows — navigation, homepage, tracking, rate check, shipping, store locator, history, authentication, OTP
+## Indopaket, beyond a shipping website.
 
-Indopaket is Indomaret Group's shipping platform, used daily by sellers to manage shipments and track referral/tier status, and by internal teams for operational visibility. The site had grown feature-by-feature over time and lost coherence. This revamp restructured navigation and information hierarchy — not just visuals — and I carried it from UX analysis through to shipped code.
+Redesigning complex logistics journeys for customers and internal operations.
 
-This case study covers the **web platform**. The mobile app is covered separately.
+Indopaket is Indomaret Group's shipping platform. Sellers use it to manage shipments and track referral/tier status, while internal teams rely on it for operational visibility. I carried this web redesign from UX analysis through to production code.
 
-Jump to: [Overview](#overview) · [Redesign Scope](#redesign-scope) · [Constraints & Trade-offs](#constraints-and-trade-offs) · [Store & Shipping Discovery](#store-and-shipping-discovery) · [Account & Authentication](#account-and-authentication) · [Impact](#impact) · [Outcome](#outcome)
+**Role:** UX Engineer · Product Team Lead
 
----
+**Scope:** UX analysis, information architecture, interaction design, and frontend implementation across 9 core flows
 
-## Overview
+**Stack:** Laravel Blade · Tailwind CSS
 
-Findings below are based on Hotjar heatmap data (1–30 Sept 2023). This write-up groups the before/after evidence by the **user journey** it belongs to, rather than as a flat list of screens.
+Jump to: [Challenge](#challenge) · [Design decision](#design-decision) · [Store & shipping](#store-and-shipping-discovery) · [Account & authentication](#account-and-authentication) · [Implementation](#implementation) · [Outcome](#outcome)
 
-The current design (2026) is the result of multiple iterations since that analysis, not a single redesign pass — the before/after pairs below compare the original experience against where each flow stands today.
+<p class="editorial-eyebrow">The challenge</p>
 
-## Redesign Scope
+<h2 id="challenge">When every feature needs attention, the user loses direction.</h2>
 
-This revamp covered the full customer-facing web experience — navigation, homepage, tracking, shipping, store locator, and account management. Rather than list every area as simply "redesigned," the table below frames each by the UX problem it addressed; areas with documented before/after evidence are linked.
+The site had grown feature-by-feature. Primary actions were buried in unlabeled fields, store details obscured the map, and empty states offered no next step.
 
-| Area | UX focus |
-|---|---|
-| Navigation | Simplified information hierarchy — reorganized around user tasks instead of internal product structure |
-| Homepage | [see below](#store-and-shipping-discovery) — surfaced primary shipping actions that were buried in unlabeled fields |
-| Tracking | [see below](#store-and-shipping-discovery) — reduced ambiguity between single and multi-resi tracking entry points |
-| Cek Tarif (Check Rate) | Simplified rate comparison inputs |
-| Kirim Sekarang (Ship Package) | [see below](#store-and-shipping-discovery) — added fallback paths for the app-handoff dead end |
-| Cari Toko (Store Locator) | [see below](#store-and-shipping-discovery) — replaced popup-only selection with a persistent results list |
-| Riwayat (History) | [see below](#store-and-shipping-discovery) — turned a broken-image dead end into a self-diagnosis empty state |
-| Login / Register | [see below](#account-and-authentication) — split two competing flows into focused, single-purpose screens |
-| OTP Verification | [see below](#account-and-authentication) — added destination confirmation and recovery guidance |
-| Profile Management | Standardized recurring UI patterns (status indicators, cards, tables) |
+How might we make shipping, tracking, and store discovery easier to navigate without compromising operational requirements?
 
-### Cognitive Load
+The starting evidence was Hotjar heatmap data from **1–30 September 2023**, paired with heuristic evaluation. The screenshots compare that original experience with the **2026 iteration**, following multiple rounds of changes—not a single redesign pass.
 
-**Intrinsic** — the underlying shipping/referral domain is inherently multi-step and rule-heavy; that complexity can't be fully removed.
+<p class="editorial-eyebrow">02 / Design decision</p>
 
-**Extraneous** — this is where the revamp focused: reducing duplicated information, unclear labeling, and fragmented navigation that added effort without adding understanding. The Cari Toko popup-over-map pattern and the unlabeled Cek Ongkir fields below are both examples of extraneous load removed without touching the underlying task complexity.
+<h2 id="design-decision">Organizing around user tasks, not internal features.</h2>
 
-**Germane** — using consistent information hierarchy and repeated patterns so users don't have to relearn the interface across journeys — for example, reusing the same empty-state pattern (illustration + headline + next action) across Riwayat and Tracking instead of a one-off design for each.
+I restructured the experience around tracking, checking rates, finding a store, and shipping a package. Clear labels and repeated interaction patterns help users recognize what to do without relearning each screen.
 
-## Constraints and Trade-offs
+The business rules stayed intact. The design work focused on reducing the extra effort created by fragmented navigation, competing actions, and inconsistent feedback.
 
-- **Existing component patterns** — the redesign had to stay consistent with UI patterns already shared across the wider Indopaket product, not introduce a parallel design language.
-- **Operational and referral rules** — shipping and referral/tier logic are business rules owned by other teams; the redesign worked within that logic rather than re-defining it.
-- **Team maintainability** — built for the rest of the team to extend going forward, not as a one-off visual pass (see [Implementation](#implementation)).
-- **Scope prioritization** — not every friction point could be solved in this pass. The single vs. multi-resi tracking ambiguity was identified but intentionally deferred to a follow-up iteration, so this revamp could stay focused on the highest-friction journeys: store discovery, error states, and account flows.
+<details>
+<summary>Constraints and trade-offs</summary>
 
----
+- **Shared patterns:** stay consistent with components already used across Indopaket.
+- **Business rules:** preserve operational and referral/tier logic owned by other teams.
+- **Production stack:** work within Laravel/Blade and existing backend contracts.
+- **Prioritization:** focus on store discovery, error states, and account flows. Single vs. multi-resi tracking ambiguity remains a follow-up item.
 
-## Store and Shipping Discovery
+</details>
+
+<p class="editorial-eyebrow">Journey / Store and shipping discovery</p>
+
+<h2 id="store-and-shipping-discovery">Keep the next shipping action in sight.</h2>
 
 How sellers find a drop-off store and track a shipment.
 
@@ -123,11 +116,9 @@ Hotjar showed the heaviest interaction concentrated on the "Lacak Paket" (track)
 
 Both versions kept a results list alongside the map. The problem was the selected-store popup: it was large enough to cover a significant part of the map, and closing it to check a different result meant losing sight of where the selected pin sat relative to the rest. *(Heuristic reference: Visibility of System Status.)*
 
-**Before** — *Existing experience · Sep 2023*
-![Old Cari Toko: selecting a pin opens a large popup that covers much of the map](../../assets/images/works/indopaket-web/before/cari-toko-selected.png)
-
-**After** — *Current iteration · 2026*
-![New Cari Toko: selected store shown in a compact card with a "Terdekat" (nearest) badge, map and result list still visible](../../assets/images/works/indopaket-web/after/cari-toko-selected.png)
+| Existing experience · Sep 2023 | Current iteration · 2026 |
+|---|---|
+| ![Old Cari Toko: selecting a pin opens a large popup that covers much of the map](../../assets/images/works/indopaket-web/before/cari-toko-selected.png) | ![New Cari Toko: selected store shown in a compact card, with map and result list still visible](../../assets/images/works/indopaket-web/after/cari-toko-selected.png) |
 
 **What changed**
 
@@ -169,11 +160,13 @@ The old "not found" state on Riwayat (History) was a bare "Tidak ditemukan" mess
 **What changed**
 
 - Riwayat's broken-image dead end became an illustration + headline + self-diagnosis checklist — the same pattern now backs the Tracking page's resi-not-found result too, so error states feel consistent instead of one-off
-- Tracking input got a visual refresh, though the underlying single vs. multi-resi ambiguity is still an open item for a follow-up iteration, not solved here (see [Constraints & Trade-offs](#constraints-and-trade-offs))
+- Tracking input got a visual refresh, though the underlying single vs. multi-resi ambiguity is still an open item for a follow-up iteration, not solved here (see [Constraints & Trade-offs](#design-decision))
 
 ---
 
-## Account and Authentication
+<p class="editorial-eyebrow">Journey / Account and authentication</p>
+
+<h2 id="account-and-authentication">One purpose per screen. Clear guidance at each step.</h2>
 
 How a new user registers and verifies their account.
 
@@ -199,59 +192,25 @@ The old screen only showed a countdown and a bare set of input boxes — no conf
 
 ---
 
-## My Contribution
+<p class="editorial-eyebrow">Delivery / Design to engineering</p>
 
-**I owned:** UX analysis (heatmap review, heuristic evaluation) · information architecture · interaction design across 9 core flows · frontend implementation (Laravel/Blade) · design-to-code translation
+<h2 id="implementation">Carry the interaction decisions into production.</h2>
 
-**Collaborated with:** Product team · Backend engineers (API contracts and business rules) · Business stakeholders (operational and referral logic)
+I owned the heatmap review, heuristic evaluation, information architecture, interaction design, and frontend implementation. I worked with backend engineers on API contracts and with business stakeholders on operational and referral rules.
 
----
+The redesign shipped in the existing **Laravel Blade** frontend with **Tailwind CSS**. Reusable empty states, store-selection cards, and form layouts let the team extend the experience without introducing a parallel design language.
 
-## Design → Engineering
+<p class="editorial-eyebrow">03 / Outcome</p>
 
-**UX problem** — A shipping platform grown feature-by-feature, with fragmented navigation, ambiguous form fields, and error/empty states that dead-ended users.
+<h2 id="outcome">A clearer foundation for future journeys.</h2>
 
-**Design decision** — Restructured navigation around user tasks (track, check rate, find a store, ship) instead of internal product categories. Standardized empty and error state patterns so they felt consistent across journeys, not one-off.
+**9 core flows redesigned and shipped** on the live Indopaket web platform. The before-and-after evidence shows concrete interface changes:
 
-**Engineering constraint** — Existing Laravel/Blade frontend — no rebuild, no new framework. The redesign had to work within existing component patterns and backend contracts owned by other teams.
+- **Discovery:** labeled shipping actions and a smaller store card that keeps the map and results visible.
+- **Recovery:** useful empty states, app-store links, and a customer-support fallback in place of dead ends.
+- **Account flows:** separate Login/Register pages and OTP guidance that confirms the destination and explains recovery.
+- **Engineering:** production templates and reusable patterns the team can maintain.
 
-**Implementation** — Translated interaction decisions directly into production Blade templates styled with Tailwind CSS. Built reusable empty-state components, store-selection card, and form layouts the team can extend.
+These are delivered interface changes; this case study does not report a measured improvement in conversion or task completion.
 
-**Production** — Shipped across 9 core flows on the live Indopaket web platform.
-
----
-
-## Design Decisions
-
-- Clarified the single vs. multi-resi tracking entry points instead of one ambiguous field
-- Separated Login and Register into distinct, focused flows instead of one competing screen
-- Redesigned empty/error states to guide users toward a next action instead of leaving them stuck
-- Standardized recurring UI patterns (status indicators, cards, tables) across sections that had previously diverged
-
-## Implementation
-
-**Shipped within the existing Laravel frontend, not rebuilt from scratch.** The redesign wasn't handed off as static screens. Built with **Laravel Blade** and styled with **Tailwind CSS**, I translated the interaction model directly into production templates — working within existing component patterns, backend contracts, and business rules — focused on shipping something maintainable by the rest of the team going forward, not just a one-off visual pass.
-
-**Next iteration:** the platform is planned to be rewritten in React/Next.js, which will consolidate the patterns introduced during this redesign into a more reusable frontend architecture.
-
-**My role across this project:** UX analysis (heuristic evaluation, heatmap review) · information architecture · interaction design · frontend implementation (Laravel/Blade) · design-to-code translation.
-
-## Impact
-
-**Product** — Consolidated a feature-by-feature web platform into a more coherent, task-oriented experience across 9 core flows, without disrupting the operational and referral logic other teams depend on.
-
-**UX** — Removed extraneous cognitive load (duplicated fields, unlabeled inputs, oversized popups) while leaving the domain's inherent complexity intact and legible.
-
-**Engineering** — Delivered the redesign as production Laravel/Blade code with reusable patterns (empty/error states, cards, status indicators) the team can extend, rather than a design handoff that stops at Figma.
-
-**For sellers and internal teams** — Login/Register no longer compete for attention on one screen, store selection no longer loses the user's place behind a popup, and the app-handoff and OTP flows leave people with a clear next step instead of a dead end.
-
-## Outcome
-
-**Before:** A feature-by-feature platform where navigation was organized around internal categories, primary actions (track, check rate) were buried in unlabeled fields, store selection covered the map with a large popup, and error/empty states dead-ended users with no recovery path.
-
-**After:** A task-oriented web platform where sellers and internal teams can complete their core journeys without reorienting. Navigation reflects what users actually do. Empty and error states guide instead of dead-ending. The app-handoff flow gives stuck users a clear next step. Login and Register no longer compete on the same screen.
-
-Shipped as production Laravel/Blade code with reusable patterns the team can extend — not a Figma handoff that stops at design.
-
-Some friction points, like the single vs. multi-resi tracking ambiguity, were intentionally deferred to a follow-up iteration rather than rushed into this pass.
+**Still to resolve:** the distinction between single and multi-resi tracking. A planned React/Next.js rewrite is an opportunity to consolidate the patterns introduced here into a more reusable frontend architecture.
