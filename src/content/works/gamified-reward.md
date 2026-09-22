@@ -1,13 +1,12 @@
 ---
-title: "Gamified Reward Module"
-description: "Internal CMS roulette draw system for Member+ live campaigns — built for dual audiences: the operator running the event and Live viewers watching the winner reveal."
+title: "Member+ Reward Draw CMS"
+description: "An internal CMS module for running roulette-style Member+ reward draws during live campaigns, with separate experiences for campaign operators and event audiences."
 icon: "heroicons:gift"
 pubDate: "Jul 2025"
 updatedDate: "Apr 2026"
-scope: "Feature Module"
-tags: ["UX Engineer", "Frontend", "Laravel", "JavaScript", "jQuery", "CMS", "Gamification"]
-identity: "UX Engineer · Frontend"
-role: "UX design for live, dual-audience contexts · Frontend implementation"
+tags: ["Laravel", "JavaScript", "jQuery"]
+identity: "INTERNAL CMS MODULE"
+role: "Interaction design · Frontend implementation"
 pageSkills:
   - category: "UX Design for Live Contexts"
     icon: "1"
@@ -53,7 +52,7 @@ pageSkills:
       ]
 ---
 
-# Gamified Reward Module – Designing for Two Audiences at Once
+# Member+ Reward Draw CMS – Designing for Two Audiences at Once
 
 An internal CMS roulette draw system for **Member+ live reward campaigns (Undian Member Plus)** — where marketing teams run lottery draws on **Instagram Live**, and winners are revealed in real time to a public audience.
 

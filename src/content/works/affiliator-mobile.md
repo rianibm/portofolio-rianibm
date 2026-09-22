@@ -1,12 +1,12 @@
 ---
-title: "Indopaket Affiliator — Mobile"
-description: "UI design for the separate Indopaket Affiliator mobile experience, focused on referral sharing and clear commission visibility."
+title: "Indopaket Affiliator App"
+description: "Making referral sharing straightforward and commission earnings easy to follow."
 pubDate: "Sept 2026"
 icon: "heroicons:device-phone-mobile"
-tags: ["UI Design", "Mobile UI", "Affiliate Program"]
-identity: "UI Designer"
+tags: ["Visual Hierarchy", "Interaction States"]
+identity: "AFFILIATE PRODUCT · MOBILE"
 role: "Mobile UI design"
-delivery: "Mobile UI · Launch: late Sept 2026"
+delivery: "Launch: late Sept 2026"
 pageSkills:
   - category: "Mobile Interface Design"
     icon: "2"

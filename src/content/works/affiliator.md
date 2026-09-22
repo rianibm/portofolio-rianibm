@@ -1,12 +1,12 @@
 ---
-title: "Indopaket Affiliator — Web"
-description: "Designing and building the web experience for Indopaket affiliates, from setting up an account to sharing a code and checking commission payouts."
+title: "Indopaket Affiliator Web"
+description: "Helping affiliates set up an account, share referral codes, and check commission payouts."
 pubDate: "Sept 2026"
 icon: "heroicons:user-group"
-tags: ["UI Design", "Frontend Development", "React", "Web UI"]
-identity: "UX Engineer · Frontend"
-role: "UI design · Slicing / Frontend implementation"
-delivery: "React · Web · Launch: late Sept 2026"
+tags: ["React", "Vite", "API Integration"]
+identity: "AFFILIATE PRODUCT · WEB"
+role: "UI design · Frontend implementation"
+delivery: "Launch: late Sept 2026"
 pageSkills:
   - category: "Interface Design"
     icon: "2"

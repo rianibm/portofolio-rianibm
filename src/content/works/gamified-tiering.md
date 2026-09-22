@@ -1,12 +1,11 @@
 ---
-title: "Gamified Tiering Loyalty System"
-description: "Gamified tiering and incentive system for courier partners — from early Laravel prototype to a full Next.js rebuild with real-time progression, multi-tier tracking, and incentive history."
+title: "Member+ Tiering & Loyalty"
+description: "A tier-based loyalty experience integrated into Indopaket’s core web and mobile apps, helping Member+ customers understand their level, progress, and available benefits."
 icon: "heroicons:trophy"
 pubDate: "Dec 2024"
-scope: "Feature Module"
-tags: ["Frontend Developer", "UI/UX", "Next.js", "React", "Gamification", "Laravel"]
-identity: "UX Engineer · Frontend"
-role: "UI/UX design-to-code · Frontend implementation"
+tags: ["Next.js", "React", "Laravel"]
+identity: "CORE WEB & MOBILE FEATURE"
+role: "UI design-to-code · Frontend implementation"
 pageSkills:
   - category: "UI/UX Design & Implementation"
     icon: "1"
@@ -25,9 +24,9 @@ pageSkills:
     skills: ["Mobile-first UI", "State-based Rendering", "Visual Consistency", "Performance-aware UI"]
 ---
 
-# Gamified Tiering Loyalty System
+# Member+ Tiering & Loyalty
 
-A tiering and incentive system built for courier partners — helping them understand their current standing, track progress toward the next tier, and view their incentive history. This work spanned two phases: an **early Laravel prototype** and a **full Next.js rebuild** as the platform matured.
+A loyalty feature integrated into Indopaket’s core web and mobile apps — helping Member+ customers understand their level, track progress toward the next tier, and view available benefits. This work spanned two phases: an **early Laravel prototype** and a **full Next.js rebuild** as the platform matured.
 
 ---
 

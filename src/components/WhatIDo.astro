@@ -27,14 +27,14 @@ interface ProjectGroup {
 
 const groups: ProjectGroup[] = [
   {
-    label: "Indomaret Group — Production Work",
-    sublabel: "Production work across logistics, seller platforms, loyalty, and operational systems",
-    slugs: ["affiliator", "affiliator-mobile", "indopaket-mobile", "web-3pl", "memberplus", "gamified-reward", "gamified-tiering"],
+    label: "Indopaket Product Ecosystem",
+    sublabel: "Selected production work across Indopaket’s core customer apps, growth products, loyalty features, and internal operational tools — within Indomaret Group.",
+    slugs: ["indopaket-web", "indopaket-mobile", "gamified-tiering", "affiliator", "affiliator-mobile", "gamified-reward", "web-3pl", "memberplus"],
   },
   {
     label: "Freelance & Independent Work",
     sublabel: "Client and long-term ownership work outside Indomaret Group",
-    slugs: ["indopaket-web", "perkantas-yogyakarta"],
+    slugs: ["perkantas-yogyakarta"],
   },
   {
     label: "Additional Work",
@@ -63,7 +63,7 @@ const displayGroups = compact
       href={`/works/${featuredPost.id}/`}
       class="max-w-2xl mx-auto w-full text-left rounded-3xl border-1 border-black shadow-card hover:shadow-hover transition px-6 py-8 flex flex-col gap-4 bg-pyellow animate-on-scroll from-bottom settle mt-4"
     >
-      <span class="text-xs font-semibold uppercase tracking-widest">⭐ Featured Case Study</span>
+      <span class="text-xs font-semibold uppercase tracking-widest">⭐ Featured Case Study · Core Customer Product</span>
       <h3 class="text-2xl md:text-3xl font-bold">{featuredPost.data.title}</h3>
       {featuredPost.data.role && (
         <span class="text-xs font-bold uppercase tracking-wide text-black">{featuredPost.data.role}</span>

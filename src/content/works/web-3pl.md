@@ -1,12 +1,12 @@
 ---
-title: "Web 3PL"
-description: "Internal web platform for 3PL (Third-Party Logistics) operations, supporting land and air shipment workflows with role-based access and data-heavy processes."
+title: "Indopaket 3PL Operations Platform"
+description: "Supporting land and air shipment workflows with role-based access and data-heavy interfaces."
 pubDate: "Sept 2025"
 icon: "heroicons:truck"
-tags: ["Frontend Developer", "React", "Logistics"]
-identity: "Frontend Developer"
+tags: ["React", "TypeScript"]
+identity: "INTERNAL OPERATIONS PLATFORM"
 role: "Frontend architecture · Operational UI systems"
-delivery: "React · Production · Internal Platform"
+delivery: "Production"
 pageSkills:
   - category: "3PL & Logistics Domain"
     icon: "1"
@@ -73,7 +73,7 @@ pageSkills:
       ]
 ---
 
-# Web 3PL
+# Indopaket 3PL Operations Platform
 ### Frontend Ownership for Multi-Modal Logistics Operations
 
 ## My Contribution

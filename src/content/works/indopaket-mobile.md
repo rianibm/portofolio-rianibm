@@ -1,12 +1,12 @@
 ---
-title: "Indopaket — Mobile App"
-description: "UX work on the Indopaket mobile app, focused on tracking clarity and reducing icon ambiguity in the main navigation."
+title: "Indopaket Core Mobile App"
+description: "Improving tracking clarity and making navigation icons easier to understand."
 pubDate: "Apr 2026"
 icon: "heroicons:device-phone-mobile"
-tags: ["Design Engineer", "UX Engineer", "Mobile", "Logistics"]
-identity: "UX Engineer"
+tags: ["Information Architecture"]
+identity: "CORE CUSTOMER PRODUCT"
 role: "Heuristic evaluation · Navigation redesign"
-delivery: "UX Analysis · In Progress"
+delivery: "In Progress"
 pageSkills:
   - category: "UX Analysis"
     icon: "1"
@@ -26,7 +26,7 @@ pageSkills:
       ]
 ---
 
-# Indopaket — Mobile App
+# Indopaket Core Mobile App
 ### Reducing Ambiguity in the Core Tracking Experience
 
 This case study covers the **Indopaket mobile app** — the counterpart to the [web platform revamp](/works/indopaket-web/), used by sellers and customers on the go.
