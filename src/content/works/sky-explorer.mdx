@@ -1,0 +1,109 @@
+---
+title: "Sky Explorer – Flight Booking App"
+description: "A bootcamp flight-booking project built with React, TypeScript, and Recoil."
+icon: "heroicons:paper-airplane"
+pubDate: "Dec 2024"
+tags: ["Frontend Developer", "React", "TypeScript", "Recoil"]
+role: "Frontend implementation · State management"
+pageSkills:
+  - category: "Frontend Development"
+    icon: "1"
+    skills:
+      [
+        "React",
+        "TypeScript",
+        "Vite",
+        "Component Architecture",
+        "Custom Hooks",
+      ]
+
+  - category: "State Management & Performance"
+    icon: "2"
+    skills:
+      [
+        "Recoil",
+        "State Modeling",
+        "Code Splitting",
+        "Lazy Loading",
+      ]
+
+  - category: "UI & Interaction"
+    icon: "3"
+    skills:
+      [
+        "Ant Design",
+        "Tailwind CSS",
+        "Multi-step Forms",
+        "Responsive UI",
+        "Error States",
+      ]
+
+  - category: "Motion & Data Integration"
+    icon: "4"
+    skills:
+      [
+        "Framer Motion",
+        "REST API Integration",
+        "Async Data Handling",
+        "Loading & Empty States",
+      ]
+
+  - category: "Team & Delivery Context"
+    icon: "5"
+    skills:
+      [
+        "Small Team Collaboration",
+        "Time-boxed Delivery",
+        "Frontend Ownership",
+      ]
+---
+
+import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+
+## Project Snapshot and Contribution
+
+Sky Explorer is a flight-booking application built as a bootcamp final project.
+
+**My contribution:** Frontend implementation in a two-person frontend team, including multi-step forms, state management, and responsive interfaces.
+
+**Status:** Original React version completed; a planned Next.js iteration is paused.
+
+
+## Product Challenge
+
+Passengers should be able to go back and change a booking detail without re-entering the rest of the form.
+
+
+## Core Workflow
+
+<CaseStudyVisual items={[{"title": "Search flights"}, {"title": "Select flight"}, {"title": "Passenger details"}, {"title": "Cabin selection"}, {"title": "Confirmation"}]} kind="flow" label="Flight booking journey" />
+
+
+## Key UX Decisions
+
+<CaseStudyVisual items={[{"title": "Visible progress", "description": "Use step indicators and clear loading and confirmation states.", "label": "Status visibility"}, {"title": "Focused steps", "description": "Reveal details and forms when they become relevant.", "label": "Progressive disclosure"}, {"title": "Inline validation", "description": "Flag missing fields and invalid dates before the form is submitted.", "label": "Error prevention"}, {"title": "Keep previous entries", "description": "Keep previous entries when navigating back through the booking flow.", "label": "User control"}, {"title": "Loading, empty, and error states", "description": "Distinguish pending requests, empty search results, and errors.", "label": "State clarity"}]} kind="cards" label="Booking UX decisions" />
+
+
+## Frontend Structure
+
+<CaseStudyVisual items={[{"title": "React views and forms"}, {"title": "Shared Recoil state"}, {"title": "Reusable hooks and components"}]} kind="flow" label="Booking frontend structure" />
+
+
+## Implementation Focus
+
+Reusable components, code splitting, and lazy loading supported the multi-step experience. Validation and feedback were handled consistently across search, passenger, and confirmation screens.
+
+
+## Delivered Experience
+
+We completed the responsive booking flow for the bootcamp final project. It was a project build, not a commercial booking service.
+
+
+## Reflection
+
+In our two-person frontend team, we had to agree on where booking data lived and how each step used it. Keeping earlier form entries available was a central part of that work.
+
+
+## Future Exploration
+
+A Next.js iteration is planned but paused due to work commitments. It has not shipped.

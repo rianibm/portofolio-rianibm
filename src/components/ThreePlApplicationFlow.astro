@@ -1,0 +1,117 @@
+---
+const modes = [
+  { name: "Land", workspace: "Linear shipment workflow", steps: [] },
+  {
+    name: "Air",
+    workspace: "Multi-stage shipment workflow",
+    steps: ["Arrival recorded", "Transit information updated", "Delivery evidence confirmed"],
+  },
+];
+---
+
+<figure class="application-flow not-prose" aria-label="Simplified role-relevant shipment workflow">
+  <ol class="entry-flow" aria-label="Access and shipment mode selection">
+    <li class="flow-node entry-node">Authenticated operational user</li>
+    <li class="flow-node entry-node">Role-relevant workspace</li>
+    <li class="flow-node shipment-mode">Shipment mode</li>
+  </ol>
+  <ul class="mode-branches" aria-label="Workflows by shipment mode">
+    {modes.map((mode) => (
+      <li class="mode-branch">
+        <h3 class="mode-label">{mode.name}</h3>
+        <div class="flow-node workspace">{mode.workspace}</div>
+        {mode.steps.length > 0 && (
+          <ol class="shipment-steps" aria-label="Illustrative air shipment progression">
+            {mode.steps.map((step) => <li class="flow-node">{step}</li>)}
+          </ol>
+        )}
+      </li>
+    ))}
+  </ul>
+  <figcaption>
+    <ul class="flow-notes">
+      <li>Only valid actions are available at each stage.</li>
+      <li>Workflow progression follows operational sequence.</li>
+      <li>Incomplete early-stage information is handled safely.</li>
+    </ul>
+  </figcaption>
+</figure>
+
+<style>
+  .application-flow {
+    --line: #80caff;
+    --ink: #006ba8;
+    margin: 2rem 0;
+  }
+
+  .entry-flow, .mode-branches, .shipment-steps { padding: 0; margin: 0; list-style: none; }
+  .entry-flow { display: flex; flex-direction: column; align-items: center; }
+  .flow-node {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 5rem;
+    padding: 1rem;
+    border: 1.5px solid var(--line);
+    border-radius: 1.25rem;
+    background: #eaf7ff;
+    color: var(--ink);
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  .entry-node { width: min(100%, 26rem); }
+  .entry-flow .flow-node + .flow-node { margin-top: 3rem; }
+  .shipment-mode { width: min(100%, 20rem); border-style: dashed; background: #f3fbff; }
+  .entry-flow .flow-node + .flow-node::before, .workspace::before, .shipment-steps .flow-node::before {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    height: 3rem;
+    border-left: 1.5px solid var(--line);
+  }
+  .entry-flow .flow-node + .flow-node::after, .workspace::after, .shipment-steps .flow-node::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 3px);
+    top: -7px;
+    width: 6px;
+    height: 6px;
+    border-right: 1.5px solid var(--line);
+    border-bottom: 1.5px solid var(--line);
+    transform: rotate(45deg);
+  }
+
+  .mode-branches { position: relative; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding-top: 4rem; }
+  .mode-branch { position: relative; padding-inline: 0.75rem; min-width: 0; }
+  .mode-branch::before { content: ""; position: absolute; left: 0; right: 0; top: -2rem; border-top: 1.5px solid var(--line); }
+  .mode-branch:first-child::before { left: 50%; }
+  .mode-branch:last-child::before { right: 50%; }
+  .mode-branch::after { content: ""; position: absolute; top: -2rem; left: 50%; height: 2rem; border-left: 1.5px solid var(--line); }
+  .mode-branches::before { content: ""; position: absolute; top: 0; left: 50%; height: 2rem; border-left: 1.5px solid var(--line); }
+  .mode-label { position: relative; z-index: 1; width: fit-content; margin: 0 auto; padding: 0.25rem 1rem; border: 1.5px solid var(--line); border-radius: 999px; background: #eaf7ff; color: var(--ink); font-size: 0.9375rem; font-weight: 700; line-height: 1.5; }
+  .workspace, .shipment-steps .flow-node { margin-top: 3rem; }
+  .shipment-steps .flow-node:first-child { width: 70%; margin-inline: auto; }
+  .flow-notes { display: grid; gap: 0.5rem; margin: 2rem 0 0; padding-left: 1.25rem; list-style: disc; color: #596579; font-size: 0.9375rem; line-height: 1.6; }
+  .flow-notes li::marker { color: var(--ink); }
+
+  @media (min-width: 1024px) {
+    .application-flow { width: min(calc(100vw - 5rem), 67rem); margin-left: 0; }
+  }
+  @media (max-width: 1023px) {
+    .mode-branches::before { top: -2rem; left: -1.5px; right: 50%; height: 2rem; border-left: 1.5px solid var(--line); border-top: 1.5px solid var(--line); }
+    .shipment-mode::before { height: 3rem; }
+    .mode-branches { grid-template-columns: 1fr; gap: 2rem; margin-top: 2rem; padding: 0 0 0 1.25rem; border-left: 1.5px solid var(--line); }
+    .mode-branch { padding: 1rem; border: 1px solid #d7effb; border-radius: 1rem; }
+    .mode-branch::before, .mode-branch:first-child::before, .mode-branch:last-child::before { top: 2rem; left: -1.25rem; right: 100%; }
+    .mode-branch::after { display: none; }
+    .mode-label { margin-left: 0; }
+    .workspace::before { left: 2rem; }
+    .workspace::after { left: calc(2rem - 3px); }
+    .flow-node { min-height: 4rem; font-size: 0.9375rem; }
+  }
+</style>

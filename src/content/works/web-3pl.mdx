@@ -1,0 +1,138 @@
+---
+title: "Indopaket 3PL Operations Platform"
+description: "Supporting land and air shipment workflows with role-based access and data-heavy interfaces."
+pubDate: "Sept 2025"
+icon: "heroicons:truck"
+tags: ["React", "TypeScript"]
+identity: "INTERNAL OPERATIONS PLATFORM"
+role: "Frontend architecture · Operational UI systems"
+delivery: "Production"
+pageSkills:
+  - category: "3PL & Logistics Domain"
+    icon: "1"
+    skills:
+      [
+        "3PL Operations",
+        "Multi-modal Transportation (Land & Air)",
+        "Shipment Lifecycle",
+        "Shipment Workflow Design",
+      ]
+
+  - category: "Frontend Architecture"
+    icon: "2"
+    skills:
+      [
+        "React 19",
+        "TypeScript",
+        "Vite",
+        "Component-driven Architecture",
+      ]
+
+  - category: "UI & Interaction"
+    icon: "3"
+    skills:
+      [
+        "Tailwind CSS",
+        "Radix UI",
+        "shadcn/ui",
+        "Form-heavy UI",
+        "Operational Interfaces",
+      ]
+
+  - category: "State, Forms & Data Handling"
+    icon: "4"
+    skills:
+      [
+        "Custom React Hooks",
+        "React Hook Form",
+        "Zod Validation",
+        "Async Data Handling",
+        "Error & Empty States",
+      ]
+
+  - category: "System Integration & Reliability"
+    icon: "5"
+    skills:
+      [
+        "Role-based Access Control (RBAC)",
+        "Data Integration",
+        "Resilient UI States",
+        "Config-driven Business Rules",
+      ]
+
+  - category: "Testing & Code Quality"
+    icon: "5"
+    skills:
+      [
+        "Vitest",
+        "Testing Library",
+        "jsdom",
+        "ESLint",
+        "Prettier",
+      ]
+---
+
+import ThreePlUXCards from "@/components/ThreePlUXCards.astro";
+import ThreePlDomainCards from "@/components/ThreePlDomainCards.astro";
+import ThreePlApplicationFlow from "@/components/ThreePlApplicationFlow.astro";
+import ThreePlEngineeringVisuals from "@/components/ThreePlEngineeringVisuals.astro";
+
+## Project Snapshot and Contribution
+
+Indopaket 3PL is an internal logistics platform for land and air shipment operations, used by operational teams and logistics partners. Teams use it to check shipment status, review tracking history, and access operational reports.
+
+**My contribution:** Frontend architecture, operational interfaces, form and workflow design, error and empty states, role-aware navigation, data integration, and testing setup.
+
+**Collaboration:** I worked with backend engineers, Product, and Operations teams to translate operational requirements into usable interfaces.
+
+Some workflows, roles, and implementation details have been simplified to protect operational confidentiality.
+
+## Operational Challenge
+
+Land and air shipments follow different steps, and some information arrives after work has already started. Operators need to see the current stage and know which actions are available.
+
+## Darat vs Udara
+
+<ThreePlDomainCards />
+
+## Core Workflow
+
+<ThreePlApplicationFlow />
+
+## Key UX Decisions
+
+<ThreePlUXCards />
+
+## Selected Interface Screens
+
+Product screens are not included in this public overview to protect operational confidentiality. The diagrams above illustrate the workflow and design decisions in simplified form.
+
+## Architecture and Reliability
+
+<ThreePlEngineeringVisuals section="architecture" />
+
+## Testing Strategy
+
+I set up unit and component tests with **Vitest**, **Testing Library**, and **jsdom**, alongside **ESLint**, **Prettier**, and lint-staged for routine code checks.
+
+The testing priorities are form validation, state-dependent actions, and loading, empty, and error states—the interactions that help operators understand what they can do next.
+
+## Before vs After
+
+<ThreePlEngineeringVisuals section="outcome" />
+
+## Reflection
+
+This project was my first deep exposure to 3PL operations. It shifted my understanding of frontend quality from visual completion toward operational safety: making complex workflows predictable, preventing invalid actions, and keeping the system reliable under real-world constraints.
+
+## Future Exploration
+
+### Reconciliation (Recon)
+
+Explore a simpler way for teams to see reconciliation status and find items that need follow-up. **Conceptual exploration — not yet shipped.**
+
+### Mobile Documentation
+
+Explore capturing and reviewing documentation on a phone. The flow below is a concept; operational details have been simplified.
+
+<ThreePlEngineeringVisuals section="future" />

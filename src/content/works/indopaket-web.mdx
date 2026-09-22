@@ -44,59 +44,38 @@ pageSkills:
       ]
 ---
 
-<p class="editorial-eyebrow">01 / Context</p>
+import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
 
-## Indopaket, beyond a shipping website.
+## Project Snapshot and Contribution
 
-Redesigning complex logistics journeys for customers and internal operations.
+Indopaket Web is the core customer web product within Indomaret Group. I carried the redesign from UX analysis through production implementation across nine core flows.
 
-Indopaket is Indomaret Group's shipping platform. Sellers use it to manage shipments and track referral/tier status, while internal teams rely on it for operational visibility. I carried this web redesign from UX analysis through to production code.
+**My contribution:** UX analysis, information architecture, interaction design, and Laravel Blade/Tailwind CSS implementation as UX Engineer and Product Team Lead.
 
-**Role:** UX Engineer · Product Team Lead
+**Collaboration:** I worked with backend engineers and business stakeholders to keep the redesign compatible with existing shipping requirements.
 
-**Scope:** UX analysis, information architecture, interaction design, and frontend implementation across 9 core flows
+<h2 id="challenge">Product Challenge</h2>
 
-**Stack:** Laravel Blade · Tailwind CSS
+Primary shipping actions were buried in unlabeled fields, store details obscured the map, and empty states offered no next step. Hotjar data from September 2023 and heuristic evaluation informed the changes shown in the 2026 iteration.
 
-Jump to: [Challenge](#challenge) · [Design decision](#design-decision) · [Store & shipping](#store-and-shipping-discovery) · [Account & authentication](#account-and-authentication) · [Implementation](#implementation) · [Outcome](#outcome)
 
-<p class="editorial-eyebrow">The challenge</p>
+## Core Shipping Journey
 
-<h2 id="challenge">When every feature needs attention, the user loses direction.</h2>
+<CaseStudyVisual items={[{"title": "Choose shipping task"}, {"title": "Find a store or service"}, {"title": "Send package"}, {"title": "Track progress"}]} kind="flow" label="Simplified customer shipping journey" />
 
-The site had grown feature-by-feature. Primary actions were buried in unlabeled fields, store details obscured the map, and empty states offered no next step.
+<h2 id="design-decision">Key UX Decisions</h2>
 
-How might we make shipping, tracking, and store discovery easier to navigate without compromising operational requirements?
+<CaseStudyVisual items={[{"title": "Clear tracking and rate-check labels", "description": "Label tracking and rate-check actions clearly on the homepage.", "label": "Recognition"}, {"title": "Map context", "description": "Use a compact selected-store card that keeps the map and result list visible.", "label": "Status visibility"}, {"title": "Help when users get stuck", "description": "Provide useful empty states, app-store links, and support fallbacks.", "label": "Recovery"}, {"title": "Focused account flows", "description": "Separate Login and Register and make verification feedback understandable.", "label": "Information hierarchy"}]} kind="cards" label="Web redesign decisions" />
 
-The starting evidence was Hotjar heatmap data from **1–30 September 2023**, paired with heuristic evaluation. The screenshots compare that original experience with the **2026 iteration**, following multiple rounds of changes—not a single redesign pass.
+## Selected Interface Screens
 
-<p class="editorial-eyebrow">02 / Design decision</p>
-
-<h2 id="design-decision">Organizing around user tasks, not internal features.</h2>
-
-I restructured the experience around tracking, checking rates, finding a store, and shipping a package. Clear labels and repeated interaction patterns help users recognize what to do without relearning each screen.
-
-The business rules stayed intact. The design work focused on reducing the extra effort created by fragmented navigation, competing actions, and inconsistent feedback.
-
-<details>
-<summary>Constraints and trade-offs</summary>
-
-- **Shared patterns:** stay consistent with components already used across Indopaket.
-- **Business rules:** preserve operational and referral/tier logic owned by other teams.
-- **Production stack:** work within Laravel/Blade and existing backend contracts.
-- **Prioritization:** focus on store discovery, error states, and account flows. Single vs. multi-resi tracking ambiguity remains a follow-up item.
-
-</details>
-
-<p class="editorial-eyebrow">Journey / Store and shipping discovery</p>
-
-<h2 id="store-and-shipping-discovery">Keep the next shipping action in sight.</h2>
+<h3 id="store-and-shipping-discovery">Store and shipping discovery</h3>
 
 How sellers find a drop-off store and track a shipment.
 
-### Beranda (Homepage)
+#### Beranda (Homepage)
 
-*Surfaced tracking and rate-check as the homepage's primary actions, instead of leaving them buried in plain, unlabeled fields.*
+*Made tracking and rate checks easier to find on the homepage.*
 
 Hotjar showed the heaviest interaction concentrated on the "Lacak Paket" (track) and "Cek Ongkir" (check rate) widgets, both of which buried their primary action in plain, unlabeled fields — and the promo slider had no visible pagination. *(Heuristic reference: Recognition Rather Than Recall.)*
 
@@ -110,7 +89,7 @@ Hotjar showed the heaviest interaction concentrated on the "Lacak Paket" (track)
 - **Lacak Paket** — added a "Pindai Resi" (scan) shortcut, a dedicated "Lacak Paket" button, and a note on what happens after submitting (captcha verification)
 - **Cek Ongkir** — split the combined "Asal/Tujuan" field into two clearly labeled fields with a swap shortcut, and marked Dimensi as explicitly optional
 
-### Cari Toko (Store Locator)
+#### Cari Toko (Store Locator)
 
 *Shifted store details from a map-blocking popup to a compact card that keeps the map and result list in view.*
 
@@ -130,7 +109,7 @@ Both versions kept a results list alongside the map. The problem was the selecte
 |---|---|
 | ![Old Cari Toko no-results state: plain "0 Toko ditemukan" text with no further guidance](../../assets/images/works/indopaket-web/before/cari-toko-tidak-ditemukan.png) | ![New Cari Toko no-results state: "Lokasi tidak ditemukan. Coba kata kunci lain." with example searches to try](../../assets/images/works/indopaket-web/after/cari-toko-tidak-ditemukan.png) |
 
-### Kirim Sekarang (Ship Package)
+#### Kirim Sekarang (Ship Package)
 
 *Gave users stuck at the app-handoff screen an actual way forward, instead of a dead end.*
 
@@ -146,11 +125,11 @@ For "Jemput & Antar ke Alamat" deliveries, handing off to the mobile app used to
 - Added a "Butuh bantuan? Hubungi CS" fallback card for users who get stuck mid-handoff
 - Replaced the bare text card with an illustration consistent with the rest of the site's redesigned states
 
-### Riwayat & Tracking
+#### Riwayat & Tracking
 
-*Turned a broken-image dead end into a self-diagnosis state users can act on.*
+*Added search tips and a next step when no history was found.*
 
-The old "not found" state on Riwayat (History) was a bare "Tidak ditemukan" message with a broken image and no guidance. *(Heuristic reference: Help Users Recognize, Diagnose, and Recover from Errors.)* The old multi-resi tracking input also drew scattered heatmap clicks with no clear pattern — a sign users weren't sure how single-resi tracking differed from tracking multiple resi at once.
+The old "not found" state on Riwayat (History) was a bare "Tidak ditemukan" message with a broken image and no guidance. *(Heuristic reference: Help Users Recognize, Diagnose, and Recover from Errors.)* The old multi-resi tracking input also drew scattered heatmap clicks with no clear pattern. This suggested the distinction between single and multiple shipment tracking needed a closer look.
 
 | Existing experience · Sep 2023 | Current iteration · 2026 |
 |---|---|
@@ -160,17 +139,15 @@ The old "not found" state on Riwayat (History) was a bare "Tidak ditemukan" mess
 **What changed**
 
 - Riwayat's broken-image dead end became an illustration + headline + self-diagnosis checklist — the same pattern now backs the Tracking page's resi-not-found result too, so error states feel consistent instead of one-off
-- Tracking input got a visual refresh, though the underlying single vs. multi-resi ambiguity is still an open item for a follow-up iteration, not solved here (see [Constraints & Trade-offs](#design-decision))
+- Tracking input got a visual refresh, though the underlying single vs. multi-resi ambiguity is still an open item for a follow-up iteration, not solved here (see [Future Exploration](#future-exploration))
 
 ---
 
-<p class="editorial-eyebrow">Journey / Account and authentication</p>
-
-<h2 id="account-and-authentication">One purpose per screen. Clear guidance at each step.</h2>
+<h3 id="account-and-authentication">Account and authentication</h3>
 
 How a new user registers and verifies their account.
 
-### Login and Register
+#### Login and Register
 
 *Split a screen where two flows competed for attention into two focused, single-purpose ones.*
 
@@ -180,7 +157,7 @@ How a new user registers and verifies their account.
 
 The registration form and the "Sudah Terdaftar? Login" panel used to compete on one screen — heatmap data showed clicks scattered across both. Login and Register are now distinct, focused pages instead of one competing screen. *(Heuristic reference: Aesthetic and Minimalist Design.)*
 
-### OTP Verification
+#### OTP Verification
 
 *Replaced a bare countdown with confirmation of what's happening and what to do if it doesn't.*
 
@@ -192,25 +169,15 @@ The old screen only showed a countdown and a bare set of input boxes — no conf
 
 ---
 
-<p class="editorial-eyebrow">Delivery / Design to engineering</p>
 
-<h2 id="implementation">Carry the interaction decisions into production.</h2>
 
-I owned the heatmap review, heuristic evaluation, information architecture, interaction design, and frontend implementation. I worked with backend engineers on API contracts and with business stakeholders on operational and referral rules.
+<h2 id="implementation">Architecture and Implementation</h2>
 
-The redesign shipped in the existing **Laravel Blade** frontend with **Tailwind CSS**. Reusable empty states, store-selection cards, and form layouts let the team extend the experience without introducing a parallel design language.
+<CaseStudyVisual items={[{"title": "Existing production stack", "description": "Delivered the redesign in Laravel Blade with Tailwind CSS while preserving business requirements."}, {"title": "Reusable interface patterns", "description": "Shared empty states, store-selection cards, and form layouts support consistent future changes."}]} kind="cards" label="Web implementation" />
+<h2 id="outcome">Before vs After</h2>
 
-<p class="editorial-eyebrow">03 / Outcome</p>
+<CaseStudyVisual items={[{"title": "Before", "description": "Competing actions, map-blocking store details, and dead-end feedback made core tasks harder to follow.", "label": "Earlier interface"}, {"title": "After", "description": "Nine redesigned flows introduce labeled actions, compact store cards, useful recovery states, and focused account pages.", "label": "Delivered iteration"}]} kind="cards" label="Web redesign comparison" caption="Conversion and task-completion changes have not been measured." />
 
-<h2 id="outcome">A clearer foundation for future journeys.</h2>
+## Future Exploration
 
-**9 core flows redesigned and shipped** on the live Indopaket web platform. The before-and-after evidence shows concrete interface changes:
-
-- **Discovery:** labeled shipping actions and a smaller store card that keeps the map and results visible.
-- **Recovery:** useful empty states, app-store links, and a customer-support fallback in place of dead ends.
-- **Account flows:** separate Login/Register pages and OTP guidance that confirms the destination and explains recovery.
-- **Engineering:** production templates and reusable patterns the team can maintain.
-
-These are delivered interface changes; this case study does not report a measured improvement in conversion or task completion.
-
-**Still to resolve:** the distinction between single and multi-resi tracking. A planned React/Next.js rewrite is an opportunity to consolidate the patterns introduced here into a more reusable frontend architecture.
+The distinction between single and multi-shipment tracking remains unresolved. A planned React/Next.js rewrite offers an opportunity to consolidate the interaction patterns; it is not part of the delivered redesign.

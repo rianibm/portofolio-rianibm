@@ -1,0 +1,79 @@
+---
+title: "Member+ Tiering & Loyalty"
+description: "A tier-based loyalty experience integrated into Indopaket’s core web and mobile apps, helping Member+ customers understand their level, progress, and available benefits."
+icon: "heroicons:trophy"
+pubDate: "Dec 2024"
+tags: ["Next.js", "React", "Laravel"]
+identity: "CORE WEB & MOBILE FEATURE"
+scope: "Single Feature"
+role: "UI design-to-code · Frontend implementation"
+pageSkills:
+  - category: "UI/UX Design & Implementation"
+    icon: "1"
+    skills: ["Design-to-code", "UI Slicing", "Pixel-accurate UI", "Responsive Layouts", "Multi-state UI"]
+  - category: "Frontend Development"
+    icon: "2"
+    skills: ["Next.js", "React", "TypeScript", "Tailwind CSS", "shadcn/ui"]
+  - category: "Gamified UI Patterns"
+    icon: "3"
+    skills: ["Tier Progression UI", "Progress Indicators", "Interactive Tier Navigation", "Lock/Unlock States", "Incentive Display"]
+  - category: "API & Data Integration"
+    icon: "4"
+    skills: ["REST API Integration", "Real-time Data Fetching", "Data Formatting", "Error Handling"]
+  - category: "Implementation Quality"
+    icon: "5"
+    skills: ["Mobile-first UI", "State-based Rendering", "Visual Consistency", "Performance-aware UI"]
+---
+
+import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+
+## Project Snapshot and Contribution
+
+Member+ Tiering & Loyalty is a feature integrated into Indopaket’s core web and mobile apps. It helps Member+ customers understand their level, progress, and available benefits.
+
+**My contribution:** UI design-to-code and frontend implementation, from a Laravel prototype to a Next.js rebuild.
+
+Some workflows and implementation details have been simplified to protect operational confidentiality.
+
+
+## Product Challenge
+
+Customers need to see their current tier, how far they are from the next one, and which benefits they can use.
+
+
+## Core Experience
+
+<CaseStudyVisual items={[{"title": "View current level"}, {"title": "Understand progress"}, {"title": "Explore benefits"}, {"title": "Review history"}]} kind="flow" label="Loyalty feature experience" />
+
+
+## Key UX Decisions
+
+<CaseStudyVisual items={[{"title": "Current standing at a glance", "description": "Keep current level and progress visible on the main view.", "label": "Status visibility"}, {"title": "Progress to the next tier", "description": "Show current progress against the next target so the remaining effort is understandable.", "label": "Goal gradient"}, {"title": "Recognizable tier states", "description": "Use distinct icons and states for achieved, current, and upcoming levels.", "label": "Recognition"}, {"title": "Visible achievement", "description": "Differentiate completed milestones from levels that are still in progress.", "label": "Positive feedback"}, {"title": "Details on separate pages", "description": "Keep the overview scannable, with detailed terms and history in separate views.", "label": "Progressive disclosure"}]} kind="cards" label="Loyalty UX decisions" />
+
+
+## Implementation Evolution
+
+<CaseStudyVisual items={[{"title": "Laravel prototype", "description": "Implemented mobile-first badges, progress indicators, and interactive tier exploration to evaluate the initial interface.", "label": "Phase 1"}, {"title": "Next.js rebuild", "description": "Carried the interaction patterns into data-driven status and history pages, including loading, empty, and error states.", "label": "Phase 2"}]} kind="cards" label="Prototype and rebuild" />
+
+
+## Frontend Structure
+
+<CaseStudyVisual items={[{"title": "Status and history views"}, {"title": "Shared data presentation"}, {"title": "Consistent UI states"}]} kind="flow" label="Loyalty frontend structure" />
+
+
+## Delivered Experience
+
+<CaseStudyVisual items={[{"title": "Status and benefits", "description": "A current-level overview, progression timeline, benefit details, and clear state differences."}, {"title": "History", "description": "A separate view for reviewing prior periods without crowding the main progression screen."}]} kind="cards" label="Implemented feature scope" />
+
+
+## Reflection
+
+The Laravel prototype let me work through the badges and tier interactions first. In the Next.js rebuild, I also had to handle live data, past periods, and loading or empty states.
+
+## Collaboration
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <span class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1">Riani BM <span class="text-black/50 font-normal">· UX Engineer</span></span>
+  <a href="https://www.linkedin.com/in/aedentrisa-yasmanda-paulindino-64b805193/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Aeden <span class="text-black/50 font-normal">· Frontend</span></a>
+</div>

@@ -1,0 +1,140 @@
+---
+import { Icon } from "astro-icon/components";
+
+const principles = [
+  {
+    number: 1,
+    title: "Visibility of System Status",
+    icon: "solar:eye-linear",
+    risk: "Operators cannot confidently identify a shipment’s current stage.",
+    response: "Live statistics and state-specific actions make the next step visible.",
+  },
+  {
+    number: 5,
+    title: "Error Prevention",
+    icon: "solar:shield-cross-linear",
+    risk: "Actions taken out of sequence can lead to operational errors.",
+    response: "Guided progression makes valid next steps clear at each stage.",
+  },
+  {
+    number: 2,
+    title: "Match With the Real World",
+    icon: "solar:delivery-linear",
+    risk: "One generic workflow cannot represent both land and air operations.",
+    response: "Separate flows reflect linear land and multi-step air shipments.",
+  },
+  {
+    number: 3,
+    title: "User Control and Freedom",
+    icon: "solar:user-id-linear",
+    risk: "Actions unrelated to an operator’s work make it harder to choose the right next step.",
+    response: "Each workspace shows the tasks and actions relevant to the operator’s responsibilities.",
+  },
+  {
+    number: 4,
+    title: "Consistency and Standards",
+    icon: "solar:layers-linear",
+    risk: "Rules and form behavior can diverge across shipment features.",
+    response: "Shared domain hooks and config-driven validation keep behavior consistent.",
+  },
+];
+---
+
+<div class="ux-principles not-prose">
+  <div class="principle-grid">
+    {principles.map((principle) => (
+      <section class="principle-card" aria-labelledby={`principle-${principle.number}`}>
+        <div class="icon-column" aria-hidden="true">
+          <div class="icon-badge">
+            <Icon name={principle.icon} width={40} height={40} />
+            <span>{String(principle.number).padStart(2, "0")}</span>
+          </div>
+        </div>
+        <div class="principle-content">
+          <p class="eyebrow">Nielsen #{principle.number}</p>
+          <h3 id={`principle-${principle.number}`}>{principle.title}</h3>
+          <dl>
+            <div>
+              <dt>Operational risk</dt>
+              <dd>{principle.risk}</dd>
+            </div>
+            <div>
+              <dt>Design response</dt>
+              <dd>{principle.response}</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    ))}
+  </div>
+  <p class="icon-credit">Icons: <a href="https://icon-sets.iconify.design/solar/">Solar by 480 Design</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+</div>
+
+<style>
+  .ux-principles {
+    --card-blue: #0075b8;
+    --card-border: #d7effb;
+    margin-block: 2rem;
+  }
+
+  .principle-grid { display: grid; gap: 1rem; }
+
+  .principle-card {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0, 1fr);
+    padding: 1.25rem;
+    border: 1px solid var(--card-border);
+    border-radius: 0.875rem;
+    background: #fff;
+    box-shadow: 0 4px 24px rgb(0 117 184 / 4%);
+  }
+
+  .icon-column { border-right: 1px solid var(--card-border); padding-right: 1rem; }
+  .icon-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    background: #eaf7fd;
+    color: var(--card-blue);
+    font-size: 0.875rem;
+    font-weight: 750;
+    line-height: 1;
+  }
+
+  .principle-content { padding-left: 1.25rem; }
+  .eyebrow, dt {
+    margin: 0;
+    color: var(--card-blue);
+    font-size: 0.6875rem;
+    font-weight: 800;
+    letter-spacing: 0.065em;
+    text-transform: uppercase;
+    line-height: 1.5;
+  }
+
+  h3 { margin: 0.25rem 0 1rem; color: #101828; font-size: 1.125rem; font-weight: 750; line-height: 1.3; }
+  dl { display: grid; gap: 0.875rem; margin: 0; }
+  dd { margin: 0.25rem 0 0; color: #596579; font-size: 0.875rem; line-height: 1.6; }
+  .icon-credit { margin: 0.75rem 0 0; color: #596579; font-size: 0.6875rem; text-align: left; }
+  .icon-credit a { text-decoration: underline; text-underline-offset: 2px; }
+
+  @media (min-width: 1024px) {
+    .ux-principles { width: min(calc(100vw - 5rem), 67rem); margin-left: 0; }
+    .principle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .principle-card:last-child { grid-column: 1 / -1; }
+  }
+
+  @media (max-width: 479px) {
+    .principle-card { grid-template-columns: 3.75rem minmax(0, 1fr); padding: 1rem; }
+    .icon-column { padding-right: 0.75rem; }
+    .icon-badge { width: 3rem; height: 3rem; font-size: 0.6875rem; }
+    .icon-badge :global(svg) { width: 1.625rem; height: 1.625rem; }
+    .principle-content { padding-left: 0.875rem; }
+    h3 { font-size: 1rem; }
+  }
+</style>

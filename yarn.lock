@@ -652,6 +652,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@iconify-json/solar@npm:^1.2.12":
+  version: 1.2.12
+  resolution: "@iconify-json/solar@npm:1.2.12"
+  dependencies:
+    "@iconify/types": "npm:*"
+  checksum: 10c0/db37d2009caf3fea4beeb03e0e330fd8ff8165461000a418a975d82e3a8a237cfab6c15a570531f9b4aaccf6f60741619c879ce93c899b2c60ba3a078162787c
+  languageName: node
+  linkType: hard
+
 "@iconify/tools@npm:^4.0.5":
   version: 4.2.0
   resolution: "@iconify/tools@npm:4.2.0"
@@ -4943,6 +4952,7 @@ __metadata:
     "@astrojs/sitemap": "npm:^3.7.3"
     "@astrojs/vercel": "npm:11.0.5"
     "@iconify-json/heroicons": "npm:^1.2.3"
+    "@iconify-json/solar": "npm:^1.2.12"
     "@tailwindcss/typography": "npm:^0.5.20"
     "@tailwindcss/vite": "npm:^4.3.2"
     "@vercel/analytics": "npm:^1.6.1"

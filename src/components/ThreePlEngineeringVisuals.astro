@@ -1,0 +1,167 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+  section: "access" | "architecture" | "story" | "outcome" | "future";
+}
+const { section } = Astro.props;
+const accessRows = [
+  ["Workspace visibility", "Relevant to assigned responsibilities", "Keep attention on the work that matters."],
+  ["Shipment context", "Land and air workflows remain distinct", "Reflect operational differences in the interface."],
+  ["Available actions", "Depend on responsibility and current stage", "Reduce irrelevant decisions and invalid actions."],
+  ["Progression", "Guided by the operational sequence", "Make the appropriate next step clear."],
+];
+const story = [
+  { title: "Operational problem", text: "Land and air shipments follow different rules.", icon: "solar:box-linear" },
+  { title: "UX decision", text: "Separate workflows and role-specific actions.", icon: "solar:routing-linear" },
+  { title: "Engineering response", text: "Domain hooks, RBAC, centralized validation, and a resilient API client.", icon: "solar:code-linear" },
+  { title: "Production result", text: "Safe and predictable multi-modal shipment operations.", icon: "solar:check-circle-linear" },
+];
+const outcomes = [
+  { title: "Before", items: ["No unified operational interface", "Shipment rules handled manually", "No role-specific interface", "Higher risk of out-of-sequence actions", "Limited operational visibility"] },
+  { title: "After", items: ["One platform for land and air workflows", "Valid transitions guided by the interface", "Role-based navigation and actions", "Sequential shipment progression", "Real-time dashboard and tracking history"] },
+];
+---
+
+<div class:list={["engineering-visual not-prose", { "future-visual": section === "future" }]}>
+  {section === "future" && (
+    <figure>
+      <p class="future-label">Conceptual future flow — not yet shipped.</p>
+      <ol class="future-flow" aria-label="Conceptual mobile documentation flow">
+        {["Capture photo", "Optimize image", "Add relevant context", "Review information", "Submit documentation"].map((step) => <li class="node">{step}</li>)}
+      </ol>
+    </figure>
+  )}
+  {section === "access" && (
+    <figure>
+      <div class="table-scroll" role="region" aria-label="Simplified access principles" tabindex="0">
+        <table>
+          <caption>Role-aware experience · simplified overview</caption>
+          <thead><tr><th scope="col">Capability</th><th scope="col">Access context</th><th scope="col">UX purpose</th></tr></thead>
+          <tbody>{accessRows.map(([capability, context, purpose]) => <tr><th scope="row">{capability}</th><td>{context}</td><td>{purpose}</td></tr>)}</tbody>
+        </table>
+      </div>
+      <figcaption>RBAC reduces both unauthorized access and irrelevant decisions by adapting navigation and actions to each actor’s responsibility.</figcaption>
+    </figure>
+  )}
+
+  {section === "architecture" && (
+    <figure>
+      <div class="architecture" aria-label="Simplified frontend architecture">
+        <div class="architecture-inputs">
+          <div class="ui-path"><div class="node">Pages &amp; operational UI</div><span class="connector" aria-hidden="true">↓</span><div class="node">Domain hooks</div></div>
+          <div class="node configuration">Environment configuration</div>
+        </div>
+        <div class="merge" aria-hidden="true"></div>
+        <ol class="architecture-stack" aria-label="Shared processing layers">
+          <li class="node">Validation &amp; field mapping</li>
+          <li class="node">Custom API client</li>
+          <li class="node">Backend APIs</li>
+        </ol>
+      </div>
+      <figcaption>Shipment logic lives in domain hooks. Shared validation and field mapping give each page the same rules for handling data.</figcaption>
+      <aside class="reliability" aria-labelledby="request-lifecycle">
+        <h3 id="request-lifecycle">Request lifecycle · experience overview</h3>
+        <ol class="lifecycle">
+          <li>User action</li><li>Loading feedback</li><li>Result or recovery guidance</li><li>Consistent UI state</li>
+        </ol>
+        <p>Pages use a shared API client and show when a request is loading, has finished, or needs attention.</p>
+      </aside>
+    </figure>
+  )}
+
+  {section === "story" && (
+    <ol class="story" aria-label="From operational problem to production result">
+      {story.map((step, index) => (
+        <li class="story-card">
+          <span class="story-icon" aria-hidden="true"><Icon name={step.icon} width={28} height={28} /></span>
+          <p class="eyebrow">0{index + 1}</p>
+          <h3>{step.title}</h3>
+          <p>{step.text}</p>
+        </li>
+      ))}
+    </ol>
+  )}
+
+  {section === "outcome" && (
+    <figure>
+      <div class="outcomes">
+        {outcomes.map((outcome, index) => (
+          <section class:list={["outcome-card", { after: index === 1 }]} aria-labelledby={`outcome-${outcome.title.toLowerCase()}`}>
+            <p class="eyebrow">{index === 0 ? "Previous experience" : "Production experience"}</p>
+            <h3 id={`outcome-${outcome.title.toLowerCase()}`}>{outcome.title}</h3>
+            <ul>{outcome.items.map((item) => <li><Icon name={index === 0 ? "solar:minus-circle-linear" : "solar:check-circle-linear"} width={22} height={22} aria-hidden="true" /><span>{item}</span></li>)}</ul>
+          </section>
+        ))}
+      </div>
+      <figcaption>These changes are based on the implemented interface. Time savings have not been measured.</figcaption>
+    </figure>
+  )}
+</div>
+
+<style>
+  .engineering-visual { --blue: #006ba8; --border: #cbeafb; --line: #80caff; margin-block: 2rem; color: #17243d; }
+  .future-label { width: fit-content; margin: 0 0 1.5rem; padding: 0.5rem 0.875rem; border: 1px dashed var(--line); border-radius: 0.5rem; color: var(--blue); background: #f5fbff; font-size: 0.8125rem; font-weight: 650; }
+  .future-flow { display: grid; gap: 2rem; margin: 0; padding: 0; list-style: none; }
+  .future-flow li { position: relative; }
+  .future-flow li + li::before { content: "↓"; position: absolute; bottom: 100%; left: 50%; height: 2rem; line-height: 2rem; transform: translateX(-50%); color: var(--blue); }
+  figure { margin: 0; }
+  figcaption { margin-top: 1.25rem; color: #596579; font-size: 0.875rem; line-height: 1.7; }
+  .table-scroll { overflow-x: auto; border: 1px solid var(--border); border-radius: 1rem; }
+  .table-scroll:focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+  table { width: 100%; border-collapse: collapse; text-align: left; font-size: 0.875rem; line-height: 1.6; background: white; }
+  caption { padding: 1rem 1.25rem; text-align: left; background: #eaf7ff; color: var(--blue); font-weight: 700; }
+  th, td { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+  thead { color: var(--blue); background: #f5fbff; }
+  tbody th { font-weight: 650; width: 24%; }
+  td { color: #596579; }
+  tr:last-child th, tr:last-child td { border-bottom: 0; }
+  .architecture { max-width: 48rem; margin-right: auto; }
+  .architecture-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: end; }
+  .node { padding: 1.25rem; border: 1.5px solid var(--line); border-radius: 1.25rem; background: #eaf7ff; color: var(--blue); text-align: left; font-weight: 700; line-height: 1.5; }
+  .connector { display: block; height: 3rem; color: var(--blue); text-align: center; font-size: 1.5rem; line-height: 3rem; }
+  .merge { position: relative; height: 2rem; width: calc(50% + 1rem); margin-inline: auto; border: solid var(--line); border-width: 0 1.5px 1.5px; border-radius: 0 0 1rem 1rem; }
+  .merge::after { content: "↓"; position: absolute; left: 50%; top: 100%; transform: translateX(-50%); color: var(--blue); height: 2rem; line-height: 2rem; }
+  .architecture-stack { display: grid; gap: 3rem; max-width: 27rem; margin: 2rem auto 0; padding: 0; list-style: none; }
+  .architecture-stack li { position: relative; }
+  .architecture-stack li + li::before { content: "↓"; position: absolute; bottom: 100%; left: 50%; height: 3rem; line-height: 3rem; transform: translateX(-50%); font-size: 1.5rem; color: var(--blue); }
+  .reliability { margin-top: 2rem; padding: 1.5rem; border: 1px solid var(--border); border-radius: 1rem; background: #f5fbff; }
+  h3 { margin: 0; font-size: 1.125rem; font-weight: 750; line-height: 1.4; }
+  .reliability p, .story-card > p:not(.eyebrow) { margin: 0.875rem 0 0; color: #596579; font-size: 0.875rem; line-height: 1.7; }
+  .lifecycle { display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 1rem 0; padding: 0; list-style: none; }
+  .lifecycle li { position: relative; color: var(--blue); font-size: 0.8125rem; font-weight: 650; }
+  .lifecycle li + li::before { content: "→"; position: absolute; right: calc(100% + 0.375rem); }
+  .story { display: grid; gap: 2rem; margin: 0; padding: 0; list-style: none; }
+  .story-card { position: relative; padding: 1.5rem; border: 1px solid var(--border); border-radius: 1rem; background: white; }
+  .story-card + .story-card::before { content: "↓"; position: absolute; bottom: 100%; left: 50%; height: 2rem; line-height: 2rem; color: var(--blue); font-size: 1.25rem; }
+  .story-icon { display: flex; justify-content: center; align-items: center; width: 3rem; height: 3rem; margin-bottom: 1rem; color: var(--blue); background: #eaf7ff; border-radius: 50%; }
+  .eyebrow { margin: 0 0 0.5rem; color: var(--blue); font-size: 0.6875rem; font-weight: 800; letter-spacing: 0.065em; text-transform: uppercase; }
+  .outcomes { display: grid; gap: 1rem; }
+  .outcome-card { padding: 1.5rem; border: 1px solid #dde4eb; border-radius: 1rem; background: white; }
+  .outcome-card.after { border-color: var(--border); background: #f0f9ff; }
+  .outcome-card h3 { font-size: 1.75rem; }
+  .outcome-card ul { display: grid; gap: 1rem; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+  .outcome-card li { display: flex; gap: 0.75rem; color: #596579; font-size: 0.9375rem; line-height: 1.6; }
+  .outcome-card li :global(svg) { flex-shrink: 0; margin-top: 0.125rem; }
+  .after li :global(svg) { color: var(--blue); }
+  @media (min-width: 1024px) {
+    .future-flow { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1.5rem; }
+    .future-flow .node { display: flex; align-items: center; justify-content: flex-start; padding: 1rem; font-size: 0.875rem; }
+    .future-flow li + li::before { content: "→"; left: auto; right: 100%; bottom: auto; top: 50%; width: 1.5rem; text-align: center; transform: translateY(-50%); }
+    .engineering-visual { width: min(calc(100vw - 5rem), 67rem); margin-left: 0; }
+    .engineering-visual.future-visual { width: 100%; }
+    .story { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; }
+    .story-card { padding: 1.25rem; }
+    .story-card + .story-card::before { content: "→"; left: auto; right: 100%; bottom: auto; top: 50%; width: 1.5rem; text-align: center; transform: translateY(-50%); }
+    .outcomes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 479px) {
+    th, td { padding: 0.75rem; }
+    table { min-width: 34rem; }
+    .architecture-inputs { gap: 1rem; }
+    .node { padding: 0.875rem 0.5rem; font-size: 0.8125rem; }
+    .merge { width: calc(50% + 0.5rem); }
+    .lifecycle { flex-direction: column; gap: 1.25rem; }
+    .lifecycle li + li::before { content: "↓"; right: auto; left: 0; bottom: calc(100% + 0.125rem); line-height: 1; }
+  }
+</style>

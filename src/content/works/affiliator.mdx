@@ -1,0 +1,59 @@
+---
+title: "Indopaket Affiliator Web"
+description: "Helping affiliates set up an account, share referral codes, and check commission payouts."
+pubDate: "Sept 2026"
+icon: "heroicons:user-group"
+tags: ["React", "Vite", "API Integration"]
+identity: "AFFILIATE PRODUCT · WEB"
+role: "UI design · Frontend implementation"
+delivery: "Launch: late Sept 2026"
+pageSkills:
+  - category: "Interface Design"
+    icon: "2"
+    skills: ["Onboarding", "Dashboard UI", "Responsive Layouts", "Interaction States"]
+  - category: "Frontend Implementation"
+    icon: "3"
+    skills: ["React", "Vite", "JavaScript", "Tailwind CSS", "API Integration"]
+---
+
+import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+
+## Project Snapshot and Contribution
+
+Indopaket Affiliator Web is a separate affiliate product within the Indopaket ecosystem. It helps affiliates set up an account, manage a referral code, and review earnings.
+
+**My contribution:** UI design and frontend implementation using React, Vite, and Tailwind CSS.
+
+**Status:** Launch planned for late September 2026 alongside the separate mobile app; post-launch results are not yet available.
+
+Some workflows and implementation details have been simplified to protect operational confidentiality.
+
+
+## Product Challenge
+
+Affiliates need to know what is left to complete in their profile and whether their commission has been paid.
+
+
+## Core Workflow
+
+<CaseStudyVisual items={[{"title": "Create account"}, {"title": "Complete profile"}, {"title": "Manage referral code"}, {"title": "Review earnings"}]} kind="flow" label="Affiliate journey" />
+
+
+## Key UX Decisions
+
+<CaseStudyVisual items={[{"title": "Guided setup", "description": "Profile setup is split into steps, with unfinished tasks shown on the dashboard.", "label": "Progressive disclosure"}, {"title": "Visible referral code", "description": "The referral code has its own place on the dashboard, next to the account summary.", "label": "Recognition"}, {"title": "Clear earnings status", "description": "Distinguish period earnings, accumulated balances, and transfer status.", "label": "Status visibility"}, {"title": "Responsive history", "description": "Use comparison tables on desktop and cards with filter sheets on smaller screens.", "label": "Responsive interaction"}, {"title": "Useful empty states", "description": "Explain missing activity and give people a way to continue setup.", "label": "Recovery"}]} kind="cards" label="Affiliate UX decisions" />
+
+
+## Frontend Implementation
+
+<CaseStudyVisual items={[{"title": "Shared React components", "description": "Form controls, status messages, and layouts stay consistent across account setup and the dashboard."}, {"title": "Loading, empty, and error states", "description": "Loading, validation, empty, and error states are part of the implementation, alongside populated screens."}]} kind="cards" label="Frontend implementation" />
+
+
+## Delivery Status
+
+I built registration and account recovery, profile setup, the dashboard, referral code management, earnings history, settings, and public information pages.
+
+
+## Future Exploration
+
+After launch, evaluate whether people understand unfinished setup tasks and can distinguish earned commission from money transferred.
