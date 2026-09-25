@@ -3,6 +3,7 @@ import type { CollectionEntry } from "astro:content";
 import BaseHead from "@/components/BaseHead.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
+import WorkMotion from "@/components/WorkMotion.astro";
 import FormattedDate from "@/components/FormattedDate.astro";
 import { Icon } from "astro-icon/components";
 import { getSkillClass as _getSkillClass } from "@/utils/helpers";
@@ -103,7 +104,7 @@ const relevantSkills = pageSkills ?? [];
   </head>
   <body>
     <Header />
-    <main id="main-content" tabindex="-1" class="mx-auto max-w-6xl px-6 md:px-10 text-white">
+    <main id="main-content" data-work-motion tabindex="-1" class="mx-auto max-w-6xl px-6 md:px-10 text-white">
       <a
         href="/works"
         aria-label="Go back to works"
@@ -250,6 +251,7 @@ const relevantSkills = pageSkills ?? [];
       </article>
     </main>
     <Footer />
+    <WorkMotion />
     <script>
       function initBlogSectionLabel() {
         const label = document.getElementById("blog-section-label") as HTMLElement | null;

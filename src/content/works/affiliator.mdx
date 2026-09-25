@@ -1,6 +1,6 @@
 ---
 title: "Indopaket Affiliator Web"
-description: "Helping affiliates set up an account, share referral codes, and check commission payouts."
+description: "Designing a creator-facing affiliate experience around code sharing, earnings, and payout status."
 pubDate: "Sept 2026"
 icon: "heroicons:user-group"
 tags: ["React", "Vite", "API Integration"]
@@ -17,43 +17,93 @@ pageSkills:
 ---
 
 import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+import AffiliatorDiagram from "@/components/AffiliatorDiagram.astro";
 
-## Project Snapshot and Contribution
+## Context and Challenge
 
-Indopaket Affiliator Web is a separate affiliate product within the Indopaket ecosystem. It helps affiliates set up an account, manage a referral code, and review earnings.
+Indopaket wanted to introduce an affiliate experience for content creators. The design challenge was to support code sharing while making earnings and payout information understandable.
+
+[Visit Affiliator Web →](https://affiliator.indopaket.co.id/login)
 
 **My contribution:** UI design and frontend implementation using React, Vite, and Tailwind CSS.
 
 **Status:** Launch planned for late September 2026 alongside the separate mobile app; post-launch results are not yet available.
 
-Some workflows and implementation details have been simplified to protect operational confidentiality.
+The experience had to balance a low-friction sharing flow with clear commission and payout information. Business constraints are discussed only where they explain a design decision; sensitive program rules and operational details are omitted.
 
 
-## Product Challenge
+## Research and Design Hypothesis
 
-Affiliates need to know what is left to complete in their profile and whether their commission has been paid.
+Market research and competitor benchmarking informed the design, with a focus on how affiliate products present codes, earnings, and payouts.
+
+**Design hypothesis:** Making the referral code easy to access and earnings easy to interpret could support three core tasks: sharing a code, checking earnings, and understanding payout status.
+
+These decisions were informed by secondary research, not direct creator interviews or usability testing. Creator behavior and the effectiveness of the interface remain to be validated.
+
+<AffiliatorDiagram kind="research" />
+
+{/* Add 2–3 documented benchmark findings here, each connected to a design decision. */}
+
+<CaseStudyVisual items={[{"title": "Share a code"}, {"title": "Check earnings"}, {"title": "Understand payout status"}]} kind="flow" label="Proposed creator task sequence" caption="A design hypothesis informed by secondary research; not a validated creator journey." />
 
 
-## Core Workflow
+## Three Design Decisions
 
-<CaseStudyVisual items={[{"title": "Create account"}, {"title": "Complete profile"}, {"title": "Manage referral code"}, {"title": "Review earnings"}]} kind="flow" label="Affiliate journey" />
+### 1. Make Sharing Immediate
+
+**Design intent:** Help creators access their referral code and continue sharing it in their content workflow.
+
+The dashboard gives the referral code a dedicated place alongside the account summary, with copy and share actions.
+
+<AffiliatorDiagram kind="sharing" />
+
+**Current limitation:** The desktop dashboard still gives substantial space to financial summaries and transactions. Whether sharing needs stronger visual priority is a question for further testing.
+
+{/* Add a selected code-sharing screenshot, then explain the specific UI decision and its trade-off. Include code-change error prevention only with confirmed interface evidence. */}
+
+### 2. Make Earnings Legible
+
+**Design intent:** Help creators interpret the earnings associated with their affiliate activity.
+
+The interface separates earnings summaries from transaction history and uses distinct balance and commission statuses.
+
+<AffiliatorDiagram kind="earnings" />
+
+**To validate:** Can creators explain the differences between those statuses without additional guidance?
+
+{/* Add a selected earnings screenshot. Explain the actual labels and hierarchy, plus their trade-off, without exposing sensitive amounts or rules. */}
+
+### 3. Make Payout Expectations Clear
+
+**Design intent:** Help creators distinguish earned commission from money awaiting transfer or already paid.
+
+Payout status and progress provide context for interpreting commission balances.
+
+<AffiliatorDiagram kind="payout" />
+
+**To validate:** Can creators identify the current payout stage and understand whether any action is needed?
+
+{/* Add a selected payout screenshot. Describe the communication decision and its trade-off without disclosing private eligibility or operational mechanisms. */}
 
 
-## Key UX Decisions
+## Delivery and Implementation
 
-<CaseStudyVisual items={[{"title": "Guided setup", "description": "Profile setup is split into steps, with unfinished tasks shown on the dashboard.", "label": "Progressive disclosure"}, {"title": "Visible referral code", "description": "The referral code has its own place on the dashboard, next to the account summary.", "label": "Recognition"}, {"title": "Clear earnings status", "description": "Distinguish period earnings, accumulated balances, and transfer status.", "label": "Status visibility"}, {"title": "Responsive history", "description": "Use comparison tables on desktop and cards with filter sheets on smaller screens.", "label": "Responsive interaction"}, {"title": "Useful empty states", "description": "Explain missing activity and give people a way to continue setup.", "label": "Recovery"}]} kind="cards" label="Affiliate UX decisions" />
-
-
-## Frontend Implementation
+I built registration and account recovery, profile setup, the dashboard, referral code management, earnings history, settings, and public information pages.
 
 <CaseStudyVisual items={[{"title": "Shared React components", "description": "Form controls, status messages, and layouts stay consistent across account setup and the dashboard."}, {"title": "Loading, empty, and error states", "description": "Loading, validation, empty, and error states are part of the implementation, alongside populated screens."}]} kind="cards" label="Frontend implementation" />
 
 
-## Delivery Status
-
-I built registration and account recovery, profile setup, the dashboard, referral code management, earnings history, settings, and public information pages.
+Post-launch results are not yet available, so this case study describes the delivered interface and its design rationale rather than measured improvements.
 
 
-## Future Exploration
+## Next Validation
 
-After launch, evaluate whether people understand unfinished setup tasks and can distinguish earned commission from money transferred.
+The next step is to test the proposed task sequence with creators:
+
+- Can they find and copy or share their referral code easily?
+- Can they distinguish earnings, pending payouts, and completed transfers?
+- Can they understand payout progress and any required next action?
+
+Use those findings to revisit dashboard hierarchy and status wording. Mobile usage remains a hypothesis to investigate before claiming a mobile-first workflow.
+
+[Read the separate Affiliator Mobile case study →](/works/affiliator-mobile/)

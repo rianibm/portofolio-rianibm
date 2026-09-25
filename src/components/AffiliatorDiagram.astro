@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props { kind: "research" | "sharing" | "earnings" | "payout" }
+const { kind } = Astro.props;
+const diagrams = {
+  research: {
+    title: "From research to a testable direction",
+    caption: "Secondary research informs the hypothesis. Direct creator validation is still a next step.",
+    steps: [
+      { icon: "heroicons:magnifying-glass", title: "Research inputs", detail: "Market research + competitor benchmarking", tag: "Available foundation" },
+      { icon: "heroicons:light-bulb", title: "Design hypothesis", detail: "Accessible codes + understandable earnings", tag: "Proposed direction" },
+      { icon: "heroicons:chat-bubble-left-right", title: "Creator testing", detail: "Observe sharing, interpretation, and next actions", tag: "Next step" },
+    ],
+  },
+  sharing: {
+    title: "A short path back to creating",
+    caption: "Conceptual task sequence to validate with creators; this is not a product screenshot.",
+    steps: [
+      { icon: "heroicons:ticket", title: "Find the code", detail: "A dedicated place on the dashboard", tag: "Access" },
+      { icon: "heroicons:share", title: "Copy or share", detail: "Visible actions alongside the code", tag: "Action" },
+      { icon: "heroicons:video-camera", title: "Return to content", detail: "Continue the creator’s publishing workflow", tag: "Intended outcome" },
+    ],
+  },
+  earnings: {
+    title: "Three questions the interface should answer",
+    caption: "An information hierarchy to evaluate, not measured usability results.",
+    steps: [
+      { icon: "heroicons:chart-bar", title: "What did I earn?", detail: "An earnings summary provides the overview", tag: "Overview" },
+      { icon: "heroicons:queue-list", title: "Where did it come from?", detail: "Transaction history adds context", tag: "Detail" },
+      { icon: "heroicons:information-circle", title: "What does it mean?", detail: "Status wording explains the balance", tag: "Interpretation" },
+    ],
+  },
+  payout: {
+    title: "Make the meaning of each status visible",
+    caption: "Conceptual distinctions only. Actual eligibility rules and payout timing are not represented.",
+    steps: [
+      { icon: "heroicons:wallet", title: "Earned commission", detail: "Recognize the earnings balance", tag: "Earnings" },
+      { icon: "heroicons:clock", title: "Awaiting transfer", detail: "Understand the current payout status", tag: "In progress" },
+      { icon: "heroicons:check-circle", title: "Already paid", detail: "Distinguish completed transfers", tag: "Completed" },
+    ],
+  },
+};
+const diagram = diagrams[kind];
+---
+
+<figure class:list={["affiliator-diagram", "not-prose", kind]} aria-label={diagram.title}>
+  <div class="diagram-heading"><span class="kicker">{kind === "research" ? "Evidence → hypothesis → validation" : "Design intent"}</span><p>{diagram.title}</p></div>
+  <ol>
+    {diagram.steps.map((step, index) => (
+      <li>
+        <div class="step-top"><span class="symbol"><Icon name={step.icon} width={26} height={26} /></span><span class="step-number">0{index + 1}</span></div>
+        <span class="tag">{step.tag}</span>
+        <h4>{step.title}</h4>
+        <p>{step.detail}</p>
+      </li>
+    ))}
+  </ol>
+  <figcaption>{diagram.caption}</figcaption>
+</figure>
+
+<style>
+  .affiliator-diagram { margin: 2rem 0; padding: clamp(1rem, 3vw, 2rem); border: 1px solid #d5e4ed; border-radius: 1.25rem; background: #f3f8fc; color: #17243d; }
+  .diagram-heading { margin-bottom: 1.5rem; }
+  .kicker { color: #37617d; font-size: .6875rem; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+  .diagram-heading > p { margin: .5rem 0 0; font-size: 1.25rem; font-weight: 700; line-height: 1.4; }
+  ol { display: grid; gap: 1rem; padding: 0; margin: 0; list-style: none; }
+  li { --accent: #075d8b; --tint: #e0f2fe; position: relative; min-width: 0; padding: 1.25rem; background: white; border: 1px solid #dbe5ee; border-top: 3px solid var(--accent); border-radius: .75rem; }
+  li:nth-child(2) { --accent: #7151a6; --tint: #f0eafa; }
+  li:nth-child(3) { --accent: #17675a; --tint: #e1f3ed; }
+  .step-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.25rem; }
+  .symbol { display: grid; place-items: center; width: 3rem; height: 3rem; background: var(--tint); color: var(--accent); border-radius: .875rem; }
+  .step-number { color: var(--accent); font-size: .75rem; font-weight: 750; }
+  .tag { color: var(--accent); font-size: .6875rem; font-weight: 750; text-transform: uppercase; letter-spacing: .04em; }
+  h4 { margin: .5rem 0; font-size: 1rem; line-height: 1.4; }
+  li p { margin: 0; font-size: .875rem; line-height: 1.6; color: #526176; }
+  figcaption { margin-top: 1.25rem; font-size: .75rem; line-height: 1.6; color: #526176; }
+  .research li:last-child { border-style: dashed; }
+  .research ol, .sharing ol { gap: 1.5rem; }
+  .research li + li::before, .sharing li + li::before { content: ""; position: absolute; width: 7px; height: 7px; border-right: 1.5px solid #7090a5; border-bottom: 1.5px solid #7090a5; top: -1.1rem; left: calc(50% - 4px); transform: rotate(45deg); }
+  @media (min-width: 768px) { .research li + li::before, .sharing li + li::before { top: calc(50% - 4px); left: -1.1rem; transform: rotate(-45deg); } }
+  @media (min-width: 768px) { ol { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+  @media (min-width: 1024px) { .affiliator-diagram { width: min(calc(100vw - 5rem), 67rem); } }
+</style>

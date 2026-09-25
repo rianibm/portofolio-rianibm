@@ -1,0 +1,56 @@
+<script>
+  let observer: IntersectionObserver | undefined;
+
+  function initWorkMotion() {
+    observer?.disconnect();
+    const root = document.querySelector("[data-work-motion]");
+    if (!root || !("IntersectionObserver" in window)) return;
+
+    const elements = root.querySelectorAll<HTMLElement>(
+      "article > div:first-child, article > img, .prose > :is(h2, h3, h4, p, ul, ol, blockquote, figure, table, section, div)",
+    );
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("work-in-view", entry.isIntersecting);
+        if (entry.isIntersecting) entry.target.classList.add("work-revealed");
+      });
+    }, { threshold: 0, rootMargin: "0px 0px -24px 0px" });
+
+    elements.forEach((element) => {
+      element.classList.add("work-reveal");
+      observer!.observe(element);
+    });
+  }
+
+  initWorkMotion();
+  document.addEventListener("astro:page-load", initWorkMotion);
+  document.addEventListener("astro:before-swap", () => observer?.disconnect());
+</script>
+
+<style is:global>
+  .work-reveal { opacity: 0; transform: translateY(12px); transition: opacity 480ms ease-out, transform 480ms cubic-bezier(.22, 1, .36, 1); }
+  .work-revealed { opacity: 1; transform: none; }
+  /* Arrows settle once each time their diagram enters the viewport. */
+  .work-in-view .flow li + li::before,
+  .work-in-view.affiliator-diagram:is(.research, .sharing) li + li::before {
+    animation: work-arrow-down 750ms ease-in-out both;
+  }
+  .work-in-view .flow li:nth-child(3)::before,
+  .work-in-view.affiliator-diagram li:nth-child(3)::before { animation-delay: 100ms; }
+  @keyframes work-arrow-down { 0%, 100% { translate: 0 0; } 50% { translate: 0 4px; } }
+  @keyframes work-arrow-right { 0%, 100% { translate: 0 0; } 50% { translate: 4px 0; } }
+  @media (min-width: 768px) {
+    .work-in-view.affiliator-diagram:is(.research, .sharing) li + li::before { animation-name: work-arrow-right; }
+  }
+  @media (min-width: 1024px) {
+    .work-in-view .flow li + li::before { animation-name: work-arrow-right; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .work-reveal { opacity: 1; transform: none; transition: none; }
+    .work-in-view .flow li::before,
+    .work-in-view.affiliator-diagram li::before { animation: none !important; }
+  }
+  .reduce-motion .work-reveal { opacity: 1; transform: none; transition: none; }
+  .reduce-motion .work-in-view .flow li::before,
+  .reduce-motion .work-in-view.affiliator-diagram li::before { animation: none !important; }
+</style>
