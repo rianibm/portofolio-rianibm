@@ -170,12 +170,6 @@ const displayGroups = compact
                 )}
                 <p class="date text-sm font-light flex items-center gap-2">
                   <FormattedDate date={post.data.pubDate} monthYear />
-                  {isCompact && (
-                    <>
-                      <span aria-hidden="true">·</span>
-                      <span>Independent</span>
-                    </>
-                  )}
                   {post.data.scope && (
                     <span class="text-[10px] uppercase tracking-wide text-gray-400 border border-gray-300 rounded-full px-2 py-0.5">
                       {post.data.scope}

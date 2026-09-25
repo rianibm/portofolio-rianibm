@@ -1,10 +1,10 @@
 ---
 title: "Perkantas Yogyakarta"
-description: "Frontend development and ongoing maintenance for a Christian community platform, from the 2023 build to API migration work in 2026."
+description: "Frontend development for a Christian community platform, expanding to API migration, database work, and deployment in the 2026 phase."
 icon: "heroicons:wrench-screwdriver"
 pubDate: "Jul 2026"
 tags: ["Frontend Developer", "Laravel", "Bootstrap", "Tailwind CSS", "REST APIs", "Community Platform"]
-role: "Frontend engineering · API migration · System stabilization"
+role: "Frontend engineering · API migration · Database · Deployment"
 pageSkills:
   - category: "Project & Communication"
     icon: "1"
@@ -14,7 +14,7 @@ pageSkills:
     skills: ["Laravel Blade", "Bootstrap", "Tailwind CSS", "Responsive UI", "Reusable Layouts", "UX Audit"]
   - category: "System & Infrastructure"
     icon: "3"
-    skills: ["Domain Management", "Hosting Setup", "Email Configuration", "Environment Separation", "GitHub Webhooks", "SSH Deployment"]
+    skills: ["Database Management", "Domain Management", "Hosting Setup", "Email Configuration", "Environment Separation", "GitHub Webhooks", "SSH Deployment"]
   - category: "API & Backend Integration"
     icon: "4"
     skills: ["REST APIs", "Swagger / API Validation", "PHP & Laravel Upgrade", "Unit Testing", "QA Collaboration"]
@@ -24,12 +24,15 @@ pageSkills:
 ---
 
 import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+import ProjectLink from "@/components/ProjectLink.astro";
 
 ## Project Snapshot and Contribution
 
 Perkantas Yogyakarta is a community web platform supporting Christian discipleship activities for students, alumni, and medical professionals.
 
-**My contribution:** Frontend development for the initial 2023 build, followed by maintenance, API migration work, and system stabilization in March–June 2026. Database and backend architecture were outside my ownership.
+<ProjectLink href="https://perkantasjogja.com" label="Explore Perkantas Yogyakarta" domain="perkantasjogja.com" />
+
+**My contribution:** Frontend development for the initial 2023 build. In phase 2 (March–June 2026), I handled maintenance, API migration work, database work, deployment, and system stabilization.
 
 
 ## Product Challenge
@@ -49,7 +52,7 @@ The platform was already in use. I needed to fix existing issues and update the 
 
 ## Implementation Evolution
 
-<CaseStudyVisual items={[{"title": "Initial build · 2023", "description": "Translated approved designs into Laravel Blade and Bootstrap interfaces and handled domain, hosting, and ongoing maintenance."}, {"title": "Modernization · 2026", "description": "Audited user flows, refactored interfaces with Tailwind CSS, and prepared components for API-based integration."}]} kind="cards" label="Development phases" />
+<CaseStudyVisual items={[{"title": "Initial build · 2023", "description": "Translated approved designs into Laravel Blade and Bootstrap interfaces and handled domain, hosting, and ongoing maintenance."}, {"title": "Phase 2 · March–June 2026", "description": "Audited user flows, refactored interfaces with Tailwind CSS, and prepared components for API-based integration. Also handled database work, deployment, and system stabilization."}]} kind="cards" label="Development phases" />
 
 
 ## Testing Strategy
@@ -69,12 +72,12 @@ This was my first freelance project, and I continued maintaining it after launch
 ## Collaboration
 
 <div class="not-prose flex flex-wrap items-center gap-2 my-4">
-  <span class="text-sm font-semibold">Team:</span>
+  <span class="text-sm font-semibold">Phase 1 · 2023:</span>
   <a href="https://www.linkedin.com/in/bantolostd/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Bantolo Setiadi <span class="text-black/50 font-normal">· Backend</span></a>
   <a href="https://www.linkedin.com/in/maria-amanda-0205/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pgreen rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Maria Amanda <span class="text-black/50 font-normal">· UI/UX</span></a>
 </div>
 
 <div class="not-prose flex flex-wrap items-center gap-2 my-4">
-  <span class="text-sm font-semibold">Team:</span>
+  <span class="text-sm font-semibold">Phase 2 · March–June 2026:</span>
   <a href="https://www.linkedin.com/in/gheawaworuntu/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-ppink rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Ghea Waworuntu <span class="text-black/50 font-normal">· QA</span></a>
 </div>
