@@ -1,7 +1,9 @@
 ---
 title: "Indopaket Affiliator Web"
-description: "Designing a creator-facing affiliate experience around code sharing, earnings, and payout status."
+description: "A place for creators to share referral codes, check their earnings, and follow a payout along the way."
 pubDate: "Sept 2026"
+problem: "Creators need to distinguish referral codes, earnings, and payout stages in one experience."
+outcome: "Registration, referral sharing, earnings history, and payout interfaces; launch planned for late September 2026."
 icon: "heroicons:user-group"
 tags: ["React", "Vite", "API Integration"]
 identity: "AFFILIATE PRODUCT · WEB"
@@ -20,72 +22,80 @@ import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
 import AffiliatorDiagram from "@/components/AffiliatorDiagram.astro";
 import ProjectLink from "@/components/ProjectLink.astro";
 
-## Context and Challenge
+## A new home for referrals
 
 Indopaket wanted to introduce an affiliate experience for content creators. The design challenge was to support code sharing while making earnings and payout information understandable.
 
 <ProjectLink href="https://affiliator.indopaket.co.id/login" label="Open Affiliator Web" domain="affiliator.indopaket.co.id" />
 
-**My contribution:** UI design and frontend implementation using React, Vite, and Tailwind CSS.
+**My part:** UI design and frontend implementation using React, Vite, and Tailwind CSS.
 
 **Status:** Launch planned for late September 2026 alongside the separate mobile app; post-launch results are not yet available.
 
 The experience had to balance a low-friction sharing flow with clear commission and payout information. Business constraints are discussed only where they explain a design decision; sensitive program rules and operational details are omitted.
 
 
-## Research and Design Hypothesis
+## Where I started
 
 Market research and competitor benchmarking informed the design, with a focus on how affiliate products present codes, earnings, and payouts.
 
-**Design hypothesis:** Making the referral code easy to access and earnings easy to interpret could support three core tasks: sharing a code, checking earnings, and understanding payout status.
+My starting idea was simple: keep the code within reach, make earnings readable, and explain where a payout stands. I still need to see how that holds up with creators.
 
-These decisions were informed by secondary research, not direct creator interviews or usability testing. Creator behavior and the effectiveness of the interface remain to be validated.
+I started with market research and competitor products. I haven’t interviewed creators or run usability tests yet, so these are ideas to test, with room to change.
 
 <AffiliatorDiagram kind="research" />
 
 {/* Add 2–3 documented benchmark findings here, each connected to a design decision. */}
 
-<CaseStudyVisual items={[{"title": "Share a code"}, {"title": "Check earnings"}, {"title": "Understand payout status"}]} kind="flow" label="Proposed creator task sequence" caption="A design hypothesis informed by secondary research; not a validated creator journey." />
+<CaseStudyVisual items={[{"title": "Share a code"}, {"title": "Check earnings"}, {"title": "Understand payout status"}]} kind="flow" label="Proposed creator task sequence" caption="The flow I’m proposing after secondary research. Creator testing is still ahead." />
 
 
-## Three Design Decisions
+## Three things I wanted to make clearer
 
 ### 1. Make Sharing Immediate
 
-**Design intent:** Help creators access their referral code and continue sharing it in their content workflow.
+I wanted creators to find their code and get back to sharing it without a detour.
 
 The dashboard gives the referral code a dedicated place alongside the account summary, with copy and share actions.
 
 <AffiliatorDiagram kind="sharing" />
 
-**Current limitation:** The desktop dashboard still gives substantial space to financial summaries and transactions. Whether sharing needs stronger visual priority is a question for further testing.
+**Still on my mind:** The desktop dashboard still gives substantial space to financial summaries and transactions. Whether sharing needs stronger visual priority is a question for further testing.
 
 {/* Add a selected code-sharing screenshot, then explain the specific UI decision and its trade-off. Include code-change error prevention only with confirmed interface evidence. */}
 
 ### 2. Make Earnings Legible
 
-**Design intent:** Help creators interpret the earnings associated with their affiliate activity.
+The earnings view needed to answer a fairly personal question: what have I earned?
 
 The interface separates earnings summaries from transaction history and uses distinct balance and commission statuses.
 
 <AffiliatorDiagram kind="earnings" />
 
-**To validate:** Can creators explain the differences between those statuses without additional guidance?
+**A question for testing:** Can creators explain the differences between those statuses without additional guidance?
 
 {/* Add a selected earnings screenshot. Explain the actual labels and hierarchy, plus their trade-off, without exposing sensitive amounts or rules. */}
 
 ### 3. Make Payout Expectations Clear
 
-**Design intent:** Help creators distinguish earned commission from money awaiting transfer or already paid.
+Earning commission and receiving a payout are different moments. I wanted the interface to make that distinction easier to follow.
 
 Payout status and progress provide context for interpreting commission balances.
 
 <AffiliatorDiagram kind="payout" />
 
-**To validate:** Can creators identify the current payout stage and understand whether any action is needed?
+**A question for testing:** Can creators identify the current payout stage and understand whether any action is needed?
 
 {/* Add a selected payout screenshot. Describe the communication decision and its trade-off without disclosing private eligibility or operational mechanisms. */}
 
+
+## The Part I’m Still Thinking About
+
+The referral code has its own place on the dashboard, alongside balances and transactions. That gives creators access to sharing and earnings in one view, but it also leaves a question: is the money side of the screen taking attention away from sharing?
+
+Secondary research informed this version. I haven’t tested it with creators yet, so I’m keeping that question open.
+
+For the next iteration, I’d start by watching someone find their code and explain their commission and payout status. That should help me revisit the hierarchy and wording with something more useful than a hunch.
 
 ## Delivery and Implementation
 
@@ -94,10 +104,10 @@ I built registration and account recovery, profile setup, the dashboard, referra
 <CaseStudyVisual items={[{"title": "Shared React components", "description": "Form controls, status messages, and layouts stay consistent across account setup and the dashboard."}, {"title": "Loading, empty, and error states", "description": "Loading, validation, empty, and error states are part of the implementation, alongside populated screens."}]} kind="cards" label="Frontend implementation" />
 
 
-Post-launch results are not yet available, so this case study describes the delivered interface and its design rationale rather than measured improvements.
+The launch is still ahead, so there are no post-launch results to share yet. For now, here’s what I built and why.
 
 
-## Next Validation
+## What I’d ask creators to try
 
 The next step is to test the proposed task sequence with creators:
 
@@ -105,6 +115,6 @@ The next step is to test the proposed task sequence with creators:
 - Can they distinguish earnings, pending payouts, and completed transfers?
 - Can they understand payout progress and any required next action?
 
-Use those findings to revisit dashboard hierarchy and status wording. Mobile usage remains a hypothesis to investigate before claiming a mobile-first workflow.
+I’d use what I learn to revisit the dashboard hierarchy and status wording. I also want to understand when creators use their phones for this, rather than assume mobile is always their starting point.
 
 [Read the separate Affiliator Mobile case study →](/works/affiliator-mobile/)

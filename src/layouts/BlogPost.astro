@@ -156,7 +156,7 @@ const relevantSkills = pageSkills ?? [];
               <!-- Related Skills Section -->
               <div class="flex flex-col gap-4 pt-10 md:pt-0">
                 <p class="md:hidden font-semibold">Related Skills:</p>
-                <h3 class="hidden md:block text-lg font-semibold mb-2">Technologies Used</h3>
+                <h3 class="hidden md:block text-lg font-semibold mb-2">Tools I worked with</h3>
                 <div class="flex flex-col gap-3">
                   {relevantSkills.map((skillGroup, i) => {
                     const skillClass = getSkillBgClass(i);
@@ -185,7 +185,7 @@ const relevantSkills = pageSkills ?? [];
               
               <!-- Related Posts (smaller section) -->
               <div class="flex flex-col gap-2">
-                <p class="font-semibold text-sm">More Posts:</p>
+                <p class="font-semibold text-sm">Another story?</p>
                 <ul class="flex flex-col gap-1">
                   {
                     posts.filter((post) => post.id !== id).slice(0, 3).map((post, i) => {

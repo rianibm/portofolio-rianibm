@@ -1,7 +1,9 @@
 ---
 title: "Dashboard Member Plus"
-description: "A seller dashboard for referrals, transaction history, and account management, with single sign-on from the Laravel backend."
+description: "A home for sellers to check referrals, review transactions, and manage their account, connected to the existing Laravel login."
 pubDate: "Jan 2025"
+problem: "Sellers need an account overview without crowding it with detailed records."
+outcome: "An account dashboard, transaction and profile views, and authentication integration."
 icon: "heroicons:squares-2x2"
 tags: ["Next.js", "React"]
 identity: "SUPPORTING SELLER PLATFORM"
@@ -23,16 +25,16 @@ pageSkills:
 
 import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
 
-## Project Snapshot and Contribution
+## A little context
 
 Dashboard Member Plus is a supporting seller platform within the Indopaket ecosystem, where sellers can check referrals, membership, transaction history, and account details.
 
-**My contribution:** Frontend architecture and authentication integration using Next.js and React.
+**My part:** Frontend architecture and authentication integration using Next.js and React.
 
-Some workflows and implementation details have been simplified to protect operational confidentiality.
+I’ve simplified a few details here to keep internal information private.
 
 
-## Operational Challenge
+## Where things got tricky
 
 The overview needed to show account activity at a glance, with transaction records and profile details on separate pages.
 
@@ -42,7 +44,7 @@ The overview needed to show account activity at a glance, with transaction recor
 <CaseStudyVisual items={[{"title": "Open dashboard"}, {"title": "Review activity"}, {"title": "Explore relevant details"}, {"title": "Manage account"}]} kind="flow" label="Seller dashboard experience" />
 
 
-## Key UX Decisions
+## The choices behind the screens
 
 <CaseStudyVisual items={[{"title": "Visible account state", "description": "Show membership progress and recent activity on the overview.", "label": "Status visibility"}, {"title": "Links to details", "description": "Keep summaries connected to the corresponding detailed views.", "label": "Recognition"}, {"title": "Consistent modules", "description": "Reuse interface patterns across dashboard widgets and full pages.", "label": "Consistency"}, {"title": "Scannable records", "description": "Put key transaction details first so records are easier to scan.", "label": "Minimalist design"}, {"title": "Familiar language", "description": "Use seller-oriented terms instead of exposing implementation concepts.", "label": "Real-world language"}]} kind="cards" label="Seller dashboard UX decisions" />
 
@@ -52,16 +54,16 @@ The overview needed to show account activity at a glance, with transaction recor
 <CaseStudyVisual items={[{"title": "Next.js views"}, {"title": "Shared components and state"}, {"title": "Backend integration"}]} kind="flow" label="Simplified dashboard architecture" />
 
 
-## Delivered Experience
+## What I built
 
 <CaseStudyVisual items={[{"title": "Account overview", "description": "Progress, referrals, and activity summaries are available in a single dashboard."}, {"title": "Detailed records", "description": "Transaction history and profile management use consistent components and readable layouts."}]} kind="cards" label="Dashboard scope" />
 
 
-## Reflection
+## What stayed with me
 
-This project gave me practice separating a dashboard summary from its detailed records. I also worked on the authentication handoff between the Next.js frontend and the existing backend.
+I spent a lot of this project deciding what belonged on the overview and what could live one click away. The authentication handoff between Next.js and the existing backend gave me a different kind of puzzle to work through too.
 
-## Collaboration
+## The people I worked with
 
 <div class="not-prose flex flex-wrap items-center gap-2 my-4">
   <span class="text-sm font-semibold">Team:</span>

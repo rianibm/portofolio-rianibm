@@ -1,7 +1,9 @@
 ---
 title: "Indopaket 3PL Operations Platform"
-description: "Supporting land and air shipment workflows with role-based access and data-heavy interfaces."
+description: "Land and air shipments take different paths. I built the frontend that helps operations teams work through both."
 pubDate: "Sept 2025"
+problem: "Land and air shipments need different sequences, while operators need actions relevant to their role and the current stage."
+outcome: "Separate shipment workflows, role-aware navigation, shared validation, and loading, empty, and error states."
 icon: "heroicons:truck"
 tags: ["React", "TypeScript"]
 identity: "INTERNAL OPERATIONS PLATFORM"
@@ -77,17 +79,17 @@ import ThreePlDomainCards from "@/components/ThreePlDomainCards.astro";
 import ThreePlApplicationFlow from "@/components/ThreePlApplicationFlow.astro";
 import ThreePlEngineeringVisuals from "@/components/ThreePlEngineeringVisuals.astro";
 
-## Project Snapshot and Contribution
+## A little context
 
 Indopaket 3PL is an internal logistics platform for land and air shipment operations, used by operational teams and logistics partners. Teams use it to check shipment status, review tracking history, and access operational reports.
 
-**My contribution:** Frontend architecture, operational interfaces, form and workflow design, error and empty states, role-aware navigation, data integration, and testing setup.
+**My part:** Frontend architecture, operational interfaces, form and workflow design, error and empty states, role-aware navigation, data integration, and testing setup.
 
 **Collaboration:** I worked with backend engineers, Product, and Operations teams to translate operational requirements into usable interfaces.
 
-Some workflows, roles, and implementation details have been simplified to protect operational confidentiality.
+I’ve simplified the workflows and roles here to keep internal information private.
 
-## Operational Challenge
+## Where things got tricky
 
 Land and air shipments follow different steps, and some information arrives after work has already started. Operators need to see the current stage and know which actions are available.
 
@@ -99,13 +101,23 @@ Land and air shipments follow different steps, and some information arrives afte
 
 <ThreePlApplicationFlow />
 
-## Key UX Decisions
+## The choices behind the screens
 
 <ThreePlUXCards />
 
+## Same Destination, Different Steps
+
+Land and air shipments don’t move through the same sequence. Some information arrives partway through the work, and the next action depends on both the shipment stage and the person handling it. One generic flow would have a lot of explaining to do.
+
+I kept the workflows separate, with actions tied to the current stage and the operator’s role. Underneath, they share validation and domain logic.
+
+That leaves more interface paths to maintain. Shared rules help keep the behavior consistent while leaving room for the differences that matter in each operation.
+
+This is the reasoning behind the implemented version. I don’t have a prototype-to-test revision history to share here, or usability results that show how well it works for operators yet.
+
 ## Selected Interface Screens
 
-Product screens are not included in this public overview to protect operational confidentiality. The diagrams above illustrate the workflow and design decisions in simplified form.
+I can’t share the product screens publicly. The diagrams above are a simplified look at the workflows and the choices behind them.
 
 ## Architecture and Reliability
 
@@ -121,11 +133,19 @@ The testing priorities are form validation, state-dependent actions, and loading
 
 <ThreePlEngineeringVisuals section="outcome" />
 
-## Reflection
+## What’s there, and what I still want to learn
 
-This project was my first deep exposure to 3PL operations. It shifted my understanding of frontend quality from visual completion toward operational safety: making complex workflows predictable, preventing invalid actions, and keeping the system reliable under real-world constraints.
+The platform brings together land and air workflows, role-aware navigation, tracking history, and shared validation. Actions follow the shipment stage, so the interface can show what’s available next.
 
-## Future Exploration
+The testing setup covers form validation and interface states. I don’t have operational error rates, task-time comparisons, or usability-test results to share here.
+
+Next, I’d like to observe operators working through both shipment types, especially when information is missing or an action isn’t available yet. Does the screen explain enough? Or does someone still need to ask a colleague? Those moments would tell me where to focus.
+
+## What stayed with me
+
+This was my first deep dive into 3PL operations. It made me pay much closer attention to what a screen lets someone do, and when. A button can look perfectly fine and still be the wrong next step. That lesson stayed with me.
+
+<h2 id="future-exploration">What I’d explore next</h2>
 
 ### Reconciliation (Recon)
 

@@ -60,16 +60,16 @@ pageSkills:
 
 import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
 
-## Project Snapshot and Contribution
+## A little context
 
 Sky Explorer is a flight-booking application built as a bootcamp final project.
 
-**My contribution:** Frontend implementation in a two-person frontend team, including multi-step forms, state management, and responsive interfaces.
+**My part:** Frontend implementation in a two-person frontend team, including multi-step forms, state management, and responsive interfaces.
 
 **Status:** Original React version completed; a planned Next.js iteration is paused.
 
 
-## Product Challenge
+## What needed attention
 
 Passengers should be able to go back and change a booking detail without re-entering the rest of the form.
 
@@ -79,7 +79,7 @@ Passengers should be able to go back and change a booking detail without re-ente
 <CaseStudyVisual items={[{"title": "Search flights"}, {"title": "Select flight"}, {"title": "Passenger details"}, {"title": "Cabin selection"}, {"title": "Confirmation"}]} kind="flow" label="Flight booking journey" />
 
 
-## Key UX Decisions
+## The choices behind the screens
 
 <CaseStudyVisual items={[{"title": "Visible progress", "description": "Use step indicators and clear loading and confirmation states.", "label": "Status visibility"}, {"title": "Focused steps", "description": "Reveal details and forms when they become relevant.", "label": "Progressive disclosure"}, {"title": "Inline validation", "description": "Flag missing fields and invalid dates before the form is submitted.", "label": "Error prevention"}, {"title": "Keep previous entries", "description": "Keep previous entries when navigating back through the booking flow.", "label": "User control"}, {"title": "Loading, empty, and error states", "description": "Distinguish pending requests, empty search results, and errors.", "label": "State clarity"}]} kind="cards" label="Booking UX decisions" />
 
@@ -94,16 +94,16 @@ Passengers should be able to go back and change a booking detail without re-ente
 Reusable components, code splitting, and lazy loading supported the multi-step experience. Validation and feedback were handled consistently across search, passenger, and confirmation screens.
 
 
-## Delivered Experience
+## What I built
 
 We completed the responsive booking flow for the bootcamp final project. It was a project build, not a commercial booking service.
 
 
-## Reflection
+## What stayed with me
 
 In our two-person frontend team, we had to agree on where booking data lived and how each step used it. Keeping earlier form entries available was a central part of that work.
 
 
-## Future Exploration
+<h2 id="future-exploration">What I’d explore next</h2>
 
 A Next.js iteration is planned but paused due to work commitments. It has not shipped.

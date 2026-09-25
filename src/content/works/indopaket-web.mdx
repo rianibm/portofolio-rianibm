@@ -1,8 +1,10 @@
 ---
 title: "Indopaket Web Platform Redesign"
-description: "Redesigning the core customer shipping experience, from finding a store and sending parcels to tracking deliveries."
+description: "A closer look at finding a store, sending a parcel, and tracking it home. I redesigned nine flows across the Indopaket website."
 pubDate: "Apr 2026"
 heroImage: "/src/assets/images/works/indopaket-web/after/beranda-upper.png"
+problem: "Unlabeled shipping actions, map-blocking store details, and dead-end feedback made core tasks hard to follow."
+outcome: "Nine redesigned flows with clearer actions, compact store cards, recovery states, and focused account pages."
 icon: "heroicons:globe-alt"
 tags: ["Laravel", "Hotjar"]
 featured: true
@@ -46,11 +48,11 @@ pageSkills:
 
 import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
 
-## Project Snapshot and Contribution
+## A little context
 
 Indopaket Web is the core customer web product within Indomaret Group. I carried the redesign from UX analysis through production implementation across nine core flows.
 
-**My contribution:** UX analysis, information architecture, interaction design, and Laravel Blade/Tailwind CSS implementation as UX Engineer and Product Team Lead.
+**My part:** UX analysis, information architecture, interaction design, and Laravel Blade/Tailwind CSS implementation as UX Engineer and Product Team Lead.
 
 **Collaboration:** I worked with backend engineers and business stakeholders to keep the redesign compatible with existing shipping requirements.
 
@@ -66,6 +68,16 @@ Primary shipping actions were buried in unlabeled fields, store details obscured
 <h2 id="design-decision">Key UX Decisions</h2>
 
 <CaseStudyVisual items={[{"title": "Clear tracking and rate-check labels", "description": "Label tracking and rate-check actions clearly on the homepage.", "label": "Recognition"}, {"title": "Map context", "description": "Use a compact selected-store card that keeps the map and result list visible.", "label": "Status visibility"}, {"title": "Help when users get stuck", "description": "Provide useful empty states, app-store links, and support fallbacks.", "label": "Recovery"}, {"title": "Focused account flows", "description": "Separate Login and Register and make verification feedback understandable.", "label": "Information hierarchy"}]} kind="cards" label="Web redesign decisions" />
+
+## A Small Card, a Little More Breathing Room
+
+Selecting a store used to open a large popup over the map. The information was there, but it covered the very thing you were trying to look at. A slightly awkward introduction to your nearest drop-off point.
+
+I replaced it with a compact store card and highlighted the matching result in the list. That way, the details and the location could stay in view together.
+
+A smaller card also means choosing what gets the space. I prioritized status, distance, and contact information, with the result list keeping the surrounding search context available.
+
+The screenshots below show the change. Whether it helps someone choose a store faster is something I still need to test.
 
 ## Selected Interface Screens
 
@@ -178,6 +190,14 @@ The old screen only showed a countdown and a bare set of input boxes — no conf
 
 <CaseStudyVisual items={[{"title": "Before", "description": "Competing actions, map-blocking store details, and dead-end feedback made core tasks harder to follow.", "label": "Earlier interface"}, {"title": "After", "description": "Nine redesigned flows introduce labeled actions, compact store cards, useful recovery states, and focused account pages.", "label": "Delivered iteration"}]} kind="cards" label="Web redesign comparison" caption="Conversion and task-completion changes have not been measured." />
 
-## Future Exploration
+## What changed, and what I still want to learn
+
+The redesign covers nine flows across six customer journeys, from finding a store to verifying an account. The before/after screens show the work: clearer labels, smaller store cards, and somewhere useful to go when a search comes back empty.
+
+The Hotjar data came from September 2023. It helped me understand the earlier interface, alongside the heuristic review, but it doesn’t tell me how well the 2026 version works.
+
+I haven’t measured changes in conversion or task completion yet. I’d like to watch people find a store, recover from an empty result, and verify an account. Where do they pause? What do they try twice? That’s where I’d look for the next round of changes.
+
+<h2 id="future-exploration">What I’d explore next</h2>
 
 The distinction between single and multi-shipment tracking remains unresolved. A planned React/Next.js rewrite offers an opportunity to consolidate the interaction patterns; it is not part of the delivered redesign.

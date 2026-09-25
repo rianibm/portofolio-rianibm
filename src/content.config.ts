@@ -9,6 +9,10 @@ const works = defineCollection({
         icon: z.string(),
         title: z.string(),
         description: z.string(),
+        // Card evidence: the problem addressed and the delivered scope, not assumed impact.
+        problem: z.string().optional(),
+        outcome: z.string().optional(),
+        caseStudyStatus: z.enum(["available", "coming-soon"]).default("available"),
         // Transform string to Date object
         pubDate: z.coerce.date(),
         updatedDate: z.coerce.date().optional(),

@@ -6,7 +6,7 @@ const { kind } = Astro.props;
 const diagrams = {
   research: {
     title: "From research to a testable direction",
-    caption: "Secondary research informs the hypothesis. Direct creator validation is still a next step.",
+    caption: "I started with secondary research. Next comes trying these ideas with creators.",
     steps: [
       { icon: "heroicons:magnifying-glass", title: "Research inputs", detail: "Market research + competitor benchmarking", tag: "Available foundation" },
       { icon: "heroicons:light-bulb", title: "Design hypothesis", detail: "Accessible codes + understandable earnings", tag: "Proposed direction" },
@@ -45,7 +45,7 @@ const diagram = diagrams[kind];
 ---
 
 <figure class:list={["affiliator-diagram", "not-prose", kind]} aria-label={diagram.title}>
-  <div class="diagram-heading"><span class="kicker">{kind === "research" ? "Evidence → hypothesis → validation" : "Design intent"}</span><p>{diagram.title}</p></div>
+  <div class="diagram-heading"><span class="kicker">{kind === "research" ? "What I looked at → what I’d try → what’s next" : "The idea behind it"}</span><p>{diagram.title}</p></div>
   <ol>
     {diagram.steps.map((step, index) => (
       <li>

@@ -1,6 +1,8 @@
 ---
 title: "Member+ Reward Draw CMS"
-description: "An internal CMS module for running roulette-style Member+ reward draws during live campaigns, with separate experiences for campaign operators and event audiences."
+description: "One live reward draw, two very different views: the controls for the operator and the reveal for everyone watching."
+problem: "Campaign operators and event audiences need different views of the same live reward draw."
+outcome: "Separate operator controls and audience-facing reward draw interfaces."
 icon: "heroicons:gift"
 pubDate: "Jul 2025"
 updatedDate: "Apr 2026"
@@ -55,16 +57,16 @@ pageSkills:
 
 import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
 
-## Project Snapshot and Contribution
+## A little context
 
 Member+ Reward Draw CMS is an internal module for running roulette-style reward draws during live campaigns. It serves both campaign operators and event audiences.
 
-**My contribution:** UX design and frontend implementation, with ongoing ownership across campaign cycles from July 2025 through the April 2026 release.
+**My part:** UX design and frontend implementation, with ongoing ownership across campaign cycles from July 2025 through the April 2026 release.
 
-Some workflows and implementation details have been simplified to protect operational confidentiality.
+I’ve simplified a few details here to keep internal information private.
 
 
-## Operational Challenge
+## Where things got tricky
 
 Operators need to know which stage the draw is in and what to do next. Viewers need to read the result clearly, including when watching the broadcast on a phone.
 
@@ -79,7 +81,7 @@ Operators need to know which stage the draw is in and what to do next. Viewers n
 <CaseStudyVisual items={[{"title": "Prepare campaign"}, {"title": "Review setup"}, {"title": "Run live experience"}, {"title": "Present results"}]} kind="flow" label="Simplified campaign lifecycle" />
 
 
-## Key UX Decisions
+## The choices behind the screens
 
 <CaseStudyVisual items={[{"title": "Clear draw stages", "description": "Make each stage of the live experience visibly distinct.", "label": "Status visibility"}, {"title": "Readable on a live stream", "description": "Use readable sizing and contrast for viewers watching a compressed broadcast.", "label": "Accessibility"}, {"title": "Time to follow the reveal", "description": "Use animation timing to support anticipation and a clear reveal.", "label": "Interaction design"}, {"title": "Clear next actions", "description": "Show the next action and ask for confirmation where needed.", "label": "Error prevention"}, {"title": "Continuity", "description": "Communicate interruptions and recovery without leaving operators uncertain.", "label": "Recovery"}]} kind="cards" label="Live campaign UX decisions" />
 
@@ -89,16 +91,16 @@ Operators need to know which stage the draw is in and what to do next. Viewers n
 <CaseStudyVisual items={[{"title": "Campaign interfaces", "description": "Reward management and event views support preparation and live operation."}, {"title": "Feedback and dialogs", "description": "Consistent feedback and careful modal behavior keep the interface understandable under live conditions."}]} kind="cards" label="CMS implementation" />
 
 
-## Delivered Experience
+## What I built
 
 The module was used across several live campaigns. I continued updating the preparation screens and broadcast views through the April 2026 release.
 
 
-## Reflection
+## What stayed with me
 
 I had to think about two people at once: the operator running the draw and the viewer watching it. A screen that worked for the operator still needed readable text and enough time for the audience to follow the result.
 
-## Collaboration
+## The people I worked with
 
 <div class="not-prose flex flex-wrap items-center gap-2 my-4">
   <span class="text-sm font-semibold">Team:</span>

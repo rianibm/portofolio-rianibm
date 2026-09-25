@@ -28,17 +28,17 @@ interface ProjectGroup {
 const groups: ProjectGroup[] = [
   {
     label: "Indopaket Product Ecosystem",
-    sublabel: "Selected production work across Indopaket’s core customer apps, growth products, loyalty features, and internal operational tools — within Indomaret Group.",
+    sublabel: "A look inside my work at Indopaket, part of Indomaret Group: shipping, rewards, referrals, and the tools behind the scenes.",
     slugs: ["indopaket-web", "indopaket-mobile", "gamified-tiering", "affiliator", "affiliator-mobile", "gamified-reward", "web-3pl", "memberplus"],
   },
   {
     label: "Freelance & Independent Work",
-    sublabel: "Client and long-term ownership work outside Indomaret Group",
+    sublabel: "A project I’ve stayed with, from its first release through the fixes and changes that followed.",
     slugs: ["perkantas-yogyakarta"],
   },
   {
     label: "Additional Work",
-    sublabel: "Side projects & personal experiments, outside client production",
+    sublabel: "Earlier builds, a hackathon sprint, and a few things I learned by making them.",
     compactCards: true,
     slugs: ["hire-green-jobs", "spillr", "sky-explorer"],
   },
@@ -53,27 +53,29 @@ groups[0].slugs.sort(
 );
 
 const displayGroups = compact
-  ? [{ label: "Selected Production Work", slugs: groups[0].slugs.filter((slug) => slug !== featuredPost?.id).slice(0, 3) }]
+  ? [{ label: "Operations & Independent Work", slugs: ["web-3pl", "perkantas-yogyakarta"] }]
   : groups.map((g) => ({
       ...g,
       slugs: g.slugs.filter((slug) => slug !== featuredPost?.id),
     }));
 ---
 <section id="selected-work" class="flex flex-col text-center gap-4 scroll-mt-24">
-  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">UX Engineering — Selected Work</h2>
-  <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">I design interfaces and build the frontend, mostly for logistics products. Here are the customer apps, internal tools, and independent projects I’ve worked on.</p>
+  <h2 class="text-2xl md:text-4xl font-bold animate-on-scroll from-bottom" style="--delay: 0.1s">Selected work, with the story behind it</h2>
+  <p class="text-pblack animate-on-scroll from-bottom max-w-2xl mx-auto">These are a few projects I’ve spent time untangling, designing, and building. Here’s what needed attention, what I changed, and what I’m still figuring out.</p>
 
   {featuredPost && (
     <a
       href={`/works/${featuredPost.id}/`}
       class="max-w-2xl mx-auto w-full text-left rounded-3xl border-1 border-black shadow-card hover:shadow-hover transition px-6 py-8 flex flex-col gap-4 bg-pyellow animate-on-scroll from-bottom settle mt-4"
     >
-      <span class="text-xs font-semibold uppercase tracking-widest">⭐ Featured Case Study · Core Customer Product</span>
+      <span class="text-xs font-semibold uppercase tracking-widest">A closer look · Indopaket Web</span>
       <h3 class="text-2xl md:text-3xl font-bold">{featuredPost.data.title}</h3>
       {featuredPost.data.role && (
         <span class="text-xs font-bold uppercase tracking-wide text-black">{featuredPost.data.role}</span>
       )}
       <p class="text-sm md:text-base text-black/80">{featuredPost.data.description}</p>
+      {featuredPost.data.problem && <p class="text-sm"><strong>The tricky part:</strong> {featuredPost.data.problem}</p>}
+      {featuredPost.data.outcome && <p class="text-sm"><strong>What I built:</strong> {featuredPost.data.outcome}</p>}
       {featuredPost.data.tags && (
         <div class="flex flex-wrap gap-1">
           {featuredPost.data.tags.map((tag: string) => (
@@ -91,7 +93,7 @@ const displayGroups = compact
           ))}
         </ul>
       )}
-      <span class="font-semibold underline underline-offset-4">Read Case Study →</span>
+      <span class="font-semibold underline underline-offset-4">Read the story →</span>
     </a>
   )}
 
@@ -137,6 +139,9 @@ const displayGroups = compact
               <FormattedDate date={groupPosts[0]!.data.pubDate} monthYear />
             </p>
             <div class="text-sm text-gray-600 leading-relaxed">{groupPosts[0]!.data.description}</div>
+            {groupPosts[0]!.data.problem && <p class="text-sm text-gray-600"><strong>The tricky part:</strong> {groupPosts[0]!.data.problem}</p>}
+            {groupPosts[0]!.data.outcome && <p class="text-sm text-gray-600"><strong>What I built:</strong> {groupPosts[0]!.data.outcome}</p>}
+            <span class="text-sm font-semibold underline underline-offset-4">Read the story →</span>
             {groupPosts[0]!.data.tags && (
               <div class="flex flex-wrap gap-1">
                 {groupPosts[0]!.data.tags.map((tag: string) => (
@@ -176,10 +181,15 @@ const displayGroups = compact
                     </span>
                   )}
                 </p>
+                {post.data.caseStudyStatus === "coming-soon" && (
+                  <span class="text-xs font-semibold text-black">Still writing this story · A short overview for now</span>
+                )}
               </a>
               {!isCompact && (
-                <div class="text-sm text-gray-600 leading-relaxed line-clamp-3">{post.data.description}</div>
+                <div class="text-sm text-gray-600 leading-relaxed">{post.data.description}</div>
               )}
+              {!isCompact && post.data.problem && <p class="text-sm text-gray-600"><strong>The tricky part:</strong> {post.data.problem}</p>}
+              {!isCompact && post.data.outcome && <p class="text-sm text-gray-600"><strong>What I built:</strong> {post.data.outcome}</p>}
               {!isCompact && post.data.delivery && (
                 <p class="text-[11px] font-semibold uppercase tracking-wide text-black/50 mt-1">{post.data.delivery}</p>
               )}
@@ -190,6 +200,10 @@ const displayGroups = compact
                   ))}
                 </div>
               )}
+              <a href={`/works/${post.id}/`} class="text-sm font-semibold underline underline-offset-4 mt-auto">
+                {post.data.caseStudyStatus === "coming-soon" ? "See the overview →" : "Read the story →"}
+                <span class="sr-only"> {post.data.title}</span>
+              </a>
             </li>
           );
         })}
@@ -207,7 +221,7 @@ const displayGroups = compact
       href="/works/"
       class="self-center bg-pgreen px-6 py-3 border-1 border-black rounded-lg shadow-card hover:shadow-hover transition font-medium animate-on-scroll from-bottom settle"
     >
-      View All Projects
+      Explore all projects
     </a>
   )}
 </section>
