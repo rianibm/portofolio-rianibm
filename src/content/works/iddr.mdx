@@ -1,0 +1,54 @@
+---
+title: "IDDR Community Platform"
+description: "A community and learning platform connecting digital products, webinar recordings, events, and services with an admin workspace."
+problem: "Community activities, learning content, and products needed a shared public experience and tools for day-to-day administration."
+outcome: "Public discovery pages and an interactive admin prototype, with a database foundation for the next integration phase."
+icon: "heroicons:user-group"
+pubDate: "Nov 2026"
+tags: ["Next.js", "React", "TypeScript", "Community Platform", "Admin Workspace"]
+role: "Web development · Public platform · Admin workspace"
+delivery: "Next.js · In development"
+pageSkills:
+  - category: "Platform Development"
+    icon: "1"
+    skills: ["Next.js", "React", "TypeScript", "Responsive UI", "Reusable Components"]
+  - category: "Community & Operations"
+    icon: "2"
+    skills: ["Admin Workflows", "Community Registration", "Content Management", "Order Interfaces"]
+  - category: "Data Foundation"
+    icon: "3"
+    skills: ["Prisma", "Data Modeling", "Demo Persistence", "Integration Planning"]
+---
+
+import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+
+## A little context
+
+IDDR brings community activities and learning resources into a single platform. The public website includes a digital store, a vault of webinar recordings, events, community registration, and service enquiries.
+
+**My part:** Web development for the public platform and admin workspace, alongside the data foundation for later integration.
+
+## Two sides of the same platform
+
+Members need a clear way to find an event, recording, or product. The team needs a way to review applications, maintain content, and follow up on orders and service requests. I worked on both experiences so the public pages and administrative tasks could be developed together.
+
+<CaseStudyVisual items={[{title: "Discover and learn", description: "Public pages for products, webinar recordings, events, and the community."}, {title: "Join and enquire", description: "Registration and service enquiry interfaces with clear form states."}, {title: "Manage the work", description: "An admin workspace for community review, content, orders, and follow-up."}]} kind="cards" label="IDDR platform scope" />
+
+## Building the admin workflows
+
+The admin prototype includes search, filters, pagination, content editors, application review, member management, and order details. Browser persistence makes these workflows interactive during development, while role-specific views help explain who handles each task.
+
+The project also includes a Prisma database foundation. The browser demo and database remain separate at this stage; the prototype does not establish production authentication or shared persistence.
+
+## Where it stands
+
+IDDR is **in development**. The public interfaces and admin prototype are implemented, while production authentication, payments, paid-content access, and transactional email remain integration work.
+
+The current result is a working interface foundation for reviewing the flows before those services are connected. No launch or business impact is claimed here.
+
+## The people I worked with
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <a href="https://www.linkedin.com/in/patrisia-cindy-paskariana-043629238/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-pblue rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Patrisia Cindy Paskariana <span class="text-black/50 font-normal">· Frontend</span></a>
+</div>

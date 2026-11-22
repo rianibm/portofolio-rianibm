@@ -1,8 +1,7 @@
 ---
 title: "Indopaket Web Platform Redesign"
-description: "A closer look at finding a store, sending a parcel, and tracking it home. I redesigned nine flows across the Indopaket website."
+description: "Making core shipping tasks clearer, from finding a drop-off store to recovering from an empty result. I redesigned and implemented nine flows across six customer journeys."
 pubDate: "Apr 2026"
-heroImage: "/src/assets/images/works/indopaket-web/after/beranda-upper.png"
 problem: "Unlabeled shipping actions, map-blocking store details, and dead-end feedback made core tasks hard to follow."
 outcome: "Nine redesigned flows with clearer actions, compact store cards, recovery states, and focused account pages."
 icon: "heroicons:globe-alt"
@@ -56,38 +55,26 @@ Indopaket Web is the core customer web product within Indomaret Group. I carried
 
 **Collaboration:** I worked with backend engineers and business stakeholders to keep the redesign compatible with existing shipping requirements.
 
+<h2 id="impact-summary">What changed at a glance</h2>
+
+**Nine flows redesigned across six customer journeys, from UX analysis through production implementation.** The delivered changes include explicit tracking and rate-check actions, compact store details, recovery guidance, and focused account pages.
+
+The clearest example: selected-store details now sit in a compact card, keeping the map and result list visible together.
+
+| Earlier store selection | Delivered redesign |
+|---|---|
+| ![Large selected-store popup covering the map](../../assets/images/works/indopaket-web/before/cari-toko-selected.png) | ![Compact store card keeping map context and the selected result visible](../../assets/images/works/indopaket-web/after/cari-toko-selected.png) |
+
+This is evidence of an interface change. Conversion and task-completion improvements have not been measured.
+
 <h2 id="challenge">Product Challenge</h2>
 
 Primary shipping actions were buried in unlabeled fields, store details obscured the map, and empty states offered no next step. Hotjar data from September 2023 and heuristic evaluation informed the changes shown in the 2026 iteration.
 
 
-## Core Shipping Journey
+<h2 id="design-decision">Three decisions, with the evidence behind them</h2>
 
-<CaseStudyVisual items={[{"title": "Choose shipping task"}, {"title": "Find a store or service"}, {"title": "Send package"}, {"title": "Track progress"}]} kind="flow" label="Simplified customer shipping journey" />
-
-<h2 id="design-decision">Key UX Decisions</h2>
-
-<CaseStudyVisual items={[{"title": "Clear tracking and rate-check labels", "description": "Label tracking and rate-check actions clearly on the homepage.", "label": "Recognition"}, {"title": "Map context", "description": "Use a compact selected-store card that keeps the map and result list visible.", "label": "Status visibility"}, {"title": "Help when users get stuck", "description": "Provide useful empty states, app-store links, and support fallbacks.", "label": "Recovery"}, {"title": "Focused account flows", "description": "Separate Login and Register and make verification feedback understandable.", "label": "Information hierarchy"}]} kind="cards" label="Web redesign decisions" />
-
-## A Small Card, a Little More Breathing Room
-
-Selecting a store used to open a large popup over the map. The information was there, but it covered the very thing you were trying to look at. A slightly awkward introduction to your nearest drop-off point.
-
-I replaced it with a compact store card and highlighted the matching result in the list. That way, the details and the location could stay in view together.
-
-A smaller card also means choosing what gets the space. I prioritized status, distance, and contact information, with the result list keeping the surrounding search context available.
-
-The screenshots below show the change. Whether it helps someone choose a store faster is something I still need to test.
-
-## Selected Interface Screens
-
-<h3 id="store-and-shipping-discovery">Store and shipping discovery</h3>
-
-How sellers find a drop-off store and track a shipment.
-
-#### Beranda (Homepage)
-
-*Made tracking and rate checks easier to find on the homepage.*
+### 1. Make the main shipping actions explicit
 
 Hotjar showed the heaviest interaction concentrated on the "Lacak Paket" (track) and "Cek Ongkir" (check rate) widgets, both of which buried their primary action in plain, unlabeled fields — and the promo slider had no visible pagination. *(Heuristic reference: Recognition Rather Than Recall.)*
 
@@ -101,15 +88,13 @@ Hotjar showed the heaviest interaction concentrated on the "Lacak Paket" (track)
 - **Lacak Paket** — added a "Pindai Resi" (scan) shortcut, a dedicated "Lacak Paket" button, and a note on what happens after submitting (captcha verification)
 - **Cek Ongkir** — split the combined "Asal/Tujuan" field into two clearly labeled fields with a swap shortcut, and marked Dimensi as explicitly optional
 
-#### Cari Toko (Store Locator)
+**Trade-off:** Labels and guidance take space. I prioritized the tracking and rate-check actions while leaving the single-versus-multiple tracking interaction for a follow-up iteration.
 
-*Shifted store details from a map-blocking popup to a compact card that keeps the map and result list in view.*
+### 2. Keep store details in context
 
 Both versions kept a results list alongside the map. The problem was the selected-store popup: it was large enough to cover a significant part of the map, and closing it to check a different result meant losing sight of where the selected pin sat relative to the rest. *(Heuristic reference: Visibility of System Status.)*
 
-| Existing experience · Sep 2023 | Current iteration · 2026 |
-|---|---|
-| ![Old Cari Toko: selecting a pin opens a large popup that covers much of the map](../../assets/images/works/indopaket-web/before/cari-toko-selected.png) | ![New Cari Toko: selected store shown in a compact card, with map and result list still visible](../../assets/images/works/indopaket-web/after/cari-toko-selected.png) |
+[Compare the selected-store interfaces in the opening summary ↑](#impact-summary)
 
 **What changed**
 
@@ -120,6 +105,12 @@ Both versions kept a results list alongside the map. The problem was the selecte
 | No results — Existing experience · Sep 2023 | No results — Current iteration · 2026 |
 |---|---|
 | ![Old Cari Toko no-results state: plain "0 Toko ditemukan" text with no further guidance](../../assets/images/works/indopaket-web/before/cari-toko-tidak-ditemukan.png) | ![New Cari Toko no-results state: "Lokasi tidak ditemukan. Coba kata kunci lain." with example searches to try](../../assets/images/works/indopaket-web/after/cari-toko-tidak-ditemukan.png) |
+
+**Trade-off:** A compact card cannot give every detail equal prominence. I prioritized status, distance, and contact information while keeping map and list context available.
+
+### 3. Give interrupted journeys a next step
+
+**Trade-off:** Recovery guidance can compete with the primary action. I kept it tied to the situation: an app handoff, an empty result, or account verification.
 
 #### Kirim Sekarang (Ship Package)
 
@@ -155,7 +146,7 @@ The old "not found" state on Riwayat (History) was a bare "Tidak ditemukan" mess
 
 ---
 
-<h3 id="account-and-authentication">Account and authentication</h3>
+<h4 id="account-and-authentication">Account and authentication</h4>
 
 How a new user registers and verifies their account.
 
@@ -186,17 +177,15 @@ The old screen only showed a countdown and a bare set of input boxes — no conf
 <h2 id="implementation">Architecture and Implementation</h2>
 
 <CaseStudyVisual items={[{"title": "Existing production stack", "description": "Delivered the redesign in Laravel Blade with Tailwind CSS while preserving business requirements."}, {"title": "Reusable interface patterns", "description": "Shared empty states, store-selection cards, and form layouts support consistent future changes."}]} kind="cards" label="Web implementation" />
-<h2 id="outcome">Before vs After</h2>
+<h2 id="outcome">Outcome: delivered changes</h2>
 
-<CaseStudyVisual items={[{"title": "Before", "description": "Competing actions, map-blocking store details, and dead-end feedback made core tasks harder to follow.", "label": "Earlier interface"}, {"title": "After", "description": "Nine redesigned flows introduce labeled actions, compact store cards, useful recovery states, and focused account pages.", "label": "Delivered iteration"}]} kind="cards" label="Web redesign comparison" caption="Conversion and task-completion changes have not been measured." />
+The redesign was implemented in the existing Laravel Blade/Tailwind CSS stack across nine flows. The comparisons above document the delivered interface changes. Conversion and task completion have not been measured.
 
-## What changed, and what I still want to learn
+## Learnings and validation next steps
 
-The redesign covers nine flows across six customer journeys, from finding a store to verifying an account. The before/after screens show the work: clearer labels, smaller store cards, and somewhere useful to go when a search comes back empty.
+A recovery state is part of the journey: it needs to help someone decide what to try next. The same principle shaped store search, shipment history, and account verification.
 
-The Hotjar data came from September 2023. It helped me understand the earlier interface, alongside the heuristic review, but it doesn’t tell me how well the 2026 version works.
-
-I haven’t measured changes in conversion or task completion yet. I’d like to watch people find a store, recover from an empty result, and verify an account. Where do they pause? What do they try twice? That’s where I’d look for the next round of changes.
+The September 2023 Hotjar observations helped prioritize the work, but do not validate the 2026 version. Next, I would observe people finding a store, recovering from an empty result, and verifying an account, recording task completion and points of hesitation to guide the next iteration.
 
 <h2 id="future-exploration">What I’d explore next</h2>
 

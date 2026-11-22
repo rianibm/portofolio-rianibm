@@ -1,6 +1,6 @@
 ---
 title: "Indopaket 3PL Operations Platform"
-description: "Land and air shipments take different paths. I built the frontend that helps operations teams work through both."
+description: "Turning land and air shipment requirements into stage-aware operational interfaces, with shared validation underneath."
 pubDate: "Sept 2025"
 problem: "Land and air shipments need different sequences, while operators need actions relevant to their role and the current stage."
 outcome: "Separate shipment workflows, role-aware navigation, shared validation, and loading, empty, and error states."
@@ -89,35 +89,39 @@ Indopaket 3PL is an internal logistics platform for land and air shipment operat
 
 I’ve simplified the workflows and roles here to keep internal information private.
 
-## Where things got tricky
+## What I delivered
 
-Land and air shipments follow different steps, and some information arrives after work has already started. Operators need to see the current stage and know which actions are available.
+**A production frontend with separate land and air workflows, role-aware navigation, and shared validation.** Operators can work through shipment stages with actions tied to their role and the current stage, alongside tracking history and loading, empty, and error states.
 
-## Darat vs Udara
+<ThreePlEngineeringVisuals section="outcome" />
+
+These are delivered capabilities. Operational error rates and task-time improvements have not been measured. Public product screens are restricted; the diagrams here simplify internal workflows.
+
+## Three decisions behind the operational UI
+
+### 1. Separate the workflows that behave differently
+
+Land and air shipments follow different sequences, and some information arrives after work starts. I kept their interface paths separate so each could reflect its own shipment lifecycle.
+
+**Trade-off:** Separate paths create more UI to maintain. I shared validation and domain logic underneath, keeping common rules consistent without flattening the operational differences.
 
 <ThreePlDomainCards />
 
-## Core Workflow
-
 <ThreePlApplicationFlow />
 
-## The choices behind the screens
+### 2. Tie actions to stage and responsibility
+
+An action can be valid for one stage or role and irrelevant for another. I used stage-dependent actions and role-aware navigation to reflect what an operator can do at that point in the workflow.
+
+**Design consideration:** Hiding or withholding an action can leave someone unsure why it is unavailable. The next validation step is to observe those moments and check whether the interface provides enough context. Role-aware UI also needs backend authorization; navigation alone is not an access-control boundary.
+
+### 3. Make incomplete data part of the interface
+
+Operational screens need to handle records that are loading, missing, or unavailable as well as populated results. I included loading, empty, and error states, with shared validation for form-heavy workflows.
+
+**Trade-off:** These states add implementation and verification work. Treating them as part of the core workflow gives the interface a defined response when data is not ready.
 
 <ThreePlUXCards />
-
-## Same Destination, Different Steps
-
-Land and air shipments don’t move through the same sequence. Some information arrives partway through the work, and the next action depends on both the shipment stage and the person handling it. One generic flow would have a lot of explaining to do.
-
-I kept the workflows separate, with actions tied to the current stage and the operator’s role. Underneath, they share validation and domain logic.
-
-That leaves more interface paths to maintain. Shared rules help keep the behavior consistent while leaving room for the differences that matter in each operation.
-
-This is the reasoning behind the implemented version. I don’t have a prototype-to-test revision history to share here, or usability results that show how well it works for operators yet.
-
-## Selected Interface Screens
-
-I can’t share the product screens publicly. The diagrams above are a simplified look at the workflows and the choices behind them.
 
 ## Architecture and Reliability
 
@@ -129,19 +133,15 @@ I set up unit and component tests with **Vitest**, **Testing Library**, and **js
 
 The testing priorities are form validation, state-dependent actions, and loading, empty, and error states—the interactions that help operators understand what they can do next.
 
-## Before vs After
-
-<ThreePlEngineeringVisuals section="outcome" />
-
-## What’s there, and what I still want to learn
+## Outcome and evidence limits
 
 The platform brings together land and air workflows, role-aware navigation, tracking history, and shared validation. Actions follow the shipment stage, so the interface can show what’s available next.
 
-The testing setup covers form validation and interface states. I don’t have operational error rates, task-time comparisons, or usability-test results to share here.
+The testing priorities are form validation and interface states. I don’t have operational error rates, task-time comparisons, or usability-test results to share here.
 
 Next, I’d like to observe operators working through both shipment types, especially when information is missing or an action isn’t available yet. Does the screen explain enough? Or does someone still need to ask a colleague? Those moments would tell me where to focus.
 
-## What stayed with me
+## Learnings
 
 This was my first deep dive into 3PL operations. It made me pay much closer attention to what a screen lets someone do, and when. A button can look perfectly fine and still be the wrong next step. That lesson stayed with me.
 

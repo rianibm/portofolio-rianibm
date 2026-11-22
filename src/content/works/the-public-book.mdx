@@ -1,0 +1,130 @@
+---
+title: "The Public Book"
+description: "A Jakarta culture platform bringing local stories, self-guided routes, guided walks, and events into one place."
+problem: "Different ways to explore Jakarta needed a connected discovery experience and a workflow for managing content."
+outcome: "A live public website, with custom CMS and Supabase integration work behind the content."
+icon: "heroicons:book-open"
+pubDate: "Nov 2026"
+tags: ["Next.js", "React", "Supabase", "Custom CMS", "Culture & Tourism"]
+role: "UI/UX implementation · Frontend engineering · CMS integration"
+delivery: "Next.js · Live website"
+pageSkills:
+  - category: "UI/UX Implementation"
+    icon: "3"
+    skills: ["Information Architecture", "Visual Hierarchy", "Interaction Design", "Responsive Design", "Accessible States"]
+  - category: "Public Website"
+    icon: "1"
+    skills: ["Next.js", "React", "Responsive UI", "Content Discovery", "Dynamic Routing"]
+  - category: "Content & Data"
+    icon: "2"
+    skills: ["Custom CMS", "Supabase", "Content Integration", "Editorial Workflows"]
+---
+
+import CaseStudyVisual from "@/components/CaseStudyVisual.astro";
+import ProjectLink from "@/components/ProjectLink.astro";
+import PublicBookSnapshot from "@/components/PublicBookSnapshot.astro";
+import homepage from "@/assets/images/works/the-public-book/homepage-desktop.jpg";
+import preferences from "@/assets/images/works/the-public-book/interest-preferences.jpg";
+import explore from "@/assets/images/works/the-public-book/explore-desktop.jpg";
+import route from "@/assets/images/works/the-public-book/route-desktop.jpg";
+import routeMobile from "@/assets/images/works/the-public-book/route-mobile.jpg";
+import pagespeedDesktop from "@/assets/images/works/the-public-book/pagespeed-desktop.jpg";
+import pagespeedMobile from "@/assets/images/works/the-public-book/pagespeed-mobile.jpg";
+
+## A little context
+
+The Public Book helps people discover Jakarta through its neighbourhoods, stories, and cultural experiences. The website connects editorial content with practical ways to explore: free routes, guided walks, and events.
+
+<ProjectLink href="https://www.thepublicbook.id/" label="Explore The Public Book" domain="thepublicbook.id" />
+
+**My part:** UI/UX implementation and frontend engineering across the public website, with custom CMS and Supabase content integration. I collaborated with Bimo as PO/PM.
+
+<PublicBookSnapshot image={homepage} alt="The Public Book desktop homepage with Jakarta city imagery, a clear introduction, and the Explore Jakarta action." label="01 · First impression" caption="The homepage introduces the cultural guide with city imagery and one clear starting point: Explore Jakarta." />
+
+## UI/UX: from curiosity to a day out
+
+The experience has to support different levels of intent. Someone might arrive to read about a neighbourhood, follow a free route, or find a hosted walk. I worked on a hierarchy that gives each path a clear place while keeping them connected through interests and locations.
+
+<CaseStudyVisual items={[{title: "Discover", description: "Start with an interest or a neighbourhood."}, {title: "Understand", description: "See what kind of experience it is and what it involves."}, {title: "Plan", description: "Save an idea, choose route stops, or ask about a walk."}]} kind="flow" label="From cultural discovery to planning" />
+
+### Give visitors a choice before asking for commitment
+
+The optional interest selector uses photographs, short labels, and descriptions to make the categories tangible. Visitors can select several interests, continue with those choices, or skip the step. Preferences can be changed later.
+
+The intention is to give people a useful starting point without making personalization a prerequisite for browsing. Showing a skip action also matters when someone arrives with a specific destination already in mind.
+
+<PublicBookSnapshot image={preferences} alt="Optional interest dialog with six photo categories, a Continue exploring action, and a Skip for now option." label="02 · Optional personalization" caption="Interest choices are visual and reversible. The dialog explains what the selection affects and keeps a visible way to skip." />
+
+### Make the type of experience clear
+
+Guided walks and self-guided routes share a city, but involve different expectations. The Explore page gives them separate entry points, with a short explanation beside each. Stories and events have their own navigation destinations.
+
+Warm neutral surfaces, large headings, fine dividers, and neighbourhood photography carry the editorial feel. Compact labels and consistent actions give the practical information a separate visual rhythm, so the page can inspire a visit and explain the next step.
+
+<PublicBookSnapshot image={explore} alt="Explore Jakarta page showing separate photographic entry points for guided walks and self-guided routes." label="03 · Discovery hierarchy" caption="Two visible paths distinguish a hosted experience from a free route visitors can follow at their own pace." />
+
+### Turn a route into something visitors can use
+
+The route detail brings together an introduction, a map, the number of stops, practical information, and the itinerary. Visitors can include or exclude stops; the plan preserves their order and directions lead to the next selected stop.
+
+On mobile, the layout becomes a single reading column. Stop selection and directions stay next to the relevant place, while the plan shows how many stops remain selected. An empty plan prompts visitors to choose a stop, and the interface explains that choices stay in the current tab.
+
+<PublicBookSnapshot image={route} mobileImage={routeMobile} alt="Desktop Cikini route detail with an introduction, map, practical information, and route section." mobileAlt="Mobile route itinerary showing selected stops and route planning controls." label="04 · Desktop to mobile" caption="Desktop introduces the route and its map together. The mobile snapshot shows the itinerary controls further down the same page, where visitors make their plan." />
+
+## Frontend: making those decisions work
+
+### Shared presentation, focused interactive components
+
+I used Next.js and React to connect public pages with reusable navigation, responsive images, content cards, and detail layouts. Interactive concerns such as preferences, saves, enquiry dialogs, and route planning have their own components and state.
+
+For example, choosing interests edits a draft selection before applying it. Saved preferences are checked against known categories when restored. Route selections are validated, deduplicated, and sorted before reuse, so an old browser value does not become an invalid itinerary.
+
+### Preserve intent and explain recovery
+
+Local storage supports interests and saved ideas; session storage supports the route plan and enquiry draft. These choices serve different lifetimes: a preference can survive a return visit, while a route plan belongs to the current tab.
+
+Storage can fail. The route interface then keeps the current selection in memory and explains that refreshing may clear it. Save buttons expose their pressed state, plan counts announce changes, and enquiry dialogs use labelled native dialog elements. These details make the interaction state visible beyond its visual styling.
+
+### Keep data mapping outside the page layout
+
+Supabase readers map stories, routes, and events into the shapes used by the public interface. Publication checks and ordered route stops belong in that data layer, alongside explicit unavailable states. That keeps database fields and provider-specific handling out of individual cards.
+
+The project also includes custom CMS interfaces. Public content delivery and administrative workflows are related parts of the build, while publishing a walk page remains separate from confirming bookable departures.
+
+### Load media and dialogs when they are needed
+
+A photography-led website needs deliberate loading choices. The implementation uses responsive image variants, deferred account and interest dialogs, and event loading near the relevant section. These decisions balance the editorial presentation with the amount of work needed on the first view.
+
+The screenshots above come from the live public website; implementation details in this story were checked against the project source. They describe the delivered approach rather than a measured improvement in visitor behavior.
+
+## Performance & validation
+
+PageSpeed Insights reports captured on **20 November 2026** provide a technical checkpoint for the live homepage on desktop and mobile.
+
+| Lighthouse category | Desktop | Mobile |
+| --- | ---: | ---: |
+| Performance | 100 | 91 |
+| Accessibility | 100 | 100 |
+| Best Practices | 100 | 100 |
+| SEO | 100 | 100 |
+
+The recorded Largest Contentful Paint was **0.3 seconds on desktop** and **3.0 seconds on mobile**. The mobile result leaves room for further loading improvements, even with a green overall performance score.
+
+<PublicBookSnapshot image={pagespeedDesktop} alt="PageSpeed Insights desktop homepage report dated 20 November 2026, showing 100 in Performance, Accessibility, Best Practices, and SEO." label="05 · Desktop validation" source="PageSpeed Insights · 20 November 2026" caption="Desktop homepage: 100 across the four Lighthouse categories in this captured lab run." />
+
+<PublicBookSnapshot image={pagespeedMobile} alt="PageSpeed Insights mobile homepage report dated 20 November 2026, showing Performance 91 and 100 in Accessibility, Best Practices, and SEO." label="06 · Mobile validation" source="PageSpeed Insights · 20 November 2026" caption="Mobile homepage: Performance 91, with 100 in Accessibility, Best Practices, and SEO in the same dated report." />
+
+These are dated lab results for the homepage; scores can vary between runs. The reports show no real-user field data, so they do not establish site-wide performance or a before-and-after improvement. The automated accessibility score also needs to be complemented by manual checks and usability evaluation.
+
+## Where it stands
+
+The public website is live at **thepublicbook.id**. Visitors can discover stories, routes, walks, and events. Guided walk pages currently show enquiry and planning information, with dates coming soon.
+
+This overview covers the website and implementation scope. Visitor conversion and usability improvements have not been measured here.
+
+## The people I worked with
+
+<div class="not-prose flex flex-wrap items-center gap-2 my-4">
+  <span class="text-sm font-semibold">Team:</span>
+  <a href="https://www.linkedin.com/in/bimoadr/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 bg-ppink rounded-full border-1 border-black text-xs font-semibold shadow-card1 hover:shadow-card transition no-underline text-black">Bimo <span class="text-black/50 font-normal">· PO/PM</span></a>
+</div>

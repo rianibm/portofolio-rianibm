@@ -1,0 +1,46 @@
+---
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  image: ImageMetadata;
+  alt: string;
+  caption: string;
+  label: string;
+  source?: string;
+  mobileImage?: ImageMetadata;
+  mobileAlt?: string;
+}
+const { image, alt, caption, label, source = 'Live website · November 2026', mobileImage, mobileAlt } = Astro.props;
+---
+
+<figure class="tpb-snapshot not-prose">
+  <div class="snapshot-label"><span class="dot" aria-hidden="true"></span>{label}<span class="source">{source}</span></div>
+  <div class:list={["screens", { paired: mobileImage }]}>
+    <div class="desktop-screen">
+      <Image src={image} alt={alt} widths={[720, 1080, 1440]} sizes="(min-width: 1024px) 1000px, 100vw" format="webp" loading="lazy" />
+    </div>
+    {mobileImage && <div class="mobile-screen"><Image src={mobileImage} alt={mobileAlt ?? alt} widths={[390, 780]} sizes="(min-width: 640px) 230px, 70vw" format="webp" loading="lazy" /></div>}
+  </div>
+  <figcaption>{caption}</figcaption>
+</figure>
+
+<style>
+  .tpb-snapshot { margin: 2rem 0; color: #17243d; }
+  .snapshot-label { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin-bottom: .75rem; font-size: .75rem; font-weight: 700; }
+  .dot { width: .45rem; height: .45rem; border-radius: 50%; background: #b84019; }
+  .source { margin-left: auto; font-size: .6875rem; color: #596579; font-weight: 400; }
+  .screens { padding: 1rem; background: #eae7e0; border: 1px solid #d7d2c8; border-radius: 1rem; }
+  .desktop-screen { min-width: 0; overflow: hidden; border: 1px solid #d7d2c8; border-radius: .5rem; background: #f7f4ed; }
+  .tpb-snapshot :global(img) { display: block; width: 100%; height: auto; margin: 0; }
+  .paired { display: grid; grid-template-columns: minmax(0, 1fr) minmax(150px, 23%); gap: 1rem; align-items: start; }
+  .mobile-screen { overflow: hidden; border: 5px solid #282722; border-radius: 1.25rem; background: #f7f4ed; }
+  figcaption { margin-top: .875rem; color: #596579; font-size: .8125rem; line-height: 1.7; }
+  @media (min-width: 1024px) { .tpb-snapshot { width: min(calc(100vw - 5rem), 67rem); } }
+  @media (max-width: 639px) {
+    .source { width: 100%; margin-left: .95rem; }
+    .screens { padding: .625rem; }
+    .paired { grid-template-columns: 1fr; }
+    .mobile-screen { width: min(70%, 250px); margin: .5rem auto; }
+  }
+</style>

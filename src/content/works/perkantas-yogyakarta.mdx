@@ -1,6 +1,6 @@
 ---
 title: "Perkantas Yogyakarta"
-description: "A community website I helped build in 2023 and returned to in 2026 for fixes, API migration, and a little growing up."
+description: "From the initial 2023 frontend to 2026 maintenance: evolving a live community platform through stabilization, interface refactoring, and API migration work."
 problem: "An active community platform needed maintenance and modernization while supporting everyday tasks."
 outcome: "Refactored interfaces, API-ready components, database work, and deployment across the 2026 maintenance phase."
 icon: "heroicons:wrench-screwdriver"
@@ -37,57 +37,45 @@ Perkantas Yogyakarta is a community web platform supporting Christian disciplesh
 **My part:** Frontend development for the initial 2023 build. In phase 2 (March–June 2026), I handled maintenance, API migration work, database work, deployment, and system stabilization.
 
 
-## What needed attention
+## What I delivered
 
-The platform was already in use. I needed to fix existing issues and update the frontend without disrupting everyday community tasks.
+**Initial frontend delivery in 2023, followed by maintenance and a modernization phase in March–June 2026.** The later phase brought refactored interfaces, updated dependencies, API-ready components, database work, and deployment support.
 
+<CaseStudyVisual items={[{title: "2023 · Initial delivery", description: "Implemented approved designs in Laravel Blade and Bootstrap, with domain, hosting, and maintenance work."}, {title: "2026 · Modernization", description: "Refactored interfaces with Tailwind CSS and prepared components for API integration, alongside stabilization and deployment."}]} kind="cards" label="Delivered work across two project phases" caption="This summary describes delivery scope; comparative usability and reliability metrics are not available." />
 
-## Delivery Journey
+## Three decisions when returning to a live product
 
-<CaseStudyVisual items={[{"title": "Initial frontend build"}, {"title": "Ongoing maintenance"}, {"title": "UX audit and stabilization"}, {"title": "Modernize interfaces"}]} kind="flow" label="Project delivery phases" />
+### 1. Stabilize before expanding the migration
 
+The platform was already supporting everyday community tasks. I started with fixes and stabilization before broader migration work, using the UX audit and maintenance needs to guide the phase.
 
-## Key Decisions
+**Trade-off:** This puts less visible work ahead of a broader interface update. It also makes existing behavior and compatibility part of the delivery decision.
 
-<CaseStudyVisual items={[{"title": "Readable community pages", "description": "Use readable, responsive layouts for everyday community tasks.", "label": "Usability"}, {"title": "Stabilize before modernizing", "description": "Resolve issues in the existing platform before expanding migration work.", "label": "Delivery sequencing"}, {"title": "Reusable layouts", "description": "Keep repeated pages consistent as components move from Bootstrap to Tailwind CSS.", "label": "Maintainability"}]} kind="cards" label="Community platform decisions" />
+### 2. Refactor repeated interfaces for the next phase
 
+The initial frontend used Laravel Blade and Bootstrap. In 2026, I refactored interfaces with Tailwind CSS and prepared components for API-based integration.
 
-## Implementation Evolution
+**Trade-off:** Existing pages and newer patterns had to coexist during the transition. Reusable layouts helped organize repeated interfaces while compatibility checks remained necessary. API-ready components describe the work delivered here; they do not imply that every migration was completed.
 
-<CaseStudyVisual items={[{"title": "Initial build · 2023", "description": "Translated approved designs into Laravel Blade and Bootstrap interfaces and handled domain, hosting, and ongoing maintenance."}, {"title": "Phase 2 · March–June 2026", "description": "Audited user flows, refactored interfaces with Tailwind CSS, and prepared components for API-based integration. Also handled database work, deployment, and system stabilization."}]} kind="cards" label="Development phases" />
+### 3. Verify CMS changes alongside API integration
 
+A concrete verification target was CMS CRUD functionality: creating, reading, updating, and deleting content. I performed unit testing for those operations and collaborated with QA on regression checks and API validation, alongside database and deployment work.
 
-## Coming Back to Something I Built
+This connects the migration work to behavior the platform still needed to support. The available record does not include a specific defect or test-result artifact, so I cannot show a verified before/after for those operations.
 
-The first version went live in 2023, with approved designs built in Laravel Blade and Bootstrap. Returning to it in 2026 meant working with something people were already using. Any changes had to make room for that.
+**Evidence boundary:** These checks support technical verification of the changes. They do not establish that community tasks became faster or easier; that requires separate user evaluation.
 
-I started with fixes and stabilization before the broader migration work. Then I refactored repeated interfaces with Tailwind CSS and prepared components for API integration.
-
-It meant keeping the existing pages working while introducing newer patterns. There was plenty of less-visible work along the way: compatibility checks, regression testing, and deployment.
-
-The UX audit, maintenance work, and collaboration with QA shaped this phase. I don’t have comparative usability results to share, so this is the story of how the platform evolved, with that question still open.
-
-## Testing Strategy
-
-Worked with QA on regression checks and API validation, and performed unit testing for CMS CRUD functionality. These checks supported changes to an existing live system.
-
-
-## Before vs After
-
-<CaseStudyVisual items={[{"title": "Before", "description": "An existing Bootstrap-based platform needed stabilization and more consistent user flows.", "label": "Starting point"}, {"title": "After", "description": "Refactored interfaces, updated dependencies, and API-ready components supported continued maintenance.", "label": "Delivered work"}]} kind="cards" label="Qualitative modernization outcomes" />
-
-
-## What’s there, and what I still want to learn
+## Outcome
 
 The 2026 work brought refactored interfaces, updated dependencies, and API-ready components, alongside database work and deployment support.
 
-I worked with QA on regression checks and API validation, and tested CMS CRUD functionality. Those checks mattered for keeping an existing system working; they don’t tell me whether the everyday tasks feel easier now.
+Technical checks supported the delivery; task-completion, support-volume, and satisfaction changes have not been measured.
 
-I’d like to compare those tasks with people using the platform. I don’t have task-completion, support-volume, or satisfaction results to share yet.
+## Learnings and next steps
 
-## What stayed with me
+Returning to my first freelance project changed the unit of responsibility: a page also has dependencies, data, and a deployment path to maintain. The 2026 phase required revisiting earlier decisions with the client and sequencing fixes before migration work.
 
-This was my first freelance project, and I continued maintaining it after launch. Returning in 2026 meant revisiting earlier decisions, discussing changes with the client, and fixing existing issues before moving on to the migration.
+Next, I would select an everyday community task and compare completion, points of hesitation, and requests for help. That would connect the technical modernization to evidence about the experience people actually use.
 
 ## The people I worked with
 
